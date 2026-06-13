@@ -62,4 +62,25 @@ export interface TournamentSimulationResult {
   matches: Match[];
 }
 
+export interface TeamTournamentOdds {
+  teamId: TeamId;
+  roundOf16Probability: number;
+  quarterfinalProbability: number;
+  semifinalProbability: number;
+  finalProbability: number;
+  championProbability: number;
+}
+
+export interface MonteCarloOptions {
+  matches: Match[];
+  ratingsByTeamId: RatingsByTeamId;
+  simulationCount: number;
+  rng: RNG;
+}
+
+export interface MonteCarloResult {
+  simulationCount: number;
+  teamOdds: TeamTournamentOdds[];
+}
+
 export type RatingsByTeamId = Record<TeamId, TeamRating>;

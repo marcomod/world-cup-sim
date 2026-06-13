@@ -9,8 +9,10 @@ export function calculateMatchupProbability(
   teamARating: TeamRating,
   teamBRating: TeamRating,
 ): MatchupProbability {
-  const ratingDiff = teamARating.overall - teamBRating.overall;
-  const teamAWinProbability = 1 / (1 + Math.pow(10, -ratingDiff / 400));
+  const teamAWinProbability = calculateWinProbabilityFromOverall(
+    teamARating.overall,
+    teamBRating.overall,
+  );
 
   return {
     teamAId: teamARating.teamId,
@@ -18,6 +20,15 @@ export function calculateMatchupProbability(
     teamAWinProbability,
     teamBWinProbability: 1 - teamAWinProbability,
   };
+}
+
+export function calculateWinProbabilityFromOverall(
+  teamAOverall: number,
+  teamBOverall: number,
+): number {
+  const ratingDiff = teamAOverall - teamBOverall;
+
+  return 1 / (1 + Math.pow(10, -ratingDiff / 400));
 }
 
 export function getMatchupProbabilityForMatch(

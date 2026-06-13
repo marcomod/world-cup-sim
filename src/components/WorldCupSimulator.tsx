@@ -6,14 +6,27 @@ import { mockRatingsByTeamId } from "@/src/data/mockRatings";
 import { mockTeams } from "@/src/data/mockTeams";
 import { Bracket } from "@/src/components/Bracket/Bracket";
 import { MatchupOddsTable } from "@/src/components/Odds/MatchupOddsTable";
+import { TournamentOddsTable } from "@/src/components/Odds/TournamentOddsTable";
 import {
   createMatchCardViewModel,
   createMatchupOddsRows,
   getTeamDisplayName,
 } from "@/src/components/viewModels/bracketViewModels";
+import {
+  createTournamentOddsRows,
+  formatSimulationCountLabel,
+} from "@/src/components/viewModels/tournamentOddsViewModels";
+import { runMonteCarlo } from "@/src/lib/simulator/monteCarlo";
 import { createSeededRng } from "@/src/lib/simulator/rng";
 import { simulateBracket } from "@/src/lib/simulator/simulateBracket";
-import type { Match, Team, TeamsById } from "@/src/lib/simulator/types";
+import type {
+  Match,
+  MonteCarloResult,
+  Team,
+  TeamsById,
+} from "@/src/lib/simulator/types";
+
+const MONTE_CARLO_SIMULATION_COUNT = 10_000;
 
 function cloneInitialBracket(): Match[] {
   return initialBracket.map((match) => ({ ...match }));
@@ -26,6 +39,8 @@ function createTeamsById(teams: Team[]): TeamsById {
 export function WorldCupSimulator() {
   const [matches, setMatches] = useState<Match[]>(() => cloneInitialBracket());
   const [lastSeed, setLastSeed] = useState<number | null>(null);
+  const [monteCarloResult, setMonteCarloResult] =
+    useState<MonteCarloResult | null>(null);
   const teamsById = useMemo(() => createTeamsById(mockTeams), []);
   const finalMatch = matches[matches.length - 1];
   const championName = finalMatch?.winnerId
@@ -42,6 +57,16 @@ export function WorldCupSimulator() {
     () => createMatchupOddsRows(matches, mockRatingsByTeamId, teamsById),
     [matches, teamsById],
   );
+  const tournamentOddsRows = useMemo(
+    () =>
+      monteCarloResult
+        ? createTournamentOddsRows(monteCarloResult.teamOdds, teamsById)
+        : [],
+    [monteCarloResult, teamsById],
+  );
+  const tournamentOddsSimulationCountLabel = monteCarloResult
+    ? formatSimulationCountLabel(monteCarloResult.simulationCount)
+    : "";
 
   function handleSimulateBracket() {
     const seed = Date.now();
@@ -58,6 +83,18 @@ export function WorldCupSimulator() {
   function handleResetBracket() {
     setMatches(cloneInitialBracket());
     setLastSeed(null);
+    setMonteCarloResult(null);
+  }
+
+  function handleRunMonteCarlo() {
+    const result = runMonteCarlo({
+      matches: cloneInitialBracket(),
+      ratingsByTeamId: mockRatingsByTeamId,
+      simulationCount: MONTE_CARLO_SIMULATION_COUNT,
+      rng: createSeededRng(Date.now()),
+    });
+
+    setMonteCarloResult(result);
   }
 
   return (
@@ -83,7 +120,14 @@ export function WorldCupSimulator() {
               onClick={handleSimulateBracket}
               className="h-11 rounded-md bg-emerald-700 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
             >
-              Simulate Bracket
+              Simulate One Bracket
+            </button>
+            <button
+              type="button"
+              onClick={handleRunMonteCarlo}
+              className="h-11 rounded-md bg-slate-900 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+            >
+              Run 10,000 Simulations
             </button>
             <button
               type="button"
@@ -98,7 +142,7 @@ export function WorldCupSimulator() {
         <section className="grid gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:grid-cols-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Champion
+              Single Simulation Champion
             </p>
             <p className="mt-2 text-2xl font-semibold text-slate-950">
               {championName ?? "Not simulated"}
@@ -115,6 +159,13 @@ export function WorldCupSimulator() {
         </section>
 
         <MatchupOddsTable rows={matchupOddsRows} hasSimulated={Boolean(championName)} />
+
+        {monteCarloResult ? (
+          <TournamentOddsTable
+            rows={tournamentOddsRows}
+            simulationCountLabel={tournamentOddsSimulationCountLabel}
+          />
+        ) : null}
 
         <Bracket matches={bracketMatches} />
       </div>
