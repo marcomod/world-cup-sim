@@ -9,6 +9,8 @@ export function simulateBracket(
   const simulatedMatches = matches.map((match) => ({ ...match }));
   const matchesById = new Map(simulatedMatches.map((match) => [match.id, match]));
 
+  // V1 bracket data is ordered from Round of 32 through Final, so advancing
+  // winners fills each future match before that future match is processed.
   for (const match of simulatedMatches) {
     const result = simulateMatch(match, ratingsByTeamId, rng);
     match.winnerId = result.winnerId;

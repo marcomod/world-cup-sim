@@ -8,6 +8,8 @@ export interface Team {
   confederation?: string;
 }
 
+export type TeamsById = Partial<Record<TeamId, Team>>;
+
 export interface TeamRating {
   teamId: TeamId;
   overall: number;
