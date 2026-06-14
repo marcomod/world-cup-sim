@@ -9,7 +9,9 @@ export function MatchupOddsTable({ rows, hasSimulated }: MatchupOddsTableProps) 
   return (
     <section className="rounded-lg border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 px-4 py-3">
-        <h2 className="text-base font-semibold text-slate-950">Current Matchup Odds</h2>
+        <h2 className="text-base font-semibold text-slate-950">
+          Current Rating-Based Matchup Odds
+        </h2>
       </div>
 
       {rows.length > 0 ? (

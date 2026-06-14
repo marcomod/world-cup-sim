@@ -16,7 +16,8 @@ export function TournamentOddsTable({
           Tournament Odds
         </h2>
         <p className="mt-1 text-sm text-slate-600">
-          Based on {simulationCountLabel} simulations.
+          Based on {simulationCountLabel} simulations using early V2 team-strength
+          ratings.
         </p>
       </div>
 

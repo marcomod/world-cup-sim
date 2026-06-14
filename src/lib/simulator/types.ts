@@ -12,12 +12,20 @@ export type TeamsById = Partial<Record<TeamId, Team>>;
 
 export interface TeamRating {
   teamId: TeamId;
+  modelVersion?: "v1" | "v2";
   overall: number;
   attack: number;
   defense: number;
   recentForm?: number;
   squadStrength?: number;
   penalties?: number;
+}
+
+export interface TeamRatingV2 extends TeamRating {
+  modelVersion: "v2";
+  recentForm: number;
+  squadStrength: number;
+  penalties: number;
 }
 
 export type TournamentRound =

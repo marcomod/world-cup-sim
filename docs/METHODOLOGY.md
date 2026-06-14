@@ -14,19 +14,30 @@ Simulation Pipeline
 
 Team Ratings
 ↓
-Expected Goals
+Rating-Based Win Probability
 ↓
-Goal Simulation
-↓
-Extra Time
-↓
-Penalty Shootout
+Seeded Winner Sampling
 ↓
 Winner Advances
 ↓
 Monte Carlo Repetition
 ↓
 Tournament Odds
+
+⸻
+
+Current Implementation
+
+The current simulator samples match winners directly from rating-based win probabilities.
+
+For each playable match:
+
+1. The simulator reads each team's overall rating.
+2. It converts the rating difference into a win probability.
+3. It uses the seedable random number generator to choose a winner.
+4. The winner advances through the fixed bracket.
+
+The current implementation does not simulate goals, scorelines, extra time, or penalty shootouts.
 
 ⸻
 
@@ -43,9 +54,9 @@ Possible rating components include:
 - Squad strength
 - Penalty ability
 
-Not all components are required in the MVP.
+V2 uses a static, manually assigned team-strength snapshot. The overall rating is the value used by the current probability model. Attack, defense, recent form, squad strength, and penalties are normalized 0-100 values for documentation and future model extensions.
 
-Initially, ratings may be manually assigned.
+The V2 snapshot is not live sourced, scraped, or automatically updated.
 
 Future versions may incorporate:
 
@@ -59,7 +70,7 @@ Future versions may incorporate:
 
 Match Probabilities
 
-For the MVP, matchup probabilities are based on rating differences.
+Current matchup probabilities are based on rating differences.
 
 Example:
 
@@ -75,9 +86,11 @@ Future versions may derive probabilities directly from repeated simulations.
 
 ⸻
 
-Expected Goals
+Planned Model Extensions
 
-The model estimates expected goals for each team.
+Expected goals, Poisson scoring, extra time, and penalty shootout modeling are planned future work. They are not part of the current simulator behavior.
+
+Future expected-goals models may estimate scoring strength for each team.
 
 Conceptually:
 
@@ -103,11 +116,7 @@ Guidelines:
 - Neutral-site matches assume no home advantage.
 - Host advantage may be introduced later.
 
-⸻
-
-Goal Simulation
-
-Goals are simulated using a Poisson distribution.
+Future goal simulation may use a Poisson distribution.
 
 Regular time is simulated first.
 
@@ -116,8 +125,6 @@ If one team scores more goals, that team advances.
 If scores are level, extra time is played.
 
 If scores remain level after extra time, penalties determine the winner.
-
-⸻
 
 Extra Time
 
@@ -128,8 +135,6 @@ Guidelines:
 - Lower xG than regular time.
 - Maintain realism.
 - Avoid excessive scoring.
-
-⸻
 
 Penalty Shootouts
 

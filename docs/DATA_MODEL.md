@@ -50,6 +50,7 @@ Stores the numerical strength of a team.
 
 export interface TeamRating {
 teamId: TeamId;
+modelVersion?: "v1" | "v2";
 overall: number;
 attack: number;
 defense: number;
@@ -60,9 +61,35 @@ penalties?: number;
 
 Notes
 
-Attack and defense ratings are independent.
+The current probability model uses `overall` directly. `overall` is an Elo-style scalar calibrated for the existing rating-difference formula.
+
+Attack and defense ratings are independent normalized 0-100 values, where higher is better.
 
 Additional rating components may be introduced later.
+
+⸻
+
+Team Rating V2
+
+Represents the current static team-strength snapshot.
+
+export interface TeamRatingV2 extends TeamRating {
+modelVersion: "v2";
+recentForm: number;
+squadStrength: number;
+penalties: number;
+}
+
+V2 field scales:
+
+- overall: Elo-style team strength used by matchup probabilities.
+- attack: normalized 0-100 attacking strength.
+- defense: normalized 0-100 defensive strength.
+- recentForm: normalized 0-100 recent performance signal.
+- squadStrength: normalized 0-100 squad quality signal.
+- penalties: normalized 0-100 penalty ability signal for future use.
+
+The V2 data source is a static manual snapshot. It is not live sourced, scraped, or automatically updated.
 
 ⸻
 
@@ -79,7 +106,9 @@ export type TournamentRound =
 
 Match Score
 
-Represents the final score of a match.
+Represents the final score of a match in planned scoreline simulation.
+
+The current rating-based simulator does not produce scores, extra time results, or penalty shootout details.
 
 export interface MatchScore {
 teamAGoals: number;
@@ -114,10 +143,11 @@ Returned by simulateMatch().
 export interface MatchSimulationResult {
 winnerId: TeamId;
 loserId: TeamId;
-score: MatchScore;
 teamAWinProbability: number;
 teamBWinProbability: number;
 }
+
+Current match simulation results include only the winner, loser, and matchup probabilities.
 
 ⸻
 

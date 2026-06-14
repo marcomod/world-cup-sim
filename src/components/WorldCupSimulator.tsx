@@ -2,8 +2,8 @@
 
 import { useMemo, useState } from "react";
 import { initialBracket } from "@/src/data/initialBracket";
-import { mockRatingsByTeamId } from "@/src/data/mockRatings";
 import { mockTeams } from "@/src/data/mockTeams";
+import { teamRatingsV2ByTeamId } from "@/src/data/teamRatingsV2";
 import { Bracket } from "@/src/components/Bracket/Bracket";
 import { MatchupOddsTable } from "@/src/components/Odds/MatchupOddsTable";
 import { TournamentOddsTable } from "@/src/components/Odds/TournamentOddsTable";
@@ -49,12 +49,12 @@ export function WorldCupSimulator() {
   const bracketMatches = useMemo(
     () =>
       matches.map((match) =>
-        createMatchCardViewModel(match, mockRatingsByTeamId, teamsById),
+        createMatchCardViewModel(match, teamRatingsV2ByTeamId, teamsById),
       ),
     [matches, teamsById],
   );
   const matchupOddsRows = useMemo(
-    () => createMatchupOddsRows(matches, mockRatingsByTeamId, teamsById),
+    () => createMatchupOddsRows(matches, teamRatingsV2ByTeamId, teamsById),
     [matches, teamsById],
   );
   const tournamentOddsRows = useMemo(
@@ -72,7 +72,7 @@ export function WorldCupSimulator() {
     const seed = Date.now();
     const result = simulateBracket(
       cloneInitialBracket(),
-      mockRatingsByTeamId,
+      teamRatingsV2ByTeamId,
       createSeededRng(seed),
     );
 
@@ -89,7 +89,7 @@ export function WorldCupSimulator() {
   function handleRunMonteCarlo() {
     const result = runMonteCarlo({
       matches: cloneInitialBracket(),
-      ratingsByTeamId: mockRatingsByTeamId,
+      ratingsByTeamId: teamRatingsV2ByTeamId,
       simulationCount: MONTE_CARLO_SIMULATION_COUNT,
       rng: createSeededRng(Date.now()),
     });
@@ -109,8 +109,9 @@ export function WorldCupSimulator() {
               World Cup Knockout Simulator
             </h1>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
-              Static Round of 32 bracket with mock teams, mock ratings, matchup odds,
-              full-bracket simulation, champion output, and reset.
+              Static Round of 32 bracket with mock teams, early V2 team-strength
+              ratings, matchup odds, full-bracket simulation, champion output, and
+              reset.
             </p>
           </div>
 

@@ -38,11 +38,11 @@ Not Included
 
 ⸻
 
-Version 2 — Monte Carlo Engine
+Version 2 — Monte Carlo Engine And Static Team Strength
 
 Goal:
 
-Generate tournament odds through repeated simulations.
+Generate tournament odds through repeated simulations and replace mock ratings with a static V2 team-strength snapshot.
 
 Features
 
@@ -52,7 +52,12 @@ Features
 - Semifinal probability
 - Quarterfinal probability
 - Matchup probabilities
+- Static V2 team-strength ratings
+- Elo-style overall rating used by matchup probabilities
+- Normalized attack, defense, recent form, squad strength, and penalty components
 - Faster simulation engine
+
+The V2 ratings are a static manual snapshot. They are not live sourced, scraped, or automatically updated.
 
 Target:
 
@@ -95,11 +100,11 @@ Features
 
 ⸻
 
-Version 5 — Improved Team Strength Model
+Version 5 — Advanced Team Strength Model
 
 Goal:
 
-Replace simple ratings with more realistic estimates.
+Replace the static V2 snapshot with more realistic, maintained estimates.
 
 Potential inputs:
 
