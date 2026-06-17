@@ -16,6 +16,12 @@ export interface MatchCardViewModel {
   teamBName: string;
   teamAIsKnown: boolean;
   teamBIsKnown: boolean;
+  teamAIsWinner: boolean;
+  teamBIsWinner: boolean;
+  teamAScoreLabel: string | null;
+  teamBScoreLabel: string | null;
+  scorelineLabel: string | null;
+  resultDetailLabel: string | null;
   teamAWinProbabilityLabel: string | null;
   teamBWinProbabilityLabel: string | null;
 }
@@ -64,6 +70,12 @@ export function createMatchCardViewModel(
     teamBName: getTeamDisplayName(match.teamBId, teamsById),
     teamAIsKnown: match.teamAId !== null,
     teamBIsKnown: match.teamBId !== null,
+    teamAIsWinner: match.winnerId !== undefined && match.winnerId === match.teamAId,
+    teamBIsWinner: match.winnerId !== undefined && match.winnerId === match.teamBId,
+    teamAScoreLabel: match.score ? String(match.score.teamAGoals) : null,
+    teamBScoreLabel: match.score ? String(match.score.teamBGoals) : null,
+    scorelineLabel: formatScoreline(match),
+    resultDetailLabel: match.score ? formatDecisionLabel(match.score.decidedBy) : null,
     teamAWinProbabilityLabel: probability
       ? formatWholeProbability(probability.teamAWinProbability)
       : null,
@@ -109,6 +121,36 @@ function getMatchStatusLabel(match: Match, teamsById: TeamsById): string {
   }
 
   return "Ready";
+}
+
+function formatScoreline(match: Match): string | null {
+  if (!match.score) {
+    return null;
+  }
+
+  const scoreline = `${match.score.teamAGoals}-${match.score.teamBGoals}`;
+
+  if (
+    match.score.decidedBy === "penalties" &&
+    match.score.teamAPenalties !== undefined &&
+    match.score.teamBPenalties !== undefined
+  ) {
+    return `${scoreline} (${match.score.teamAPenalties}-${match.score.teamBPenalties} pens)`;
+  }
+
+  return scoreline;
+}
+
+function formatDecisionLabel(decidedBy: NonNullable<Match["score"]>["decidedBy"]): string {
+  if (decidedBy === "extra_time") {
+    return "AET";
+  }
+
+  if (decidedBy === "penalties") {
+    return "Pens";
+  }
+
+  return "FT";
 }
 
 function formatWholeProbability(value: number): string {

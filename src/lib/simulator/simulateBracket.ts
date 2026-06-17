@@ -1,10 +1,17 @@
 import { simulateMatch } from "./simulateMatch";
-import type { Match, RatingsByTeamId, RNG, TournamentSimulationResult } from "./types";
+import type {
+  BracketSimulationOptions,
+  Match,
+  RatingsByTeamId,
+  RNG,
+  TournamentSimulationResult,
+} from "./types";
 
 export function simulateBracket(
   matches: Match[],
   ratingsByTeamId: RatingsByTeamId,
   rng: RNG,
+  options: BracketSimulationOptions = {},
 ): TournamentSimulationResult {
   const simulatedMatches = matches.map((match) => ({ ...match }));
   const matchesById = new Map(simulatedMatches.map((match) => [match.id, match]));
@@ -12,8 +19,12 @@ export function simulateBracket(
   // V1 bracket data is ordered from Round of 32 through Final, so advancing
   // winners fills each future match before that future match is processed.
   for (const match of simulatedMatches) {
-    const result = simulateMatch(match, ratingsByTeamId, rng);
+    const result = simulateMatch(match, ratingsByTeamId, rng, options);
     match.winnerId = result.winnerId;
+
+    if (result.score) {
+      match.score = result.score;
+    }
 
     if (!match.nextMatchId) {
       continue;

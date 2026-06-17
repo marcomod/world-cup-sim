@@ -18,6 +18,8 @@ Rating-Based Win Probability
 ↓
 Seeded Winner Sampling
 ↓
+Optional Scoreline Simulation
+↓
 Winner Advances
 ↓
 Monte Carlo Repetition
@@ -35,9 +37,10 @@ For each playable match:
 1. The simulator reads each team's overall rating.
 2. It converts the rating difference into a win probability.
 3. It uses the seedable random number generator to choose a winner.
-4. The winner advances through the fixed bracket.
+4. If scorelines are enabled, it generates a plausible scoreline conditioned on the already-sampled winner.
+5. The winner advances through the fixed bracket.
 
-The current implementation does not simulate goals, scorelines, extra time, or penalty shootouts.
+Scorelines do not replace winner probabilities yet. They are explanatory simulation output for single-bracket runs.
 
 ⸻
 
@@ -86,11 +89,9 @@ Future versions may derive probabilities directly from repeated simulations.
 
 ⸻
 
-Planned Model Extensions
+Scoreline Simulation
 
-Expected goals, Poisson scoring, extra time, and penalty shootout modeling are planned future work. They are not part of the current simulator behavior.
-
-Future expected-goals models may estimate scoring strength for each team.
+V3 scoreline simulation estimates scoring strength for each team, then produces a score that matches the already-sampled winner.
 
 Conceptually:
 
@@ -116,15 +117,17 @@ Guidelines:
 - Neutral-site matches assume no home advantage.
 - Host advantage may be introduced later.
 
-Future goal simulation may use a Poisson distribution.
+Regular-time goals are sampled with a Poisson distribution.
 
-Regular time is simulated first.
+If regular time produces a winner that matches the already-sampled winner, the match is decided in regular time.
 
-If one team scores more goals, that team advances.
+If regular time produces the opposite winner, the score is minimally adjusted so the already-sampled winner wins in regular time.
 
-If scores are level, extra time is played.
+If regular time is tied, extra time is simulated.
 
 If scores remain level after extra time, penalties determine the winner.
+
+Penalty shootout goals are stored separately from match goals.
 
 Extra Time
 
@@ -145,6 +148,8 @@ Guidelines:
 - Penalty ability may influence outcomes.
 - Strong teams should not have overwhelming penalty advantages.
 - Most penalty shootouts should remain close to 50-50.
+
+Fully score-driven matchup probabilities are planned future work.
 
 ⸻
 

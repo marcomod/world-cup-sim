@@ -74,6 +74,10 @@ export function WorldCupSimulator() {
       cloneInitialBracket(),
       teamRatingsV2ByTeamId,
       createSeededRng(seed),
+      {
+        includeScoreline: true,
+        scoreRng: createSeededRng(seed + 1),
+      },
     );
 
     setMatches(result.matches);

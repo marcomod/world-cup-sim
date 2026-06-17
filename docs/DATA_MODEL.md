@@ -106,9 +106,7 @@ export type TournamentRound =
 
 Match Score
 
-Represents the final score of a match in planned scoreline simulation.
-
-The current rating-based simulator does not produce scores, extra time results, or penalty shootout details.
+Represents the final score of a simulated match.
 
 export interface MatchScore {
 teamAGoals: number;
@@ -117,7 +115,11 @@ decidedBy:
 | "regular_time"
 | "extra_time"
 | "penalties";
+teamAPenalties?: number;
+teamBPenalties?: number;
 }
+
+Penalty shootout goals are stored separately from match goals. A match decided by penalties keeps tied match goals and stores the shootout result in `teamAPenalties` and `teamBPenalties`.
 
 ⸻
 
@@ -145,9 +147,10 @@ winnerId: TeamId;
 loserId: TeamId;
 teamAWinProbability: number;
 teamBWinProbability: number;
+score?: MatchScore;
 }
 
-Current match simulation results include only the winner, loser, and matchup probabilities.
+Scoreline simulation is optional. When it is omitted, match simulation results include only the winner, loser, and matchup probabilities.
 
 ⸻
 

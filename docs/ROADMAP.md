@@ -69,7 +69,7 @@ Version 3 — Better Presentation
 
 Goal:
 
-Improve the user experience.
+Improve the user experience and add scoreline display for single-bracket simulations.
 
 Features
 
@@ -77,6 +77,8 @@ Features
 - Improved bracket styling
 - Responsive layout
 - Better odds tables
+- Scoreline display
+- Extra-time and penalty shootout result labels
 - Loading indicators
 - Simulation history
 - Animated advancement
@@ -151,6 +153,7 @@ Potential additions:
 - Historical calibration
 - Dixon-Coles model
 - Correlated scoring
+- Fully score-driven matchup probabilities
 
 ⸻
 

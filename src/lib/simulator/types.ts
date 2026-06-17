@@ -37,6 +37,14 @@ export type TournamentRound =
 
 export type MatchSlot = "teamAId" | "teamBId";
 
+export interface MatchScore {
+  teamAGoals: number;
+  teamBGoals: number;
+  decidedBy: "regular_time" | "extra_time" | "penalties";
+  teamAPenalties?: number;
+  teamBPenalties?: number;
+}
+
 export interface Match {
   id: string;
   round: TournamentRound;
@@ -45,6 +53,7 @@ export interface Match {
   nextMatchId?: string;
   nextSlot?: MatchSlot;
   winnerId?: TeamId;
+  score?: MatchScore;
 }
 
 export interface RNG {
@@ -63,6 +72,17 @@ export interface MatchSimulationResult {
   loserId: TeamId;
   teamAWinProbability: number;
   teamBWinProbability: number;
+  score?: MatchScore;
+}
+
+export interface MatchSimulationOptions {
+  includeScoreline?: boolean;
+  scoreRng?: RNG;
+}
+
+export interface BracketSimulationOptions {
+  includeScoreline?: boolean;
+  scoreRng?: RNG;
 }
 
 export interface TournamentSimulationResult {
