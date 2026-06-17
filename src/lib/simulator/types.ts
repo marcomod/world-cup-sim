@@ -75,15 +75,17 @@ export interface MatchSimulationResult {
   score?: MatchScore;
 }
 
-export interface MatchSimulationOptions {
-  includeScoreline?: boolean;
-  scoreRng?: RNG;
-}
+export type MatchSimulationOptions =
+  | {
+      includeScoreline?: false;
+      scoreRng?: never;
+    }
+  | {
+      includeScoreline: true;
+      scoreRng: RNG;
+    };
 
-export interface BracketSimulationOptions {
-  includeScoreline?: boolean;
-  scoreRng?: RNG;
-}
+export type BracketSimulationOptions = MatchSimulationOptions;
 
 export interface TournamentSimulationResult {
   championId: TeamId;

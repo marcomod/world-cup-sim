@@ -75,7 +75,10 @@ export function createMatchCardViewModel(
     teamAScoreLabel: match.score ? String(match.score.teamAGoals) : null,
     teamBScoreLabel: match.score ? String(match.score.teamBGoals) : null,
     scorelineLabel: formatScoreline(match),
-    resultDetailLabel: match.score ? formatDecisionLabel(match.score.decidedBy) : null,
+    resultDetailLabel:
+      match.score && match.winnerId
+        ? `Winner: ${getTeamDisplayName(match.winnerId, teamsById)} · ${formatDecisionLabel(match.score.decidedBy)}`
+        : null,
     teamAWinProbabilityLabel: probability
       ? formatWholeProbability(probability.teamAWinProbability)
       : null,

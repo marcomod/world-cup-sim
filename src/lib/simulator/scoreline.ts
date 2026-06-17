@@ -95,6 +95,8 @@ export function simulateScoreline(
   }
 
   if (extraTimeWinnerId) {
+    // V3 scorelines are conditioned on the already-sampled winner, so a
+    // conflicting extra-time sample is adjusted to keep the bracket result stable.
     return {
       ...adjustGoalsForWinner(afterExtraTime, match.teamAId, winnerId),
       decidedBy: "extra_time",

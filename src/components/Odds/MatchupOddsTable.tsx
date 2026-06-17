@@ -5,7 +5,10 @@ interface MatchupOddsTableProps {
   hasSimulated: boolean;
 }
 
-export function MatchupOddsTable({ rows, hasSimulated }: MatchupOddsTableProps) {
+export function MatchupOddsTable({
+  rows,
+  hasSimulated,
+}: MatchupOddsTableProps) {
   return (
     <section className="rounded-lg border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 px-4 py-3">
@@ -21,9 +24,13 @@ export function MatchupOddsTable({ rows, hasSimulated }: MatchupOddsTableProps) 
               <tr>
                 <th className="px-4 py-3 font-semibold">Match</th>
                 <th className="px-4 py-3 font-semibold">Team A</th>
-                <th className="px-4 py-3 font-semibold">Team A Win probability</th>
+                <th className="px-4 py-3 font-semibold">
+                  Team A Win probability
+                </th>
                 <th className="px-4 py-3 font-semibold">Team B</th>
-                <th className="px-4 py-3 font-semibold">Team B Win probability</th>
+                <th className="px-4 py-3 font-semibold">
+                  Team B Win probability
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200">

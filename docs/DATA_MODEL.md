@@ -87,7 +87,7 @@ V2 field scales:
 - defense: normalized 0-100 defensive strength.
 - recentForm: normalized 0-100 recent performance signal.
 - squadStrength: normalized 0-100 squad quality signal.
-- penalties: normalized 0-100 penalty ability signal for future use.
+- penalties: normalized 0-100 penalty ability signal currently used by V3 penalty shootout simulation.
 
 The V2 data source is a static manual snapshot. It is not live sourced, scraped, or automatically updated.
 

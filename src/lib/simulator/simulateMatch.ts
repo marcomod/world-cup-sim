@@ -34,8 +34,14 @@ export function simulateMatch(
     return result;
   }
 
+  if (!options.scoreRng) {
+    throw new Error(
+      `Cannot simulate scoreline for match "${match.id}" without scoreRng. Pass a separate scoreRng when includeScoreline is true to preserve winner RNG stability.`,
+    );
+  }
+
   return {
     ...result,
-    score: simulateScoreline(match, ratingsByTeamId, winnerId, options.scoreRng ?? rng),
+    score: simulateScoreline(match, ratingsByTeamId, winnerId, options.scoreRng),
   };
 }
