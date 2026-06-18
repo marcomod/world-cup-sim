@@ -1,7 +1,11 @@
-import { mockTeams } from "@/src/data/mockTeams";
-import type { Team, TeamId } from "@/src/lib/simulator/types";
-import { createAliasResolver, normalizeAlias, normalizeRawTeamRatingRecords } from "./normalizeTeams";
-import { teamAliasEntries } from "./teamAliases";
+import { mockTeams } from "../../src/data/mockTeams.ts";
+import type { Team, TeamId } from "../../src/lib/simulator/types.ts";
+import {
+  createAliasResolver,
+  normalizeAlias,
+  normalizeRawTeamRatingRecords,
+} from "./normalizeTeams.ts";
+import { teamAliasEntries } from "./teamAliases.ts";
 import {
   DEFAULT_STALE_AFTER_DAYS,
   MAX_SOURCE_ELO,
@@ -12,7 +16,7 @@ import {
   type RawTeamRatingRecord,
   type TeamAliasEntry,
   type ValidationWarning,
-} from "./schemas";
+} from "./schemas.ts";
 
 export function normalizeAndValidateTeamRatings(
   rawRecords: RawTeamRatingRecord[],

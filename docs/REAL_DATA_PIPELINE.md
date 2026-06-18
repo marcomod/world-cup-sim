@@ -54,6 +54,34 @@ Local `TeamId` values are produced only through explicit alias resolution.
 
 Future `attack`, `defense`, `recentForm`, and `squadStrength` values may initially be Elo-derived compatibility proxies. Those values should be documented as derived proxies, not independent measurements, until separate data sources are added.
 
+The current repository fixture is synthetic data used to exercise the pipeline.
+It is not real Elo data and is not wired into the app.
+
+Generated rating files must not be edited manually. They should be recreated
+from the approved source snapshot using `npm run ratings:generate`.
+
+`scripts/ratings-pipeline/generateRatings.ts` intentionally targets
+`data/raw/ratings/team-elo-fixture.csv` today. The generated metadata for this
+path must remain `fixture: true`. A future approved real-data source should be
+selected through an explicit source configuration or CLI argument, not by
+silently renaming or replacing the fixture file. Real-data metadata must use
+`fixture: false` after provenance and licensing review.
+
+Before replacing the fixture with real third-party data, review licensing and
+attribution requirements. Record source name, source URL, retrieval/access date,
+snapshot/data date, license or terms, required attribution, redistribution
+permission/status, and transformation notes.
+
+The fixture CSV loader supports a deliberately small CSV subset:
+
+- comma-separated fields
+- quoted fields
+- escaped quotes represented as doubled quotes
+- no multiline quoted fields
+
+Blank rows, duplicate headers, malformed quote placement, missing required
+values, and out-of-range Elo values are rejected.
+
 ---
 
 Validation Expectations
@@ -73,4 +101,3 @@ The pipeline should reject:
 Old snapshots may produce warnings or metadata but should not automatically fail.
 
 Generated output order must be deterministic and follow `mockTeams` order.
-

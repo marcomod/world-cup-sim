@@ -1,0 +1,13 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "modelVersion": "v2",
+  "sourceFile": "data/raw/ratings/team-elo-fixture.csv",
+  "sourceDateRange": {
+    "from": "2026-06-01",
+    "to": "2026-06-01"
+  },
+  "teamCount": 32,
+  "fixture": true,
+  "warnings": [],
+  "generationTimestampPolicy": "No wall-clock timestamp is written; generated artifacts are deterministic for identical inputs."
+}

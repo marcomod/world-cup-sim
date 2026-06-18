@@ -1,10 +1,10 @@
-import type { TeamId } from "@/src/lib/simulator/types";
-import { teamAliasEntries } from "./teamAliases";
+import type { TeamId } from "../../src/lib/simulator/types.ts";
+import { teamAliasEntries } from "./teamAliases.ts";
 import type {
   NormalizedTeamRatingRecord,
   RawTeamRatingRecord,
   TeamAliasEntry,
-} from "./schemas";
+} from "./schemas.ts";
 
 export function normalizeAlias(value: string): string {
   return value.trim().replace(/\s+/g, " ").toLocaleLowerCase("en-US");

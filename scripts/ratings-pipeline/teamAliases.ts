@@ -1,4 +1,4 @@
-import type { TeamAliasEntry } from "./schemas";
+import type { TeamAliasEntry } from "./schemas.ts";
 
 export const teamAliasEntries: TeamAliasEntry[] = [
   { teamId: "arg", aliases: ["Argentina", "ARG"] },
@@ -34,4 +34,3 @@ export const teamAliasEntries: TeamAliasEntry[] = [
   { teamId: "crc", aliases: ["Costa Rica", "CRC"] },
   { teamId: "nzl", aliases: ["New Zealand", "NZL"] },
 ];
-

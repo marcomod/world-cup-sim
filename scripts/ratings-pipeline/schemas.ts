@@ -1,4 +1,4 @@
-import type { Team, TeamId } from "@/src/lib/simulator/types";
+import type { Team, TeamId } from "../../src/lib/simulator/types.ts";
 
 export const MIN_SOURCE_ELO = 1200;
 export const MAX_SOURCE_ELO = 2200;
@@ -42,4 +42,3 @@ export interface NormalizeTeamRatingsResult {
   records: NormalizedTeamRatingRecord[];
   warnings: ValidationWarning[];
 }
-
