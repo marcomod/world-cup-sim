@@ -39,7 +39,7 @@ export function normalizeAndValidateTeamRatings(
 export function validateRawTeamRatingRecords(
   rawRecords: RawTeamRatingRecord[],
   asOfDate: Date = new Date(),
-) {
+): void {
   for (const record of rawRecords) {
     if (!record.sourceName.trim()) {
       throw new Error("Raw rating record has an empty sourceName.");
@@ -64,7 +64,6 @@ export function validateNormalizedTeamRatings(
   const teamIds = new Set(teams.map((team) => team.id));
   const seenTeamIds = new Set<TeamId>();
   const recordsByTeamId = new Map<TeamId, NormalizedTeamRatingRecord>();
-  const warnings: ValidationWarning[] = [];
 
   for (const record of records) {
     if (!teamIds.has(record.teamId)) {
@@ -76,12 +75,7 @@ export function validateNormalizedTeamRatings(
     }
 
     validateSourceElo(record.overall, record.sourceName);
-    const sourceDate = validateSourceDate(record.sourceDate, asOfDate, record.sourceName);
-    const staleWarning = getStaleSnapshotWarning(record, sourceDate, asOfDate, staleAfterDays);
-
-    if (staleWarning) {
-      warnings.push(staleWarning);
-    }
+    validateSourceDate(record.sourceDate, asOfDate, record.sourceName);
 
     seenTeamIds.add(record.teamId);
     recordsByTeamId.set(record.teamId, record);
@@ -93,8 +87,7 @@ export function validateNormalizedTeamRatings(
     }
   }
 
-  return {
-    records: teams.map((team) => {
+  const orderedRecords = teams.map((team) => {
       const record = recordsByTeamId.get(team.id);
 
       if (!record) {
@@ -102,7 +95,16 @@ export function validateNormalizedTeamRatings(
       }
 
       return record;
-    }),
+    });
+  const warnings = orderedRecords.flatMap((record) => {
+    const sourceDate = validateSourceDate(record.sourceDate, asOfDate, record.sourceName);
+    const staleWarning = getStaleSnapshotWarning(record, sourceDate, asOfDate, staleAfterDays);
+
+    return staleWarning ? [staleWarning] : [];
+  });
+
+  return {
+    records: orderedRecords,
     warnings,
   };
 }
@@ -110,10 +112,23 @@ export function validateNormalizedTeamRatings(
 export function validateAliasCoverage(
   teams: Team[] = mockTeams,
   aliasEntries: TeamAliasEntry[] = teamAliasEntries,
-) {
+): void {
   createAliasResolver(aliasEntries);
 
-  const aliasTeamIds = new Set(aliasEntries.map((entry) => entry.teamId));
+  const validTeamIds = new Set(teams.map((team) => team.id));
+  const aliasTeamIds = new Set<TeamId>();
+
+  for (const entry of aliasEntries) {
+    if (!validTeamIds.has(entry.teamId)) {
+      throw new Error(`Alias entry has unknown teamId "${entry.teamId}".`);
+    }
+
+    if (aliasTeamIds.has(entry.teamId)) {
+      throw new Error(`Duplicate alias entry for teamId "${entry.teamId}".`);
+    }
+
+    aliasTeamIds.add(entry.teamId);
+  }
 
   for (const team of teams) {
     if (!aliasTeamIds.has(team.id)) {

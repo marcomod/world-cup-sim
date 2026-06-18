@@ -53,6 +53,39 @@ describe("ratings pipeline team aliases", () => {
     );
   });
 
+  it("rejects duplicate aliases within one entry", () => {
+    const duplicateAliases: TeamAliasEntry[] = [
+      { teamId: "arg", aliases: ["Argentina", " argentina "] },
+      ...teamAliasEntries.filter((entry) => entry.teamId !== "arg"),
+    ];
+
+    expect(() => validateAliasCoverage(mockTeams, duplicateAliases)).toThrow(
+      /Duplicate alias " argentina " for teamId "arg"/,
+    );
+  });
+
+  it("rejects duplicate alias entries for one teamId", () => {
+    const duplicateEntries: TeamAliasEntry[] = [
+      ...teamAliasEntries,
+      { teamId: "arg", aliases: ["Argentina Duplicate"] },
+    ];
+
+    expect(() => validateAliasCoverage(mockTeams, duplicateEntries)).toThrow(
+      /Duplicate alias entry for teamId "arg"/,
+    );
+  });
+
+  it("rejects unknown alias-entry teamIds", () => {
+    const aliasesWithUnknownTeam: TeamAliasEntry[] = [
+      ...teamAliasEntries,
+      { teamId: "unknown-team", aliases: ["Unknown Team"] },
+    ];
+
+    expect(() => validateAliasCoverage(mockTeams, aliasesWithUnknownTeam)).toThrow(
+      /unknown teamId "unknown-team"/,
+    );
+  });
+
   it("covers all 32 current teams", () => {
     const aliasTeamIds = new Set(teamAliasEntries.map((entry) => entry.teamId));
 
@@ -188,5 +221,25 @@ describe("ratings pipeline validation", () => {
     expect(result.records).toHaveLength(mockTeams.length);
     expect(result.warnings).toHaveLength(mockTeams.length);
     expect(result.warnings[0]?.code).toBe("STALE_SOURCE_DATE");
+  });
+
+  it("returns stale warnings in deterministic team order when input order changes", () => {
+    const rawRecords = createRawRecords().map((record) => ({
+      ...record,
+      sourceDate: "2024-01-01",
+    }));
+    const resultA = normalizeAndValidateTeamRatings(rawRecords, {
+      asOfDate: AS_OF_DATE,
+      staleAfterDays: 365,
+    });
+    const resultB = normalizeAndValidateTeamRatings([...rawRecords].reverse(), {
+      asOfDate: AS_OF_DATE,
+      staleAfterDays: 365,
+    });
+
+    expect(resultA.warnings.map((warning) => warning.teamId)).toEqual(
+      mockTeams.map((team) => team.id),
+    );
+    expect(resultA.warnings).toEqual(resultB.warnings);
   });
 });

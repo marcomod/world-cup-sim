@@ -16,6 +16,8 @@ export function createAliasResolver(
   const aliasesByName = new Map<string, TeamId>();
 
   for (const entry of aliasEntries) {
+    const entryAliases = new Set<string>();
+
     for (const alias of entry.aliases) {
       const normalizedAlias = normalizeAlias(alias);
 
@@ -23,9 +25,23 @@ export function createAliasResolver(
         throw new Error(`Alias for team "${entry.teamId}" cannot be empty.`);
       }
 
+      if (entryAliases.has(normalizedAlias)) {
+        throw new Error(
+          `Duplicate alias "${alias}" for teamId "${entry.teamId}".`,
+        );
+      }
+
+      entryAliases.add(normalizedAlias);
+
       const existingTeamId = aliasesByName.get(normalizedAlias);
 
-      if (existingTeamId && existingTeamId !== entry.teamId) {
+      if (existingTeamId) {
+        if (existingTeamId === entry.teamId) {
+          throw new Error(
+            `Duplicate alias "${alias}" for teamId "${entry.teamId}".`,
+          );
+        }
+
         throw new Error(
           `Conflicting alias "${alias}" maps to both "${existingTeamId}" and "${entry.teamId}".`,
         );
@@ -71,4 +87,3 @@ export function normalizeRawTeamRatingRecords(
 ): NormalizedTeamRatingRecord[] {
   return records.map((record) => normalizeRawTeamRatingRecord(record, aliasEntries));
 }
-

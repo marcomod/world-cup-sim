@@ -63,7 +63,7 @@ Notes
 
 The current probability model uses `overall` directly. `overall` is an Elo-style scalar calibrated for the existing rating-difference formula.
 
-Attack and defense ratings are independent normalized 0-100 values, where higher is better.
+Attack and defense ratings are normalized 0-100 values, where higher is better. Current manual ratings may use distinct attack and defense values. Future generated baseline snapshots may use Elo-derived compatibility proxies, which should not be treated as independent measurements until separate source data exists.
 
 Additional rating components may be introduced later.
 
