@@ -83,7 +83,17 @@ teamAProbability =
 teamBProbability =
 1 - teamAProbability;
 
-This is only an initial approximation.
+The divisor is currently `400`, matching the baseline Elo-style logistic curve
+used by the simulator.
+
+These are baseline probabilities. They have not yet been historically calibrated
+against World Cup knockout results, betting markets, or out-of-sample match
+data. Probability sanity tests verify that the current formula behaves
+monotonically and produces plausible broad bands for representative matchups,
+but they do not prove the model is calibrated.
+
+Future calibration may adjust the divisor or replace this direct rating-gap
+mapping with a better validated probability model.
 
 Future versions may derive probabilities directly from repeated simulations.
 
