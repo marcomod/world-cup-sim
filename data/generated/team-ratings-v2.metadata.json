@@ -1,7 +1,16 @@
 {
   "generatedFileWarning": "Do not edit manually.",
   "modelVersion": "v2",
+  "sourceId": "fixture",
   "sourceFile": "data/raw/ratings/team-elo-fixture.csv",
+  "sourceName": "Synthetic ratings pipeline fixture",
+  "sourceUrl": "local synthetic fixture",
+  "accessDate": "2026-06-17",
+  "snapshotDate": "2026-06-01",
+  "license": "Repository-owned synthetic fixture data",
+  "attribution": "World Cup Simulator synthetic fixture",
+  "redistributionStatus": "Allowed; synthetic fixture data only",
+  "transformationNotes": "Synthetic source Elo values are converted into TeamRatingV2 compatibility proxy fields.",
   "sourceDateRange": {
     "from": "2026-06-01",
     "to": "2026-06-01"

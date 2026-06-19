@@ -60,17 +60,108 @@ It is not real Elo data and is not wired into the app.
 Generated rating files must not be edited manually. They should be recreated
 from the approved source snapshot using `npm run ratings:generate`.
 
-`scripts/ratings-pipeline/generateRatings.ts` intentionally targets
-`data/raw/ratings/team-elo-fixture.csv` today. The generated metadata for this
-path must remain `fixture: true`. A future approved real-data source should be
-selected through an explicit source configuration or CLI argument, not by
-silently renaming or replacing the fixture file. Real-data metadata must use
-`fixture: false` after provenance and licensing review.
+`scripts/ratings-pipeline/generateRatings.ts` now requires an explicit source
+selection path, with fixture retained as the documented default for local
+regeneration:
+
+- `npm run ratings:generate -- --source fixture`
+- `npm run ratings:generate -- --source world-football-elo-development`
+
+Fixture mode intentionally targets `data/raw/ratings/team-elo-fixture.csv`. The
+generated metadata for this path must remain `fixture: true`.
+
+Generic `--source real` mode is intentionally unconfigured. It must fail clearly
+and must not silently fall back to the fixture or validate against the 32-team
+demo bracket. Approved real snapshots must be added under an explicit source ID
+and selected with that exact ID. The migration must not be done by renaming or
+replacing the fixture file. Real-data metadata must use `fixture: false` after
+provenance and licensing review.
+
+`world-football-elo-development` is the current private development source. It
+uses a single World Football Elo Ratings snapshot from `https://eloratings.net/`
+taken during the ongoing 2026 World Cup group stage. It is not final knockout
+data. The source must be refreshed immediately after the group stage before the
+final knockout app uses it.
+
+For the current World Football Elo development source, the retrieved TSV did not
+provide a distinct source-declared ratings date. The pipeline therefore records
+separate provenance fields:
+
+- `accessDate`: the local calendar date when the source was retrieved.
+- `httpLastModified`: the exact HTTP timestamp, currently
+  `Fri, 19 Jun 2026 00:13:16 GMT`.
+- `httpLastModifiedLocal`: the same HTTP timestamp interpreted in
+  America/Toronto, currently `2026-06-18T20:13:16-04:00`.
+- `sourceDeclaredSnapshotDate`: `null` when the dataset does not declare its own
+  ratings date.
+- `sourceDateBasis`: an explanation that the project snapshot label is based on
+  retrieval and HTTP metadata, not a source-declared ratings date.
+- `snapshotDate`: the project's frozen snapshot label. For the development CSV,
+  `2026-06-18` is a project label used consistently in `sourceDate`, not a claim
+  that World Football Elo officially dated the ratings `2026-06-18`.
 
 Before replacing the fixture with real third-party data, review licensing and
 attribution requirements. Record source name, source URL, retrieval/access date,
 snapshot/data date, license or terms, required attribution, redistribution
 permission/status, and transformation notes.
+
+Source configuration requires these core fields:
+
+- `sourceId`
+- `sourceFile`
+- `fixture`
+- `sourceName`
+- `sourceUrl`
+- `accessDate`
+- `snapshotDate`
+- `license`
+- `attribution`
+- `redistributionStatus`
+- `transformationNotes`
+
+When HTTP metadata is used as provenance, the source configuration also records:
+
+- `httpLastModified`
+- `httpLastModifiedLocal`
+- `sourceDeclaredSnapshotDate`, using `null` when the source did not declare one
+- `sourceDateBasis`
+
+The first real snapshot may cover all 48 World Cup tournament participants so
+ratings are ready before the official knockout qualifiers are known. The app
+remains knockout-only: the bracket consumes only the official 32 qualifiers.
+Do not add standings, qualification, best-third-place logic, or group-stage
+simulation as part of ratings ingestion.
+
+The tournament-team rating registry is stored separately from the existing
+32-team demo bracket registry. Rating coverage for all 48 teams does not imply
+group-stage simulation. The official bracket should use only the confirmed 32
+qualifiers once the group stage is complete.
+
+Approval process for a real snapshot:
+
+1. Choose a frozen source file with the supported raw shape.
+2. Complete provenance and licensing review for the exact source.
+3. Add a new explicit real source configuration with `fixture: false`.
+4. Store the approved CSV at the configured `sourceFile`.
+5. Run `npm run ratings:generate -- --source <explicit-source-id>`.
+6. Review generated metadata and artifacts before wiring anything into the app.
+
+Development-source refresh procedure:
+
+1. Wait until all group-stage matches are complete.
+2. Retrieve one fresh World Football Elo Ratings snapshot from a single source
+   page/file.
+3. Confirm all 48 tournament teams have ratings from that same snapshot.
+4. Replace `data/raw/ratings/world-football-elo-development.csv` with the new
+   values and one consistent `sourceDate`. If the source still does not declare
+   a ratings date, keep `sourceDeclaredSnapshotDate: null`, update the HTTP
+   metadata fields, and document that `sourceDate` is the project snapshot label.
+5. Update `data/raw/ratings/world-football-elo-development.provenance.json` and
+   the matching source configuration snapshot/access dates.
+6. Run `npm run ratings:generate -- --source world-football-elo-development`.
+7. Review generated artifacts, then explicitly decide whether to wire the
+   generated export into the app. Do not import the development export
+   accidentally.
 
 The fixture CSV loader supports a deliberately small CSV subset:
 
@@ -100,4 +191,6 @@ The pipeline should reject:
 
 Old snapshots may produce warnings or metadata but should not automatically fail.
 
-Generated output order must be deterministic and follow `mockTeams` order.
+Generated output order must be deterministic and source-scope dependent:
+fixture output follows `mockTeams` order, while World Football Elo development
+output follows `tournamentTeams` order.

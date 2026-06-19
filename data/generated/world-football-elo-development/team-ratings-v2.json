@@ -1,0 +1,485 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "ratingsByTeamId": {
+    "aus": {
+      "teamId": "aus",
+      "modelVersion": "v2",
+      "overall": 1839,
+      "attack": 85,
+      "defense": 85,
+      "recentForm": 85,
+      "squadStrength": 85,
+      "penalties": 80
+    },
+    "irn": {
+      "teamId": "irn",
+      "modelVersion": "v2",
+      "overall": 1756,
+      "attack": 83,
+      "defense": 83,
+      "recentForm": 83,
+      "squadStrength": 83,
+      "penalties": 80
+    },
+    "irq": {
+      "teamId": "irq",
+      "modelVersion": "v2",
+      "overall": 1592,
+      "attack": 77,
+      "defense": 77,
+      "recentForm": 77,
+      "squadStrength": 77,
+      "penalties": 80
+    },
+    "jpn": {
+      "teamId": "jpn",
+      "modelVersion": "v2",
+      "overall": 1910,
+      "attack": 88,
+      "defense": 88,
+      "recentForm": 88,
+      "squadStrength": 88,
+      "penalties": 80
+    },
+    "jor": {
+      "teamId": "jor",
+      "modelVersion": "v2",
+      "overall": 1653,
+      "attack": 79,
+      "defense": 79,
+      "recentForm": 79,
+      "squadStrength": 79,
+      "penalties": 80
+    },
+    "qat": {
+      "teamId": "qat",
+      "modelVersion": "v2",
+      "overall": 1437,
+      "attack": 72,
+      "defense": 72,
+      "recentForm": 72,
+      "squadStrength": 72,
+      "penalties": 80
+    },
+    "ksa": {
+      "teamId": "ksa",
+      "modelVersion": "v2",
+      "overall": 1598,
+      "attack": 78,
+      "defense": 78,
+      "recentForm": 78,
+      "squadStrength": 78,
+      "penalties": 80
+    },
+    "kor": {
+      "teamId": "kor",
+      "modelVersion": "v2",
+      "overall": 1786,
+      "attack": 84,
+      "defense": 84,
+      "recentForm": 84,
+      "squadStrength": 84,
+      "penalties": 80
+    },
+    "uzb": {
+      "teamId": "uzb",
+      "modelVersion": "v2",
+      "overall": 1698,
+      "attack": 81,
+      "defense": 81,
+      "recentForm": 81,
+      "squadStrength": 81,
+      "penalties": 80
+    },
+    "alg": {
+      "teamId": "alg",
+      "modelVersion": "v2",
+      "overall": 1759,
+      "attack": 83,
+      "defense": 83,
+      "recentForm": 83,
+      "squadStrength": 83,
+      "penalties": 80
+    },
+    "cpv": {
+      "teamId": "cpv",
+      "modelVersion": "v2",
+      "overall": 1606,
+      "attack": 78,
+      "defense": 78,
+      "recentForm": 78,
+      "squadStrength": 78,
+      "penalties": 80
+    },
+    "cod": {
+      "teamId": "cod",
+      "modelVersion": "v2",
+      "overall": 1674,
+      "attack": 80,
+      "defense": 80,
+      "recentForm": 80,
+      "squadStrength": 80,
+      "penalties": 80
+    },
+    "egy": {
+      "teamId": "egy",
+      "modelVersion": "v2",
+      "overall": 1711,
+      "attack": 81,
+      "defense": 81,
+      "recentForm": 81,
+      "squadStrength": 81,
+      "penalties": 80
+    },
+    "gha": {
+      "teamId": "gha",
+      "modelVersion": "v2",
+      "overall": 1557,
+      "attack": 76,
+      "defense": 76,
+      "recentForm": 76,
+      "squadStrength": 76,
+      "penalties": 80
+    },
+    "civ": {
+      "teamId": "civ",
+      "modelVersion": "v2",
+      "overall": 1743,
+      "attack": 82,
+      "defense": 82,
+      "recentForm": 82,
+      "squadStrength": 82,
+      "penalties": 80
+    },
+    "mar": {
+      "teamId": "mar",
+      "modelVersion": "v2",
+      "overall": 1840,
+      "attack": 86,
+      "defense": 86,
+      "recentForm": 86,
+      "squadStrength": 86,
+      "penalties": 80
+    },
+    "sen": {
+      "teamId": "sen",
+      "modelVersion": "v2",
+      "overall": 1839,
+      "attack": 85,
+      "defense": 85,
+      "recentForm": 85,
+      "squadStrength": 85,
+      "penalties": 80
+    },
+    "rsa": {
+      "teamId": "rsa",
+      "modelVersion": "v2",
+      "overall": 1527,
+      "attack": 75,
+      "defense": 75,
+      "recentForm": 75,
+      "squadStrength": 75,
+      "penalties": 80
+    },
+    "tun": {
+      "teamId": "tun",
+      "modelVersion": "v2",
+      "overall": 1585,
+      "attack": 77,
+      "defense": 77,
+      "recentForm": 77,
+      "squadStrength": 77,
+      "penalties": 80
+    },
+    "can": {
+      "teamId": "can",
+      "modelVersion": "v2",
+      "overall": 1777,
+      "attack": 83,
+      "defense": 83,
+      "recentForm": 83,
+      "squadStrength": 83,
+      "penalties": 80
+    },
+    "cuw": {
+      "teamId": "cuw",
+      "modelVersion": "v2",
+      "overall": 1427,
+      "attack": 72,
+      "defense": 72,
+      "recentForm": 72,
+      "squadStrength": 72,
+      "penalties": 80
+    },
+    "hai": {
+      "teamId": "hai",
+      "modelVersion": "v2",
+      "overall": 1536,
+      "attack": 76,
+      "defense": 76,
+      "recentForm": 76,
+      "squadStrength": 76,
+      "penalties": 80
+    },
+    "mex": {
+      "teamId": "mex",
+      "modelVersion": "v2",
+      "overall": 1881,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    "pan": {
+      "teamId": "pan",
+      "modelVersion": "v2",
+      "overall": 1683,
+      "attack": 80,
+      "defense": 80,
+      "recentForm": 80,
+      "squadStrength": 80,
+      "penalties": 80
+    },
+    "usa": {
+      "teamId": "usa",
+      "modelVersion": "v2",
+      "overall": 1780,
+      "attack": 84,
+      "defense": 84,
+      "recentForm": 84,
+      "squadStrength": 84,
+      "penalties": 80
+    },
+    "arg": {
+      "teamId": "arg",
+      "modelVersion": "v2",
+      "overall": 2128,
+      "attack": 95,
+      "defense": 95,
+      "recentForm": 95,
+      "squadStrength": 95,
+      "penalties": 80
+    },
+    "bra": {
+      "teamId": "bra",
+      "modelVersion": "v2",
+      "overall": 1978,
+      "attack": 90,
+      "defense": 90,
+      "recentForm": 90,
+      "squadStrength": 90,
+      "penalties": 80
+    },
+    "col": {
+      "teamId": "col",
+      "modelVersion": "v2",
+      "overall": 1998,
+      "attack": 91,
+      "defense": 91,
+      "recentForm": 91,
+      "squadStrength": 91,
+      "penalties": 80
+    },
+    "ecu": {
+      "teamId": "ecu",
+      "modelVersion": "v2",
+      "overall": 1890,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    "par": {
+      "teamId": "par",
+      "modelVersion": "v2",
+      "overall": 1780,
+      "attack": 84,
+      "defense": 84,
+      "recentForm": 84,
+      "squadStrength": 84,
+      "penalties": 80
+    },
+    "uru": {
+      "teamId": "uru",
+      "modelVersion": "v2",
+      "overall": 1870,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    "nzl": {
+      "teamId": "nzl",
+      "modelVersion": "v2",
+      "overall": 1578,
+      "attack": 77,
+      "defense": 77,
+      "recentForm": 77,
+      "squadStrength": 77,
+      "penalties": 80
+    },
+    "aut": {
+      "teamId": "aut",
+      "modelVersion": "v2",
+      "overall": 1857,
+      "attack": 86,
+      "defense": 86,
+      "recentForm": 86,
+      "squadStrength": 86,
+      "penalties": 80
+    },
+    "bel": {
+      "teamId": "bel",
+      "modelVersion": "v2",
+      "overall": 1879,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    "bih": {
+      "teamId": "bih",
+      "modelVersion": "v2",
+      "overall": 1596,
+      "attack": 78,
+      "defense": 78,
+      "recentForm": 78,
+      "squadStrength": 78,
+      "penalties": 80
+    },
+    "cro": {
+      "teamId": "cro",
+      "modelVersion": "v2",
+      "overall": 1881,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    "cze": {
+      "teamId": "cze",
+      "modelVersion": "v2",
+      "overall": 1696,
+      "attack": 81,
+      "defense": 81,
+      "recentForm": 81,
+      "squadStrength": 81,
+      "penalties": 80
+    },
+    "eng": {
+      "teamId": "eng",
+      "modelVersion": "v2",
+      "overall": 2055,
+      "attack": 93,
+      "defense": 93,
+      "recentForm": 93,
+      "squadStrength": 93,
+      "penalties": 80
+    },
+    "fra": {
+      "teamId": "fra",
+      "modelVersion": "v2",
+      "overall": 2084,
+      "attack": 94,
+      "defense": 94,
+      "recentForm": 94,
+      "squadStrength": 94,
+      "penalties": 80
+    },
+    "ger": {
+      "teamId": "ger",
+      "modelVersion": "v2",
+      "overall": 1939,
+      "attack": 89,
+      "defense": 89,
+      "recentForm": 89,
+      "squadStrength": 89,
+      "penalties": 80
+    },
+    "ned": {
+      "teamId": "ned",
+      "modelVersion": "v2",
+      "overall": 1944,
+      "attack": 89,
+      "defense": 89,
+      "recentForm": 89,
+      "squadStrength": 89,
+      "penalties": 80
+    },
+    "nor": {
+      "teamId": "nor",
+      "modelVersion": "v2",
+      "overall": 1929,
+      "attack": 88,
+      "defense": 88,
+      "recentForm": 88,
+      "squadStrength": 88,
+      "penalties": 80
+    },
+    "por": {
+      "teamId": "por",
+      "modelVersion": "v2",
+      "overall": 1967,
+      "attack": 90,
+      "defense": 90,
+      "recentForm": 90,
+      "squadStrength": 90,
+      "penalties": 80
+    },
+    "sco": {
+      "teamId": "sco",
+      "modelVersion": "v2",
+      "overall": 1794,
+      "attack": 84,
+      "defense": 84,
+      "recentForm": 84,
+      "squadStrength": 84,
+      "penalties": 80
+    },
+    "esp": {
+      "teamId": "esp",
+      "modelVersion": "v2",
+      "overall": 2129,
+      "attack": 95,
+      "defense": 95,
+      "recentForm": 95,
+      "squadStrength": 95,
+      "penalties": 80
+    },
+    "swe": {
+      "teamId": "swe",
+      "modelVersion": "v2",
+      "overall": 1755,
+      "attack": 83,
+      "defense": 83,
+      "recentForm": 83,
+      "squadStrength": 83,
+      "penalties": 80
+    },
+    "sui": {
+      "teamId": "sui",
+      "modelVersion": "v2",
+      "overall": 1885,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    "tur": {
+      "teamId": "tur",
+      "modelVersion": "v2",
+      "overall": 1849,
+      "attack": 86,
+      "defense": 86,
+      "recentForm": 86,
+      "squadStrength": 86,
+      "penalties": 80
+    }
+  }
+}

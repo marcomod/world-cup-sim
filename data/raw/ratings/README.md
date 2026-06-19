@@ -33,6 +33,12 @@ The first supported raw shape is a team-level Elo-style snapshot with:
 
 Local `TeamId` values are intentionally not required in raw source records. They are assigned by the pipeline through explicit aliases.
 
+Regenerate the current fixture with:
+
+```bash
+npm run ratings:generate -- --source fixture
+```
+
 To replace the fixture later, add an approved real snapshot with the same raw
 shape, complete the provenance review above, update source notes, and add an
 explicit source configuration or CLI argument for the real snapshot. Do not
@@ -40,6 +46,44 @@ switch to real data by silently renaming or replacing the fixture file. Fixture
 metadata must remain `fixture: true`; approved real data must produce
 `fixture: false` metadata after review. Generated files must not be edited
 manually.
+
+Generic `--source real` mode is intentionally not configured. Approved real
+snapshots must use an explicit source ID. Do not use fixture renaming as the
+migration path.
+
+The private World Football Elo development snapshot uses:
+
+```bash
+npm run ratings:generate -- --source world-football-elo-development
+```
+
+That source is a development snapshot from `https://eloratings.net/`, taken
+during the ongoing 2026 World Cup group stage. It must be refreshed immediately
+after the group stage before final knockout use. Use one project snapshot label
+across all rows and do not mix ratings from differently dated pages/files.
+
+For the current World Football Elo development CSV:
+
+- `accessDate` is the local calendar date when the source was retrieved.
+- `httpLastModified` preserves the exact HTTP timestamp:
+  `Fri, 19 Jun 2026 00:13:16 GMT`.
+- `httpLastModifiedLocal` records that timestamp in America/Toronto:
+  `2026-06-18T20:13:16-04:00`.
+- `sourceDeclaredSnapshotDate` is `null` because the retrieved TSV did not
+  declare a distinct ratings date.
+- `snapshotDate` is the project's frozen snapshot label, not a claim that World
+  Football Elo officially dated the ratings.
+- The `sourceDate` value `2026-06-18` in every CSV row is that project frozen
+  snapshot label.
+
+The future real snapshot may include all 48 tournament participants. The app
+remains knockout-only and will consume only the official 32 qualifiers in the
+bracket; this directory must not add group-stage standings, qualification, or
+best-third-place logic.
+
+The development export must not be wired into the final app accidentally. After
+the post-group-stage refresh, review generated artifacts and make an explicit
+app-wiring decision.
 
 Supported CSV subset:
 

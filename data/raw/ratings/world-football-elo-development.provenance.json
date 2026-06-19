@@ -1,0 +1,19 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "sourceId": "world-football-elo-development",
+  "sourceName": "World Football Elo Ratings",
+  "sourceUrl": "https://eloratings.net/",
+  "accessDate": "2026-06-18",
+  "httpLastModified": "Fri, 19 Jun 2026 00:13:16 GMT",
+  "httpLastModifiedLocal": "2026-06-18T20:13:16-04:00",
+  "snapshotDate": "2026-06-18",
+  "sourceDeclaredSnapshotDate": null,
+  "sourceDateBasis": "The World.tsv snapshot did not declare a distinct ratings date. The project frozen snapshot label 2026-06-18 is based on the local retrieval date and HTTP Last-Modified metadata, not an official source-declared ratings date inside the dataset.",
+  "licenseOrTermsStatus": "Private personal project; review eloratings.net terms before public redistribution.",
+  "attribution": "World Football Elo Ratings (eloratings.net)",
+  "redistributionStatus": "Development snapshot for private personal project; not approved for redistribution.",
+  "transformationNotes": "Source Elo values from one World.tsv snapshot are preserved as overall ratings; sourceDate values use the project frozen snapshot label; attack, defense, recentForm, and squadStrength are Elo-derived compatibility proxies.",
+  "fixture": false,
+  "developmentSnapshot": true,
+  "refreshRequiredAfterGroupStage": true
+}

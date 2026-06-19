@@ -10,6 +10,7 @@ const FIXTURE_TEAM_COUNT = 32;
 
 interface BuildTeamRatingsV2Options {
   teams?: Team[];
+  expectedTeamCount?: number;
 }
 
 export function buildTeamRatingsV2(
@@ -17,7 +18,7 @@ export function buildTeamRatingsV2(
   options: BuildTeamRatingsV2Options = {},
 ): Record<TeamId, TeamRatingV2> {
   const teams = options.teams ?? mockTeams;
-  assertFixtureTeamSet(teams);
+  assertTeamSet(teams, options.expectedTeamCount ?? FIXTURE_TEAM_COUNT);
 
   const minOverall = Math.min(...records.map((record) => record.overall));
   const maxOverall = Math.max(...records.map((record) => record.overall));
@@ -63,10 +64,10 @@ export function calculateEloDerivedProxy(
   return Math.round(MIN_PROXY_VALUE + MAX_PROXY_SPREAD * ratio);
 }
 
-function assertFixtureTeamSet(teams: Team[]): void {
-  if (teams.length !== FIXTURE_TEAM_COUNT) {
+function assertTeamSet(teams: Team[], expectedTeamCount: number): void {
+  if (teams.length !== expectedTeamCount) {
     throw new Error(
-      `Cannot build TeamRatingV2 fixture: expected ${FIXTURE_TEAM_COUNT} mock teams but found ${teams.length}.`,
+      `Cannot build TeamRatingV2: expected ${expectedTeamCount} teams but found ${teams.length}.`,
     );
   }
 
