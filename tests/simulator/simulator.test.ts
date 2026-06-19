@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { initialBracket } from "@/src/data/initialBracket";
 import { mockTeams } from "@/src/data/mockTeams";
+import { tournamentTeams } from "@/src/data/tournamentTeams";
+import { worldFootballEloDevelopmentByTeamId } from "@/src/data/generated/worldFootballEloDevelopment.generated";
 import { teamRatingsV2ByTeamId } from "@/src/data/teamRatingsV2";
 import { runMonteCarlo } from "@/src/lib/simulator/monteCarlo";
 import {
@@ -12,11 +14,52 @@ import { simulateBracket } from "@/src/lib/simulator/simulateBracket";
 import { simulateMatch } from "@/src/lib/simulator/simulateMatch";
 import type {
   Match,
+  MatchSlot,
   MatchScore,
   RNG,
   TeamId,
   TeamRating,
 } from "@/src/lib/simulator/types";
+
+const incompatibleDemoTeamIds = ["den", "crc", "nga", "pol", "ita", "srb"];
+
+const expectedBracketTopology: {
+  id: string;
+  nextMatchId?: string;
+  nextSlot?: MatchSlot;
+}[] = [
+  { id: "r32-1", nextMatchId: "r16-1", nextSlot: "teamAId" },
+  { id: "r32-2", nextMatchId: "r16-1", nextSlot: "teamBId" },
+  { id: "r32-3", nextMatchId: "r16-2", nextSlot: "teamAId" },
+  { id: "r32-4", nextMatchId: "r16-2", nextSlot: "teamBId" },
+  { id: "r32-5", nextMatchId: "r16-3", nextSlot: "teamAId" },
+  { id: "r32-6", nextMatchId: "r16-3", nextSlot: "teamBId" },
+  { id: "r32-7", nextMatchId: "r16-4", nextSlot: "teamAId" },
+  { id: "r32-8", nextMatchId: "r16-4", nextSlot: "teamBId" },
+  { id: "r32-9", nextMatchId: "r16-5", nextSlot: "teamAId" },
+  { id: "r32-10", nextMatchId: "r16-5", nextSlot: "teamBId" },
+  { id: "r32-11", nextMatchId: "r16-6", nextSlot: "teamAId" },
+  { id: "r32-12", nextMatchId: "r16-6", nextSlot: "teamBId" },
+  { id: "r32-13", nextMatchId: "r16-7", nextSlot: "teamAId" },
+  { id: "r32-14", nextMatchId: "r16-7", nextSlot: "teamBId" },
+  { id: "r32-15", nextMatchId: "r16-8", nextSlot: "teamAId" },
+  { id: "r32-16", nextMatchId: "r16-8", nextSlot: "teamBId" },
+  { id: "r16-1", nextMatchId: "qf-1", nextSlot: "teamAId" },
+  { id: "r16-2", nextMatchId: "qf-1", nextSlot: "teamBId" },
+  { id: "r16-3", nextMatchId: "qf-2", nextSlot: "teamAId" },
+  { id: "r16-4", nextMatchId: "qf-2", nextSlot: "teamBId" },
+  { id: "r16-5", nextMatchId: "qf-3", nextSlot: "teamAId" },
+  { id: "r16-6", nextMatchId: "qf-3", nextSlot: "teamBId" },
+  { id: "r16-7", nextMatchId: "qf-4", nextSlot: "teamAId" },
+  { id: "r16-8", nextMatchId: "qf-4", nextSlot: "teamBId" },
+  { id: "qf-1", nextMatchId: "sf-1", nextSlot: "teamAId" },
+  { id: "qf-2", nextMatchId: "sf-1", nextSlot: "teamBId" },
+  { id: "qf-3", nextMatchId: "sf-2", nextSlot: "teamAId" },
+  { id: "qf-4", nextMatchId: "sf-2", nextSlot: "teamBId" },
+  { id: "sf-1", nextMatchId: "final", nextSlot: "teamAId" },
+  { id: "sf-2", nextMatchId: "final", nextSlot: "teamBId" },
+  { id: "final" },
+];
 
 function cloneInitialBracket(): Match[] {
   return initialBracket.map((match) => ({ ...match }));
@@ -376,6 +419,59 @@ describe("Monte Carlo", () => {
 });
 
 describe("rating-data integrity", () => {
+  it("keeps the demo team registry to exactly 32 unique tournament teams", () => {
+    const demoTeamIds = mockTeams.map((team) => team.id);
+    const tournamentTeamIds = new Set(tournamentTeams.map((team) => team.id));
+
+    expect(mockTeams).toHaveLength(32);
+    expect(new Set(demoTeamIds).size).toBe(32);
+
+    for (const teamId of demoTeamIds) {
+      expect(tournamentTeamIds.has(teamId)).toBe(true);
+    }
+  });
+
+  it("keeps every demo team covered by World Football Elo development ratings", () => {
+    for (const team of mockTeams) {
+      expect(worldFootballEloDevelopmentByTeamId[team.id]).toBeDefined();
+    }
+  });
+
+  it("removes the incompatible non-tournament demo teams from registry and bracket", () => {
+    const demoTeamIds = new Set(mockTeams.map((team) => team.id));
+    const bracketTeamIds = new Set(
+      initialBracket.flatMap((match) => [match.teamAId, match.teamBId]).filter(Boolean),
+    );
+
+    for (const teamId of incompatibleDemoTeamIds) {
+      expect(demoTeamIds.has(teamId)).toBe(false);
+      expect(bracketTeamIds.has(teamId)).toBe(false);
+    }
+  });
+
+  it("keeps Round of 32 bracket slots aligned with the 32 demo teams exactly once", () => {
+    const demoTeamIds = mockTeams.map((team) => team.id).sort();
+    const roundOf32TeamIds = initialBracket
+      .filter((match) => match.round === "round_of_32")
+      .flatMap((match) => [match.teamAId, match.teamBId])
+      .filter((teamId): teamId is TeamId => Boolean(teamId))
+      .sort();
+
+    expect(roundOf32TeamIds).toHaveLength(32);
+    expect(new Set(roundOf32TeamIds).size).toBe(32);
+    expect(roundOf32TeamIds).toEqual(demoTeamIds);
+  });
+
+  it("preserves bracket match IDs and advancement topology", () => {
+    expect(
+      initialBracket.map((match) => ({
+        id: match.id,
+        nextMatchId: match.nextMatchId,
+        nextSlot: match.nextSlot,
+      })),
+    ).toEqual(expectedBracketTopology);
+  });
+
   it("has one V2 rating for every mock team and no unknown team ratings", () => {
     const mockTeamIds = new Set(mockTeams.map((team) => team.id));
     const ratingIds = Object.keys(teamRatingsV2ByTeamId);

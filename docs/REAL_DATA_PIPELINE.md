@@ -137,6 +137,11 @@ The tournament-team rating registry is stored separately from the existing
 group-stage simulation. The official bracket should use only the confirmed 32
 qualifiers once the group stage is complete.
 
+The current 32-team demo bracket now uses teams drawn from the actual 2026
+tournament field so every demo team can be covered by the development Elo
+snapshot. It remains a development bracket only: the matchups are not the
+official Round of 32 bracket and should be replaced after the group stage.
+
 Approval process for a real snapshot:
 
 1. Choose a frozen source file with the supported raw shape.

@@ -42,6 +42,11 @@ For each playable match:
 
 Scorelines do not replace winner probabilities yet. They are explanatory simulation output for single-bracket runs.
 
+The current bracket is still a development/demo bracket. Its 32 demo teams are
+drawn from the actual 2026 tournament field, but the matchups are not the
+official Round of 32 bracket. The bracket should be replaced after the group
+stage once the official knockout qualifiers and matchups are known.
+
 ⸻
 
 Team Strength

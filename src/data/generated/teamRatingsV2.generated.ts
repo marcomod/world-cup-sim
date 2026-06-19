@@ -85,8 +85,8 @@ export const teamRatingsV2GeneratedByTeamId: Record<TeamId, TeamRatingV2> = {
     "squadStrength": 90,
     "penalties": 80
   },
-  "ita": {
-    "teamId": "ita",
+  "aut": {
+    "teamId": "aut",
     "modelVersion": "v2",
     "overall": 1886,
     "attack": 89,
@@ -165,8 +165,8 @@ export const teamRatingsV2GeneratedByTeamId: Record<TeamId, TeamRatingV2> = {
     "squadStrength": 84,
     "penalties": 80
   },
-  "den": {
-    "teamId": "den",
+  "sco": {
+    "teamId": "sco",
     "modelVersion": "v2",
     "overall": 1802,
     "attack": 84,
@@ -225,8 +225,8 @@ export const teamRatingsV2GeneratedByTeamId: Record<TeamId, TeamRatingV2> = {
     "squadStrength": 81,
     "penalties": 80
   },
-  "pol": {
-    "teamId": "pol",
+  "swe": {
+    "teamId": "swe",
     "modelVersion": "v2",
     "overall": 1744,
     "attack": 80,
@@ -235,8 +235,8 @@ export const teamRatingsV2GeneratedByTeamId: Record<TeamId, TeamRatingV2> = {
     "squadStrength": 80,
     "penalties": 80
   },
-  "srb": {
-    "teamId": "srb",
+  "civ": {
+    "teamId": "civ",
     "modelVersion": "v2",
     "overall": 1738,
     "attack": 80,
@@ -265,8 +265,8 @@ export const teamRatingsV2GeneratedByTeamId: Record<TeamId, TeamRatingV2> = {
     "squadStrength": 78,
     "penalties": 80
   },
-  "nga": {
-    "teamId": "nga",
+  "uzb": {
+    "teamId": "uzb",
     "modelVersion": "v2",
     "overall": 1702,
     "attack": 77,
@@ -305,8 +305,8 @@ export const teamRatingsV2GeneratedByTeamId: Record<TeamId, TeamRatingV2> = {
     "squadStrength": 74,
     "penalties": 80
   },
-  "crc": {
-    "teamId": "crc",
+  "jor": {
+    "teamId": "jor",
     "modelVersion": "v2",
     "overall": 1640,
     "attack": 74,
