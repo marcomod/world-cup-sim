@@ -460,7 +460,6 @@ describe("World Football Elo development source", () => {
       "app",
       "src/components",
       "src/lib/simulator",
-      "src/data/teamRatingsV2.ts",
     ]);
 
     expect(

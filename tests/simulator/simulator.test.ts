@@ -3,7 +3,10 @@ import { initialBracket } from "@/src/data/initialBracket";
 import { mockTeams } from "@/src/data/mockTeams";
 import { tournamentTeams } from "@/src/data/tournamentTeams";
 import { worldFootballEloDevelopmentByTeamId } from "@/src/data/generated/worldFootballEloDevelopment.generated";
-import { teamRatingsV2ByTeamId } from "@/src/data/teamRatingsV2";
+import {
+  teamRatingsV2ByTeamId,
+  teamRatingsV2SourceMetadata,
+} from "@/src/data/teamRatingsV2";
 import { runMonteCarlo } from "@/src/lib/simulator/monteCarlo";
 import {
   calculateMatchupProbability,
@@ -419,6 +422,19 @@ describe("Monte Carlo", () => {
 });
 
 describe("rating-data integrity", () => {
+  it("exports World Football Elo development ratings through the stable V2 boundary", () => {
+    expect(teamRatingsV2ByTeamId).toBe(worldFootballEloDevelopmentByTeamId);
+  });
+
+  it("exposes stable metadata for the active V2 ratings source", () => {
+    expect(teamRatingsV2SourceMetadata).toEqual({
+      sourceName: "World Football Elo Ratings",
+      snapshotDate: "2026-06-18",
+      developmentSnapshot: true,
+      refreshRequiredAfterGroupStage: true,
+    });
+  });
+
   it("keeps the demo team registry to exactly 32 unique tournament teams", () => {
     const demoTeamIds = mockTeams.map((team) => team.id);
     const tournamentTeamIds = new Set(tournamentTeams.map((team) => team.id));
@@ -472,18 +488,19 @@ describe("rating-data integrity", () => {
     ).toEqual(expectedBracketTopology);
   });
 
-  it("has one V2 rating for every mock team and no unknown team ratings", () => {
+  it("has stable V2 ratings for every mock team and every Round of 32 bracket team", () => {
     const mockTeamIds = new Set(mockTeams.map((team) => team.id));
-    const ratingIds = Object.keys(teamRatingsV2ByTeamId);
-
-    expect(ratingIds).toHaveLength(mockTeams.length);
+    const roundOf32TeamIds = initialBracket
+      .filter((match) => match.round === "round_of_32")
+      .flatMap((match) => [match.teamAId, match.teamBId])
+      .filter((teamId): teamId is TeamId => Boolean(teamId));
 
     for (const teamId of mockTeamIds) {
       expect(teamRatingsV2ByTeamId[teamId]).toBeDefined();
     }
 
-    for (const teamId of ratingIds) {
-      expect(mockTeamIds.has(teamId)).toBe(true);
+    for (const teamId of roundOf32TeamIds) {
+      expect(teamRatingsV2ByTeamId[teamId]).toBeDefined();
     }
   });
 

@@ -142,6 +142,12 @@ tournament field so every demo team can be covered by the development Elo
 snapshot. It remains a development bracket only: the matchups are not the
 official Round of 32 bracket and should be replaced after the group stage.
 
+The app runtime now consumes the World Football Elo development snapshot through
+the stable `src/data/teamRatingsV2.ts` export. React components and simulator
+code should continue importing only that stable ratings boundary, not the
+generated development file directly. The snapshot remains temporary development
+data and must be refreshed after the group stage before final knockout use.
+
 Approval process for a real snapshot:
 
 1. Choose a frozen source file with the supported raw shape.

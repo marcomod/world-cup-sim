@@ -1,10 +1,16 @@
+import { worldFootballEloDevelopmentByTeamId } from "@/src/data/generated/worldFootballEloDevelopment.generated";
 import type { TeamId, TeamRatingV2 } from "@/src/lib/simulator/types";
 
-// V2 ratings are a static, manually assigned snapshot for the current 32 mock
-// teams. They are not live sourced, fetched, scraped, or historically calibrated.
-// `overall` is the Elo-style value used by matchup probabilities. Component
-// ratings are normalized 0-100 values, where higher is better.
-export const teamRatingsV2ByTeamId: Record<TeamId, TeamRatingV2> = {
+export interface TeamRatingsV2SourceMetadata {
+  sourceName: string;
+  snapshotDate: string;
+  developmentSnapshot: boolean;
+  refreshRequiredAfterGroupStage: boolean;
+}
+
+// Legacy manual V2 ratings are kept for comparison and rollback while the app
+// runtime uses the generated World Football Elo development snapshot below.
+export const legacyManualTeamRatingsV2ByTeamId: Record<TeamId, TeamRatingV2> = {
   arg: { teamId: "arg", modelVersion: "v2", overall: 1992, attack: 92, defense: 88, recentForm: 91, squadStrength: 92, penalties: 89 },
   fra: { teamId: "fra", modelVersion: "v2", overall: 1984, attack: 93, defense: 87, recentForm: 89, squadStrength: 93, penalties: 86 },
   bra: { teamId: "bra", modelVersion: "v2", overall: 1962, attack: 91, defense: 86, recentForm: 86, squadStrength: 91, penalties: 84 },
@@ -38,3 +44,13 @@ export const teamRatingsV2ByTeamId: Record<TeamId, TeamRatingV2> = {
   jor: { teamId: "jor", modelVersion: "v2", overall: 1640, attack: 73, defense: 75, recentForm: 73, squadStrength: 73, penalties: 75 },
   nzl: { teamId: "nzl", modelVersion: "v2", overall: 1612, attack: 72, defense: 72, recentForm: 72, squadStrength: 72, penalties: 73 },
 };
+
+export const teamRatingsV2ByTeamId: Record<TeamId, TeamRatingV2> =
+  worldFootballEloDevelopmentByTeamId;
+
+export const teamRatingsV2SourceMetadata = {
+  sourceName: "World Football Elo Ratings",
+  snapshotDate: "2026-06-18",
+  developmentSnapshot: true,
+  refreshRequiredAfterGroupStage: true,
+} as const satisfies TeamRatingsV2SourceMetadata;

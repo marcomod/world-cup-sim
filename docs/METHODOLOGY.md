@@ -62,9 +62,16 @@ Possible rating components include:
 - Squad strength
 - Penalty ability
 
-V2 uses a static, manually assigned team-strength snapshot. The overall rating is the value used by the current probability model. Attack, defense, recent form, squad strength, and penalties are normalized 0-100 values for documentation and future model extensions.
+The app currently uses a World Football Elo Ratings development snapshot through
+the stable `teamRatingsV2ByTeamId` export. The overall rating is the value used
+by the current probability model. Attack, defense, recent form, squad strength,
+and penalties are Elo-derived compatibility proxies normalized to 0-100 for
+documentation and future model extensions.
 
-The V2 snapshot is not live sourced, scraped, or automatically updated.
+The active V2 snapshot is not live fetched, scraped at runtime, or automatically
+updated. It was captured during the 2026 World Cup group stage and must be
+refreshed after the group stage before final knockout use. The official Round of
+32 bracket is not loaded yet.
 
 Future versions may incorporate:
 
