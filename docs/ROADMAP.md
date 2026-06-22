@@ -159,6 +159,26 @@ Potential additions:
 - Correlated scoring
 - Fully score-driven matchup probabilities
 
+Historical Calibration Phases
+
+The following work is offline analysis and does not change production
+probabilities until a reviewed calibration result is deliberately adopted:
+
+1. Ingest and validate an approved historical World Cup match dataset.
+2. Join decisive matches to contemporaneous pre-match ratings without
+   look-ahead bias.
+3. Evaluate baseline probabilities with Brier score and log loss.
+4. Compare candidate Elo divisors against a fixed validation set.
+5. Analyse regulation, extra-time, and penalty outcomes separately.
+6. Optionally compare the validated model with betting-market probabilities.
+7. Remove bookmaker margin to produce no-vig market probabilities.
+8. Consider model/market blending only after independent out-of-sample
+   validation.
+
+The historical dataset and calibration scripts remain outside the runtime app.
+The World Football Elo development snapshot remains the active rating source,
+and the production Elo divisor remains `400` during this foundation work.
+
 ⸻
 
 Version 8 — Community Features

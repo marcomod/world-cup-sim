@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "ratings:generate": "node --no-warnings --experimental-strip-types scripts/ratings-pipeline/generateRatings.ts"
+    "ratings:generate": "node --no-warnings --experimental-strip-types scripts/ratings-pipeline/generateRatings.ts",
+    "historical:validate": "node --no-warnings --experimental-strip-types scripts/historical-pipeline/validateHistoricalDataset.ts",
+    "historical:test": "vitest run tests/data/historicalPipeline.test.ts"
   },
   "dependencies": {
     "next": "16.2.9",

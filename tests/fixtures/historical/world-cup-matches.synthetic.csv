@@ -1,0 +1,5 @@
+tournamentYear,date,stage,homeTeam,awayTeam,homeGoals,awayGoals,extraTime,penalties,homePenaltyGoals,awayPenaltyGoals,neutralVenue,sourceMatchId
+2006,2006-06-30,quarterfinal,Germany,Argentina,1,1,true,true,4,2,true,synthetic-penalties
+1990,1990-06-20,group_stage,USA,Korea Republic,1,1,false,false,,,true,synthetic-draw
+2014,2014-06-28,round_of_16,Brazil,Chile,2,1,false,false,,,true,synthetic-regulation
+1990,1990-07-04,semifinal,West Germany,England,2,1,true,false,,,true,synthetic-extra-time

@@ -109,6 +109,40 @@ mapping with a better validated probability model.
 
 Future versions may derive probabilities directly from repeated simulations.
 
+Historical Calibration
+
+Historical World Cup data is reserved for offline model evaluation. It is not
+imported by the app, React components, or runtime simulator, and adding the
+historical pipeline does not change the active World Football Elo ratings or the
+current divisor of `400`.
+
+The first evaluation target is the binary knockout winner probability produced
+by the current Elo-difference formula. Group-stage draws are retained in the
+normalized historical dataset for data integrity and later analysis, but they
+cannot become binary `PredictionObservation` values without a separate draw
+model. Initial probability calibration should therefore use decisive knockout
+outcomes.
+
+Planned evaluation metrics are:
+
+- Brier score for mean squared probability error.
+- Log loss for confidence-sensitive probability error.
+- Sample size reported with every metric result.
+- Side-by-side comparison of candidate Elo divisors while keeping evaluation
+  data and rating inputs fixed.
+
+Historical match results alone are not sufficient to calculate these metrics.
+Each observation also needs a contemporaneous pre-match rating difference. The
+current 2026 development snapshot must not be applied retrospectively because
+that would introduce look-ahead bias. A future step must approve a historical
+rating series or define a deterministic sequential Elo reconstruction.
+
+Extra-time and penalty outcomes will be analysed separately after the baseline
+winner model is evaluated. Betting-market probabilities are a later optional
+comparison layer. Any market inputs must first be converted to no-vig
+probabilities, and model/market blending should be considered only after both
+inputs have been validated independently.
+
 ⸻
 
 Scoreline Simulation

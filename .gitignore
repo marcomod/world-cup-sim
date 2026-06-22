@@ -13,6 +13,10 @@
 # testing
 /coverage
 
+# third-party historical source data (keep only repository placeholders)
+/data/raw/historical/world-cup/*
+!/data/raw/historical/world-cup/.gitkeep
+
 # next.js
 /.next/
 /out/

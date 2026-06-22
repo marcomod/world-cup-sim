@@ -1,0 +1,70 @@
+export type HistoricalTeamId = string;
+
+export const HISTORICAL_STAGES = [
+  "group_stage",
+  "first_group_stage",
+  "second_group_stage",
+  "final_group_stage",
+  "round_of_32",
+  "round_of_16",
+  "quarterfinal",
+  "semifinal",
+  "third_place",
+  "final",
+] as const;
+
+export type HistoricalStage = (typeof HISTORICAL_STAGES)[number];
+export type HistoricalCalibrationScope = "all_matches" | "knockout_only";
+
+export interface RawHistoricalMatch {
+  tournamentYear: number;
+  date: string;
+  stage: string;
+  homeTeam: string;
+  awayTeam: string;
+  homeGoals: number;
+  awayGoals: number;
+  extraTime: boolean;
+  penalties: boolean;
+  homePenaltyGoals?: number;
+  awayPenaltyGoals?: number;
+  neutralVenue?: boolean;
+  sourceMatchId?: string;
+}
+
+export interface NormalizedHistoricalMatch {
+  matchId: string;
+  tournamentYear: number;
+  date: string;
+  stage: HistoricalStage;
+  teamAId: HistoricalTeamId;
+  teamBId: HistoricalTeamId;
+  teamAGoals: number;
+  teamBGoals: number;
+  wentToExtraTime: boolean;
+  wentToPenalties: boolean;
+  teamAPenaltyGoals?: number;
+  teamBPenaltyGoals?: number;
+  winnerTeamId: HistoricalTeamId | null;
+  source: string;
+}
+
+export interface HistoricalDatasetMetadata {
+  sourceName: string;
+  sourceUrl: string;
+  accessDate: string;
+  licence: string;
+  attribution: string;
+  redistributionStatus: string;
+  recordCount: number;
+  yearRange: {
+    start: number;
+    end: number;
+  };
+  generatedFileWarning: "Do not edit manually.";
+}
+
+export interface HistoricalTeamAliasEntry {
+  teamId: HistoricalTeamId;
+  aliases: readonly string[];
+}
