@@ -24,3 +24,80 @@ body {
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
+.knockout-bracket-grid {
+  --bracket-width: 1752px;
+  --bracket-card-width: 164px;
+  --bracket-connector-width: 26px;
+  --bracket-center-width: 200px;
+
+  display: grid;
+  grid-template-columns:
+    var(--bracket-card-width) var(--bracket-connector-width)
+    var(--bracket-card-width) var(--bracket-connector-width)
+    var(--bracket-card-width) var(--bracket-connector-width)
+    var(--bracket-card-width) var(--bracket-connector-width)
+    var(--bracket-center-width)
+    var(--bracket-connector-width) var(--bracket-card-width)
+    var(--bracket-connector-width) var(--bracket-card-width)
+    var(--bracket-connector-width) var(--bracket-card-width)
+    var(--bracket-connector-width) var(--bracket-card-width);
+  width: var(--bracket-width);
+  min-width: var(--bracket-width);
+  align-items: start;
+}
+
+.bracket-round-column,
+.bracket-final-column {
+  min-width: 0;
+}
+
+.bracket-connector-column {
+  display: grid;
+  height: 1080px;
+  margin-top: 40px;
+}
+
+.bracket-connector-merge,
+.bracket-connector-straight {
+  position: relative;
+  display: block;
+}
+
+.bracket-connector-merge::after {
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  left: 50%;
+  width: 1px;
+  background: rgba(151, 160, 173, 0.42);
+  content: "";
+}
+
+.bracket-connector-merge--left {
+  background:
+    linear-gradient(rgba(151, 160, 173, 0.42), rgba(151, 160, 173, 0.42)) left 25% / 50% 1px no-repeat,
+    linear-gradient(rgba(151, 160, 173, 0.42), rgba(151, 160, 173, 0.42)) left 75% / 50% 1px no-repeat,
+    linear-gradient(rgba(151, 160, 173, 0.42), rgba(151, 160, 173, 0.42)) right 50% / 50% 1px no-repeat;
+}
+
+.bracket-connector-merge--right {
+  background:
+    linear-gradient(rgba(151, 160, 173, 0.42), rgba(151, 160, 173, 0.42)) right 25% / 50% 1px no-repeat,
+    linear-gradient(rgba(151, 160, 173, 0.42), rgba(151, 160, 173, 0.42)) right 75% / 50% 1px no-repeat,
+    linear-gradient(rgba(151, 160, 173, 0.42), rgba(151, 160, 173, 0.42)) left 50% / 50% 1px no-repeat;
+}
+
+.bracket-connector-straight {
+  background: linear-gradient(rgba(151, 160, 173, 0.42), rgba(151, 160, 173, 0.42)) center / 100% 1px no-repeat;
+}
+
+.bracket-horizontal-scroll {
+  scrollbar-color: rgba(151, 160, 173, 0.55) rgba(255, 255, 255, 0.05);
+  scrollbar-width: thin;
+}
+
+.bracket-horizontal-scroll:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: -2px;
+}

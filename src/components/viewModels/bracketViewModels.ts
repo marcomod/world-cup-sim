@@ -1,4 +1,5 @@
 import { getMatchupProbabilityForMatch } from "@/src/lib/simulator/probability";
+import { getTeamFlagPath } from "@/src/data/teamFlags";
 import type {
   Match,
   MatchupProbability,
@@ -14,6 +15,8 @@ export interface MatchCardViewModel {
   statusLabel: string;
   teamAName: string;
   teamBName: string;
+  teamAFlagPath: string;
+  teamBFlagPath: string;
   teamAIsKnown: boolean;
   teamBIsKnown: boolean;
   teamAIsWinner: boolean;
@@ -21,9 +24,18 @@ export interface MatchCardViewModel {
   teamAScoreLabel: string | null;
   teamBScoreLabel: string | null;
   scorelineLabel: string | null;
+  decisionLabel: string | null;
   resultDetailLabel: string | null;
+  accessibleLabel: string;
   teamAWinProbabilityLabel: string | null;
   teamBWinProbabilityLabel: string | null;
+}
+
+export interface ChampionViewModel {
+  isKnown: boolean;
+  teamName: string;
+  flagPath: string;
+  statusLabel: string;
 }
 
 export interface MatchupOddsRowViewModel {
@@ -61,13 +73,23 @@ export function createMatchCardViewModel(
     match.teamAId && match.teamBId
       ? getMatchupProbabilityForMatch(match, ratingsByTeamId)
       : null;
+  const teamAName = getTeamDisplayName(match.teamAId, teamsById);
+  const teamBName = getTeamDisplayName(match.teamBId, teamsById);
+  const teamAWinProbabilityLabel = probability
+    ? formatWholeProbability(probability.teamAWinProbability)
+    : null;
+  const teamBWinProbabilityLabel = probability
+    ? formatWholeProbability(probability.teamBWinProbability)
+    : null;
 
   return {
     id: match.id,
     round: match.round,
     statusLabel: getMatchStatusLabel(match, teamsById),
-    teamAName: getTeamDisplayName(match.teamAId, teamsById),
-    teamBName: getTeamDisplayName(match.teamBId, teamsById),
+    teamAName,
+    teamBName,
+    teamAFlagPath: getTeamFlagPath(match.teamAId),
+    teamBFlagPath: getTeamFlagPath(match.teamBId),
     teamAIsKnown: match.teamAId !== null,
     teamBIsKnown: match.teamBId !== null,
     teamAIsWinner: match.winnerId !== undefined && match.winnerId === match.teamAId,
@@ -75,16 +97,46 @@ export function createMatchCardViewModel(
     teamAScoreLabel: match.score ? String(match.score.teamAGoals) : null,
     teamBScoreLabel: match.score ? String(match.score.teamBGoals) : null,
     scorelineLabel: formatScoreline(match),
+    decisionLabel: match.score ? formatDecisionLabel(match.score.decidedBy) : null,
     resultDetailLabel:
       match.score && match.winnerId
         ? `Winner: ${getTeamDisplayName(match.winnerId, teamsById)} · ${formatDecisionLabel(match.score.decidedBy)}`
         : null,
-    teamAWinProbabilityLabel: probability
-      ? formatWholeProbability(probability.teamAWinProbability)
-      : null,
-    teamBWinProbabilityLabel: probability
-      ? formatWholeProbability(probability.teamBWinProbability)
-      : null,
+    accessibleLabel: formatAccessibleMatchLabel(
+      match,
+      teamAName,
+      teamBName,
+      teamAWinProbabilityLabel,
+      teamBWinProbabilityLabel,
+      teamsById,
+    ),
+    teamAWinProbabilityLabel,
+    teamBWinProbabilityLabel,
+  };
+}
+
+export function createChampionViewModel(
+  finalMatch: Match | undefined,
+  teamsById: TeamsById,
+): ChampionViewModel {
+  const championId = finalMatch?.winnerId ?? null;
+
+  if (!championId) {
+    return {
+      isKnown: false,
+      teamName: "Awaiting simulation",
+      flagPath: getTeamFlagPath(null),
+      statusLabel: "Not simulated",
+    };
+  }
+
+  const teamName = getTeamDisplayName(championId, teamsById);
+
+  return {
+    isKnown: true,
+    teamName,
+    flagPath: getTeamFlagPath(championId),
+    statusLabel: "Tournament winner",
   };
 }
 
@@ -142,6 +194,40 @@ function formatScoreline(match: Match): string | null {
   }
 
   return scoreline;
+}
+
+function formatAccessibleMatchLabel(
+  match: Match,
+  teamAName: string,
+  teamBName: string,
+  teamAWinProbabilityLabel: string | null,
+  teamBWinProbabilityLabel: string | null,
+  teamsById: TeamsById,
+): string {
+  if (!match.teamAId || !match.teamBId) {
+    return `${match.id}: Matchup awaiting teams.`;
+  }
+
+  const parts = [`${match.id}: ${teamAName} vs ${teamBName}.`];
+
+  if (match.winnerId) {
+    parts.push(`Winner: ${getTeamDisplayName(match.winnerId, teamsById)}.`);
+  } else {
+    parts.push("Not simulated.");
+  }
+
+  if (match.score) {
+    parts.push(`Score: ${formatScoreline(match)}.`);
+    parts.push(`${formatDecisionLabel(match.score.decidedBy)}.`);
+  }
+
+  if (teamAWinProbabilityLabel && teamBWinProbabilityLabel) {
+    parts.push(
+      `Win probabilities: ${teamAName} ${teamAWinProbabilityLabel}, ${teamBName} ${teamBWinProbabilityLabel}.`,
+    );
+  }
+
+  return parts.join(" ");
 }
 
 function formatDecisionLabel(decidedBy: NonNullable<Match["score"]>["decidedBy"]): string {

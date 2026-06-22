@@ -3,14 +3,17 @@
 import { useMemo, useState } from "react";
 import { initialBracket } from "@/src/data/initialBracket";
 import { mockTeams } from "@/src/data/mockTeams";
-import { teamRatingsV2ByTeamId } from "@/src/data/teamRatingsV2";
+import {
+  teamRatingsV2ByTeamId,
+  teamRatingsV2SourceMetadata,
+} from "@/src/data/teamRatingsV2";
 import { Bracket } from "@/src/components/Bracket/Bracket";
 import { MatchupOddsTable } from "@/src/components/Odds/MatchupOddsTable";
 import { TournamentOddsTable } from "@/src/components/Odds/TournamentOddsTable";
 import {
   createMatchCardViewModel,
   createMatchupOddsRows,
-  getTeamDisplayName,
+  createChampionViewModel,
 } from "@/src/components/viewModels/bracketViewModels";
 import {
   createTournamentOddsRows,
@@ -42,10 +45,11 @@ export function WorldCupSimulator() {
   const [monteCarloResult, setMonteCarloResult] =
     useState<MonteCarloResult | null>(null);
   const teamsById = useMemo(() => createTeamsById(mockTeams), []);
-  const finalMatch = matches[matches.length - 1];
-  const championName = finalMatch?.winnerId
-    ? getTeamDisplayName(finalMatch.winnerId, teamsById)
-    : null;
+  const finalMatch = matches.find((match) => match.round === "final");
+  const champion = useMemo(
+    () => createChampionViewModel(finalMatch, teamsById),
+    [finalMatch, teamsById],
+  );
   const bracketMatches = useMemo(
     () =>
       matches.map((match) =>
@@ -102,77 +106,72 @@ export function WorldCupSimulator() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 px-4 py-6 text-slate-950 sm:px-6 lg:px-8">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6">
-        <header className="flex flex-col gap-4 border-b border-slate-200 pb-5 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-wide text-emerald-700">
-              Post-group-stage simulator
-            </p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-              World Cup Knockout Simulator
-            </h1>
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
-              Static Round of 32 bracket with mock teams, early V2 team-strength
-              ratings, matchup odds, full-bracket simulation, champion output, and
-              reset.
-            </p>
-          </div>
+    <main className="min-h-screen bg-[#101318] pb-10 text-[#edf0f4]">
+      <header className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-4 py-6 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:py-8">
+        <div className="max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">
+            Post-group-stage simulator
+          </p>
+          <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
+            World Cup Knockout Simulator
+          </h1>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-[#a8afb9] sm:text-base">
+            Explore the development Round of 32, simulate one complete path to the
+            trophy, or compare tournament odds across 10,000 runs.
+          </p>
+          <p
+            className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8c929d]"
+            aria-label="Ratings and bracket status"
+          >
+            <span>Ratings: {teamRatingsV2SourceMetadata.sourceName}</span>
+            <span aria-hidden="true">/</span>
+            <span>Snapshot label: {teamRatingsV2SourceMetadata.snapshotDate}</span>
+            <span aria-hidden="true">/</span>
+            <span>Demo bracket</span>
+          </p>
+        </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
+        <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap lg:max-w-[620px] lg:justify-end">
             <button
               type="button"
               onClick={handleSimulateBracket}
-              className="h-11 rounded-md bg-emerald-700 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
+              className="h-11 rounded-md bg-emerald-500 px-5 text-sm font-bold text-[#07130e] shadow-sm transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-[#101318]"
             >
               Simulate One Bracket
             </button>
             <button
               type="button"
               onClick={handleRunMonteCarlo}
-              className="h-11 rounded-md bg-slate-900 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+              className="h-11 rounded-md bg-white px-5 text-sm font-bold text-[#101318] shadow-sm transition hover:bg-[#dfe3e8] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#101318]"
             >
               Run 10,000 Simulations
             </button>
             <button
               type="button"
               onClick={handleResetBracket}
-              className="h-11 rounded-md border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2"
+              className="h-11 rounded-md border border-white/20 bg-transparent px-5 text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
             >
               Reset
             </button>
-          </div>
-        </header>
+            <p
+              className="basis-full pt-1 text-right font-mono text-[10px] text-[#747c88]"
+              aria-live="polite"
+            >
+              Last seed: {lastSeed ?? "Not simulated"}
+            </p>
+        </div>
+      </header>
 
-        <section className="grid gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:grid-cols-2">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Single Simulation Champion
-            </p>
-            <p className="mt-2 text-2xl font-semibold text-slate-950">
-              {championName ?? "Not simulated"}
-            </p>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Last seed
-            </p>
-            <p className="mt-2 font-mono text-sm text-slate-700">
-              {lastSeed ?? "Not simulated"}
-            </p>
-          </div>
-        </section>
+      <Bracket matches={bracketMatches} champion={champion} />
 
-        <MatchupOddsTable rows={matchupOddsRows} hasSimulated={Boolean(championName)} />
-
+      <div className="mx-auto mt-8 flex w-full max-w-7xl flex-col gap-6 px-4 text-slate-950 sm:px-6 lg:px-8">
+        <MatchupOddsTable rows={matchupOddsRows} hasSimulated={champion.isKnown} />
         {monteCarloResult ? (
           <TournamentOddsTable
             rows={tournamentOddsRows}
             simulationCountLabel={tournamentOddsSimulationCountLabel}
           />
         ) : null}
-
-        <Bracket matches={bracketMatches} />
       </div>
     </main>
   );

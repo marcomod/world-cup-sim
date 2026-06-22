@@ -73,15 +73,19 @@ Improve the user experience and add scoreline display for single-bracket simulat
 
 Features
 
-- Team flags
-- Improved bracket styling
-- Responsive layout
+- Local team flags with fallback handling
+- Mirrored knockout bracket moving inward to a central final and champion area
+- CSS connector lines between rounds
+- Responsive horizontal bracket scrolling on tablet and mobile
 - Better odds tables
 - Scoreline display
 - Extra-time and penalty shootout result labels
 - Loading indicators
 - Simulation history
 - Animated advancement
+
+The current bracket remains a development/demo bracket. Its matchups will be
+replaced with the official Round of 32 bracket after the group stage.
 
 ⸻
 

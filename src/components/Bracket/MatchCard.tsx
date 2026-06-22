@@ -1,3 +1,4 @@
+import { MatchTeamRow } from "@/src/components/Bracket/MatchTeamRow";
 import type { MatchCardViewModel } from "@/src/components/viewModels/bracketViewModels";
 
 interface MatchCardProps {
@@ -6,64 +7,50 @@ interface MatchCardProps {
 
 export function MatchCard({ match }: MatchCardProps) {
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
-      <div className="mb-3 flex items-center justify-between gap-2">
-        <span className="font-mono text-xs font-medium text-slate-500">{match.id}</span>
-        <span className="rounded-full bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600">
-          {match.resultDetailLabel ?? match.statusLabel}
-        </span>
-      </div>
+    <article
+      className="h-32 w-full border border-white/12 bg-[#171a1f] shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+      data-match-id={match.id}
+      data-round={match.round}
+      aria-label={match.accessibleLabel}
+    >
+      <div aria-hidden="true">
+        <div className="flex h-7 items-center justify-between gap-2 border-b border-white/8 px-2.5">
+          <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#747c88]">
+            {match.id}
+          </span>
+          <span className="min-w-0 truncate text-[9px] font-semibold uppercase tracking-[0.08em] text-[#a8afb9]">
+            {match.decisionLabel ?? match.statusLabel}
+          </span>
+        </div>
 
-      {match.scorelineLabel ? (
-        <p className="mb-3 font-mono text-sm font-semibold text-slate-900">
-          {match.scorelineLabel}
+        <div className="divide-y divide-white/8">
+          <MatchTeamRow
+            name={match.teamAName}
+            flagPath={match.teamAFlagPath}
+            isKnown={match.teamAIsKnown}
+            isWinner={match.teamAIsWinner}
+            probabilityLabel={match.teamAWinProbabilityLabel}
+            scoreLabel={match.teamAScoreLabel}
+          />
+          <MatchTeamRow
+            name={match.teamBName}
+            flagPath={match.teamBFlagPath}
+            isKnown={match.teamBIsKnown}
+            isWinner={match.teamBIsWinner}
+            probabilityLabel={match.teamBWinProbabilityLabel}
+            scoreLabel={match.teamBScoreLabel}
+          />
+        </div>
+
+        <p
+          className={`flex h-6 items-center border-t border-white/8 px-2.5 font-mono text-[9px] ${
+            match.scorelineLabel?.includes("pens")
+              ? "text-amber-200"
+              : "text-[#8c929d]"
+          }`}
+        >
+          {match.scorelineLabel ?? "\u00a0"}
         </p>
-      ) : null}
-
-      <div className="space-y-2">
-        <div
-          className={`flex min-h-10 items-center justify-between gap-3 rounded-md border px-3 py-2 ${
-            match.teamAIsWinner
-              ? "border-emerald-300 bg-emerald-50"
-              : "border-slate-200"
-          }`}
-        >
-          <span className={match.teamAIsKnown ? "font-medium text-slate-950" : "text-slate-400"}>
-            {match.teamAName}
-          </span>
-          <span className="flex items-center gap-3">
-            {match.teamAScoreLabel ? (
-              <span className="w-5 text-right font-mono text-base font-semibold text-slate-950">
-                {match.teamAScoreLabel}
-              </span>
-            ) : null}
-            <span className="font-mono text-xs text-slate-500">
-              {match.teamAWinProbabilityLabel ?? "--"}
-            </span>
-          </span>
-        </div>
-
-        <div
-          className={`flex min-h-10 items-center justify-between gap-3 rounded-md border px-3 py-2 ${
-            match.teamBIsWinner
-              ? "border-emerald-300 bg-emerald-50"
-              : "border-slate-200"
-          }`}
-        >
-          <span className={match.teamBIsKnown ? "font-medium text-slate-950" : "text-slate-400"}>
-            {match.teamBName}
-          </span>
-          <span className="flex items-center gap-3">
-            {match.teamBScoreLabel ? (
-              <span className="w-5 text-right font-mono text-base font-semibold text-slate-950">
-                {match.teamBScoreLabel}
-              </span>
-            ) : null}
-            <span className="font-mono text-xs text-slate-500">
-              {match.teamBWinProbabilityLabel ?? "--"}
-            </span>
-          </span>
-        </div>
       </div>
     </article>
   );
