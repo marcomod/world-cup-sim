@@ -16,6 +16,7 @@
 # third-party historical source data (keep only repository placeholders)
 /data/raw/historical/world-cup/*
 !/data/raw/historical/world-cup/.gitkeep
+!/data/raw/historical/world-cup/matches_1930_2022.provenance.json
 
 # next.js
 /.next/

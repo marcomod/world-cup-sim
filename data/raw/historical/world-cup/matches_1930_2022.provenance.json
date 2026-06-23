@@ -1,0 +1,22 @@
+{
+  "sourceName": "Football - FIFA World Cup, 1930 - 2026",
+  "sourceUrl": "https://www.kaggle.com/datasets/piterfm/fifa-football-world-cup",
+  "datasetAuthor": "Petro Ivaniuk",
+  "accessDate": "2026-06-22",
+  "licence": "CC BY-NC-SA 4.0, as displayed by Kaggle metadata; terms require review before redistribution",
+  "attribution": "Petro Ivaniuk, Football - FIFA World Cup dataset on Kaggle",
+  "redistributionStatus": "Raw CSV excluded from Git; redistribution is not approved pending licence and attribution review",
+  "expectedFilename": "matches_1930_2022.csv",
+  "fileSizeBytes": 707938,
+  "sha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+  "rowCount": 964,
+  "yearRange": [1930, 2022],
+  "sourceVersionOrUpdateDate": null,
+  "sourceVersionBasis": "No official dataset version manifest accompanied the local file. The filesystem timestamp is not treated as dataset provenance.",
+  "rawFileModified": false,
+  "notes": [
+    "accessDate is the local validation date, not the unknown original download date.",
+    "The checksum and file size identify the exact unmodified local snapshot validated by the offline adapter.",
+    "Detailed source event columns are preserved as raw strings and are not interpreted by the historical match adapter."
+  ]
+}

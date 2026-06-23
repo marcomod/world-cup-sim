@@ -175,6 +175,17 @@ probabilities until a reviewed calibration result is deliberately adopted:
 8. Consider model/market blending only after independent out-of-sample
    validation.
 
+Current status:
+
+- The confirmed 44-column Kaggle source is parsed by an isolated offline
+  adapter.
+- The raw snapshot is checksum-validated against tracked provenance.
+- All 964 rows, 12 stage labels, and 86 team names validate deterministically.
+- Replay-era non-decisive ties, historical group formats, extra time, and
+  shootouts are preserved explicitly.
+- Brier score, log loss, Elo-divisor comparison, and market comparison remain
+  future work.
+
 The historical dataset and calibration scripts remain outside the runtime app.
 The World Football Elo development snapshot remains the active rating source,
 and the production Elo divisor remains `400` during this foundation work.

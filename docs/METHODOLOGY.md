@@ -116,6 +116,22 @@ imported by the app, React components, or runtime simulator, and adding the
 historical pipeline does not change the active World Football Elo ratings or the
 current divisor of `400`.
 
+The confirmed Kaggle World Cup source adapter validates the unmodified
+`matches_1930_2022.csv` snapshot before normalization. All 44 source columns are
+preserved for diagnostics even though only match identity, teams, stages,
+scores, extra-time notes, and shootout totals feed the normalized record.
+
+Normalized historical outcomes are explicit:
+
+- `decisive` for regulation, extra-time, and penalty-shootout winners.
+- `draw` for valid group-format draws.
+- `non_decisive` for four tied 1934/1938 knockout records from replay-era
+  formats where the source row itself does not identify a winner.
+
+No replay links, neutral-venue values, or 90-minute scores are inferred when the
+source does not provide them. Historical predecessor teams retain separate
+identities rather than being collapsed into modern successor states.
+
 The first evaluation target is the binary knockout winner probability produced
 by the current Elo-difference formula. Group-stage draws are retained in the
 normalized historical dataset for data integrity and later analysis, but they
@@ -130,6 +146,8 @@ Planned evaluation metrics are:
 - Sample size reported with every metric result.
 - Side-by-side comparison of candidate Elo divisors while keeping evaluation
   data and rating inputs fixed.
+
+These metrics are not calculated by the ingestion and validation adapter.
 
 Historical match results alone are not sufficient to calculate these metrics.
 Each observation also needs a contemporaneous pre-match rating difference. The

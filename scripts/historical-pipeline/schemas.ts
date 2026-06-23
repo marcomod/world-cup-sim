@@ -5,6 +5,7 @@ export const HISTORICAL_STAGES = [
   "first_group_stage",
   "second_group_stage",
   "final_group_stage",
+  "group_stage_playoff",
   "round_of_32",
   "round_of_16",
   "quarterfinal",
@@ -15,6 +16,7 @@ export const HISTORICAL_STAGES = [
 
 export type HistoricalStage = (typeof HISTORICAL_STAGES)[number];
 export type HistoricalCalibrationScope = "all_matches" | "knockout_only";
+export type HistoricalOutcomeStatus = "decisive" | "draw" | "non_decisive";
 
 export interface RawHistoricalMatch {
   tournamentYear: number;
@@ -28,12 +30,14 @@ export interface RawHistoricalMatch {
   penalties: boolean;
   homePenaltyGoals?: number;
   awayPenaltyGoals?: number;
-  neutralVenue?: boolean;
+  neutralVenue?: boolean | null;
   sourceMatchId?: string;
+  outcomeStatus?: HistoricalOutcomeStatus;
 }
 
-export interface NormalizedHistoricalMatch {
+interface NormalizedHistoricalMatchBase {
   matchId: string;
+  sourceMatchId?: string;
   tournamentYear: number;
   date: string;
   stage: HistoricalStage;
@@ -45,9 +49,30 @@ export interface NormalizedHistoricalMatch {
   wentToPenalties: boolean;
   teamAPenaltyGoals?: number;
   teamBPenaltyGoals?: number;
-  winnerTeamId: HistoricalTeamId | null;
   source: string;
 }
+
+export interface DecisiveNormalizedHistoricalMatch
+  extends NormalizedHistoricalMatchBase {
+  outcomeStatus: "decisive";
+  winnerTeamId: HistoricalTeamId;
+}
+
+export interface DrawnNormalizedHistoricalMatch extends NormalizedHistoricalMatchBase {
+  outcomeStatus: "draw";
+  winnerTeamId: null;
+}
+
+export interface NonDecisiveNormalizedHistoricalMatch
+  extends NormalizedHistoricalMatchBase {
+  outcomeStatus: "non_decisive";
+  winnerTeamId: null;
+}
+
+export type NormalizedHistoricalMatch =
+  | DecisiveNormalizedHistoricalMatch
+  | DrawnNormalizedHistoricalMatch
+  | NonDecisiveNormalizedHistoricalMatch;
 
 export interface HistoricalDatasetMetadata {
   sourceName: string;

@@ -24,6 +24,8 @@ const STAGES_BY_SOURCE_NAME = new Map<string, HistoricalStage>([
   ["second group stage", "second_group_stage"],
   ["final_group_stage", "final_group_stage"],
   ["final group stage", "final_group_stage"],
+  ["group_stage_playoff", "group_stage_playoff"],
+  ["group stage play-off", "group_stage_playoff"],
   ["round_of_32", "round_of_32"],
   ["round of 32", "round_of_32"],
   ["round_of_16", "round_of_16"],
@@ -87,11 +89,12 @@ function normalizeHistoricalMatch(
   const stage = resolveHistoricalStage(rawMatch.stage);
   const teamAId = resolveHistoricalTeamId(rawMatch.homeTeam, aliasEntries);
   const teamBId = resolveHistoricalTeamId(rawMatch.awayTeam, aliasEntries);
-  const winnerTeamId = resolveWinner(rawMatch, teamAId, teamBId);
+  const outcomeStatus = resolveOutcomeStatus(rawMatch, stage);
+  const winnerTeamId = resolveWinner(rawMatch, teamAId, teamBId, outcomeStatus);
   const matchId = createDeterministicMatchId(rawMatch, source, stage, teamAId, teamBId);
-
-  return {
+  const baseMatch = {
     matchId,
+    ...(rawMatch.sourceMatchId ? { sourceMatchId: rawMatch.sourceMatchId } : {}),
     tournamentYear: rawMatch.tournamentYear,
     date: rawMatch.date,
     stage,
@@ -107,9 +110,18 @@ function normalizeHistoricalMatch(
     ...(rawMatch.awayPenaltyGoals === undefined
       ? {}
       : { teamBPenaltyGoals: rawMatch.awayPenaltyGoals }),
-    winnerTeamId,
     source,
   };
+
+  if (outcomeStatus === "decisive") {
+    if (!winnerTeamId) {
+      throw new Error(`Decisive historical match "${matchId}" does not identify a winner.`);
+    }
+
+    return { ...baseMatch, outcomeStatus, winnerTeamId };
+  }
+
+  return { ...baseMatch, outcomeStatus, winnerTeamId: null };
 }
 
 function resolveHistoricalStage(sourceStage: string): HistoricalStage {
@@ -127,7 +139,12 @@ function resolveWinner(
   match: RawHistoricalMatch,
   teamAId: string,
   teamBId: string,
+  outcomeStatus: RawHistoricalMatch["outcomeStatus"],
 ): string | null {
+  if (outcomeStatus !== "decisive") {
+    return null;
+  }
+
   if (match.penalties) {
     return Number(match.homePenaltyGoals) > Number(match.awayPenaltyGoals)
       ? teamAId
@@ -139,6 +156,21 @@ function resolveWinner(
   }
 
   return match.homeGoals > match.awayGoals ? teamAId : teamBId;
+}
+
+function resolveOutcomeStatus(
+  match: RawHistoricalMatch,
+  stage: HistoricalStage,
+): NonNullable<RawHistoricalMatch["outcomeStatus"]> {
+  if (match.outcomeStatus) {
+    return match.outcomeStatus;
+  }
+
+  if (match.penalties || match.homeGoals !== match.awayGoals) {
+    return "decisive";
+  }
+
+  return isKnockoutHistoricalStage(stage) ? "non_decisive" : "draw";
 }
 
 function createDeterministicMatchId(

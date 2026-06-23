@@ -10,7 +10,7 @@
     "test": "vitest run",
     "ratings:generate": "node --no-warnings --experimental-strip-types scripts/ratings-pipeline/generateRatings.ts",
     "historical:validate": "node --no-warnings --experimental-strip-types scripts/historical-pipeline/validateHistoricalDataset.ts",
-    "historical:test": "vitest run tests/data/historicalPipeline.test.ts"
+    "historical:test": "vitest run tests/data/historicalPipeline.test.ts tests/data/historicalKaggleAdapter.test.ts"
   },
   "dependencies": {
     "next": "16.2.9",

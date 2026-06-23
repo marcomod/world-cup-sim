@@ -249,6 +249,7 @@ describe("historical match normalization and validation", () => {
     );
 
     expect(bySourceId["synthetic-regulation"].winnerTeamId).toBe("bra");
+    expect(bySourceId["synthetic-regulation"].outcomeStatus).toBe("decisive");
     expect(bySourceId["synthetic-extra-time"].winnerTeamId).toBe("west-germany");
     expect(bySourceId["synthetic-penalties"].winnerTeamId).toBe("ger");
     expect(bySourceId["synthetic-penalties"].teamAGoals).toBe(1);
@@ -269,6 +270,7 @@ describe("historical match normalization and validation", () => {
     );
 
     expect(match.winnerTeamId).toBeNull();
+    expect(match.outcomeStatus).toBe("draw");
   });
 
   it("rejects a knockout draw without penalties", () => {
@@ -277,7 +279,7 @@ describe("historical match normalization and validation", () => {
         [createRawMatch({ homeGoals: 1, awayGoals: 1, sourceMatchId: "bad-draw" })],
         { source: SYNTHETIC_SOURCE },
       ),
-    ).toThrow(/cannot finish drawn without penalties/);
+    ).toThrow(/non_decisive.*four allowlisted replay-era ties/);
   });
 
   it("rejects unknown stages and winner inconsistencies", () => {
@@ -298,6 +300,7 @@ describe("historical match normalization and validation", () => {
       teamBGoals: 1,
       wentToExtraTime: false,
       wentToPenalties: false,
+      outcomeStatus: "decisive",
       winnerTeamId: "chi",
       source: SYNTHETIC_SOURCE,
     };
@@ -327,7 +330,12 @@ describe("historical pipeline isolation", () => {
   });
 
   it("is not imported by runtime app, component, or simulator files", async () => {
-    const runtimeFiles = await readFilesUnder(["app", "src/components", "src/lib/simulator"]);
+    const runtimeFiles = await readFilesUnder([
+      "app",
+      "src/components",
+      "src/lib/simulator",
+      "src/data/teamRatingsV2.ts",
+    ]);
     const forbiddenImports = runtimeFiles.filter(
       ({ contents }) =>
         /(?:from\s+|import\s*\()["'][^"']*(?:historical-pipeline|scripts\/calibration)/.test(

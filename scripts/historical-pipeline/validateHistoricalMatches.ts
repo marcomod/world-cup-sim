@@ -3,6 +3,7 @@ import {
   type HistoricalStage,
   type NormalizedHistoricalMatch,
 } from "./schemas.ts";
+import { isAllowlistedReplayEraNonDecisiveMatch } from "./replayEraNonDecisiveMatches.ts";
 
 const GROUP_STAGES = new Set<HistoricalStage>([
   "group_stage",
@@ -83,22 +84,50 @@ function validateHistoricalMatch(match: NormalizedHistoricalMatch): void {
   }
 
   if (isGroupHistoricalStage(match.stage)) {
-    if (match.wentToExtraTime || match.wentToPenalties) {
+    if (match.wentToPenalties) {
       throw new Error(
-        `Group-stage historical match "${match.matchId}" cannot use extra time or penalties.`,
+        `Group-stage historical match "${match.matchId}" cannot use penalties.`,
       );
     }
-  } else if (match.teamAGoals === match.teamBGoals && !match.wentToPenalties) {
-    throw new Error(
-      `Knockout historical match "${match.matchId}" cannot finish drawn without penalties.`,
-    );
   }
 
   const expectedWinner = calculateExpectedWinner(match);
+  validateOutcomeStatus(match, expectedWinner);
+}
 
-  if (match.winnerTeamId !== expectedWinner) {
+function validateOutcomeStatus(
+  match: NormalizedHistoricalMatch,
+  expectedWinner: string | null,
+): void {
+  if (match.outcomeStatus === "decisive") {
+    if (!expectedWinner || match.winnerTeamId !== expectedWinner) {
+      throw new Error(
+        `Historical match "${match.matchId}" has winnerTeamId "${match.winnerTeamId}" but its score implies "${expectedWinner}".`,
+      );
+    }
+
+    return;
+  }
+
+  if (expectedWinner !== null || match.winnerTeamId !== null) {
     throw new Error(
-      `Historical match "${match.matchId}" has winnerTeamId "${match.winnerTeamId}" but its score implies "${expectedWinner}".`,
+      `Historical match "${match.matchId}" uses outcomeStatus "${match.outcomeStatus}" but its score is decisive.`,
+    );
+  }
+
+  if (match.outcomeStatus === "draw") {
+    if (!isGroupHistoricalStage(match.stage)) {
+      throw new Error(
+        `Historical match "${match.matchId}" can use outcomeStatus "draw" only in a group-format stage.`,
+      );
+    }
+
+    return;
+  }
+
+  if (!isAllowlistedReplayEraNonDecisiveMatch(match)) {
+    throw new Error(
+      `Historical match "${match.matchId}" can use outcomeStatus "non_decisive" only when its exact source key is one of the four allowlisted replay-era ties.`,
     );
   }
 }
