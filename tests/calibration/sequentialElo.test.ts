@@ -146,6 +146,23 @@ describe("sequential Elo expected score", () => {
     expect(strongHome + weakHome).toBeCloseTo(1, 15);
   });
 
+  it("keeps opposing Number.MAX_VALUE ratings inside probability bounds", () => {
+    const strongHome = calculateHistoricalEloExpectedScore({
+      homeRating: Number.MAX_VALUE,
+      awayRating: -Number.MAX_VALUE,
+      divisor: 400,
+    });
+    const weakHome = calculateHistoricalEloExpectedScore({
+      homeRating: -Number.MAX_VALUE,
+      awayRating: Number.MAX_VALUE,
+      divisor: 400,
+    });
+
+    expect(strongHome).toBe(1 - Number.EPSILON);
+    expect(weakHome).toBe(Number.EPSILON);
+    expect(strongHome + weakHome).toBeCloseTo(1, 15);
+  });
+
   it("retains the standard formula for ordinary rating differences", () => {
     const expected = 1 / (1 + 10 ** ((1500 - 1600) / 400));
 

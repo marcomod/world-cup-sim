@@ -1,0 +1,331 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "evaluationModelVersion": "historical-elo-evaluation-v1",
+  "results": [
+    {
+      "cohort": "all_matches",
+      "split": "development",
+      "selectedSampleSize": 708,
+      "scoredSampleSize": 551,
+      "excludedFromBinaryScoring": 157,
+      "metrics": {
+        "sampleSize": 551,
+        "brierScore": 0.223065,
+        "logLoss": 0.637322,
+        "accuracy": 0.651543,
+        "meanPredictedProbability": 0.53047,
+        "observedHomeWinRate": 0.77314
+      }
+    },
+    {
+      "cohort": "all_matches",
+      "split": "validation",
+      "selectedSampleSize": 192,
+      "scoredSampleSize": 150,
+      "excludedFromBinaryScoring": 42,
+      "metrics": {
+        "sampleSize": 150,
+        "brierScore": 0.223088,
+        "logLoss": 0.63731,
+        "accuracy": 0.626667,
+        "meanPredictedProbability": 0.525477,
+        "observedHomeWinRate": 0.513333
+      }
+    },
+    {
+      "cohort": "all_matches",
+      "split": "holdout",
+      "selectedSampleSize": 64,
+      "scoredSampleSize": 49,
+      "excludedFromBinaryScoring": 15,
+      "metrics": {
+        "sampleSize": 49,
+        "brierScore": 0.223529,
+        "logLoss": 0.642894,
+        "accuracy": 0.734694,
+        "meanPredictedProbability": 0.542938,
+        "observedHomeWinRate": 0.591837
+      }
+    },
+    {
+      "cohort": "all_matches",
+      "split": "full_history",
+      "selectedSampleSize": 964,
+      "scoredSampleSize": 750,
+      "excludedFromBinaryScoring": 214,
+      "metrics": {
+        "sampleSize": 750,
+        "brierScore": 0.2231,
+        "logLoss": 0.637684,
+        "accuracy": 0.652,
+        "meanPredictedProbability": 0.530286,
+        "observedHomeWinRate": 0.709333
+      }
+    },
+    {
+      "cohort": "knockout_only",
+      "split": "development",
+      "selectedSampleSize": 187,
+      "scoredSampleSize": 163,
+      "excludedFromBinaryScoring": 24,
+      "metrics": {
+        "sampleSize": 163,
+        "brierScore": 0.224077,
+        "logLoss": 0.639269,
+        "accuracy": 0.607362,
+        "meanPredictedProbability": 0.531478,
+        "observedHomeWinRate": 0.797546
+      }
+    },
+    {
+      "cohort": "knockout_only",
+      "split": "validation",
+      "selectedSampleSize": 48,
+      "scoredSampleSize": 38,
+      "excludedFromBinaryScoring": 10,
+      "metrics": {
+        "sampleSize": 38,
+        "brierScore": 0.204254,
+        "logLoss": 0.597383,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.55412,
+        "observedHomeWinRate": 0.657895
+      }
+    },
+    {
+      "cohort": "knockout_only",
+      "split": "holdout",
+      "selectedSampleSize": 16,
+      "scoredSampleSize": 11,
+      "excludedFromBinaryScoring": 5,
+      "metrics": {
+        "sampleSize": 11,
+        "brierScore": 0.150217,
+        "logLoss": 0.482112,
+        "accuracy": 0.909091,
+        "meanPredictedProbability": 0.611777,
+        "observedHomeWinRate": 0.909091
+      }
+    },
+    {
+      "cohort": "knockout_only",
+      "split": "full_history",
+      "selectedSampleSize": 251,
+      "scoredSampleSize": 212,
+      "excludedFromBinaryScoring": 39,
+      "metrics": {
+        "sampleSize": 212,
+        "brierScore": 0.216691,
+        "logLoss": 0.623606,
+        "accuracy": 0.641509,
+        "meanPredictedProbability": 0.539703,
+        "observedHomeWinRate": 0.778302
+      }
+    },
+    {
+      "cohort": "decisive_only",
+      "split": "development",
+      "selectedSampleSize": 551,
+      "scoredSampleSize": 551,
+      "excludedFromBinaryScoring": 0,
+      "metrics": {
+        "sampleSize": 551,
+        "brierScore": 0.223065,
+        "logLoss": 0.637322,
+        "accuracy": 0.651543,
+        "meanPredictedProbability": 0.53047,
+        "observedHomeWinRate": 0.77314
+      }
+    },
+    {
+      "cohort": "decisive_only",
+      "split": "validation",
+      "selectedSampleSize": 150,
+      "scoredSampleSize": 150,
+      "excludedFromBinaryScoring": 0,
+      "metrics": {
+        "sampleSize": 150,
+        "brierScore": 0.223088,
+        "logLoss": 0.63731,
+        "accuracy": 0.626667,
+        "meanPredictedProbability": 0.525477,
+        "observedHomeWinRate": 0.513333
+      }
+    },
+    {
+      "cohort": "decisive_only",
+      "split": "holdout",
+      "selectedSampleSize": 49,
+      "scoredSampleSize": 49,
+      "excludedFromBinaryScoring": 0,
+      "metrics": {
+        "sampleSize": 49,
+        "brierScore": 0.223529,
+        "logLoss": 0.642894,
+        "accuracy": 0.734694,
+        "meanPredictedProbability": 0.542938,
+        "observedHomeWinRate": 0.591837
+      }
+    },
+    {
+      "cohort": "decisive_only",
+      "split": "full_history",
+      "selectedSampleSize": 750,
+      "scoredSampleSize": 750,
+      "excludedFromBinaryScoring": 0,
+      "metrics": {
+        "sampleSize": 750,
+        "brierScore": 0.2231,
+        "logLoss": 0.637684,
+        "accuracy": 0.652,
+        "meanPredictedProbability": 0.530286,
+        "observedHomeWinRate": 0.709333
+      }
+    },
+    {
+      "cohort": "knockout_decisive_only",
+      "split": "development",
+      "selectedSampleSize": 163,
+      "scoredSampleSize": 163,
+      "excludedFromBinaryScoring": 0,
+      "metrics": {
+        "sampleSize": 163,
+        "brierScore": 0.224077,
+        "logLoss": 0.639269,
+        "accuracy": 0.607362,
+        "meanPredictedProbability": 0.531478,
+        "observedHomeWinRate": 0.797546
+      }
+    },
+    {
+      "cohort": "knockout_decisive_only",
+      "split": "validation",
+      "selectedSampleSize": 38,
+      "scoredSampleSize": 38,
+      "excludedFromBinaryScoring": 0,
+      "metrics": {
+        "sampleSize": 38,
+        "brierScore": 0.204254,
+        "logLoss": 0.597383,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.55412,
+        "observedHomeWinRate": 0.657895
+      }
+    },
+    {
+      "cohort": "knockout_decisive_only",
+      "split": "holdout",
+      "selectedSampleSize": 11,
+      "scoredSampleSize": 11,
+      "excludedFromBinaryScoring": 0,
+      "metrics": {
+        "sampleSize": 11,
+        "brierScore": 0.150217,
+        "logLoss": 0.482112,
+        "accuracy": 0.909091,
+        "meanPredictedProbability": 0.611777,
+        "observedHomeWinRate": 0.909091
+      }
+    },
+    {
+      "cohort": "knockout_decisive_only",
+      "split": "full_history",
+      "selectedSampleSize": 212,
+      "scoredSampleSize": 212,
+      "excludedFromBinaryScoring": 0,
+      "metrics": {
+        "sampleSize": 212,
+        "brierScore": 0.216691,
+        "logLoss": 0.623606,
+        "accuracy": 0.641509,
+        "meanPredictedProbability": 0.539703,
+        "observedHomeWinRate": 0.778302
+      }
+    },
+    {
+      "cohort": "penalties_only",
+      "split": "development",
+      "selectedSampleSize": 20,
+      "scoredSampleSize": 0,
+      "excludedFromBinaryScoring": 20,
+      "metrics": null
+    },
+    {
+      "cohort": "penalties_only",
+      "split": "validation",
+      "selectedSampleSize": 10,
+      "scoredSampleSize": 0,
+      "excludedFromBinaryScoring": 10,
+      "metrics": null
+    },
+    {
+      "cohort": "penalties_only",
+      "split": "holdout",
+      "selectedSampleSize": 5,
+      "scoredSampleSize": 0,
+      "excludedFromBinaryScoring": 5,
+      "metrics": null
+    },
+    {
+      "cohort": "penalties_only",
+      "split": "full_history",
+      "selectedSampleSize": 35,
+      "scoredSampleSize": 0,
+      "excludedFromBinaryScoring": 35,
+      "metrics": null
+    },
+    {
+      "cohort": "extra_time_only",
+      "split": "development",
+      "selectedSampleSize": 51,
+      "scoredSampleSize": 25,
+      "excludedFromBinaryScoring": 26,
+      "metrics": {
+        "sampleSize": 25,
+        "brierScore": 0.247132,
+        "logLoss": 0.689804,
+        "accuracy": 0.52,
+        "meanPredictedProbability": 0.512161,
+        "observedHomeWinRate": 0.76
+      }
+    },
+    {
+      "cohort": "extra_time_only",
+      "split": "validation",
+      "selectedSampleSize": 17,
+      "scoredSampleSize": 7,
+      "excludedFromBinaryScoring": 10,
+      "metrics": {
+        "sampleSize": 7,
+        "brierScore": 0.188635,
+        "logLoss": 0.564491,
+        "accuracy": 0.714286,
+        "meanPredictedProbability": 0.560541,
+        "observedHomeWinRate": 0.714286
+      }
+    },
+    {
+      "cohort": "extra_time_only",
+      "split": "holdout",
+      "selectedSampleSize": 5,
+      "scoredSampleSize": 0,
+      "excludedFromBinaryScoring": 5,
+      "metrics": null
+    },
+    {
+      "cohort": "extra_time_only",
+      "split": "full_history",
+      "selectedSampleSize": 73,
+      "scoredSampleSize": 32,
+      "excludedFromBinaryScoring": 41,
+      "metrics": {
+        "sampleSize": 32,
+        "brierScore": 0.234335,
+        "logLoss": 0.662392,
+        "accuracy": 0.5625,
+        "meanPredictedProbability": 0.522744,
+        "observedHomeWinRate": 0.75
+      }
+    }
+  ]
+}

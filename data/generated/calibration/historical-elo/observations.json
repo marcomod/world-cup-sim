@@ -15,6 +15,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -30,6 +31,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -45,6 +47,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rou",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -60,6 +63,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -75,6 +79,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -90,6 +95,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -105,6 +111,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -120,6 +127,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -135,6 +143,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -150,6 +159,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -165,6 +175,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -180,6 +191,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -195,6 +207,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "par",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -210,6 +223,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -225,6 +239,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -240,6 +255,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -255,6 +271,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -270,6 +287,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -285,6 +303,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -300,6 +319,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -315,6 +335,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -330,6 +351,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -345,6 +367,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -360,6 +383,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -375,6 +399,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -390,6 +415,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -405,6 +431,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -420,6 +447,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -435,6 +463,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -450,6 +479,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "non_decisive",
       "winnerTeamId": null,
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -465,6 +495,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -480,6 +511,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -495,6 +527,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -510,6 +543,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -525,6 +559,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -540,6 +575,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "non_decisive",
       "winnerTeamId": null,
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -555,6 +591,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -570,6 +607,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "non_decisive",
       "winnerTeamId": null,
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -585,6 +623,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -600,6 +639,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -615,6 +655,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -630,6 +671,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -645,6 +687,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cub",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -660,6 +703,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -675,6 +719,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "non_decisive",
       "winnerTeamId": null,
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -690,6 +735,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -705,6 +751,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -720,6 +767,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -735,6 +783,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -750,6 +799,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -765,6 +815,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -780,6 +831,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -795,6 +847,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -810,6 +863,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -825,6 +879,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -840,6 +895,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -855,6 +911,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -870,6 +927,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -885,6 +943,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -900,6 +959,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -915,6 +975,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -930,6 +991,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -945,6 +1007,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -960,6 +1023,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -975,6 +1039,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -990,6 +1055,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1005,6 +1071,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1020,6 +1087,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1035,6 +1103,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1050,6 +1119,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1065,6 +1135,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1080,6 +1151,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1095,6 +1167,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1110,6 +1183,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1125,6 +1199,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1140,6 +1215,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1155,6 +1231,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1170,6 +1247,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1185,6 +1263,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1200,6 +1279,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -1215,6 +1295,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1230,6 +1311,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1245,6 +1327,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1260,6 +1343,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1275,6 +1359,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -1290,6 +1375,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1305,6 +1391,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1320,6 +1407,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1335,6 +1423,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1350,6 +1439,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1365,6 +1455,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "tur",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1380,6 +1471,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1395,6 +1487,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1410,6 +1503,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1425,6 +1519,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1440,6 +1535,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1455,6 +1551,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1470,6 +1567,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1485,6 +1583,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -1500,6 +1599,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1515,6 +1615,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1530,6 +1631,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1545,6 +1647,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1560,6 +1663,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1575,6 +1679,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1590,6 +1695,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nir",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1605,6 +1711,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1620,6 +1727,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1635,6 +1743,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1650,6 +1759,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1665,6 +1775,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1680,6 +1791,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1695,6 +1807,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "par",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1710,6 +1823,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1725,6 +1839,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1740,6 +1855,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1755,6 +1871,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1770,6 +1887,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1785,6 +1903,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1800,6 +1919,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1815,6 +1935,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1830,6 +1951,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1845,6 +1967,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1860,6 +1983,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1875,6 +1999,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1890,6 +2015,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nir",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -1905,6 +2031,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1920,6 +2047,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "wal",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1935,6 +2063,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1950,6 +2079,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1965,6 +2095,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1980,6 +2111,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -1995,6 +2127,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2010,6 +2143,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2025,6 +2159,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2040,6 +2175,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2055,6 +2191,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2070,6 +2207,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2085,6 +2223,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2100,6 +2239,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2115,6 +2255,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2130,6 +2271,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2145,6 +2287,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2160,6 +2303,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2175,6 +2319,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2190,6 +2335,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2205,6 +2351,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2220,6 +2367,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2235,6 +2383,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2250,6 +2399,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2265,6 +2415,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2280,6 +2431,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2295,6 +2447,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2310,6 +2463,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2325,6 +2479,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2340,6 +2495,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2355,6 +2511,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2370,6 +2527,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2385,6 +2543,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2400,6 +2559,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2415,6 +2575,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2430,6 +2591,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2445,6 +2607,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2460,6 +2623,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2475,6 +2639,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2490,6 +2655,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2505,6 +2671,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2520,6 +2687,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2535,6 +2703,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2550,6 +2719,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2565,6 +2735,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2580,6 +2751,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2595,6 +2767,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2610,6 +2783,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2625,6 +2799,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2640,6 +2815,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2655,6 +2831,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2670,6 +2847,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2685,6 +2863,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2700,6 +2879,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2715,6 +2895,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2730,6 +2911,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2745,6 +2927,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2760,6 +2943,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2775,6 +2959,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2790,6 +2975,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "prk",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2805,6 +2991,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2820,6 +3007,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2835,6 +3023,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2850,6 +3039,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2865,6 +3055,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2880,6 +3071,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2895,6 +3087,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2910,6 +3103,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2925,6 +3119,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2940,6 +3135,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2955,6 +3151,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2970,6 +3167,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -2985,6 +3183,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3000,6 +3199,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -3015,6 +3215,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3030,6 +3231,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3045,6 +3247,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "per",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3060,6 +3263,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3075,6 +3279,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3090,6 +3295,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3105,6 +3311,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3120,6 +3327,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3135,6 +3343,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "per",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3150,6 +3359,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rou",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3165,6 +3375,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3180,6 +3391,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3195,6 +3407,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3210,6 +3423,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3225,6 +3439,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3240,6 +3455,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3255,6 +3471,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3270,6 +3487,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3285,6 +3503,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3300,6 +3519,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3315,6 +3535,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3330,6 +3551,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3345,6 +3567,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3360,6 +3583,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3375,6 +3599,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3390,6 +3615,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3405,6 +3631,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -3420,6 +3647,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -3435,6 +3663,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3450,6 +3679,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -3465,6 +3695,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3480,6 +3711,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3495,6 +3727,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3510,6 +3743,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "germany-dr",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3525,6 +3759,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3540,6 +3775,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sco",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3555,6 +3791,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3570,6 +3807,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3585,6 +3823,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3600,6 +3839,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3615,6 +3855,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3630,6 +3871,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3645,6 +3887,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3660,6 +3903,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3675,6 +3919,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3690,6 +3935,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3705,6 +3951,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3720,6 +3967,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3735,6 +3983,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3750,6 +3999,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "germany-dr",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3765,6 +4015,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3780,6 +4031,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3795,6 +4047,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3810,6 +4063,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3825,6 +4079,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3840,6 +4095,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3855,6 +4111,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3870,6 +4127,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3885,6 +4143,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3900,6 +4159,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3915,6 +4175,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3930,6 +4191,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3945,6 +4207,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3960,6 +4223,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3975,6 +4239,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -3990,6 +4255,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4005,6 +4271,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4020,6 +4287,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4035,6 +4303,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4050,6 +4319,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4065,6 +4335,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4080,6 +4351,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4095,6 +4367,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4110,6 +4383,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "tun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4125,6 +4399,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4140,6 +4415,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4155,6 +4431,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "per",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4170,6 +4447,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4185,6 +4463,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4200,6 +4479,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4215,6 +4495,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4230,6 +4511,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4245,6 +4527,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4260,6 +4543,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4275,6 +4559,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4290,6 +4575,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4305,6 +4591,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4320,6 +4607,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4335,6 +4623,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4350,6 +4639,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4365,6 +4655,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4380,6 +4671,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "per",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4395,6 +4687,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sco",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4410,6 +4703,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4425,6 +4719,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4440,6 +4735,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4455,6 +4751,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4470,6 +4767,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4485,6 +4783,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4500,6 +4799,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4515,6 +4815,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4530,6 +4831,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4545,6 +4847,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4560,6 +4863,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4575,6 +4879,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4590,6 +4895,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4605,6 +4911,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4620,6 +4927,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -4635,6 +4943,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4650,6 +4959,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4665,6 +4975,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4680,6 +4991,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4695,6 +5007,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4710,6 +5023,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sco",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4725,6 +5039,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4740,6 +5055,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4755,6 +5071,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "alg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4770,6 +5087,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4785,6 +5103,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4800,6 +5119,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4815,6 +5135,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4830,6 +5151,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4845,6 +5167,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4860,6 +5183,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4875,6 +5199,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4890,6 +5215,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4905,6 +5231,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4920,6 +5247,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4935,6 +5263,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4950,6 +5279,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4965,6 +5295,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4980,6 +5311,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -4995,6 +5327,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5010,6 +5343,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5025,6 +5359,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5040,6 +5375,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5055,6 +5391,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5070,6 +5407,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5085,6 +5423,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "alg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5100,6 +5439,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5115,6 +5455,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5130,6 +5471,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5145,6 +5487,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nir",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5160,6 +5503,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5175,6 +5519,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5190,6 +5535,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5205,6 +5551,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5220,6 +5567,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5235,6 +5583,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5250,6 +5599,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5265,6 +5615,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5280,6 +5631,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5295,6 +5647,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5310,6 +5663,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5325,6 +5679,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5340,6 +5695,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5355,6 +5711,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5370,6 +5727,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -5385,6 +5743,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5400,6 +5759,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5415,6 +5775,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5430,6 +5791,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5445,6 +5807,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5460,6 +5823,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5475,6 +5839,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5490,6 +5855,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5505,6 +5871,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5520,6 +5887,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5535,6 +5903,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5550,6 +5919,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "par",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5565,6 +5935,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5580,6 +5951,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5595,6 +5967,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5610,6 +5983,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5625,6 +5999,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5640,6 +6015,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5655,6 +6031,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5670,6 +6047,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "hun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5685,6 +6063,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5700,6 +6079,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5715,6 +6095,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5730,6 +6111,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5745,6 +6127,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5760,6 +6143,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5775,6 +6159,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5790,6 +6175,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5805,6 +6191,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5820,6 +6207,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5835,6 +6223,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5850,6 +6239,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5865,6 +6255,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5880,6 +6271,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mar",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5895,6 +6287,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5910,6 +6303,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5925,6 +6319,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5940,6 +6335,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5955,6 +6351,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -5970,6 +6367,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -5985,6 +6383,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6000,6 +6399,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6015,6 +6415,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6030,6 +6431,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6045,6 +6447,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6060,6 +6463,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6075,6 +6479,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -6090,6 +6495,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -6105,6 +6511,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6120,6 +6527,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -6135,6 +6543,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6150,6 +6559,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6165,6 +6575,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -6180,6 +6591,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6195,6 +6607,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cmr",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6210,6 +6623,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6225,6 +6639,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rou",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6240,6 +6655,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6255,6 +6671,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6270,6 +6687,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6285,6 +6703,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6300,6 +6719,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "crc",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6315,6 +6735,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6330,6 +6751,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6345,6 +6767,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6360,6 +6783,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6375,6 +6799,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6390,6 +6815,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cmr",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6405,6 +6831,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6420,6 +6847,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6435,6 +6863,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6450,6 +6879,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6465,6 +6895,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6480,6 +6911,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6495,6 +6927,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sco",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6510,6 +6943,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6525,6 +6959,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6540,6 +6975,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6555,6 +6991,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6570,6 +7007,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "soviet-union",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6585,6 +7023,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aut",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6600,6 +7039,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6615,6 +7055,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6630,6 +7071,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6645,6 +7087,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6660,6 +7103,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "crc",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6675,6 +7119,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6690,6 +7135,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6705,6 +7151,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6720,6 +7167,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6735,6 +7183,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cmr",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -6750,6 +7199,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "czechoslovakia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6765,6 +7215,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6780,6 +7231,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6795,6 +7247,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6810,6 +7263,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "irl",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -6825,6 +7279,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -6840,6 +7295,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "yugoslavia",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -6855,6 +7311,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6870,6 +7327,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -6885,6 +7343,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -6900,6 +7359,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6915,6 +7375,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -6930,6 +7391,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -6945,6 +7407,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6960,6 +7423,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "west-germany",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6975,6 +7439,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -6990,6 +7455,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7005,6 +7471,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rou",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7020,6 +7487,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "irl",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7035,6 +7503,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7050,6 +7519,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7065,6 +7535,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7080,6 +7551,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nor",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7095,6 +7567,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7110,6 +7583,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7125,6 +7599,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7140,6 +7615,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7155,6 +7631,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nga",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7170,6 +7647,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7185,6 +7663,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7200,6 +7679,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7215,6 +7695,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7230,6 +7711,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7245,6 +7727,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7260,6 +7743,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7275,6 +7759,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7290,6 +7775,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7305,6 +7791,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ksa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7320,6 +7807,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bul",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7335,6 +7823,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7350,6 +7839,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rou",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7365,6 +7855,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7380,6 +7871,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7395,6 +7887,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7410,6 +7903,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7425,6 +7919,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7440,6 +7935,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rus",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7455,6 +7951,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ksa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7470,6 +7967,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7485,6 +7983,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bul",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7500,6 +7999,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nga",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7515,6 +8015,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7530,6 +8031,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7545,6 +8047,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rou",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7560,6 +8063,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7575,6 +8079,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7590,6 +8095,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7605,6 +8111,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bul",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -7620,6 +8127,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -7635,6 +8143,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7650,6 +8159,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7665,6 +8175,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bul",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7680,6 +8191,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -7695,6 +8207,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7710,6 +8223,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7725,6 +8239,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7740,6 +8255,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -7755,6 +8271,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7770,6 +8287,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7785,6 +8303,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7800,6 +8319,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7815,6 +8335,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7830,6 +8351,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7845,6 +8367,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7860,6 +8383,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7875,6 +8399,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7890,6 +8415,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nga",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7905,6 +8431,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7920,6 +8447,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fr-yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7935,6 +8463,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7950,6 +8479,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7965,6 +8495,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7980,6 +8511,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rou",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -7995,6 +8527,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8010,6 +8543,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8025,6 +8559,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8040,6 +8575,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8055,6 +8591,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8070,6 +8607,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8085,6 +8623,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nga",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8100,6 +8639,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8115,6 +8655,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8130,6 +8671,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8145,6 +8687,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8160,6 +8703,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8175,6 +8719,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8190,6 +8735,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "irn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8205,6 +8751,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8220,6 +8767,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rou",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8235,6 +8783,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nor",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8250,6 +8799,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8265,6 +8815,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8280,6 +8831,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mar",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8295,6 +8847,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8310,6 +8863,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "par",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8325,6 +8879,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8340,6 +8895,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8355,6 +8911,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8370,6 +8927,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8385,6 +8943,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8400,6 +8959,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fr-yugoslavia",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8415,6 +8975,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8430,6 +8991,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8445,6 +9007,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "jam",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8460,6 +9023,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8475,6 +9039,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8490,6 +9055,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8505,6 +9071,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -8520,6 +9087,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8535,6 +9103,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8550,6 +9119,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8565,6 +9135,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -8580,6 +9151,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8595,6 +9167,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8610,6 +9183,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -8625,6 +9199,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8640,6 +9215,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8655,6 +9231,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -8670,6 +9247,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8685,6 +9263,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8700,6 +9279,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8715,6 +9295,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sen",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8730,6 +9311,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8745,6 +9327,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8760,6 +9343,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8775,6 +9359,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8790,6 +9375,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8805,6 +9391,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8820,6 +9407,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8835,6 +9423,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8850,6 +9439,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8865,6 +9455,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8880,6 +9471,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "crc",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8895,6 +9487,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8910,6 +9503,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "kor",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8925,6 +9519,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8940,6 +9535,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rus",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8955,6 +9551,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8970,6 +9567,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cmr",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -8985,6 +9583,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9000,6 +9599,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9015,6 +9615,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9030,6 +9631,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9045,6 +9647,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9060,6 +9663,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9075,6 +9679,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9090,6 +9695,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rsa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9105,6 +9711,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9120,6 +9727,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "jpn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9135,6 +9743,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9150,6 +9759,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9165,6 +9775,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9180,6 +9791,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9195,6 +9807,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9210,6 +9823,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9225,6 +9839,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "irl",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9240,6 +9855,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9255,6 +9871,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9270,6 +9887,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "par",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9285,6 +9903,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9300,6 +9919,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9315,6 +9935,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9330,6 +9951,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ecu",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9345,6 +9967,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9360,6 +9983,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "tur",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9375,6 +9999,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9390,6 +10015,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9405,6 +10031,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "kor",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9420,6 +10047,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "jpn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9435,6 +10063,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9450,6 +10079,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9465,6 +10095,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -9480,6 +10111,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sen",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -9495,6 +10127,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9510,6 +10143,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9525,6 +10159,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "tur",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9540,6 +10175,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "kor",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -9555,6 +10191,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9570,6 +10207,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9585,6 +10223,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "tur",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -9600,6 +10239,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "kor",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -9615,6 +10255,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9630,6 +10271,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9645,6 +10287,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "tur",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9660,6 +10303,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9675,6 +10319,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9690,6 +10335,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ecu",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9705,6 +10351,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9720,6 +10367,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9735,6 +10383,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9750,6 +10399,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9765,6 +10415,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9780,6 +10431,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9795,6 +10447,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aus",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9810,6 +10463,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9825,6 +10479,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cze",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9840,6 +10495,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9855,6 +10511,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9870,6 +10527,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "kor",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9885,6 +10543,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9900,6 +10559,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9915,6 +10575,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9930,6 +10591,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ecu",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9945,6 +10607,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9960,6 +10623,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9975,6 +10639,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -9990,6 +10655,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10005,6 +10671,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10020,6 +10687,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "gha",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10035,6 +10703,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10050,6 +10719,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10065,6 +10735,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10080,6 +10751,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10095,6 +10767,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10110,6 +10783,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ukr",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10125,6 +10799,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10140,6 +10815,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10155,6 +10831,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10170,6 +10847,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10185,6 +10863,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "par",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10200,6 +10879,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10215,6 +10895,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "civ",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10230,6 +10911,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10245,6 +10927,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10260,6 +10943,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10275,6 +10959,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10290,6 +10975,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10305,6 +10991,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "gha",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10320,6 +11007,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10335,6 +11023,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10350,6 +11039,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10365,6 +11055,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10380,6 +11071,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ukr",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10395,6 +11087,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -10410,6 +11103,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10425,6 +11119,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10440,6 +11135,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10455,6 +11151,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10470,6 +11167,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ukr",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -10485,6 +11183,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10500,6 +11199,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10515,6 +11215,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -10530,6 +11231,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10545,6 +11247,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10560,6 +11263,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -10575,6 +11279,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -10590,6 +11295,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10605,6 +11311,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10620,6 +11327,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -10635,6 +11343,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10650,6 +11359,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10665,6 +11375,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10680,6 +11391,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10695,6 +11407,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "kor",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10710,6 +11423,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "svn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10725,6 +11439,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10740,6 +11455,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "gha",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10755,6 +11471,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10770,6 +11487,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "jpn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10785,6 +11503,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10800,6 +11519,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10815,6 +11535,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10830,6 +11551,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10845,6 +11567,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10860,6 +11583,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10875,6 +11599,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10890,6 +11615,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10905,6 +11631,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10920,6 +11647,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "gre",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10935,6 +11663,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10950,6 +11679,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "srb",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10965,6 +11695,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10980,6 +11711,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -10995,6 +11727,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11010,6 +11743,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11025,6 +11759,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11040,6 +11775,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11055,6 +11791,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "par",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11070,6 +11807,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11085,6 +11823,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11100,6 +11839,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11115,6 +11855,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rsa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11130,6 +11871,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11145,6 +11887,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11160,6 +11903,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11175,6 +11919,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aus",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11190,6 +11935,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11205,6 +11951,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11220,6 +11967,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11235,6 +11983,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11250,6 +11999,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "jpn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11265,6 +12015,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11280,6 +12031,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "svk",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11295,6 +12047,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11310,6 +12063,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "civ",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11325,6 +12079,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11340,6 +12095,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11355,6 +12111,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "gha",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -11370,6 +12127,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11385,6 +12143,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11400,6 +12159,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11415,6 +12175,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11430,6 +12191,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11445,6 +12207,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "par",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -11460,6 +12223,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11475,6 +12239,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11490,6 +12255,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -11505,6 +12271,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11520,6 +12287,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11535,6 +12303,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11550,6 +12319,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11565,6 +12335,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11580,6 +12351,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -11595,6 +12367,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11610,6 +12383,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11625,6 +12399,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11640,6 +12415,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11655,6 +12431,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11670,6 +12447,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "civ",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11685,6 +12463,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ita",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11700,6 +12479,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "crc",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11715,6 +12495,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11730,6 +12511,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11745,6 +12527,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11760,6 +12543,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11775,6 +12559,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11790,6 +12575,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11805,6 +12591,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11820,6 +12607,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11835,6 +12623,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11850,6 +12639,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11865,6 +12655,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11880,6 +12671,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "chi",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11895,6 +12687,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11910,6 +12703,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11925,6 +12719,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11940,6 +12735,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ecu",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11955,6 +12751,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "crc",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11970,6 +12767,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -11985,6 +12783,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12000,6 +12799,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12015,6 +12815,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nga",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12030,6 +12831,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12045,6 +12847,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "alg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12060,6 +12863,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12075,6 +12879,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12090,6 +12895,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12105,6 +12911,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12120,6 +12927,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12135,6 +12943,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12150,6 +12959,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "gre",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12165,6 +12975,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12180,6 +12991,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12195,6 +13007,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bih",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12210,6 +13023,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12225,6 +13039,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12240,6 +13055,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12255,6 +13071,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12270,6 +13087,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12285,6 +13103,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12300,6 +13119,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12315,6 +13135,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -12330,6 +13151,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12345,6 +13167,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "crc",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -12360,6 +13183,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12375,6 +13199,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12390,6 +13215,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -12405,6 +13231,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -12420,6 +13247,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -12435,6 +13263,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12450,6 +13279,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12465,6 +13295,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12480,6 +13311,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -12495,6 +13327,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12510,6 +13343,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -12525,6 +13359,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12540,6 +13375,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -12555,6 +13391,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rus",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12570,6 +13407,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12585,6 +13423,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "irn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12600,6 +13439,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12615,6 +13455,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12630,6 +13471,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12645,6 +13487,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12660,6 +13503,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "den",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12675,6 +13519,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12690,6 +13535,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "srb",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12705,6 +13551,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12720,6 +13567,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12735,6 +13583,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12750,6 +13599,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12765,6 +13615,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "jpn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12780,6 +13631,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sen",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12795,6 +13647,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rus",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12810,6 +13663,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12825,6 +13679,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12840,6 +13695,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12855,6 +13711,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12870,6 +13727,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12885,6 +13743,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12900,6 +13759,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12915,6 +13775,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "nga",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12930,6 +13791,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12945,6 +13807,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12960,6 +13823,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12975,6 +13839,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -12990,6 +13855,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13005,6 +13871,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13020,6 +13887,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13035,6 +13903,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13050,6 +13919,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ksa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13065,6 +13935,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13080,6 +13951,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13095,6 +13967,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "per",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13110,6 +13983,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13125,6 +13999,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13140,6 +14015,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13155,6 +14031,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "kor",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13170,6 +14047,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13185,6 +14063,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13200,6 +14079,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13215,6 +14095,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13230,6 +14111,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13245,6 +14127,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "tun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13260,6 +14143,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "col",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13275,6 +14159,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13290,6 +14175,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13305,6 +14191,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -13320,6 +14207,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "rus",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -13335,6 +14223,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13350,6 +14239,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13365,6 +14255,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -13380,6 +14271,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "swe",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13395,6 +14287,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13410,6 +14303,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13425,6 +14319,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -13440,6 +14335,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13455,6 +14351,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13470,6 +14367,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": true,
       "decidedByPenalties": false
     },
     {
@@ -13485,6 +14383,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13500,6 +14399,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13515,6 +14415,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ecu",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13530,6 +14431,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13545,6 +14447,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13560,6 +14463,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13575,6 +14479,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ksa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13590,6 +14495,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13605,6 +14511,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13620,6 +14527,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13635,6 +14543,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bel",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13650,6 +14559,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "jpn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13665,6 +14575,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13680,6 +14591,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "esp",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13695,6 +14607,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13710,6 +14623,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13725,6 +14639,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13740,6 +14655,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13755,6 +14671,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13770,6 +14687,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13785,6 +14703,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sen",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13800,6 +14719,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "irn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13815,6 +14735,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13830,6 +14751,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13845,6 +14767,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "pol",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13860,6 +14783,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aus",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13875,6 +14799,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mar",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13890,6 +14815,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13905,6 +14831,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "crc",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13920,6 +14847,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13935,6 +14863,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13950,6 +14879,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13965,6 +14895,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "gha",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13980,6 +14911,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -13995,6 +14927,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sen",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14010,6 +14943,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "usa",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14025,6 +14959,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14040,6 +14975,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14055,6 +14991,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "aus",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14070,6 +15007,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14085,6 +15023,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mex",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14100,6 +15039,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "tun",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14115,6 +15055,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mar",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14130,6 +15071,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ger",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14145,6 +15087,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "draw",
       "winnerTeamId": null,
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14160,6 +15103,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "jpn",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14175,6 +15119,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cmr",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14190,6 +15135,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "uru",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14205,6 +15151,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "kor",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14220,6 +15167,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "sui",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14235,6 +15183,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14250,6 +15199,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "ned",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14265,6 +15215,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "eng",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14280,6 +15231,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14295,6 +15247,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "bra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14310,6 +15263,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -14325,6 +15279,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mar",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -14340,6 +15295,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "por",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14355,6 +15311,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -14370,6 +15327,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     },
     {
@@ -14385,6 +15343,7 @@
       "observedHomeScore": 0,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14400,6 +15359,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "mar",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14415,6 +15375,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14430,6 +15391,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "fra",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14445,6 +15407,7 @@
       "observedHomeScore": 1,
       "outcomeStatus": "decisive",
       "winnerTeamId": "cro",
+      "wentToExtraTime": false,
       "decidedByPenalties": false
     },
     {
@@ -14460,6 +15423,7 @@
       "observedHomeScore": 0.5,
       "outcomeStatus": "decisive",
       "winnerTeamId": "arg",
+      "wentToExtraTime": true,
       "decidedByPenalties": true
     }
   ]

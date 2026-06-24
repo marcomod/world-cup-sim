@@ -139,22 +139,25 @@ cannot become binary `PredictionObservation` values without a separate draw
 model. Initial probability calibration should therefore use decisive knockout
 outcomes.
 
-Planned evaluation metrics are:
+The implemented offline evaluation reports include:
 
 - Brier score for mean squared probability error.
 - Log loss for confidence-sensitive probability error.
 - Sample size reported with every metric result.
-- Side-by-side comparison of candidate Elo divisors while keeping evaluation
-  data and rating inputs fixed.
+- Explicit cohort and development, validation, holdout, and full-history split
+  results.
 
-These metrics are not calculated by the ingestion and validation adapter.
+These deterministic reports are calculated after ingestion and sequential Elo
+reconstruction. They remain offline and do not change the production model.
 
 Historical match results alone are not sufficient to calculate these metrics.
 Each observation also needs a contemporaneous pre-match rating difference. The
 implemented sequential Elo baseline now generates leakage-free pre-match
-ratings and observations offline. It is not yet a calibrated production model;
-Brier score, log loss, divisor comparison, and model selection remain future
-work. The current 2026 development snapshot is not applied retrospectively.
+ratings and observations offline, and Brier score and log-loss evaluation is
+implemented for those baseline observations. Divisor comparison, parameter
+tuning, model selection, and deliberate production adoption remain future work.
+The 2022 holdout has not been used for tuning, and the current 2026 development
+snapshot is not applied retrospectively.
 
 Sequential Historical Elo Baseline
 
@@ -212,6 +215,42 @@ reconstruction is evaluated. Betting-market probabilities are a later optional
 comparison layer. Any market inputs must first be converted to no-vig
 probabilities, and model/market blending should be considered only after both
 inputs have been validated independently.
+
+Historical Evaluation
+
+The offline evaluation layer now reports deterministic Brier score, log loss,
+classification accuracy, mean prediction, observed home-win rate, and ten fixed
+calibration buckets. It evaluates explicit `development` (1930-2006),
+`validation` (2010-2018), `holdout` (2022), and `full_history` splits. The 2022
+holdout is report-only and is not used for tuning.
+
+Binary metrics include only decisive non-shootout outcomes. Ordinary draws,
+replay-era `non_decisive` ties, and penalty shootouts are not silently converted
+to regulation binary targets. Shootouts remain available through a descriptive
+`penalties_only` cohort, while extra-time reports distinguish selected matches
+from the decisive non-shootout subset that can be binary-scored.
+
+Every generated result exposes both `selectedSampleSize` and
+`scoredSampleSize`; descriptive-only results use an explicit scored count of
+zero and null metrics. The five historical `group_stage_playoff` tiebreak or
+elimination fixtures are deliberately included in knockout cohorts, while
+`final_group_stage` and the other group formats are excluded. Canonical stage,
+outcome, year, date, team, winner, target, probability, and decision metadata
+are validated before cohort classification.
+
+Brier score is the mean squared probability error. Log loss uses natural
+logarithms and clips predictions only to `Number.EPSILON` and
+`1 - Number.EPSILON`. Accuracy classifies an exact `0.5` prediction as a home
+win. Calibration buckets are `[0.0, 0.1)` through `[0.9, 1.0]`; empty buckets
+remain explicit.
+
+The exact-`0.5` accuracy rule arbitrarily favors the home-labelled side. Brier
+score and log loss are the primary proper scoring rules; accuracy is a secondary
+diagnostic and must not determine model selection by itself.
+
+These reports evaluate the baseline but do not establish that the production
+model or divisor should change. Cohort definitions, generated artifacts, and
+holdout discipline are detailed in `docs/HISTORICAL_EVALUATION.md`.
 
 ⸻
 

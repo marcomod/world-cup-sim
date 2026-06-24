@@ -35,7 +35,7 @@ export function buildHistoricalPredictionObservation(input: {
     observedHomeScore,
     outcomeStatus: match.outcomeStatus,
     winnerTeamId: match.winnerTeamId,
+    wentToExtraTime: match.wentToExtraTime,
     decidedByPenalties: match.wentToPenalties,
   };
 }
-

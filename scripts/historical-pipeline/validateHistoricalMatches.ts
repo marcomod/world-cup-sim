@@ -5,19 +5,36 @@ import {
 } from "./schemas.ts";
 import { isAllowlistedReplayEraNonDecisiveMatch } from "./replayEraNonDecisiveMatches.ts";
 
-const GROUP_STAGES = new Set<HistoricalStage>([
-  "group_stage",
-  "first_group_stage",
-  "second_group_stage",
-  "final_group_stage",
-]);
+const STAGE_CLASSIFICATION: Record<HistoricalStage, "group" | "knockout"> = {
+  group_stage: "group",
+  first_group_stage: "group",
+  second_group_stage: "group",
+  final_group_stage: "group",
+  group_stage_playoff: "knockout",
+  round_of_32: "knockout",
+  round_of_16: "knockout",
+  quarterfinal: "knockout",
+  semifinal: "knockout",
+  third_place: "knockout",
+  final: "knockout",
+};
 
 export function isGroupHistoricalStage(stage: HistoricalStage): boolean {
-  return GROUP_STAGES.has(stage);
+  return classifyHistoricalStage(stage) === "group";
 }
 
 export function isKnockoutHistoricalStage(stage: HistoricalStage): boolean {
-  return !isGroupHistoricalStage(stage);
+  return classifyHistoricalStage(stage) === "knockout";
+}
+
+function classifyHistoricalStage(
+  stage: HistoricalStage,
+): "group" | "knockout" {
+  const classification = (STAGE_CLASSIFICATION as Record<string, unknown>)[stage];
+  if (classification !== "group" && classification !== "knockout") {
+    throw new Error(`Unknown canonical historical stage "${stage}".`);
+  }
+  return classification;
 }
 
 export function validateHistoricalMatches(

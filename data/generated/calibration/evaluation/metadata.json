@@ -1,0 +1,52 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "evaluationModelVersion": "historical-elo-evaluation-v1",
+  "sourceObservationFile": "data/generated/calibration/historical-elo/observations.json",
+  "sourceObservationChecksumSha256": "3a5b201d2bef64a0f72a5b07e63ced2b313f2efc04d69128ba195cc8f4d371b1",
+  "sourceReconstructionMetadata": {
+    "generatedFileWarning": "Do not edit manually.",
+    "modelVersion": "sequential-elo-v1",
+    "matchCount": 964,
+    "teamCount": 86,
+    "firstDate": "1930-07-13",
+    "lastDate": "2022-12-18",
+    "multiMatchDateCount": 297,
+    "matchesOnMultiMatchDates": 883,
+    "maxMatchesOnSingleDate": 8,
+    "sameDayOrderingPolicy": "Matches are ordered by date, then stable matchId when kickoff times are unavailable.",
+    "config": {
+      "initialRating": 1500,
+      "kFactor": 20,
+      "divisor": 400,
+      "homeAdvantage": 0,
+      "penaltyUpdateOutcome": "draw",
+      "nonDecisiveUpdateOutcome": "draw"
+    },
+    "sourceFile": "data/raw/historical/world-cup/matches_1930_2022.csv",
+    "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+    "numericPrecision": 6,
+    "numericSerializationPolicy": "Calculations retain full precision; generated ratings and probabilities are rounded to 6 decimal places and negative zero is serialized as zero.",
+    "generationTimestampPolicy": "No wall-clock timestamp is written; identical validated input and configuration produce byte-stable artifacts."
+  },
+  "cohorts": [
+    "all_matches",
+    "knockout_only",
+    "decisive_only",
+    "knockout_decisive_only",
+    "penalties_only",
+    "extra_time_only"
+  ],
+  "splits": [
+    "development",
+    "validation",
+    "holdout",
+    "full_history"
+  ],
+  "numericPrecision": 6,
+  "numericSerializationPolicy": "Metrics retain full precision during calculation and are rounded to 6 decimal places only in generated JSON; negative zero is serialized as zero.",
+  "generationTimestampPolicy": "No wall-clock timestamp is written; identical source observations produce byte-stable evaluation artifacts.",
+  "binaryTargetPolicy": "Only decisive non-shootout matches are binary-scored. Draws, replay-era non-decisive ties, and penalty shootouts are excluded from binary metrics; penalties_only remains descriptive.",
+  "sampleSizePolicy": "Every result reports selectedSampleSize and scoredSampleSize explicitly; excludedFromBinaryScoring equals selectedSampleSize minus scoredSampleSize, and zero-scored results use null metrics.",
+  "knockoutStagePolicy": "group_stage_playoff is included as a knockout tiebreak/elimination stage and contributes five full-history records; final_group_stage and other group formats are excluded from knockout cohorts.",
+  "holdoutPolicy": "The 2022 holdout is reported but must not be used for tuning or model selection."
+}

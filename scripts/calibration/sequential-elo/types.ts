@@ -54,6 +54,7 @@ export interface HistoricalPredictionObservation {
   observedHomeScore: 0 | 0.5 | 1;
   outcomeStatus: HistoricalOutcomeStatus;
   winnerTeamId: HistoricalTeamId | null;
+  wentToExtraTime: boolean;
   decidedByPenalties: boolean;
 }
 

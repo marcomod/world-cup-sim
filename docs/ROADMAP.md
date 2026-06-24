@@ -192,8 +192,13 @@ Current status:
   are unavailable. No team appears twice on one date in the current snapshot;
   future datasets must revalidate this invariant, and grouped same-day
   sensitivity analysis remains future work.
-- Brier score, log loss, Elo-divisor comparison, and market comparison remain
-  future work.
+- Deterministic Brier score, log loss, accuracy, and calibration-bucket reports
+  are implemented for explicit development, validation, holdout, and full-history
+  cohorts. Reports expose explicit selected and binary-scored sample counts;
+  descriptive shootout results retain null metrics. These reports do not select
+  a production model.
+- Elo-divisor comparison, model selection, and market comparison remain future
+  work. The 2022 holdout is not used for tuning.
 
 The historical dataset and calibration scripts remain outside the runtime app.
 The World Football Elo development snapshot remains the active rating source,

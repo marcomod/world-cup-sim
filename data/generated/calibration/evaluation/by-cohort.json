@@ -1,0 +1,2091 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "evaluationModelVersion": "historical-elo-evaluation-v1",
+  "byCohort": {
+    "all_matches": [
+      {
+        "cohort": "all_matches",
+        "split": "development",
+        "selectedSampleSize": 708,
+        "scoredSampleSize": 551,
+        "excludedFromBinaryScoring": 157,
+        "metrics": {
+          "sampleSize": 551,
+          "brierScore": 0.223065,
+          "logLoss": 0.637322,
+          "accuracy": 0.651543,
+          "meanPredictedProbability": 0.53047,
+          "observedHomeWinRate": 0.77314,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.186327,
+              "observedHomeWinRate": 0,
+              "absoluteCalibrationError": 0.186327
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 7,
+              "meanPredictedProbability": 0.265255,
+              "observedHomeWinRate": 0.142857,
+              "absoluteCalibrationError": 0.122398
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 31,
+              "meanPredictedProbability": 0.358012,
+              "observedHomeWinRate": 0.516129,
+              "absoluteCalibrationError": 0.158117
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 164,
+              "meanPredictedProbability": 0.464625,
+              "observedHomeWinRate": 0.719512,
+              "absoluteCalibrationError": 0.254887
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 231,
+              "meanPredictedProbability": 0.542241,
+              "observedHomeWinRate": 0.822511,
+              "absoluteCalibrationError": 0.28027
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 91,
+              "meanPredictedProbability": 0.639852,
+              "observedHomeWinRate": 0.857143,
+              "absoluteCalibrationError": 0.21729
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 25,
+              "meanPredictedProbability": 0.746568,
+              "observedHomeWinRate": 0.88,
+              "absoluteCalibrationError": 0.133432
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.800797,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.199203
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "all_matches",
+        "split": "validation",
+        "selectedSampleSize": 192,
+        "scoredSampleSize": 150,
+        "excludedFromBinaryScoring": 42,
+        "metrics": {
+          "sampleSize": 150,
+          "brierScore": 0.223088,
+          "logLoss": 0.63731,
+          "accuracy": 0.626667,
+          "meanPredictedProbability": 0.525477,
+          "observedHomeWinRate": 0.513333,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.182081,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.31792
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 5,
+              "meanPredictedProbability": 0.276321,
+              "observedHomeWinRate": 0.2,
+              "absoluteCalibrationError": 0.076321
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 15,
+              "meanPredictedProbability": 0.3471,
+              "observedHomeWinRate": 0.133333,
+              "absoluteCalibrationError": 0.213767
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 41,
+              "meanPredictedProbability": 0.457844,
+              "observedHomeWinRate": 0.463415,
+              "absoluteCalibrationError": 0.00557
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 43,
+              "meanPredictedProbability": 0.541035,
+              "observedHomeWinRate": 0.511628,
+              "absoluteCalibrationError": 0.029407
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 31,
+              "meanPredictedProbability": 0.64831,
+              "observedHomeWinRate": 0.709677,
+              "absoluteCalibrationError": 0.061367
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 12,
+              "meanPredictedProbability": 0.744401,
+              "observedHomeWinRate": 0.75,
+              "absoluteCalibrationError": 0.005599
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.802728,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.197272
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "all_matches",
+        "split": "holdout",
+        "selectedSampleSize": 64,
+        "scoredSampleSize": 49,
+        "excludedFromBinaryScoring": 15,
+        "metrics": {
+          "sampleSize": 49,
+          "brierScore": 0.223529,
+          "logLoss": 0.642894,
+          "accuracy": 0.734694,
+          "meanPredictedProbability": 0.542938,
+          "observedHomeWinRate": 0.591837,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.180872,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.819128
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.234785,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.765215
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 5,
+              "meanPredictedProbability": 0.331954,
+              "observedHomeWinRate": 0.4,
+              "absoluteCalibrationError": 0.068046
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 12,
+              "meanPredictedProbability": 0.44821,
+              "observedHomeWinRate": 0.166667,
+              "absoluteCalibrationError": 0.281543
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 11,
+              "meanPredictedProbability": 0.547606,
+              "observedHomeWinRate": 0.636364,
+              "absoluteCalibrationError": 0.088758
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 10,
+              "meanPredictedProbability": 0.64044,
+              "observedHomeWinRate": 0.9,
+              "absoluteCalibrationError": 0.25956
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 8,
+              "meanPredictedProbability": 0.740042,
+              "observedHomeWinRate": 0.75,
+              "absoluteCalibrationError": 0.009958
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.801636,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.198364
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "all_matches",
+        "split": "full_history",
+        "selectedSampleSize": 964,
+        "scoredSampleSize": 750,
+        "excludedFromBinaryScoring": 214,
+        "metrics": {
+          "sampleSize": 750,
+          "brierScore": 0.2231,
+          "logLoss": 0.637684,
+          "accuracy": 0.652,
+          "meanPredictedProbability": 0.530286,
+          "observedHomeWinRate": 0.709333,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 4,
+              "meanPredictedProbability": 0.18284,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.31716
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 13,
+              "meanPredictedProbability": 0.267168,
+              "observedHomeWinRate": 0.230769,
+              "absoluteCalibrationError": 0.036398
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 51,
+              "meanPredictedProbability": 0.352248,
+              "observedHomeWinRate": 0.392157,
+              "absoluteCalibrationError": 0.039909
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 217,
+              "meanPredictedProbability": 0.462436,
+              "observedHomeWinRate": 0.640553,
+              "absoluteCalibrationError": 0.178117
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 285,
+              "meanPredictedProbability": 0.542266,
+              "observedHomeWinRate": 0.768421,
+              "absoluteCalibrationError": 0.226155
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 132,
+              "meanPredictedProbability": 0.641883,
+              "observedHomeWinRate": 0.825758,
+              "absoluteCalibrationError": 0.183874
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 45,
+              "meanPredictedProbability": 0.74483,
+              "observedHomeWinRate": 0.822222,
+              "absoluteCalibrationError": 0.077392
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.80172,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.19828
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      }
+    ],
+    "knockout_only": [
+      {
+        "cohort": "knockout_only",
+        "split": "development",
+        "selectedSampleSize": 187,
+        "scoredSampleSize": 163,
+        "excludedFromBinaryScoring": 24,
+        "metrics": {
+          "sampleSize": 163,
+          "brierScore": 0.224077,
+          "logLoss": 0.639269,
+          "accuracy": 0.607362,
+          "meanPredictedProbability": 0.531478,
+          "observedHomeWinRate": 0.797546,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.254438,
+              "observedHomeWinRate": 0.333333,
+              "absoluteCalibrationError": 0.078896
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 7,
+              "meanPredictedProbability": 0.342985,
+              "observedHomeWinRate": 0.285714,
+              "absoluteCalibrationError": 0.05727
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 55,
+              "meanPredictedProbability": 0.470306,
+              "observedHomeWinRate": 0.818182,
+              "absoluteCalibrationError": 0.347876
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 60,
+              "meanPredictedProbability": 0.537834,
+              "observedHomeWinRate": 0.833333,
+              "absoluteCalibrationError": 0.295499
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 31,
+              "meanPredictedProbability": 0.645849,
+              "observedHomeWinRate": 0.83871,
+              "absoluteCalibrationError": 0.192861
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 7,
+              "meanPredictedProbability": 0.758354,
+              "observedHomeWinRate": 0.857143,
+              "absoluteCalibrationError": 0.098789
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "knockout_only",
+        "split": "validation",
+        "selectedSampleSize": 48,
+        "scoredSampleSize": 38,
+        "excludedFromBinaryScoring": 10,
+        "metrics": {
+          "sampleSize": 38,
+          "brierScore": 0.204254,
+          "logLoss": 0.597383,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.55412,
+          "observedHomeWinRate": 0.657895,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 4,
+              "meanPredictedProbability": 0.349384,
+              "observedHomeWinRate": 0.25,
+              "absoluteCalibrationError": 0.099384
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 10,
+              "meanPredictedProbability": 0.451434,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.048566
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 11,
+              "meanPredictedProbability": 0.558734,
+              "observedHomeWinRate": 0.727273,
+              "absoluteCalibrationError": 0.168539
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 7,
+              "meanPredictedProbability": 0.646621,
+              "observedHomeWinRate": 0.857143,
+              "absoluteCalibrationError": 0.210522
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 5,
+              "meanPredictedProbability": 0.733905,
+              "observedHomeWinRate": 0.8,
+              "absoluteCalibrationError": 0.066095
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.802728,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.197272
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "knockout_only",
+        "split": "holdout",
+        "selectedSampleSize": 16,
+        "scoredSampleSize": 11,
+        "excludedFromBinaryScoring": 5,
+        "metrics": {
+          "sampleSize": 11,
+          "brierScore": 0.150217,
+          "logLoss": 0.482112,
+          "accuracy": 0.909091,
+          "meanPredictedProbability": 0.611777,
+          "observedHomeWinRate": 0.909091,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.409372,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.090628
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.566589,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.433411
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.65187,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.34813
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.726895,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.273105
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.801636,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.198364
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "knockout_only",
+        "split": "full_history",
+        "selectedSampleSize": 251,
+        "scoredSampleSize": 212,
+        "excludedFromBinaryScoring": 39,
+        "metrics": {
+          "sampleSize": 212,
+          "brierScore": 0.216691,
+          "logLoss": 0.623606,
+          "accuracy": 0.641509,
+          "meanPredictedProbability": 0.539703,
+          "observedHomeWinRate": 0.778302,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.254438,
+              "observedHomeWinRate": 0.333333,
+              "absoluteCalibrationError": 0.078896
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 11,
+              "meanPredictedProbability": 0.345312,
+              "observedHomeWinRate": 0.272727,
+              "absoluteCalibrationError": 0.072585
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 67,
+              "meanPredictedProbability": 0.46567,
+              "observedHomeWinRate": 0.761194,
+              "absoluteCalibrationError": 0.295524
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 74,
+              "meanPredictedProbability": 0.542107,
+              "observedHomeWinRate": 0.824324,
+              "absoluteCalibrationError": 0.282218
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 41,
+              "meanPredictedProbability": 0.646421,
+              "observedHomeWinRate": 0.853659,
+              "absoluteCalibrationError": 0.207237
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 14,
+              "meanPredictedProbability": 0.745128,
+              "observedHomeWinRate": 0.857143,
+              "absoluteCalibrationError": 0.112015
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.802182,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.197818
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      }
+    ],
+    "decisive_only": [
+      {
+        "cohort": "decisive_only",
+        "split": "development",
+        "selectedSampleSize": 551,
+        "scoredSampleSize": 551,
+        "excludedFromBinaryScoring": 0,
+        "metrics": {
+          "sampleSize": 551,
+          "brierScore": 0.223065,
+          "logLoss": 0.637322,
+          "accuracy": 0.651543,
+          "meanPredictedProbability": 0.53047,
+          "observedHomeWinRate": 0.77314,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.186327,
+              "observedHomeWinRate": 0,
+              "absoluteCalibrationError": 0.186327
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 7,
+              "meanPredictedProbability": 0.265255,
+              "observedHomeWinRate": 0.142857,
+              "absoluteCalibrationError": 0.122398
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 31,
+              "meanPredictedProbability": 0.358012,
+              "observedHomeWinRate": 0.516129,
+              "absoluteCalibrationError": 0.158117
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 164,
+              "meanPredictedProbability": 0.464625,
+              "observedHomeWinRate": 0.719512,
+              "absoluteCalibrationError": 0.254887
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 231,
+              "meanPredictedProbability": 0.542241,
+              "observedHomeWinRate": 0.822511,
+              "absoluteCalibrationError": 0.28027
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 91,
+              "meanPredictedProbability": 0.639852,
+              "observedHomeWinRate": 0.857143,
+              "absoluteCalibrationError": 0.21729
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 25,
+              "meanPredictedProbability": 0.746568,
+              "observedHomeWinRate": 0.88,
+              "absoluteCalibrationError": 0.133432
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.800797,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.199203
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "decisive_only",
+        "split": "validation",
+        "selectedSampleSize": 150,
+        "scoredSampleSize": 150,
+        "excludedFromBinaryScoring": 0,
+        "metrics": {
+          "sampleSize": 150,
+          "brierScore": 0.223088,
+          "logLoss": 0.63731,
+          "accuracy": 0.626667,
+          "meanPredictedProbability": 0.525477,
+          "observedHomeWinRate": 0.513333,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.182081,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.31792
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 5,
+              "meanPredictedProbability": 0.276321,
+              "observedHomeWinRate": 0.2,
+              "absoluteCalibrationError": 0.076321
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 15,
+              "meanPredictedProbability": 0.3471,
+              "observedHomeWinRate": 0.133333,
+              "absoluteCalibrationError": 0.213767
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 41,
+              "meanPredictedProbability": 0.457844,
+              "observedHomeWinRate": 0.463415,
+              "absoluteCalibrationError": 0.00557
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 43,
+              "meanPredictedProbability": 0.541035,
+              "observedHomeWinRate": 0.511628,
+              "absoluteCalibrationError": 0.029407
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 31,
+              "meanPredictedProbability": 0.64831,
+              "observedHomeWinRate": 0.709677,
+              "absoluteCalibrationError": 0.061367
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 12,
+              "meanPredictedProbability": 0.744401,
+              "observedHomeWinRate": 0.75,
+              "absoluteCalibrationError": 0.005599
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.802728,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.197272
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "decisive_only",
+        "split": "holdout",
+        "selectedSampleSize": 49,
+        "scoredSampleSize": 49,
+        "excludedFromBinaryScoring": 0,
+        "metrics": {
+          "sampleSize": 49,
+          "brierScore": 0.223529,
+          "logLoss": 0.642894,
+          "accuracy": 0.734694,
+          "meanPredictedProbability": 0.542938,
+          "observedHomeWinRate": 0.591837,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.180872,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.819128
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.234785,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.765215
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 5,
+              "meanPredictedProbability": 0.331954,
+              "observedHomeWinRate": 0.4,
+              "absoluteCalibrationError": 0.068046
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 12,
+              "meanPredictedProbability": 0.44821,
+              "observedHomeWinRate": 0.166667,
+              "absoluteCalibrationError": 0.281543
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 11,
+              "meanPredictedProbability": 0.547606,
+              "observedHomeWinRate": 0.636364,
+              "absoluteCalibrationError": 0.088758
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 10,
+              "meanPredictedProbability": 0.64044,
+              "observedHomeWinRate": 0.9,
+              "absoluteCalibrationError": 0.25956
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 8,
+              "meanPredictedProbability": 0.740042,
+              "observedHomeWinRate": 0.75,
+              "absoluteCalibrationError": 0.009958
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.801636,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.198364
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "decisive_only",
+        "split": "full_history",
+        "selectedSampleSize": 750,
+        "scoredSampleSize": 750,
+        "excludedFromBinaryScoring": 0,
+        "metrics": {
+          "sampleSize": 750,
+          "brierScore": 0.2231,
+          "logLoss": 0.637684,
+          "accuracy": 0.652,
+          "meanPredictedProbability": 0.530286,
+          "observedHomeWinRate": 0.709333,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 4,
+              "meanPredictedProbability": 0.18284,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.31716
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 13,
+              "meanPredictedProbability": 0.267168,
+              "observedHomeWinRate": 0.230769,
+              "absoluteCalibrationError": 0.036398
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 51,
+              "meanPredictedProbability": 0.352248,
+              "observedHomeWinRate": 0.392157,
+              "absoluteCalibrationError": 0.039909
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 217,
+              "meanPredictedProbability": 0.462436,
+              "observedHomeWinRate": 0.640553,
+              "absoluteCalibrationError": 0.178117
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 285,
+              "meanPredictedProbability": 0.542266,
+              "observedHomeWinRate": 0.768421,
+              "absoluteCalibrationError": 0.226155
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 132,
+              "meanPredictedProbability": 0.641883,
+              "observedHomeWinRate": 0.825758,
+              "absoluteCalibrationError": 0.183874
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 45,
+              "meanPredictedProbability": 0.74483,
+              "observedHomeWinRate": 0.822222,
+              "absoluteCalibrationError": 0.077392
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.80172,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.19828
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      }
+    ],
+    "knockout_decisive_only": [
+      {
+        "cohort": "knockout_decisive_only",
+        "split": "development",
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "excludedFromBinaryScoring": 0,
+        "metrics": {
+          "sampleSize": 163,
+          "brierScore": 0.224077,
+          "logLoss": 0.639269,
+          "accuracy": 0.607362,
+          "meanPredictedProbability": 0.531478,
+          "observedHomeWinRate": 0.797546,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.254438,
+              "observedHomeWinRate": 0.333333,
+              "absoluteCalibrationError": 0.078896
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 7,
+              "meanPredictedProbability": 0.342985,
+              "observedHomeWinRate": 0.285714,
+              "absoluteCalibrationError": 0.05727
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 55,
+              "meanPredictedProbability": 0.470306,
+              "observedHomeWinRate": 0.818182,
+              "absoluteCalibrationError": 0.347876
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 60,
+              "meanPredictedProbability": 0.537834,
+              "observedHomeWinRate": 0.833333,
+              "absoluteCalibrationError": 0.295499
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 31,
+              "meanPredictedProbability": 0.645849,
+              "observedHomeWinRate": 0.83871,
+              "absoluteCalibrationError": 0.192861
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 7,
+              "meanPredictedProbability": 0.758354,
+              "observedHomeWinRate": 0.857143,
+              "absoluteCalibrationError": 0.098789
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "knockout_decisive_only",
+        "split": "validation",
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "excludedFromBinaryScoring": 0,
+        "metrics": {
+          "sampleSize": 38,
+          "brierScore": 0.204254,
+          "logLoss": 0.597383,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.55412,
+          "observedHomeWinRate": 0.657895,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 4,
+              "meanPredictedProbability": 0.349384,
+              "observedHomeWinRate": 0.25,
+              "absoluteCalibrationError": 0.099384
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 10,
+              "meanPredictedProbability": 0.451434,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.048566
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 11,
+              "meanPredictedProbability": 0.558734,
+              "observedHomeWinRate": 0.727273,
+              "absoluteCalibrationError": 0.168539
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 7,
+              "meanPredictedProbability": 0.646621,
+              "observedHomeWinRate": 0.857143,
+              "absoluteCalibrationError": 0.210522
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 5,
+              "meanPredictedProbability": 0.733905,
+              "observedHomeWinRate": 0.8,
+              "absoluteCalibrationError": 0.066095
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.802728,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.197272
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "knockout_decisive_only",
+        "split": "holdout",
+        "selectedSampleSize": 11,
+        "scoredSampleSize": 11,
+        "excludedFromBinaryScoring": 0,
+        "metrics": {
+          "sampleSize": 11,
+          "brierScore": 0.150217,
+          "logLoss": 0.482112,
+          "accuracy": 0.909091,
+          "meanPredictedProbability": 0.611777,
+          "observedHomeWinRate": 0.909091,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.409372,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.090628
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.566589,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.433411
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.65187,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.34813
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.726895,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.273105
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.801636,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.198364
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "knockout_decisive_only",
+        "split": "full_history",
+        "selectedSampleSize": 212,
+        "scoredSampleSize": 212,
+        "excludedFromBinaryScoring": 0,
+        "metrics": {
+          "sampleSize": 212,
+          "brierScore": 0.216691,
+          "logLoss": 0.623606,
+          "accuracy": 0.641509,
+          "meanPredictedProbability": 0.539703,
+          "observedHomeWinRate": 0.778302,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.254438,
+              "observedHomeWinRate": 0.333333,
+              "absoluteCalibrationError": 0.078896
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 11,
+              "meanPredictedProbability": 0.345312,
+              "observedHomeWinRate": 0.272727,
+              "absoluteCalibrationError": 0.072585
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 67,
+              "meanPredictedProbability": 0.46567,
+              "observedHomeWinRate": 0.761194,
+              "absoluteCalibrationError": 0.295524
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 74,
+              "meanPredictedProbability": 0.542107,
+              "observedHomeWinRate": 0.824324,
+              "absoluteCalibrationError": 0.282218
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 41,
+              "meanPredictedProbability": 0.646421,
+              "observedHomeWinRate": 0.853659,
+              "absoluteCalibrationError": 0.207237
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 14,
+              "meanPredictedProbability": 0.745128,
+              "observedHomeWinRate": 0.857143,
+              "absoluteCalibrationError": 0.112015
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.802182,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.197818
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      }
+    ],
+    "penalties_only": [
+      {
+        "cohort": "penalties_only",
+        "split": "development",
+        "selectedSampleSize": 20,
+        "scoredSampleSize": 0,
+        "excludedFromBinaryScoring": 20,
+        "metrics": null
+      },
+      {
+        "cohort": "penalties_only",
+        "split": "validation",
+        "selectedSampleSize": 10,
+        "scoredSampleSize": 0,
+        "excludedFromBinaryScoring": 10,
+        "metrics": null
+      },
+      {
+        "cohort": "penalties_only",
+        "split": "holdout",
+        "selectedSampleSize": 5,
+        "scoredSampleSize": 0,
+        "excludedFromBinaryScoring": 5,
+        "metrics": null
+      },
+      {
+        "cohort": "penalties_only",
+        "split": "full_history",
+        "selectedSampleSize": 35,
+        "scoredSampleSize": 0,
+        "excludedFromBinaryScoring": 35,
+        "metrics": null
+      }
+    ],
+    "extra_time_only": [
+      {
+        "cohort": "extra_time_only",
+        "split": "development",
+        "selectedSampleSize": 51,
+        "scoredSampleSize": 25,
+        "excludedFromBinaryScoring": 26,
+        "metrics": {
+          "sampleSize": 25,
+          "brierScore": 0.247132,
+          "logLoss": 0.689804,
+          "accuracy": 0.52,
+          "meanPredictedProbability": 0.512161,
+          "observedHomeWinRate": 0.76,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.243817,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.756183
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.344137,
+              "observedHomeWinRate": 0,
+              "absoluteCalibrationError": 0.344137
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 8,
+              "meanPredictedProbability": 0.474206,
+              "observedHomeWinRate": 0.875,
+              "absoluteCalibrationError": 0.400794
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 12,
+              "meanPredictedProbability": 0.541065,
+              "observedHomeWinRate": 0.75,
+              "absoluteCalibrationError": 0.208935
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.643211,
+              "observedHomeWinRate": 0.666667,
+              "absoluteCalibrationError": 0.023455
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "extra_time_only",
+        "split": "validation",
+        "selectedSampleSize": 17,
+        "scoredSampleSize": 7,
+        "excludedFromBinaryScoring": 10,
+        "metrics": {
+          "sampleSize": 7,
+          "brierScore": 0.188635,
+          "logLoss": 0.564491,
+          "accuracy": 0.714286,
+          "meanPredictedProbability": 0.560541,
+          "observedHomeWinRate": 0.714286,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.431392,
+              "observedHomeWinRate": 0.5,
+              "absoluteCalibrationError": 0.068608
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.544968,
+              "observedHomeWinRate": 0.666667,
+              "absoluteCalibrationError": 0.121698
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.713051,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.286949
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      },
+      {
+        "cohort": "extra_time_only",
+        "split": "holdout",
+        "selectedSampleSize": 5,
+        "scoredSampleSize": 0,
+        "excludedFromBinaryScoring": 5,
+        "metrics": null
+      },
+      {
+        "cohort": "extra_time_only",
+        "split": "full_history",
+        "selectedSampleSize": 73,
+        "scoredSampleSize": 32,
+        "excludedFromBinaryScoring": 41,
+        "metrics": {
+          "sampleSize": 32,
+          "brierScore": 0.234335,
+          "logLoss": 0.662392,
+          "accuracy": 0.5625,
+          "meanPredictedProbability": 0.522744,
+          "observedHomeWinRate": 0.75,
+          "calibrationBuckets": [
+            {
+              "lowerBound": 0,
+              "upperBound": 0.1,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.1,
+              "upperBound": 0.2,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.2,
+              "upperBound": 0.3,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.243817,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.756183
+            },
+            {
+              "lowerBound": 0.3,
+              "upperBound": 0.4,
+              "includesUpperBound": false,
+              "sampleSize": 1,
+              "meanPredictedProbability": 0.344137,
+              "observedHomeWinRate": 0,
+              "absoluteCalibrationError": 0.344137
+            },
+            {
+              "lowerBound": 0.4,
+              "upperBound": 0.5,
+              "includesUpperBound": false,
+              "sampleSize": 10,
+              "meanPredictedProbability": 0.465643,
+              "observedHomeWinRate": 0.8,
+              "absoluteCalibrationError": 0.334357
+            },
+            {
+              "lowerBound": 0.5,
+              "upperBound": 0.6,
+              "includesUpperBound": false,
+              "sampleSize": 15,
+              "meanPredictedProbability": 0.541845,
+              "observedHomeWinRate": 0.733333,
+              "absoluteCalibrationError": 0.191488
+            },
+            {
+              "lowerBound": 0.6,
+              "upperBound": 0.7,
+              "includesUpperBound": false,
+              "sampleSize": 3,
+              "meanPredictedProbability": 0.643211,
+              "observedHomeWinRate": 0.666667,
+              "absoluteCalibrationError": 0.023455
+            },
+            {
+              "lowerBound": 0.7,
+              "upperBound": 0.8,
+              "includesUpperBound": false,
+              "sampleSize": 2,
+              "meanPredictedProbability": 0.713051,
+              "observedHomeWinRate": 1,
+              "absoluteCalibrationError": 0.286949
+            },
+            {
+              "lowerBound": 0.8,
+              "upperBound": 0.9,
+              "includesUpperBound": false,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            },
+            {
+              "lowerBound": 0.9,
+              "upperBound": 1,
+              "includesUpperBound": true,
+              "sampleSize": 0,
+              "meanPredictedProbability": null,
+              "observedHomeWinRate": null,
+              "absoluteCalibrationError": null
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
