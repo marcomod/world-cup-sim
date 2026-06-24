@@ -151,12 +151,64 @@ These metrics are not calculated by the ingestion and validation adapter.
 
 Historical match results alone are not sufficient to calculate these metrics.
 Each observation also needs a contemporaneous pre-match rating difference. The
-current 2026 development snapshot must not be applied retrospectively because
-that would introduce look-ahead bias. A future step must approve a historical
-rating series or define a deterministic sequential Elo reconstruction.
+implemented sequential Elo baseline now generates leakage-free pre-match
+ratings and observations offline. It is not yet a calibrated production model;
+Brier score, log loss, divisor comparison, and model selection remain future
+work. The current 2026 development snapshot is not applied retrospectively.
+
+Sequential Historical Elo Baseline
+
+The offline calibration pipeline now reconstructs a leakage-free baseline Elo
+series sequentially from the normalized 1930-2022 matches. This reconstruction
+is not imported by the app and does not change the production probability
+formula or its divisor of `400`.
+
+The baseline configuration is explicit:
+
+- Initial rating: `1500` for every historical identity at first appearance.
+- K-factor: `20`.
+- Elo divisor: `400`.
+- Home advantage: `0`.
+- No goal-difference, match-importance, decay, or regression adjustment.
+- Regulation and extra-time wins use observed scores of `1` or `0`.
+- Ordinary draws use `0.5`.
+- Penalty shootouts use `0.5` for the rating update while preserving the
+  shootout winner in the observation.
+- Replay-era `non_decisive` ties use `0.5`.
+
+For each match, the pipeline records both teams' ratings and the expected home
+score before applying either update. Both team updates then use those same
+pre-match ratings. Later results therefore cannot affect earlier predictions.
+The current 2026 World Football Elo snapshot is not used anywhere in this
+reconstruction.
+
+Historical identities remain independent. Ratings are not transferred from
+West Germany to Germany, Soviet Union to Russia, Yugoslavia to successor teams,
+or Czechoslovakia to the Czech Republic. This avoids undocumented continuity
+assumptions, though a reviewed continuity policy could be evaluated later.
+
+The source does not provide kickoff times for every match. Matches on the same
+date are therefore ordered by stable match ID as a deterministic fallback. This
+ordering uses JavaScript string code-point comparison and does not depend on the
+runtime locale. No team appears more than once on a date in the current
+964-match snapshot, so one same-day result cannot affect that same team's later
+prediction that day. Future datasets must revalidate this invariant. A later
+sensitivity analysis may still apply same-day updates as a batch or use verified
+kickoff-time data.
+
+Generated calibration JSON keeps full floating-point precision during rating
+updates, then rounds ratings and probabilities to six decimal places only at
+serialization. No wall-clock timestamp is emitted, so identical validated
+input and configuration produce byte-stable output. See
+`docs/HISTORICAL_ELO_RECONSTRUCTION.md` for the artifact contract.
+
+The offline expected-score implementation evaluates the same Elo formula with a
+branch-stable odds calculation. Extreme finite inputs are bounded only at the
+machine-safe open interval from `Number.EPSILON` to `1 - Number.EPSILON`, not at
+an application-level probability floor.
 
 Extra-time and penalty outcomes will be analysed separately after the baseline
-winner model is evaluated. Betting-market probabilities are a later optional
+reconstruction is evaluated. Betting-market probabilities are a later optional
 comparison layer. Any market inputs must first be converted to no-vig
 probabilities, and model/market blending should be considered only after both
 inputs have been validated independently.

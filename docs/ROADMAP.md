@@ -165,7 +165,7 @@ The following work is offline analysis and does not change production
 probabilities until a reviewed calibration result is deliberately adopted:
 
 1. Ingest and validate an approved historical World Cup match dataset.
-2. Join decisive matches to contemporaneous pre-match ratings without
+2. Reconstruct deterministic sequential pre-match Elo ratings without
    look-ahead bias.
 3. Evaluate baseline probabilities with Brier score and log loss.
 4. Compare candidate Elo divisors against a fixed validation set.
@@ -183,6 +183,15 @@ Current status:
 - All 964 rows, 12 stage labels, and 86 team names validate deterministically.
 - Replay-era non-decisive ties, historical group formats, extra time, and
   shootouts are preserved explicitly.
+- A deterministic offline sequential Elo baseline now produces pre-match
+  observations for all historical matches using initial rating `1500`, K-factor
+  `20`, divisor `400`, and no home advantage or weighting adjustments.
+- Penalty shootouts and replay-era non-decisive ties update Elo as draws while
+  preserving their original outcome metadata.
+- Same-day matches use stable match ID ordering because complete kickoff times
+  are unavailable. No team appears twice on one date in the current snapshot;
+  future datasets must revalidate this invariant, and grouped same-day
+  sensitivity analysis remains future work.
 - Brier score, log loss, Elo-divisor comparison, and market comparison remain
   future work.
 

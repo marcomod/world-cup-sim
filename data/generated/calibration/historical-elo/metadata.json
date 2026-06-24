@@ -1,0 +1,25 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "modelVersion": "sequential-elo-v1",
+  "matchCount": 964,
+  "teamCount": 86,
+  "firstDate": "1930-07-13",
+  "lastDate": "2022-12-18",
+  "multiMatchDateCount": 297,
+  "matchesOnMultiMatchDates": 883,
+  "maxMatchesOnSingleDate": 8,
+  "sameDayOrderingPolicy": "Matches are ordered by date, then stable matchId when kickoff times are unavailable.",
+  "config": {
+    "initialRating": 1500,
+    "kFactor": 20,
+    "divisor": 400,
+    "homeAdvantage": 0,
+    "penaltyUpdateOutcome": "draw",
+    "nonDecisiveUpdateOutcome": "draw"
+  },
+  "sourceFile": "data/raw/historical/world-cup/matches_1930_2022.csv",
+  "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+  "numericPrecision": 6,
+  "numericSerializationPolicy": "Calculations retain full precision; generated ratings and probabilities are rounded to 6 decimal places and negative zero is serialized as zero.",
+  "generationTimestampPolicy": "No wall-clock timestamp is written; identical validated input and configuration produce byte-stable artifacts."
+}

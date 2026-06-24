@@ -14,13 +14,20 @@ export async function loadKaggleWorldCupMatches(
   filePath: string,
 ): Promise<KaggleWorldCupSourceRow[]> {
   const buffer = await readFile(filePath);
+  return decodeKaggleWorldCupMatches(buffer, filePath);
+}
+
+export function decodeKaggleWorldCupMatches(
+  buffer: Uint8Array,
+  fileContext: string,
+): KaggleWorldCupSourceRow[] {
   let csv: string;
 
   try {
     csv = new TextDecoder("utf-8", { fatal: true }).decode(buffer);
   } catch {
     throw new Error(
-      `Failed to decode Kaggle World Cup CSV "${basename(filePath)}" as UTF-8: malformed byte sequence.`,
+      `Failed to decode Kaggle World Cup CSV "${basename(fileContext)}" as UTF-8: malformed byte sequence.`,
     );
   }
 

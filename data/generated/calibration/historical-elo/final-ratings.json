@@ -1,0 +1,436 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "modelVersion": "sequential-elo-v1",
+  "finalRatings": [
+    {
+      "teamId": "alg",
+      "rating": 1470.418842,
+      "matchesPlayed": 13
+    },
+    {
+      "teamId": "ang",
+      "rating": 1489.372268,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "arg",
+      "rating": 1629.75653,
+      "matchesPlayed": 88
+    },
+    {
+      "teamId": "aus",
+      "rating": 1461.625457,
+      "matchesPlayed": 20
+    },
+    {
+      "teamId": "aut",
+      "rating": 1499.327412,
+      "matchesPlayed": 29
+    },
+    {
+      "teamId": "bel",
+      "rating": 1552.421198,
+      "matchesPlayed": 51
+    },
+    {
+      "teamId": "bih",
+      "rating": 1491.564683,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "bol",
+      "rating": 1455.026649,
+      "matchesPlayed": 6
+    },
+    {
+      "teamId": "bra",
+      "rating": 1683.122737,
+      "matchesPlayed": 114
+    },
+    {
+      "teamId": "bul",
+      "rating": 1430.837746,
+      "matchesPlayed": 26
+    },
+    {
+      "teamId": "can",
+      "rating": 1446.972987,
+      "matchesPlayed": 6
+    },
+    {
+      "teamId": "chi",
+      "rating": 1501.9492,
+      "matchesPlayed": 33
+    },
+    {
+      "teamId": "chn",
+      "rating": 1475.269479,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "civ",
+      "rating": 1488.135175,
+      "matchesPlayed": 9
+    },
+    {
+      "teamId": "cmr",
+      "rating": 1453.366969,
+      "matchesPlayed": 26
+    },
+    {
+      "teamId": "col",
+      "rating": 1511.476744,
+      "matchesPlayed": 22
+    },
+    {
+      "teamId": "crc",
+      "rating": 1489.515755,
+      "matchesPlayed": 21
+    },
+    {
+      "teamId": "cro",
+      "rating": 1550.659452,
+      "matchesPlayed": 30
+    },
+    {
+      "teamId": "cub",
+      "rating": 1499.191646,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "cze",
+      "rating": 1491.561113,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "czechoslovakia",
+      "rating": 1489.627809,
+      "matchesPlayed": 30
+    },
+    {
+      "teamId": "den",
+      "rating": 1509.990132,
+      "matchesPlayed": 23
+    },
+    {
+      "teamId": "dutch-east-indies",
+      "rating": 1489.999762,
+      "matchesPlayed": 1
+    },
+    {
+      "teamId": "ecu",
+      "rating": 1505.589923,
+      "matchesPlayed": 13
+    },
+    {
+      "teamId": "egy",
+      "rating": 1452.953613,
+      "matchesPlayed": 7
+    },
+    {
+      "teamId": "eng",
+      "rating": 1567.221464,
+      "matchesPlayed": 74
+    },
+    {
+      "teamId": "esp",
+      "rating": 1577.462415,
+      "matchesPlayed": 67
+    },
+    {
+      "teamId": "fr-yugoslavia",
+      "rating": 1509.602065,
+      "matchesPlayed": 4
+    },
+    {
+      "teamId": "fra",
+      "rating": 1647.915123,
+      "matchesPlayed": 73
+    },
+    {
+      "teamId": "ger",
+      "rating": 1643.36175,
+      "matchesPlayed": 56
+    },
+    {
+      "teamId": "germany-dr",
+      "rating": 1504.761683,
+      "matchesPlayed": 6
+    },
+    {
+      "teamId": "gha",
+      "rating": 1489.550766,
+      "matchesPlayed": 15
+    },
+    {
+      "teamId": "gre",
+      "rating": 1467.674113,
+      "matchesPlayed": 10
+    },
+    {
+      "teamId": "hai",
+      "rating": 1472.483829,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "hon",
+      "rating": 1445.111755,
+      "matchesPlayed": 9
+    },
+    {
+      "teamId": "hun",
+      "rating": 1494.80231,
+      "matchesPlayed": 32
+    },
+    {
+      "teamId": "irl",
+      "rating": 1501.006158,
+      "matchesPlayed": 13
+    },
+    {
+      "teamId": "irn",
+      "rating": 1443.15495,
+      "matchesPlayed": 18
+    },
+    {
+      "teamId": "irq",
+      "rating": 1467.009852,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "isl",
+      "rating": 1483.564056,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "isr",
+      "rating": 1493.534843,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "ita",
+      "rating": 1612.635579,
+      "matchesPlayed": 83
+    },
+    {
+      "teamId": "jam",
+      "rating": 1492.492531,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "jpn",
+      "rating": 1481.573228,
+      "matchesPlayed": 25
+    },
+    {
+      "teamId": "kor",
+      "rating": 1436.420564,
+      "matchesPlayed": 38
+    },
+    {
+      "teamId": "ksa",
+      "rating": 1432.534182,
+      "matchesPlayed": 19
+    },
+    {
+      "teamId": "kuw",
+      "rating": 1480.263331,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "mar",
+      "rating": 1478.127755,
+      "matchesPlayed": 23
+    },
+    {
+      "teamId": "mex",
+      "rating": 1501.175905,
+      "matchesPlayed": 60
+    },
+    {
+      "teamId": "ned",
+      "rating": 1652.512329,
+      "matchesPlayed": 55
+    },
+    {
+      "teamId": "nga",
+      "rating": 1462.935841,
+      "matchesPlayed": 21
+    },
+    {
+      "teamId": "nir",
+      "rating": 1484.041135,
+      "matchesPlayed": 13
+    },
+    {
+      "teamId": "nor",
+      "rating": 1501.123936,
+      "matchesPlayed": 8
+    },
+    {
+      "teamId": "nzl",
+      "rating": 1481.085311,
+      "matchesPlayed": 6
+    },
+    {
+      "teamId": "pan",
+      "rating": 1471.059356,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "par",
+      "rating": 1487.327389,
+      "matchesPlayed": 27
+    },
+    {
+      "teamId": "per",
+      "rating": 1470.947183,
+      "matchesPlayed": 18
+    },
+    {
+      "teamId": "pol",
+      "rating": 1508.636195,
+      "matchesPlayed": 38
+    },
+    {
+      "teamId": "por",
+      "rating": 1537.284803,
+      "matchesPlayed": 35
+    },
+    {
+      "teamId": "prk",
+      "rating": 1470.980132,
+      "matchesPlayed": 7
+    },
+    {
+      "teamId": "qat",
+      "rating": 1474.823956,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "rou",
+      "rating": 1512.911602,
+      "matchesPlayed": 21
+    },
+    {
+      "teamId": "rsa",
+      "rating": 1495.038811,
+      "matchesPlayed": 9
+    },
+    {
+      "teamId": "rus",
+      "rating": 1486.47012,
+      "matchesPlayed": 14
+    },
+    {
+      "teamId": "sco",
+      "rating": 1456.716161,
+      "matchesPlayed": 23
+    },
+    {
+      "teamId": "sen",
+      "rating": 1515.037987,
+      "matchesPlayed": 12
+    },
+    {
+      "teamId": "serbia-and-montenegro",
+      "rating": 1474.126214,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "slv",
+      "rating": 1442.010472,
+      "matchesPlayed": 6
+    },
+    {
+      "teamId": "soviet-union",
+      "rating": 1535.808413,
+      "matchesPlayed": 31
+    },
+    {
+      "teamId": "srb",
+      "rating": 1472.416823,
+      "matchesPlayed": 9
+    },
+    {
+      "teamId": "sui",
+      "rating": 1490.578834,
+      "matchesPlayed": 41
+    },
+    {
+      "teamId": "svk",
+      "rating": 1495.365651,
+      "matchesPlayed": 4
+    },
+    {
+      "teamId": "svn",
+      "rating": 1473.374031,
+      "matchesPlayed": 6
+    },
+    {
+      "teamId": "swe",
+      "rating": 1527.70758,
+      "matchesPlayed": 51
+    },
+    {
+      "teamId": "tog",
+      "rating": 1469.666738,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "tri",
+      "rating": 1482.197938,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "tun",
+      "rating": 1452.685425,
+      "matchesPlayed": 18
+    },
+    {
+      "teamId": "tur",
+      "rating": 1520.136941,
+      "matchesPlayed": 10
+    },
+    {
+      "teamId": "uae",
+      "rating": 1472.878139,
+      "matchesPlayed": 3
+    },
+    {
+      "teamId": "ukr",
+      "rating": 1501.54438,
+      "matchesPlayed": 5
+    },
+    {
+      "teamId": "uru",
+      "rating": 1528.974597,
+      "matchesPlayed": 59
+    },
+    {
+      "teamId": "usa",
+      "rating": 1452.331469,
+      "matchesPlayed": 37
+    },
+    {
+      "teamId": "wal",
+      "rating": 1480.778242,
+      "matchesPlayed": 8
+    },
+    {
+      "teamId": "west-germany",
+      "rating": 1619.344137,
+      "matchesPlayed": 56
+    },
+    {
+      "teamId": "yugoslavia",
+      "rating": 1522.090733,
+      "matchesPlayed": 33
+    },
+    {
+      "teamId": "zaire",
+      "rating": 1473.877507,
+      "matchesPlayed": 3
+    }
+  ]
+}
