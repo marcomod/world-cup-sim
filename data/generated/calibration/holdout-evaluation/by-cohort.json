@@ -1,0 +1,168 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "holdoutEvaluationModelVersion": "historical-elo-holdout-evaluation-v1",
+  "candidates": [
+    {
+      "divisor": 200,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 200,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "cohorts": [
+        {
+          "cohort": "all_matches",
+          "split": "holdout",
+          "selectedSampleSize": 64,
+          "scoredSampleSize": 49,
+          "excludedFromBinaryScoring": 15,
+          "metrics": {
+            "brierScore": 0.22438,
+            "logLoss": 0.654604,
+            "accuracy": 0.77551,
+            "meanPredictedProbability": 0.55135,
+            "observedHomeWinRate": 0.591837
+          }
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "holdout",
+          "selectedSampleSize": 49,
+          "scoredSampleSize": 49,
+          "excludedFromBinaryScoring": 0,
+          "metrics": {
+            "brierScore": 0.22438,
+            "logLoss": 0.654604,
+            "accuracy": 0.77551,
+            "meanPredictedProbability": 0.55135,
+            "observedHomeWinRate": 0.591837
+          }
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "holdout",
+          "selectedSampleSize": 16,
+          "scoredSampleSize": 11,
+          "excludedFromBinaryScoring": 5,
+          "metrics": {
+            "brierScore": 0.136992,
+            "logLoss": 0.448079,
+            "accuracy": 0.909091,
+            "meanPredictedProbability": 0.627032,
+            "observedHomeWinRate": 0.909091
+          }
+        },
+        {
+          "cohort": "knockout_decisive_only",
+          "split": "holdout",
+          "selectedSampleSize": 11,
+          "scoredSampleSize": 11,
+          "excludedFromBinaryScoring": 0,
+          "metrics": {
+            "brierScore": 0.136992,
+            "logLoss": 0.448079,
+            "accuracy": 0.909091,
+            "meanPredictedProbability": 0.627032,
+            "observedHomeWinRate": 0.909091
+          }
+        }
+      ]
+    },
+    {
+      "divisor": 400,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 400,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "cohorts": [
+        {
+          "cohort": "all_matches",
+          "split": "holdout",
+          "selectedSampleSize": 64,
+          "scoredSampleSize": 49,
+          "excludedFromBinaryScoring": 15,
+          "metrics": {
+            "brierScore": 0.223529,
+            "logLoss": 0.642894,
+            "accuracy": 0.734694,
+            "meanPredictedProbability": 0.542938,
+            "observedHomeWinRate": 0.591837
+          }
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "holdout",
+          "selectedSampleSize": 49,
+          "scoredSampleSize": 49,
+          "excludedFromBinaryScoring": 0,
+          "metrics": {
+            "brierScore": 0.223529,
+            "logLoss": 0.642894,
+            "accuracy": 0.734694,
+            "meanPredictedProbability": 0.542938,
+            "observedHomeWinRate": 0.591837
+          }
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "holdout",
+          "selectedSampleSize": 16,
+          "scoredSampleSize": 11,
+          "excludedFromBinaryScoring": 5,
+          "metrics": {
+            "brierScore": 0.150217,
+            "logLoss": 0.482111,
+            "accuracy": 0.909091,
+            "meanPredictedProbability": 0.611777,
+            "observedHomeWinRate": 0.909091
+          }
+        },
+        {
+          "cohort": "knockout_decisive_only",
+          "split": "holdout",
+          "selectedSampleSize": 11,
+          "scoredSampleSize": 11,
+          "excludedFromBinaryScoring": 0,
+          "metrics": {
+            "brierScore": 0.150217,
+            "logLoss": 0.482111,
+            "accuracy": 0.909091,
+            "meanPredictedProbability": 0.611777,
+            "observedHomeWinRate": 0.909091
+          }
+        }
+      ]
+    }
+  ]
+}

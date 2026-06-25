@@ -86,11 +86,12 @@ cohort evaluation remains complete.
 
 ## Sealed Holdout
 
-The comparison does not compute or serialize 2022 candidate metrics. Metadata
-marks the holdout `sealed_unopened`. Before opening it, commit and review the
-candidate grid, selection protocol, generated artifacts, source checksum, and
-provisional selection. The holdout should then be evaluated once in a separate
-task without changing the protocol.
+The comparison does not compute or serialize 2022 candidate metrics. Its
+metadata remains a pre-holdout record and marks the holdout `sealed_unopened`.
+The one-time 2022 holdout opening is a separate artifact set documented in
+`docs/HOLDOUT_EVALUATION.md`; it evaluates only the fixed selected divisor `200`
+against reference divisor `400` without changing this protocol, reranking the
+grid, or changing production.
 
 ## Generated Artifacts
 

@@ -1,0 +1,60 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "holdoutEvaluationModelVersion": "historical-elo-holdout-evaluation-v1",
+  "frozenProtocol": {
+    "selectedDivisor": 200,
+    "referenceDivisor": 400,
+    "primaryCohort": "knockout_decisive_only",
+    "primaryMetric": "brierScore",
+    "secondaryMetric": "logLoss",
+    "holdoutSplit": "holdout",
+    "holdoutTournamentYear": 2022
+  },
+  "primaryComparison": {
+    "selectedDivisor": 200,
+    "referenceDivisor": 400,
+    "cohort": "knockout_decisive_only",
+    "split": "holdout",
+    "selectedSampleSize": 11,
+    "scoredSampleSize": 11,
+    "selected": {
+      "brierScore": 0.136992,
+      "logLoss": 0.448079,
+      "accuracy": 0.909091,
+      "meanPredictedProbability": 0.627032,
+      "observedHomeWinRate": 0.909091
+    },
+    "reference": {
+      "brierScore": 0.150217,
+      "logLoss": 0.482111,
+      "accuracy": 0.909091,
+      "meanPredictedProbability": 0.611777,
+      "observedHomeWinRate": 0.909091
+    },
+    "deltas": {
+      "brierScore": -0.013225,
+      "logLoss": -0.034032
+    },
+    "deltaDirection": {
+      "brierScore": "favors_selected",
+      "logLoss": "favors_selected"
+    },
+    "accuracyPolicy": "secondary_not_used_for_selection"
+  },
+  "decisionSummary": {
+    "status": "opened_once_evaluated",
+    "conclusion": "holdout_favors_selected_divisor",
+    "conclusionBasis": "primary_holdout_brier_score_delta",
+    "primarySampleSize": 11,
+    "selectedDivisor": 200,
+    "referenceDivisor": 400,
+    "productionDivisor": 400,
+    "productionChangeApplied": false,
+    "protocolRetuned": false,
+    "gridExpanded": false,
+    "significanceClaimed": false,
+    "furtherTuningOnHoldoutAllowed": false,
+    "note": "The holdout is one 11-match primary sample from one tournament. No statistical significance is claimed, no further tuning may use 2022, and production remains divisor 400 pending a separate adoption decision."
+  },
+  "productionStatement": "Production remains divisor 400; no automatic production change was applied."
+}

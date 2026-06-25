@@ -204,8 +204,11 @@ Current status:
   expanding the grid after observing results requires a new predefined protocol.
   Uncertainty analysis, K-factor tuning, goal-difference and importance
   weighting, identity continuity, and other model changes remain separate work.
-- The 2022 holdout remains sealed. One-time holdout evaluation, production model
-  selection, broader parameter tuning, and market comparison remain future work.
+- The 2022 holdout has been opened once under the frozen protocol. Divisor `200`
+  beat reference divisor `400` on the 11-match primary holdout sample at reported
+  precision, but no significance is claimed, no further tuning may use 2022, and
+  production remains at divisor `400`. Production model adoption, broader
+  parameter tuning, and market comparison remain future work.
 
 The historical dataset and calibration scripts remain outside the runtime app.
 The World Football Elo development snapshot remains the active rating source,

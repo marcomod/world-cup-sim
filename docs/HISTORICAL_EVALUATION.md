@@ -111,7 +111,13 @@ will not be expanded after seeing validation results; that would require a new
 predefined tuning protocol. Uncertainty analysis remains future work. This is not
 a production recommendation, and the production divisor remains `400`.
 
-The 2022 holdout remains sealed and is not computed by the comparison framework.
-The next step is to commit and review the protocol, results, and provisional
-selection before one separate holdout evaluation. Extra-time, shootout, and
-cohort sensitivity remain future analysis.
+The divisor-comparison artifacts remain sealed pre-holdout records and do not
+compute 2022 candidate metrics. The one-time holdout evaluation is now recorded
+separately in `docs/HOLDOUT_EVALUATION.md` and
+`data/generated/calibration/holdout-evaluation/`. It evaluates the frozen
+selected divisor `200` against reference divisor `400` for 2022 only. The primary
+`knockout_decisive_only` holdout cohort has 11 selected and 11 scored matches;
+Brier delta is `-0.013225` and log-loss delta is `-0.034032`, both computed as
+`200 - 400`. The result is descriptive, does not claim significance, does not
+permit further tuning on 2022, and does not change production. Extra-time,
+shootout, and broader cohort sensitivity remain future analysis.

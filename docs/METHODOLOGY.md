@@ -282,9 +282,16 @@ goal-difference, match-importance, identity-continuity, and other model changes
 require separate protocols. Calibration buckets are omitted from comparison
 artifacts only to avoid redundant artifact size.
 
-The comparison does not compute or serialize 2022 metrics. The holdout remains
-sealed until the protocol, artifacts, and provisional decision are committed and
-reviewed. See `docs/DIVISOR_COMPARISON.md` for the complete protocol and results.
+The comparison artifacts do not compute or serialize 2022 metrics and remain the
+pre-holdout `sealed_unopened` record. The one-time holdout evaluation has opened
+2022 separately under the frozen protocol: selected divisor `200`, reference
+divisor `400`, primary cohort `knockout_decisive_only`, and primary metric Brier
+score. The 11-match primary holdout sample favors divisor `200` at reported
+precision, with Brier delta `-0.013225` and log-loss delta `-0.034032` computed
+as `200 - 400`. This is descriptive only, makes no significance claim, does not
+permit further tuning on 2022, and does not change production; the production
+divisor remains `400`. See `docs/DIVISOR_COMPARISON.md` and
+`docs/HOLDOUT_EVALUATION.md` for the complete protocol and results.
 
 ⸻
 

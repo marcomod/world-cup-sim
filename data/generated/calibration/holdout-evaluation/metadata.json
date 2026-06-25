@@ -1,0 +1,48 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "holdoutStatus": "opened_once_evaluated",
+  "projectRecordDate": "2026-06-24",
+  "projectRecordDatePolicy": "Fixed project record date for the one-time holdout opening; not an execution timestamp.",
+  "sourceDatasetChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+  "divisorComparisonMetadataChecksumSha256": "c080c5616b7bc2ccd4d7813c8798b2fd8e671238808285d8d4a02f8c678c2728",
+  "frozenProtocolChecksumSha256": "e139c2dc83df1c25b2e1934f8fb16e7bf7b39cf052cabbc10d18830b22a4349d",
+  "historicalReconstructionModelVersion": "sequential-elo-v1",
+  "evaluationModelVersion": "historical-elo-evaluation-v1",
+  "holdoutEvaluationModelVersion": "historical-elo-holdout-evaluation-v1",
+  "candidateDivisors": [
+    200,
+    400
+  ],
+  "fixedCandidateGrid": [
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    600
+  ],
+  "fixedBaselineParameters": {
+    "initialRating": 1500,
+    "kFactor": 20,
+    "homeAdvantage": 0,
+    "penaltyUpdateOutcome": "draw",
+    "nonDecisiveUpdateOutcome": "draw"
+  },
+  "frozenProtocol": {
+    "selectedDivisor": 200,
+    "referenceDivisor": 400,
+    "primaryCohort": "knockout_decisive_only",
+    "primaryMetric": "brierScore",
+    "secondaryMetric": "logLoss",
+    "holdoutSplit": "holdout",
+    "holdoutTournamentYear": 2022
+  },
+  "previouslySealedHoldoutStatus": "sealed_unopened",
+  "openingReason": "One-time final holdout evaluation after the divisor-comparison protocol, grid, and provisional divisor 200 selection were fixed.",
+  "numericPrecision": 6,
+  "numericSerializationPolicy": "Generated numbers are rounded to 6 decimal places and negative zero is serialized as zero.",
+  "generationTimestampPolicy": "No wall-clock timestamp is written; identical validated input produces byte-stable artifacts.",
+  "noRetuningPolicy": "Holdout metrics are descriptive only; they do not rerank candidates, expand the grid, alter fixed parameters, or change the production divisor."
+}
