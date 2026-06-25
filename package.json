@@ -10,9 +10,10 @@
     "test": "vitest run",
     "ratings:generate": "node --no-warnings --experimental-strip-types scripts/ratings-pipeline/generateRatings.ts",
     "historical:validate": "node --no-warnings --experimental-strip-types scripts/historical-pipeline/validateHistoricalDataset.ts",
-    "historical:test": "vitest run tests/data/historicalPipeline.test.ts tests/data/historicalKaggleAdapter.test.ts tests/calibration/sequentialElo.test.ts tests/calibration/evaluation.test.ts",
+    "historical:test": "vitest run tests/data/historicalPipeline.test.ts tests/data/historicalKaggleAdapter.test.ts tests/calibration/sequentialElo.test.ts tests/calibration/evaluation.test.ts tests/calibration/divisorComparison.test.ts",
     "calibration:reconstruct-elo": "node --no-warnings --experimental-strip-types scripts/calibration/reconstructHistoricalElo.ts",
-    "calibration:evaluate-elo": "node --no-warnings --experimental-strip-types scripts/calibration/evaluateHistoricalElo.ts"
+    "calibration:evaluate-elo": "node --no-warnings --experimental-strip-types scripts/calibration/evaluateHistoricalElo.ts",
+    "calibration:compare-divisors": "node --no-warnings --experimental-strip-types scripts/calibration/compareHistoricalEloDivisors.ts"
   },
   "dependencies": {
     "next": "16.2.9",

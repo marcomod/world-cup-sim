@@ -197,8 +197,15 @@ Current status:
   cohorts. Reports expose explicit selected and binary-scored sample counts;
   descriptive shootout results retain null metrics. These reports do not select
   a production model.
-- Elo-divisor comparison, model selection, and market comparison remain future
-  work. The 2022 holdout is not used for tuning.
+- A deterministic fixed-grid Elo-divisor comparison is implemented using only
+  development and validation. Divisor `200` is the provisional protocol choice,
+  not a production recommendation; it is the lower grid boundary and validation
+  includes only 38 scored knockout matches. The optimum may lie below `200`, but
+  expanding the grid after observing results requires a new predefined protocol.
+  Uncertainty analysis, K-factor tuning, goal-difference and importance
+  weighting, identity continuity, and other model changes remain separate work.
+- The 2022 holdout remains sealed. One-time holdout evaluation, production model
+  selection, broader parameter tuning, and market comparison remain future work.
 
 The historical dataset and calibration scripts remain outside the runtime app.
 The World Football Elo development snapshot remains the active rating source,

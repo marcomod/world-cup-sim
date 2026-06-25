@@ -1,0 +1,878 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "comparisonModelVersion": "historical-elo-divisor-comparison-v1",
+  "candidates": [
+    {
+      "divisor": 200,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 200,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.2208,
+        "logLoss": 0.631204,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.545619,
+        "observedHomeWinRate": 0.797546
+      },
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.184883,
+        "logLoss": 0.553313,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.565774,
+        "observedHomeWinRate": 0.657895
+      },
+      "supportingDiagnostics": [
+        {
+          "cohort": "decisive_only",
+          "split": "development",
+          "selectedSampleSize": 551,
+          "scoredSampleSize": 551,
+          "brierScore": 0.216427,
+          "logLoss": 0.622412,
+          "accuracy": 0.647913,
+          "meanPredictedProbability": 0.545378,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "validation",
+          "selectedSampleSize": 150,
+          "scoredSampleSize": 150,
+          "brierScore": 0.215985,
+          "logLoss": 0.622213,
+          "accuracy": 0.62,
+          "meanPredictedProbability": 0.533673,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "all_matches",
+          "split": "development",
+          "selectedSampleSize": 708,
+          "scoredSampleSize": 551,
+          "brierScore": 0.216427,
+          "logLoss": 0.622412,
+          "accuracy": 0.647913,
+          "meanPredictedProbability": 0.545378,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "all_matches",
+          "split": "validation",
+          "selectedSampleSize": 192,
+          "scoredSampleSize": 150,
+          "brierScore": 0.215985,
+          "logLoss": 0.622213,
+          "accuracy": 0.62,
+          "meanPredictedProbability": 0.533673,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "development",
+          "selectedSampleSize": 187,
+          "scoredSampleSize": 163,
+          "brierScore": 0.2208,
+          "logLoss": 0.631204,
+          "accuracy": 0.601227,
+          "meanPredictedProbability": 0.545619,
+          "observedHomeWinRate": 0.797546
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "validation",
+          "selectedSampleSize": 48,
+          "scoredSampleSize": 38,
+          "brierScore": 0.184883,
+          "logLoss": 0.553313,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.565774,
+          "observedHomeWinRate": 0.657895
+        }
+      ]
+    },
+    {
+      "divisor": 250,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 250,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.2213,
+        "logLoss": 0.632658,
+        "accuracy": 0.607362,
+        "meanPredictedProbability": 0.540892,
+        "observedHomeWinRate": 0.797546
+      },
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.190928,
+        "logLoss": 0.567249,
+        "accuracy": 0.736842,
+        "meanPredictedProbability": 0.562283,
+        "observedHomeWinRate": 0.657895
+      },
+      "supportingDiagnostics": [
+        {
+          "cohort": "decisive_only",
+          "split": "development",
+          "selectedSampleSize": 551,
+          "scoredSampleSize": 551,
+          "brierScore": 0.218219,
+          "logLoss": 0.626503,
+          "accuracy": 0.651543,
+          "meanPredictedProbability": 0.540354,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "validation",
+          "selectedSampleSize": 150,
+          "scoredSampleSize": 150,
+          "brierScore": 0.218029,
+          "logLoss": 0.62649,
+          "accuracy": 0.626667,
+          "meanPredictedProbability": 0.53109,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "all_matches",
+          "split": "development",
+          "selectedSampleSize": 708,
+          "scoredSampleSize": 551,
+          "brierScore": 0.218219,
+          "logLoss": 0.626503,
+          "accuracy": 0.651543,
+          "meanPredictedProbability": 0.540354,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "all_matches",
+          "split": "validation",
+          "selectedSampleSize": 192,
+          "scoredSampleSize": 150,
+          "brierScore": 0.218029,
+          "logLoss": 0.62649,
+          "accuracy": 0.626667,
+          "meanPredictedProbability": 0.53109,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "development",
+          "selectedSampleSize": 187,
+          "scoredSampleSize": 163,
+          "brierScore": 0.2213,
+          "logLoss": 0.632658,
+          "accuracy": 0.607362,
+          "meanPredictedProbability": 0.540892,
+          "observedHomeWinRate": 0.797546
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "validation",
+          "selectedSampleSize": 48,
+          "scoredSampleSize": 38,
+          "brierScore": 0.190928,
+          "logLoss": 0.567249,
+          "accuracy": 0.736842,
+          "meanPredictedProbability": 0.562283,
+          "observedHomeWinRate": 0.657895
+        }
+      ]
+    },
+    {
+      "divisor": 300,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 300,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.222132,
+        "logLoss": 0.634731,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.537135,
+        "observedHomeWinRate": 0.797546
+      },
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.196111,
+        "logLoss": 0.579068,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.559272,
+        "observedHomeWinRate": 0.657895
+      },
+      "supportingDiagnostics": [
+        {
+          "cohort": "decisive_only",
+          "split": "development",
+          "selectedSampleSize": 551,
+          "scoredSampleSize": 551,
+          "brierScore": 0.219961,
+          "logLoss": 0.630431,
+          "accuracy": 0.651543,
+          "meanPredictedProbability": 0.536385,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "validation",
+          "selectedSampleSize": 150,
+          "scoredSampleSize": 150,
+          "brierScore": 0.219912,
+          "logLoss": 0.630501,
+          "accuracy": 0.613333,
+          "meanPredictedProbability": 0.528927,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "all_matches",
+          "split": "development",
+          "selectedSampleSize": 708,
+          "scoredSampleSize": 551,
+          "brierScore": 0.219961,
+          "logLoss": 0.630431,
+          "accuracy": 0.651543,
+          "meanPredictedProbability": 0.536385,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "all_matches",
+          "split": "validation",
+          "selectedSampleSize": 192,
+          "scoredSampleSize": 150,
+          "brierScore": 0.219912,
+          "logLoss": 0.630501,
+          "accuracy": 0.613333,
+          "meanPredictedProbability": 0.528927,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "development",
+          "selectedSampleSize": 187,
+          "scoredSampleSize": 163,
+          "brierScore": 0.222132,
+          "logLoss": 0.634731,
+          "accuracy": 0.601227,
+          "meanPredictedProbability": 0.537135,
+          "observedHomeWinRate": 0.797546
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "validation",
+          "selectedSampleSize": 48,
+          "scoredSampleSize": 38,
+          "brierScore": 0.196111,
+          "logLoss": 0.579068,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.559272,
+          "observedHomeWinRate": 0.657895
+        }
+      ]
+    },
+    {
+      "divisor": 350,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 350,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.223089,
+        "logLoss": 0.636996,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.534057,
+        "observedHomeWinRate": 0.797546
+      },
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.20051,
+        "logLoss": 0.589005,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.556577,
+        "observedHomeWinRate": 0.657895
+      },
+      "supportingDiagnostics": [
+        {
+          "cohort": "decisive_only",
+          "split": "development",
+          "selectedSampleSize": 551,
+          "scoredSampleSize": 551,
+          "brierScore": 0.221581,
+          "logLoss": 0.634044,
+          "accuracy": 0.647913,
+          "meanPredictedProbability": 0.533156,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "validation",
+          "selectedSampleSize": 150,
+          "scoredSampleSize": 150,
+          "brierScore": 0.221594,
+          "logLoss": 0.634103,
+          "accuracy": 0.613333,
+          "meanPredictedProbability": 0.52708,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "all_matches",
+          "split": "development",
+          "selectedSampleSize": 708,
+          "scoredSampleSize": 551,
+          "brierScore": 0.221581,
+          "logLoss": 0.634044,
+          "accuracy": 0.647913,
+          "meanPredictedProbability": 0.533156,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "all_matches",
+          "split": "validation",
+          "selectedSampleSize": 192,
+          "scoredSampleSize": 150,
+          "brierScore": 0.221594,
+          "logLoss": 0.634103,
+          "accuracy": 0.613333,
+          "meanPredictedProbability": 0.52708,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "development",
+          "selectedSampleSize": 187,
+          "scoredSampleSize": 163,
+          "brierScore": 0.223089,
+          "logLoss": 0.636996,
+          "accuracy": 0.601227,
+          "meanPredictedProbability": 0.534057,
+          "observedHomeWinRate": 0.797546
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "validation",
+          "selectedSampleSize": 48,
+          "scoredSampleSize": 38,
+          "brierScore": 0.20051,
+          "logLoss": 0.589005,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.556577,
+          "observedHomeWinRate": 0.657895
+        }
+      ]
+    },
+    {
+      "divisor": 400,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 400,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.224077,
+        "logLoss": 0.639269,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.531478,
+        "observedHomeWinRate": 0.797546
+      },
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.204254,
+        "logLoss": 0.597383,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.55412,
+        "observedHomeWinRate": 0.657895
+      },
+      "supportingDiagnostics": [
+        {
+          "cohort": "decisive_only",
+          "split": "development",
+          "selectedSampleSize": 551,
+          "scoredSampleSize": 551,
+          "brierScore": 0.223065,
+          "logLoss": 0.637322,
+          "accuracy": 0.647913,
+          "meanPredictedProbability": 0.53047,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "validation",
+          "selectedSampleSize": 150,
+          "scoredSampleSize": 150,
+          "brierScore": 0.223088,
+          "logLoss": 0.63731,
+          "accuracy": 0.626667,
+          "meanPredictedProbability": 0.525477,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "all_matches",
+          "split": "development",
+          "selectedSampleSize": 708,
+          "scoredSampleSize": 551,
+          "brierScore": 0.223065,
+          "logLoss": 0.637322,
+          "accuracy": 0.647913,
+          "meanPredictedProbability": 0.53047,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "all_matches",
+          "split": "validation",
+          "selectedSampleSize": 192,
+          "scoredSampleSize": 150,
+          "brierScore": 0.223088,
+          "logLoss": 0.63731,
+          "accuracy": 0.626667,
+          "meanPredictedProbability": 0.525477,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "development",
+          "selectedSampleSize": 187,
+          "scoredSampleSize": 163,
+          "brierScore": 0.224077,
+          "logLoss": 0.639269,
+          "accuracy": 0.601227,
+          "meanPredictedProbability": 0.531478,
+          "observedHomeWinRate": 0.797546
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "validation",
+          "selectedSampleSize": 48,
+          "scoredSampleSize": 38,
+          "brierScore": 0.204254,
+          "logLoss": 0.597383,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.55412,
+          "observedHomeWinRate": 0.657895
+        }
+      ]
+    },
+    {
+      "divisor": 450,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 450,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.22505,
+        "logLoss": 0.641467,
+        "accuracy": 0.595092,
+        "meanPredictedProbability": 0.529279,
+        "observedHomeWinRate": 0.797546
+      },
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.207462,
+        "logLoss": 0.604497,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.551859,
+        "observedHomeWinRate": 0.657895
+      },
+      "supportingDiagnostics": [
+        {
+          "cohort": "decisive_only",
+          "split": "development",
+          "selectedSampleSize": 551,
+          "scoredSampleSize": 551,
+          "brierScore": 0.224418,
+          "logLoss": 0.640288,
+          "accuracy": 0.646098,
+          "meanPredictedProbability": 0.528197,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "validation",
+          "selectedSampleSize": 150,
+          "scoredSampleSize": 150,
+          "brierScore": 0.224419,
+          "logLoss": 0.640168,
+          "accuracy": 0.626667,
+          "meanPredictedProbability": 0.524067,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "all_matches",
+          "split": "development",
+          "selectedSampleSize": 708,
+          "scoredSampleSize": 551,
+          "brierScore": 0.224418,
+          "logLoss": 0.640288,
+          "accuracy": 0.646098,
+          "meanPredictedProbability": 0.528197,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "all_matches",
+          "split": "validation",
+          "selectedSampleSize": 192,
+          "scoredSampleSize": 150,
+          "brierScore": 0.224419,
+          "logLoss": 0.640168,
+          "accuracy": 0.626667,
+          "meanPredictedProbability": 0.524067,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "development",
+          "selectedSampleSize": 187,
+          "scoredSampleSize": 163,
+          "brierScore": 0.22505,
+          "logLoss": 0.641467,
+          "accuracy": 0.595092,
+          "meanPredictedProbability": 0.529279,
+          "observedHomeWinRate": 0.797546
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "validation",
+          "selectedSampleSize": 48,
+          "scoredSampleSize": 38,
+          "brierScore": 0.207462,
+          "logLoss": 0.604497,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.551859,
+          "observedHomeWinRate": 0.657895
+        }
+      ]
+    },
+    {
+      "divisor": 500,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 500,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.225988,
+        "logLoss": 0.643556,
+        "accuracy": 0.595092,
+        "meanPredictedProbability": 0.527378,
+        "observedHomeWinRate": 0.797546
+      },
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.210234,
+        "logLoss": 0.610593,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.549767,
+        "observedHomeWinRate": 0.657895
+      },
+      "supportingDiagnostics": [
+        {
+          "cohort": "decisive_only",
+          "split": "development",
+          "selectedSampleSize": 551,
+          "scoredSampleSize": 551,
+          "brierScore": 0.225652,
+          "logLoss": 0.642973,
+          "accuracy": 0.640653,
+          "meanPredictedProbability": 0.526246,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "validation",
+          "selectedSampleSize": 150,
+          "scoredSampleSize": 150,
+          "brierScore": 0.225612,
+          "logLoss": 0.642728,
+          "accuracy": 0.613333,
+          "meanPredictedProbability": 0.522815,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "all_matches",
+          "split": "development",
+          "selectedSampleSize": 708,
+          "scoredSampleSize": 551,
+          "brierScore": 0.225652,
+          "logLoss": 0.642973,
+          "accuracy": 0.640653,
+          "meanPredictedProbability": 0.526246,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "all_matches",
+          "split": "validation",
+          "selectedSampleSize": 192,
+          "scoredSampleSize": 150,
+          "brierScore": 0.225612,
+          "logLoss": 0.642728,
+          "accuracy": 0.613333,
+          "meanPredictedProbability": 0.522815,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "development",
+          "selectedSampleSize": 187,
+          "scoredSampleSize": 163,
+          "brierScore": 0.225988,
+          "logLoss": 0.643556,
+          "accuracy": 0.595092,
+          "meanPredictedProbability": 0.527378,
+          "observedHomeWinRate": 0.797546
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "validation",
+          "selectedSampleSize": 48,
+          "scoredSampleSize": 38,
+          "brierScore": 0.210234,
+          "logLoss": 0.610593,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.549767,
+          "observedHomeWinRate": 0.657895
+        }
+      ]
+    },
+    {
+      "divisor": 600,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 600,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "reconstruction": {
+        "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+        "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+        "matchCount": 964,
+        "observationCount": 964,
+        "teamCount": 86,
+        "firstDate": "1930-07-13",
+        "lastDate": "2022-12-18",
+        "multiMatchDateCount": 297,
+        "matchesOnMultiMatchDates": 883,
+        "maxMatchesOnSingleDate": 8
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.227726,
+        "logLoss": 0.647369,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.524249,
+        "observedHomeWinRate": 0.797546
+      },
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.21477,
+        "logLoss": 0.620462,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.546018,
+        "observedHomeWinRate": 0.657895
+      },
+      "supportingDiagnostics": [
+        {
+          "cohort": "decisive_only",
+          "split": "development",
+          "selectedSampleSize": 551,
+          "scoredSampleSize": 551,
+          "brierScore": 0.22781,
+          "logLoss": 0.647627,
+          "accuracy": 0.644283,
+          "meanPredictedProbability": 0.523065,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "decisive_only",
+          "split": "validation",
+          "selectedSampleSize": 150,
+          "scoredSampleSize": 150,
+          "brierScore": 0.227664,
+          "logLoss": 0.64712,
+          "accuracy": 0.613333,
+          "meanPredictedProbability": 0.52068,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "all_matches",
+          "split": "development",
+          "selectedSampleSize": 708,
+          "scoredSampleSize": 551,
+          "brierScore": 0.22781,
+          "logLoss": 0.647627,
+          "accuracy": 0.644283,
+          "meanPredictedProbability": 0.523065,
+          "observedHomeWinRate": 0.77314
+        },
+        {
+          "cohort": "all_matches",
+          "split": "validation",
+          "selectedSampleSize": 192,
+          "scoredSampleSize": 150,
+          "brierScore": 0.227664,
+          "logLoss": 0.64712,
+          "accuracy": 0.613333,
+          "meanPredictedProbability": 0.52068,
+          "observedHomeWinRate": 0.513333
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "development",
+          "selectedSampleSize": 187,
+          "scoredSampleSize": 163,
+          "brierScore": 0.227726,
+          "logLoss": 0.647369,
+          "accuracy": 0.601227,
+          "meanPredictedProbability": 0.524249,
+          "observedHomeWinRate": 0.797546
+        },
+        {
+          "cohort": "knockout_only",
+          "split": "validation",
+          "selectedSampleSize": 48,
+          "scoredSampleSize": 38,
+          "brierScore": 0.21477,
+          "logLoss": 0.620462,
+          "accuracy": 0.710526,
+          "meanPredictedProbability": 0.546018,
+          "observedHomeWinRate": 0.657895
+        }
+      ]
+    }
+  ]
+}

@@ -102,8 +102,16 @@ selection. Unknown stages fail closed and cannot default into knockout cohorts.
 
 ## Remaining Work
 
-Before comparing divisors, define a fixed tuning protocol using development and
-validation data only. The 2022 holdout must remain untouched until a candidate
-method is fixed. Extra-time, shootout, and cohort sensitivity should be reported
-separately. No production divisor recommendation is made by this evaluation
-foundation.
+The fixed-grid divisor comparison is implemented using development and
+validation only. Its protocol and provisional results are documented in
+`docs/DIVISOR_COMPARISON.md`. Divisor `200` ranks first on validation Brier score,
+but the validation knockout sample contains only 38 scored matches and `200` is
+the lower grid boundary. The underlying optimum may lie below `200`, but the grid
+will not be expanded after seeing validation results; that would require a new
+predefined tuning protocol. Uncertainty analysis remains future work. This is not
+a production recommendation, and the production divisor remains `400`.
+
+The 2022 holdout remains sealed and is not computed by the comparison framework.
+The next step is to commit and review the protocol, results, and provisional
+selection before one separate holdout evaluation. Extra-time, shootout, and
+cohort sensitivity remain future analysis.

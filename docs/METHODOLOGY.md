@@ -154,7 +154,8 @@ Historical match results alone are not sufficient to calculate these metrics.
 Each observation also needs a contemporaneous pre-match rating difference. The
 implemented sequential Elo baseline now generates leakage-free pre-match
 ratings and observations offline, and Brier score and log-loss evaluation is
-implemented for those baseline observations. Divisor comparison, parameter
+implemented for those baseline observations. A fixed-grid divisor comparison is
+also implemented using development and validation only. Broader parameter
 tuning, model selection, and deliberate production adoption remain future work.
 The 2022 holdout has not been used for tuning, and the current 2026 development
 snapshot is not applied retrospectively.
@@ -251,6 +252,39 @@ diagnostic and must not determine model selection by itself.
 These reports evaluate the baseline but do not establish that the production
 model or divisor should change. Cohort definitions, generated artifacts, and
 holdout discipline are detailed in `docs/HISTORICAL_EVALUATION.md`.
+
+Historical Divisor Comparison
+
+The offline comparison reconstructs the historical Elo series independently for
+the fixed divisor grid `200, 250, 300, 350, 400, 450, 500, 600`. Initial rating
+`1500`, K-factor `20`, home advantage `0`, outcome treatment, ordering, and all
+other assumptions remain fixed.
+
+Candidates rank by validation Brier score, validation log loss, development
+Brier score, development log loss, distance from `400`, and numeric divisor, in
+that order. Ranking uses full precision and does not accept holdout or
+full-history metrics. Accuracy is descriptive only.
+
+Divisor `200` is the provisional validation selection, but it is the lower grid
+boundary and the validation knockout sample contains only 38 scored matches. The
+underlying optimum may lie below `200`, but expanding the grid after observing
+validation results would be a new tuning decision requiring a separately
+predefined protocol. Uncertainty analysis remains future work. The result is not
+claimed to be statistically conclusive, final, or production-ready. The
+production divisor remains `400`.
+
+Divisor `400` reproduces baseline cohort membership, sample counts, and
+six-decimal Brier-score and log-loss results. Mean prediction and observed rate
+also agree at that boundary. Threshold accuracy can differ because comparison
+uses full-precision probabilities while standalone baseline evaluation consumes
+six-decimal serialized probabilities; accuracy does not drive ranking. K-factor,
+goal-difference, match-importance, identity-continuity, and other model changes
+require separate protocols. Calibration buckets are omitted from comparison
+artifacts only to avoid redundant artifact size.
+
+The comparison does not compute or serialize 2022 metrics. The holdout remains
+sealed until the protocol, artifacts, and provisional decision are committed and
+reviewed. See `docs/DIVISOR_COMPARISON.md` for the complete protocol and results.
 
 ⸻
 

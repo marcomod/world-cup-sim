@@ -1,0 +1,315 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "comparisonModelVersion": "historical-elo-divisor-comparison-v1",
+  "selectionProtocol": {
+    "primaryCohort": "knockout_decisive_only",
+    "primaryMetric": "validation_brier_score",
+    "secondaryMetric": "validation_log_loss",
+    "tieBreakRules": [
+      "development_brier_score",
+      "development_log_loss",
+      "distance_from_current_divisor_400",
+      "smaller_numeric_divisor"
+    ],
+    "rankingPrecision": "full_precision",
+    "eligibleSplits": [
+      "development",
+      "validation"
+    ],
+    "excludedSplits": [
+      "holdout",
+      "full_history"
+    ],
+    "accuracyUsedForSelection": false
+  },
+  "selectionDecision": {
+    "provisionalSelectedDivisor": 200,
+    "selectedRank": 1,
+    "productionDivisor": 400,
+    "productionChangeApplied": false,
+    "holdoutStatus": "sealed_unopened",
+    "status": "provisional_validation_selection"
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "divisor": 200,
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.184883,
+        "logLoss": 0.553313,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.565774,
+        "observedHomeWinRate": 0.657895
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.2208,
+        "logLoss": 0.631204,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.545619,
+        "observedHomeWinRate": 0.797546
+      },
+      "comparisonKeys": {
+        "validationBrierScore": 0.184883,
+        "validationLogLoss": 0.553313,
+        "developmentBrierScore": 0.2208,
+        "developmentLogLoss": 0.631204,
+        "distanceFromCurrentDivisor": 200,
+        "divisor": 200
+      },
+      "deltaFromCurrentDivisor": {
+        "validationBrierScore": -0.01937,
+        "validationLogLoss": -0.044069
+      },
+      "deltaFromBestValidationBrierScore": 0
+    },
+    {
+      "rank": 2,
+      "divisor": 250,
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.190928,
+        "logLoss": 0.567249,
+        "accuracy": 0.736842,
+        "meanPredictedProbability": 0.562283,
+        "observedHomeWinRate": 0.657895
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.2213,
+        "logLoss": 0.632658,
+        "accuracy": 0.607362,
+        "meanPredictedProbability": 0.540892,
+        "observedHomeWinRate": 0.797546
+      },
+      "comparisonKeys": {
+        "validationBrierScore": 0.190928,
+        "validationLogLoss": 0.567249,
+        "developmentBrierScore": 0.2213,
+        "developmentLogLoss": 0.632658,
+        "distanceFromCurrentDivisor": 150,
+        "divisor": 250
+      },
+      "deltaFromCurrentDivisor": {
+        "validationBrierScore": -0.013325,
+        "validationLogLoss": -0.030134
+      },
+      "deltaFromBestValidationBrierScore": 0.006045
+    },
+    {
+      "rank": 3,
+      "divisor": 300,
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.196111,
+        "logLoss": 0.579068,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.559272,
+        "observedHomeWinRate": 0.657895
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.222132,
+        "logLoss": 0.634731,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.537135,
+        "observedHomeWinRate": 0.797546
+      },
+      "comparisonKeys": {
+        "validationBrierScore": 0.196111,
+        "validationLogLoss": 0.579068,
+        "developmentBrierScore": 0.222132,
+        "developmentLogLoss": 0.634731,
+        "distanceFromCurrentDivisor": 100,
+        "divisor": 300
+      },
+      "deltaFromCurrentDivisor": {
+        "validationBrierScore": -0.008143,
+        "validationLogLoss": -0.018314
+      },
+      "deltaFromBestValidationBrierScore": 0.011227
+    },
+    {
+      "rank": 4,
+      "divisor": 350,
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.20051,
+        "logLoss": 0.589005,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.556577,
+        "observedHomeWinRate": 0.657895
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.223089,
+        "logLoss": 0.636996,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.534057,
+        "observedHomeWinRate": 0.797546
+      },
+      "comparisonKeys": {
+        "validationBrierScore": 0.20051,
+        "validationLogLoss": 0.589005,
+        "developmentBrierScore": 0.223089,
+        "developmentLogLoss": 0.636996,
+        "distanceFromCurrentDivisor": 50,
+        "divisor": 350
+      },
+      "deltaFromCurrentDivisor": {
+        "validationBrierScore": -0.003744,
+        "validationLogLoss": -0.008378
+      },
+      "deltaFromBestValidationBrierScore": 0.015627
+    },
+    {
+      "rank": 5,
+      "divisor": 400,
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.204254,
+        "logLoss": 0.597383,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.55412,
+        "observedHomeWinRate": 0.657895
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.224077,
+        "logLoss": 0.639269,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.531478,
+        "observedHomeWinRate": 0.797546
+      },
+      "comparisonKeys": {
+        "validationBrierScore": 0.204254,
+        "validationLogLoss": 0.597383,
+        "developmentBrierScore": 0.224077,
+        "developmentLogLoss": 0.639269,
+        "distanceFromCurrentDivisor": 0,
+        "divisor": 400
+      },
+      "deltaFromCurrentDivisor": {
+        "validationBrierScore": 0,
+        "validationLogLoss": 0
+      },
+      "deltaFromBestValidationBrierScore": 0.01937
+    },
+    {
+      "rank": 6,
+      "divisor": 450,
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.207462,
+        "logLoss": 0.604497,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.551859,
+        "observedHomeWinRate": 0.657895
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.22505,
+        "logLoss": 0.641467,
+        "accuracy": 0.595092,
+        "meanPredictedProbability": 0.529279,
+        "observedHomeWinRate": 0.797546
+      },
+      "comparisonKeys": {
+        "validationBrierScore": 0.207462,
+        "validationLogLoss": 0.604497,
+        "developmentBrierScore": 0.22505,
+        "developmentLogLoss": 0.641467,
+        "distanceFromCurrentDivisor": 50,
+        "divisor": 450
+      },
+      "deltaFromCurrentDivisor": {
+        "validationBrierScore": 0.003208,
+        "validationLogLoss": 0.007115
+      },
+      "deltaFromBestValidationBrierScore": 0.022579
+    },
+    {
+      "rank": 7,
+      "divisor": 500,
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.210234,
+        "logLoss": 0.610593,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.549767,
+        "observedHomeWinRate": 0.657895
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.225988,
+        "logLoss": 0.643556,
+        "accuracy": 0.595092,
+        "meanPredictedProbability": 0.527378,
+        "observedHomeWinRate": 0.797546
+      },
+      "comparisonKeys": {
+        "validationBrierScore": 0.210234,
+        "validationLogLoss": 0.610593,
+        "developmentBrierScore": 0.225988,
+        "developmentLogLoss": 0.643556,
+        "distanceFromCurrentDivisor": 100,
+        "divisor": 500
+      },
+      "deltaFromCurrentDivisor": {
+        "validationBrierScore": 0.00598,
+        "validationLogLoss": 0.01321
+      },
+      "deltaFromBestValidationBrierScore": 0.02535
+    },
+    {
+      "rank": 8,
+      "divisor": 600,
+      "validation": {
+        "selectedSampleSize": 38,
+        "scoredSampleSize": 38,
+        "brierScore": 0.21477,
+        "logLoss": 0.620462,
+        "accuracy": 0.710526,
+        "meanPredictedProbability": 0.546018,
+        "observedHomeWinRate": 0.657895
+      },
+      "development": {
+        "selectedSampleSize": 163,
+        "scoredSampleSize": 163,
+        "brierScore": 0.227726,
+        "logLoss": 0.647369,
+        "accuracy": 0.601227,
+        "meanPredictedProbability": 0.524249,
+        "observedHomeWinRate": 0.797546
+      },
+      "comparisonKeys": {
+        "validationBrierScore": 0.21477,
+        "validationLogLoss": 0.620462,
+        "developmentBrierScore": 0.227726,
+        "developmentLogLoss": 0.647369,
+        "distanceFromCurrentDivisor": 200,
+        "divisor": 600
+      },
+      "deltaFromCurrentDivisor": {
+        "validationBrierScore": 0.010517,
+        "validationLogLoss": 0.02308
+      },
+      "deltaFromBestValidationBrierScore": 0.029887
+    }
+  ]
+}

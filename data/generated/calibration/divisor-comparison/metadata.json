@@ -1,0 +1,70 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "comparisonModelVersion": "historical-elo-divisor-comparison-v1",
+  "historicalReconstructionModelVersion": "sequential-elo-v1",
+  "evaluationModelVersion": "historical-elo-evaluation-v1",
+  "sourceDatasetChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+  "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+  "candidateGrid": [
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    600
+  ],
+  "fixedBaselineParameters": {
+    "initialRating": 1500,
+    "kFactor": 20,
+    "homeAdvantage": 0,
+    "penaltyUpdateOutcome": "draw",
+    "nonDecisiveUpdateOutcome": "draw"
+  },
+  "productionDivisor": 400,
+  "selectionProtocol": {
+    "primaryCohort": "knockout_decisive_only",
+    "primaryMetric": "validation_brier_score",
+    "secondaryMetric": "validation_log_loss",
+    "tieBreakRules": [
+      "development_brier_score",
+      "development_log_loss",
+      "distance_from_current_divisor_400",
+      "smaller_numeric_divisor"
+    ],
+    "rankingPrecision": "full_precision",
+    "eligibleSplits": [
+      "development",
+      "validation"
+    ],
+    "excludedSplits": [
+      "holdout",
+      "full_history"
+    ],
+    "accuracyUsedForSelection": false
+  },
+  "holdoutStatus": "sealed_unopened",
+  "numericPrecision": 6,
+  "numericSerializationPolicy": "Ranking uses full-precision metrics; generated numbers are rounded to 6 decimal places and negative zero is serialized as zero.",
+  "generationTimestampPolicy": "No wall-clock timestamp is written; identical validated input produces byte-stable artifacts.",
+  "baselineCompatibilityPolicy": "Divisor 400 matches baseline cohort membership, sample counts, and 6-decimal Brier/log-loss, mean-prediction, and observed-rate results. Development accuracy differs at the exact 0.5 threshold because comparison uses full-precision in-memory probabilities while the standalone baseline evaluator reads 6-decimal serialized probabilities; accuracy is secondary and is not used for ranking.",
+  "developmentAccuracyCompatibility": {
+    "all_matches": {
+      "comparison": 0.647913,
+      "standaloneBaseline": 0.651543
+    },
+    "decisive_only": {
+      "comparison": 0.647913,
+      "standaloneBaseline": 0.651543
+    },
+    "knockout_only": {
+      "comparison": 0.601227,
+      "standaloneBaseline": 0.607362
+    },
+    "knockout_decisive_only": {
+      "comparison": 0.601227,
+      "standaloneBaseline": 0.607362
+    }
+  }
+}

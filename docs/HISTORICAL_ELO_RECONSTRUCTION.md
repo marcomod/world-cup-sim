@@ -89,6 +89,7 @@ This is a baseline reconstruction, not a final calibrated production model.
 The current 2026 World Football Elo snapshot is never applied retrospectively.
 The deterministic Brier score, log-loss, accuracy, and calibration-bucket
 evaluation protocol is documented in `docs/HISTORICAL_EVALUATION.md`. Its
-reports remain offline baseline analysis; divisor comparison, same-day
-sensitivity, production model selection, and market comparison remain separate
-future phases.
+reports remain offline baseline analysis. The fixed-grid divisor comparison is
+implemented and documented in `docs/DIVISOR_COMPARISON.md`; its provisional
+result does not change production. Same-day sensitivity, production model
+selection, and market comparison remain separate future phases.
