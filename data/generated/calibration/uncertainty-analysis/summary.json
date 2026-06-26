@@ -1,0 +1,154 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "uncertaintyAnalysisModelVersion": "historical-elo-uncertainty-analysis-v1",
+  "frozenProtocol": {
+    "selectedDivisor": 200,
+    "referenceDivisor": 400,
+    "cohort": "knockout_decisive_only",
+    "metrics": [
+      "brierScore",
+      "logLoss"
+    ],
+    "deltaDirection": "selected_minus_reference",
+    "bootstrapMethod": "paired_match_percentile",
+    "bootstrapReplications": 100000,
+    "confidenceLevel": 0.95,
+    "seed": 2026200400,
+    "splits": [
+      "development",
+      "validation",
+      "holdout"
+    ]
+  },
+  "candidateSummaries": [
+    {
+      "divisor": 200,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 200,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "matchCount": 964,
+      "observationCount": 964,
+      "teamCount": 86,
+      "firstDate": "1930-07-13",
+      "lastDate": "2022-12-18",
+      "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+      "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c"
+    },
+    {
+      "divisor": 400,
+      "reconstructionConfig": {
+        "initialRating": 1500,
+        "kFactor": 20,
+        "divisor": 400,
+        "homeAdvantage": 0,
+        "penaltyUpdateOutcome": "draw",
+        "nonDecisiveUpdateOutcome": "draw"
+      },
+      "matchCount": 964,
+      "observationCount": 964,
+      "teamCount": 86,
+      "firstDate": "1930-07-13",
+      "lastDate": "2022-12-18",
+      "sourceChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+      "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c"
+    }
+  ],
+  "splitResults": [
+    {
+      "split": "development",
+      "sampleSize": 163,
+      "brierScore": {
+        "metric": "brierScore",
+        "sampleSize": 163,
+        "observedMeanDelta": -0.003277,
+        "lowerBound": -0.00864,
+        "upperBound": 0.002275,
+        "proportionFavoringSelected": 0.88142,
+        "proportionFavoringReference": 0.11858,
+        "proportionEqual": 0
+      },
+      "logLoss": {
+        "metric": "logLoss",
+        "sampleSize": 163,
+        "observedMeanDelta": -0.008064,
+        "lowerBound": -0.020039,
+        "upperBound": 0.00458,
+        "proportionFavoringSelected": 0.89891,
+        "proportionFavoringReference": 0.10109,
+        "proportionEqual": 0
+      }
+    },
+    {
+      "split": "validation",
+      "sampleSize": 38,
+      "brierScore": {
+        "metric": "brierScore",
+        "sampleSize": 38,
+        "observedMeanDelta": -0.01937,
+        "lowerBound": -0.02829,
+        "upperBound": -0.010311,
+        "proportionFavoringSelected": 0.99998,
+        "proportionFavoringReference": 0.00002,
+        "proportionEqual": 0
+      },
+      "logLoss": {
+        "metric": "logLoss",
+        "sampleSize": 38,
+        "observedMeanDelta": -0.044069,
+        "lowerBound": -0.06312,
+        "upperBound": -0.02467,
+        "proportionFavoringSelected": 0.99999,
+        "proportionFavoringReference": 0.00001,
+        "proportionEqual": 0
+      }
+    },
+    {
+      "split": "holdout",
+      "sampleSize": 11,
+      "brierScore": {
+        "metric": "brierScore",
+        "sampleSize": 11,
+        "observedMeanDelta": -0.013225,
+        "lowerBound": -0.027729,
+        "upperBound": 0.001618,
+        "proportionFavoringSelected": 0.95915,
+        "proportionFavoringReference": 0.04085,
+        "proportionEqual": 0
+      },
+      "logLoss": {
+        "metric": "logLoss",
+        "sampleSize": 11,
+        "observedMeanDelta": -0.034032,
+        "lowerBound": -0.067697,
+        "upperBound": 0.000541,
+        "proportionFavoringSelected": 0.97287,
+        "proportionFavoringReference": 0.02713,
+        "proportionEqual": 0
+      }
+    }
+  ],
+  "evidenceClassification": "supports_adoption_review",
+  "productionDecision": {
+    "classification": "supports_adoption_review",
+    "decision": "defer_production_adoption",
+    "productionDivisor": 400,
+    "productionChangeApplied": false,
+    "leadingResearchCandidate": 200,
+    "selectedDivisor": 200,
+    "referenceDivisor": 400,
+    "policy": "Classification describes whether evidence supports a human adoption review; it never changes production automatically.",
+    "rationale": [
+      "Validation and holdout samples are small.",
+      "The holdout is one tournament.",
+      "Divisor 200 was the lower boundary of the searched grid.",
+      "Uncertainty analysis remains descriptive.",
+      "Changing the production divisor would affect every matchup and tournament simulation."
+    ]
+  },
+  "productionStatement": "Production remains divisor 400; no automatic production change was applied."
+}

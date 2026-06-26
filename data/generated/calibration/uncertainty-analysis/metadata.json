@@ -1,0 +1,74 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "uncertaintyAnalysisModelVersion": "historical-elo-uncertainty-analysis-v1",
+  "sourceDatasetChecksumSha256": "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab",
+  "observationIdentityChecksumSha256": "586c805cfa03d5f41e20ae5f21027dfa5743b2b83e7a0f14f1a36b108823376c",
+  "divisorComparisonArtifactChecksums": {
+    "ranking": "def31b50a3d3df9db6601f569f45e5888340d48fc4a13d922ba9605d65bc6cd8",
+    "candidates": "4123eb9ecb4dd43d5e945bcafe2d8824282080d30dec0f7e1ed44e5d724ec4a1",
+    "metadata": "c080c5616b7bc2ccd4d7813c8798b2fd8e671238808285d8d4a02f8c678c2728"
+  },
+  "holdoutArtifactChecksums": {
+    "result": "71326aceedc97fc7803ba0ffff45ef7d9c3017dac6aab42e0b6e5c0d27865fdb",
+    "byCohort": "06cf1fc6c7a1b0e76e7b09c6324e73022d0f419ec1f7853f7485e03532f36b55",
+    "metadata": "06cf2f51dc8797bef392e4fa34ca0dfdadaeb6b6740a364f40cab3568da55249"
+  },
+  "historicalReconstructionModelVersion": "sequential-elo-v1",
+  "evaluationModelVersion": "historical-elo-evaluation-v1",
+  "selectedDivisor": 200,
+  "referenceDivisor": 400,
+  "fixedCandidateGrid": [
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    500,
+    600
+  ],
+  "fixedBaselineParameters": {
+    "initialRating": 1500,
+    "kFactor": 20,
+    "homeAdvantage": 0,
+    "penaltyUpdateOutcome": "draw",
+    "nonDecisiveUpdateOutcome": "draw"
+  },
+  "frozenProtocol": {
+    "selectedDivisor": 200,
+    "referenceDivisor": 400,
+    "cohort": "knockout_decisive_only",
+    "metrics": [
+      "brierScore",
+      "logLoss"
+    ],
+    "deltaDirection": "selected_minus_reference",
+    "bootstrapMethod": "paired_match_percentile",
+    "bootstrapReplications": 100000,
+    "confidenceLevel": 0.95,
+    "seed": 2026200400,
+    "splits": [
+      "development",
+      "validation",
+      "holdout"
+    ]
+  },
+  "holdoutStatus": "opened_once_evaluated",
+  "numericPrecision": 6,
+  "numericSerializationPolicy": "Generated numbers are rounded to 6 decimal places and negative zero is serialized as zero.",
+  "generationTimestampPolicy": "No wall-clock timestamp is written; identical validated input produces byte-stable artifacts.",
+  "quantileConvention": "Percentile bounds use the Type 7 linear-interpolation quantile convention: sorted numeric replication means of length n use h = (n - 1) * p, the values at floor(h) and ceil(h), and linear interpolation by the fractional part of h. Lower and upper probabilities are 0.025 and 0.975, and full-precision replication values are used before six-decimal serialization.",
+  "favorFractionInterpretation": "The fraction of paired bootstrap replications with a negative delta is a descriptive resampling frequency. It is not a Bayesian posterior probability that divisor 200 is superior, not the probability that divisor 200 is the true optimum, not a production-adoption probability, and not a replacement for the predefined evidence-classification policy.",
+  "noTuningPolicy": "This uncertainty analysis does not rerank candidates, add divisors, combine splits into a new selection score, retune parameters, or change production.",
+  "statisticalSafeguards": [
+    "Match-level bootstrap treats scored matches as exchangeable.",
+    "Football matches within the same tournament may not be independent.",
+    "Validation covers only three tournaments.",
+    "Holdout covers only one tournament and 11 primary scored matches.",
+    "Percentile intervals are descriptive uncertainty summaries.",
+    "No statistical significance is claimed solely from this analysis.",
+    "Bootstrap favor fractions are descriptive resampling frequencies, not posterior probabilities.",
+    "Bootstrap intervals do not resolve the lower-boundary divisor-200 limitation.",
+    "The 2022 holdout cannot be reused for tuning."
+  ]
+}

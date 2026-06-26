@@ -1,0 +1,236 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "uncertaintyAnalysisModelVersion": "historical-elo-uncertainty-analysis-v1",
+  "tournamentSensitivity": {
+    "validationByTournament": [
+      {
+        "tournamentYear": 2010,
+        "sampleSize": 14,
+        "selected": {
+          "brierScore": 0.19004,
+          "logLoss": 0.56365
+        },
+        "reference": {
+          "brierScore": 0.202554,
+          "logLoss": 0.593907
+        },
+        "deltas": {
+          "brierScore": -0.012514,
+          "logLoss": -0.030256
+        },
+        "favors": {
+          "brierScore": "selected",
+          "logLoss": "selected"
+        }
+      },
+      {
+        "tournamentYear": 2014,
+        "sampleSize": 12,
+        "selected": {
+          "brierScore": 0.146291,
+          "logLoss": 0.468474
+        },
+        "reference": {
+          "brierScore": 0.176784,
+          "logLoss": 0.538036
+        },
+        "deltas": {
+          "brierScore": -0.030493,
+          "logLoss": -0.069562
+        },
+        "favors": {
+          "brierScore": "selected",
+          "logLoss": "selected"
+        }
+      },
+      {
+        "tournamentYear": 2018,
+        "sampleSize": 12,
+        "selected": {
+          "brierScore": 0.217459,
+          "logLoss": 0.626093
+        },
+        "reference": {
+          "brierScore": 0.233707,
+          "logLoss": 0.660785
+        },
+        "deltas": {
+          "brierScore": -0.016248,
+          "logLoss": -0.034692
+        },
+        "favors": {
+          "brierScore": "selected",
+          "logLoss": "selected"
+        }
+      }
+    ],
+    "validationLeaveOneTournamentOut": [
+      {
+        "tournamentYear": 2010,
+        "sampleSize": 24,
+        "selected": {
+          "brierScore": 0.181875,
+          "logLoss": 0.547283
+        },
+        "reference": {
+          "brierScore": 0.205245,
+          "logLoss": 0.59941
+        },
+        "deltas": {
+          "brierScore": -0.02337,
+          "logLoss": -0.052127
+        },
+        "favors": {
+          "brierScore": "selected",
+          "logLoss": "selected"
+        },
+        "excludedTournamentYear": 2010,
+        "includedTournamentYears": [
+          2014,
+          2018
+        ]
+      },
+      {
+        "tournamentYear": 2014,
+        "sampleSize": 26,
+        "selected": {
+          "brierScore": 0.202695,
+          "logLoss": 0.59247
+        },
+        "reference": {
+          "brierScore": 0.216932,
+          "logLoss": 0.624773
+        },
+        "deltas": {
+          "brierScore": -0.014237,
+          "logLoss": -0.032304
+        },
+        "favors": {
+          "brierScore": "selected",
+          "logLoss": "selected"
+        },
+        "excludedTournamentYear": 2014,
+        "includedTournamentYears": [
+          2010,
+          2018
+        ]
+      },
+      {
+        "tournamentYear": 2018,
+        "sampleSize": 26,
+        "selected": {
+          "brierScore": 0.169848,
+          "logLoss": 0.519723
+        },
+        "reference": {
+          "brierScore": 0.19066,
+          "logLoss": 0.56812
+        },
+        "deltas": {
+          "brierScore": -0.020812,
+          "logLoss": -0.048397
+        },
+        "favors": {
+          "brierScore": "selected",
+          "logLoss": "selected"
+        },
+        "excludedTournamentYear": 2018,
+        "includedTournamentYears": [
+          2010,
+          2014
+        ]
+      }
+    ],
+    "developmentSummary": {
+      "tournamentSampleSizes": [
+        {
+          "tournamentYear": 1930,
+          "sampleSize": 3
+        },
+        {
+          "tournamentYear": 1934,
+          "sampleSize": 16
+        },
+        {
+          "tournamentYear": 1938,
+          "sampleSize": 15
+        },
+        {
+          "tournamentYear": 1954,
+          "sampleSize": 10
+        },
+        {
+          "tournamentYear": 1958,
+          "sampleSize": 11
+        },
+        {
+          "tournamentYear": 1962,
+          "sampleSize": 8
+        },
+        {
+          "tournamentYear": 1966,
+          "sampleSize": 8
+        },
+        {
+          "tournamentYear": 1970,
+          "sampleSize": 8
+        },
+        {
+          "tournamentYear": 1974,
+          "sampleSize": 2
+        },
+        {
+          "tournamentYear": 1978,
+          "sampleSize": 2
+        },
+        {
+          "tournamentYear": 1982,
+          "sampleSize": 3
+        },
+        {
+          "tournamentYear": 1986,
+          "sampleSize": 13
+        },
+        {
+          "tournamentYear": 1990,
+          "sampleSize": 12
+        },
+        {
+          "tournamentYear": 1994,
+          "sampleSize": 13
+        },
+        {
+          "tournamentYear": 1998,
+          "sampleSize": 13
+        },
+        {
+          "tournamentYear": 2002,
+          "sampleSize": 14
+        },
+        {
+          "tournamentYear": 2006,
+          "sampleSize": 12
+        }
+      ],
+      "brierScore": {
+        "tournamentCount": 17,
+        "tournamentsFavoringSelected": 11,
+        "tournamentsFavoringReference": 6,
+        "tournamentsTiedAtSixDecimals": 0,
+        "medianTournamentDelta": -0.002816,
+        "minTournamentDelta": -0.01292,
+        "maxTournamentDelta": 0.01637
+      },
+      "logLoss": {
+        "tournamentCount": 17,
+        "tournamentsFavoringSelected": 11,
+        "tournamentsFavoringReference": 6,
+        "tournamentsTiedAtSixDecimals": 0,
+        "medianTournamentDelta": -0.007254,
+        "minTournamentDelta": -0.030697,
+        "maxTournamentDelta": 0.033186
+      }
+    },
+    "sensitivityPolicy": "Tournament slices are descriptive sensitivity checks only; they do not rerank candidates, replace the primary metric, or create a majority-vote decision."
+  }
+}

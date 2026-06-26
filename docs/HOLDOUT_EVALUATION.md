@@ -53,8 +53,10 @@ the frozen primary protocol, this holdout evaluation favors the selected divisor
 
 This is one tournament and only 11 primary scored matches. No statistical
 significance is claimed. Divisor `200` was also the lower-boundary validation
-winner, and uncertainty analysis remains incomplete. No further tuning may use
-the 2022 holdout.
+winner. The follow-up uncertainty analysis is now recorded under
+`data/generated/calibration/uncertainty-analysis/` and supports a formal adoption
+review, but the production adoption decision still defers any runtime change.
+No further tuning may use the 2022 holdout.
 
 ## Supporting Diagnostics
 
@@ -99,3 +101,8 @@ separate explicit production decision. The holdout result must not trigger
 automatic production changes, grid expansion, K-factor tuning, home advantage,
 weighting, identity continuity, betting-market blending, or further use of 2022
 for tuning.
+
+The current production decision is documented in
+`docs/decisions/ELO_DIVISOR_PRODUCTION_ADOPTION.md`: keep production divisor
+`400`, treat divisor `200` as the leading research candidate, and require a
+separate reviewed implementation before any runtime probability change.

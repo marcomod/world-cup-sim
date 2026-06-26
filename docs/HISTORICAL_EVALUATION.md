@@ -108,8 +108,8 @@ validation only. Its protocol and provisional results are documented in
 but the validation knockout sample contains only 38 scored matches and `200` is
 the lower grid boundary. The underlying optimum may lie below `200`, but the grid
 will not be expanded after seeing validation results; that would require a new
-predefined tuning protocol. Uncertainty analysis remains future work. This is not
-a production recommendation, and the production divisor remains `400`.
+predefined tuning protocol. This is not a production recommendation, and the
+production divisor remains `400`.
 
 The divisor-comparison artifacts remain sealed pre-holdout records and do not
 compute 2022 candidate metrics. The one-time holdout evaluation is now recorded
@@ -121,3 +121,15 @@ Brier delta is `-0.013225` and log-loss delta is `-0.034032`, both computed as
 `200 - 400`. The result is descriptive, does not claim significance, does not
 permit further tuning on 2022, and does not change production. Extra-time,
 shootout, and broader cohort sensitivity remain future analysis.
+
+The post-holdout uncertainty analysis compares only divisors `200` and `400`.
+For the primary `knockout_decisive_only` cohort, paired bootstrap intervals are:
+
+- Development: Brier delta `-0.003277`, interval `-0.008640` to `0.002275`.
+- Validation: Brier delta `-0.019370`, interval `-0.028290` to `-0.010311`.
+- Holdout: Brier delta `-0.013225`, interval `-0.027729` to `0.001618`.
+
+Validation tournament and leave-one-tournament-out checks all favor divisor
+`200`, so the evidence classification is `supports_adoption_review`. The formal
+decision record still defers production adoption and keeps divisor `400`; see
+`docs/decisions/ELO_DIVISOR_PRODUCTION_ADOPTION.md`.

@@ -169,10 +169,12 @@ probabilities until a reviewed calibration result is deliberately adopted:
    look-ahead bias.
 3. Evaluate baseline probabilities with Brier score and log loss.
 4. Compare candidate Elo divisors against a fixed validation set.
-5. Analyse regulation, extra-time, and penalty outcomes separately.
-6. Optionally compare the validated model with betting-market probabilities.
-7. Remove bookmaker margin to produce no-vig market probabilities.
-8. Consider model/market blending only after independent out-of-sample
+5. Add paired uncertainty and tournament-sensitivity analysis for frozen
+   candidate comparisons.
+6. Analyse regulation, extra-time, and penalty outcomes separately.
+7. Optionally compare the validated model with betting-market probabilities.
+8. Remove bookmaker margin to produce no-vig market probabilities.
+9. Consider model/market blending only after independent out-of-sample
    validation.
 
 Current status:
@@ -207,8 +209,14 @@ Current status:
 - The 2022 holdout has been opened once under the frozen protocol. Divisor `200`
   beat reference divisor `400` on the 11-match primary holdout sample at reported
   precision, but no significance is claimed, no further tuning may use 2022, and
-  production remains at divisor `400`. Production model adoption, broader
-  parameter tuning, and market comparison remain future work.
+  production remains at divisor `400`.
+- Post-holdout uncertainty analysis now compares only divisors `200` and `400`
+  using paired match-level bootstrap intervals and validation
+  leave-one-tournament-out checks. The evidence classification supports a formal
+  adoption review, but the decision record defers production adoption and keeps
+  the runtime divisor at `400`.
+- Production model adoption, broader parameter tuning, extra-time and penalty
+  analysis, and market comparison remain future work.
 
 The historical dataset and calibration scripts remain outside the runtime app.
 The World Football Elo development snapshot remains the active rating source,

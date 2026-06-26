@@ -293,6 +293,30 @@ permit further tuning on 2022, and does not change production; the production
 divisor remains `400`. See `docs/DIVISOR_COMPARISON.md` and
 `docs/HOLDOUT_EVALUATION.md` for the complete protocol and results.
 
+The final post-holdout uncertainty layer compares only divisors `200` and `400`
+under the frozen primary cohort. It uses a paired match-level percentile
+bootstrap with `100000` replications and seed `2026200400`, plus validation
+tournament and leave-one-tournament-out sensitivity checks. Validation favors
+divisor `200` with a Brier interval below zero; development and holdout point
+estimates also favor `200`, but their intervals cross zero. The evidence
+classification is `supports_adoption_review`, not automatic adoption. The formal
+decision record in `docs/decisions/ELO_DIVISOR_PRODUCTION_ADOPTION.md` defers
+production adoption and keeps the runtime divisor at `400`.
+
+Percentile bounds use the Type 7 linear-interpolation quantile convention.
+Replication means are sorted numerically. For sorted values of length `n`, the
+quantile at probability `p` uses `h = (n - 1) * p`, the values at `floor(h)` and
+`ceil(h)`, and linear interpolation by the fractional part of `h`. The reported
+95% interval uses `p = 0.025` and `p = 0.975`. Full-precision replication values
+are used before six-decimal serialization.
+
+The fraction of paired bootstrap replications with a negative delta is a
+descriptive resampling frequency. It is not a Bayesian posterior probability
+that divisor `200` is superior, not the probability that `200` is the true
+optimum, and not a production-adoption probability. It also does not resolve the
+lower-boundary limitation or replace the predefined evidence-classification
+policy.
+
 ⸻
 
 Scoreline Simulation

@@ -53,9 +53,11 @@ Divisor `200` is the provisional protocol selection and the lower boundary of
 the fixed grid. The underlying optimum may lie below `200`, but this protocol
 will not expand the grid after observing validation results. Adding lower values
 would be a new tuning decision and requires a separately predefined protocol.
-The 38-match primary validation sample is small, and uncertainty analysis remains
-future work. This boundary result is not conclusive, final, or sufficient for
-production adoption; the production divisor remains `400`.
+The 38-match primary validation sample is small. The follow-up uncertainty
+analysis now compares only the frozen `200` and `400` candidates using paired
+match-level bootstrap intervals and tournament sensitivity checks. This boundary
+result is not sufficient by itself for production adoption; the production
+divisor remains `400`.
 
 The divisor `400` candidate uses full-precision reconstruction. The existing
 baseline evaluator reads six-decimal serialized observations. Divisor `400`
@@ -92,6 +94,21 @@ The one-time 2022 holdout opening is a separate artifact set documented in
 `docs/HOLDOUT_EVALUATION.md`; it evaluates only the fixed selected divisor `200`
 against reference divisor `400` without changing this protocol, reranking the
 grid, or changing production.
+
+The post-holdout uncertainty analysis is a third artifact set under
+`data/generated/calibration/uncertainty-analysis/`. It uses `100000` paired
+bootstrap replications with seed `2026200400`, keeps the 2022 holdout opened only
+for descriptive uncertainty analysis, and does not retune the grid. Its evidence
+classification is `supports_adoption_review`, but the production decision in
+`docs/decisions/ELO_DIVISOR_PRODUCTION_ADOPTION.md` still defers adoption and
+keeps production at divisor `400`.
+
+Bootstrap percentile bounds use the Type 7 linear-interpolation quantile
+convention over numerically sorted full-precision replication means, with lower
+and upper probabilities `0.025` and `0.975`. Favor fractions are descriptive
+resampling frequencies, not Bayesian posterior probabilities, not probabilities
+that divisor `200` is the true optimum, and not production-adoption
+probabilities.
 
 ## Generated Artifacts
 
