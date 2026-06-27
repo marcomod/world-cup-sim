@@ -6,7 +6,9 @@ This document describes the statistical approach used by the World Cup Simulator
 
 The model is inspired by HockeyStats-style playoff simulators but is adapted for soccer. It is intended to estimate probabilities, not predict exact outcomes.
 
-The simulator begins after the group stage.
+The runtime simulator still simulates the knockout bracket, but the codebase now
+also contains an isolated product-side 2026 tournament layer for calculating
+group standings and generating the Round of 32 from completed group results.
 
 ⸻
 
@@ -46,6 +48,50 @@ The current bracket is still a development/demo bracket. Its 32 demo teams are
 drawn from the actual 2026 tournament field, but the matchups are not the
 official Round of 32 bracket. The bracket should be replaced after the group
 stage once the official knockout qualifiers and matchups are known.
+
+2026 Tournament Format Layer
+
+The `src/lib/tournament-2026` package is deterministic domain logic for:
+
+- Official 12-group representation.
+- Group standings from completed results.
+- Group tie-break stages.
+- Ranking the 12 third-placed teams.
+- Selecting the eight best third-placed teams.
+- Generating Round-of-32 matches from static slot definitions.
+- Adapting those matches to the existing knockout simulator shape.
+
+This layer does not predict or simulate group-stage scores. Scheduled matches
+are ignored for table totals, and incomplete group stages cannot generate a
+qualification result. The final deterministic fallback used in synthetic tests
+is development support only and is not an official substitute for drawing of
+lots or other final FIFA decisions.
+
+The group-ranking flow applies the official equal-points sequence from the FIFA
+World Cup 26 regulations. Head-to-head criteria are applied to the tied teams;
+if some teams separate and a smaller subset remains tied, the head-to-head
+sequence restarts for that remaining subset only. Overall goal difference,
+overall goals scored, and fair play are applied only after the head-to-head
+procedure cannot decide the remaining tied teams.
+
+Fair-play data is complete-data only in official mode. Missing fair-play records
+are not interpreted as zero deductions; explicit zero deductions are accepted.
+The development fallback may be enabled for synthetic fixtures, but it is not an
+official ranking method.
+
+The third-place slot resolver uses the complete 495-combination Annex C lookup
+from the May 2026 FIFA regulations. The lookup is checked row by row against an
+independently extracted source fixture. The canonical knockout topology stores
+both winner and loser advancement links: semifinal winners feed the final and
+semifinal losers feed the third-place match. The current simulator adapter reads
+only champion-path winner links from that topology and does not duplicate the
+mapping. Topology regression tests validate exact official adjacency and use a
+semantic normalized-data checksum over match IDs, rounds, champion-path flags,
+advancement outcomes, target matches, and target slots. That checksum is
+independent of source-file formatting and comments. Structural validation is
+tested separately from official adjacency validation so graph guarantees, such
+as champion paths reaching the final and `m103` staying outside champion
+progression, are covered without relaxing the official FIFA topology checks.
 
 ⸻
 

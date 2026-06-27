@@ -132,11 +132,39 @@ Support the entire World Cup.
 
 Features
 
-- Group-stage simulation
+- Official 2026 group representation
+- Group standings
+- Best-third-place qualification
 - Dynamic Round of 32 generation
 - FIFA tiebreakers
+- Versioned official tournament data ingestion
 - Host advantage
 - Qualification scenarios
+
+Current product phase:
+
+- Static 2026 group and Round-of-32 slot data are represented outside React.
+- Group standings, third-place ranking, qualification, and generated knockout
+  bracket adaptation are implemented as deterministic domain logic.
+- The complete 495-combination Annex C third-place assignment lookup is encoded
+  from the official May 2026 FIFA regulations and checked against an independent
+  source-derived fixture.
+- The Round-of-32 and later knockout topology is represented as a canonical
+  static source with explicit winner and loser advancement. Semifinal winners
+  feed `m104`; semifinal losers feed third-place match `m103`.
+- The existing simulator adapter remains champion-path-only and intentionally
+  omits `m103` until runtime third-place-match output is added.
+- The existing UI still uses the demo bracket until official group results and
+  the generated official bracket are reviewed and wired.
+
+Future product work:
+
+- Add versioned official result ingestion.
+- Refresh the 2026 rating snapshot after the group stage.
+- Wire generated official Round-of-32 brackets into the UI.
+- Add runtime third-place-match output if the product needs to display `m103`.
+- Add group-stage scenario tools or simulation only after the deterministic
+  result-ingestion path is proven.
 
 ⸻
 

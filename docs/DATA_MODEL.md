@@ -104,6 +104,60 @@ export type TournamentRound =
 
 ⸻
 
+2026 Group Stage
+
+The product tournament layer represents the official 48-team format separately
+from the knockout simulator:
+
+export type GroupId = "A" | "B" | ... | "L";
+
+export interface GroupStageMatch {
+id: string;
+group: GroupId;
+homeTeamId: TeamId;
+awayTeamId: TeamId;
+status: "scheduled" | "completed";
+result: { homeGoals: number; awayGoals: number } | null;
+}
+
+export interface GroupTableRow {
+teamId: TeamId;
+group: GroupId;
+played: number;
+wins: number;
+draws: number;
+losses: number;
+goalsFor: number;
+goalsAgainst: number;
+goalDifference: number;
+points: number;
+}
+
+`RankedGroupTeam` adds a group position and the tie-break stages used for the
+ranking. `ThirdPlacedTeam` adds cross-group third-place rank and qualification
+status.
+
+Round-of-32 slot definitions are static data. They describe sources such as
+`1A`, `2B`, or a third-placed team from an eligible group set. Generated
+Round-of-32 matches retain source metadata for auditability before being adapted
+to the existing simulator `Match[]` shape.
+
+The 2026 tournament layer also defines:
+
+- `RankingMode`, which distinguishes official ranking from explicit
+  development fallback behavior.
+- `FairPlayRecord`, where an explicit zero deduction is valid and a missing
+  record remains missing.
+- `ThirdPlaceAssignment`, the static Annex C mapping from a canonical
+  eight-group key to the eight third-place Round-of-32 slots.
+- `KnockoutTopologyMatch`, the canonical progression from `m73` through the
+  final `m104`, including explicit winner and loser advancement. Semifinal
+  losers advance to the third-place match `m103`; semifinal winners advance to
+  the final `m104`. The current simulator adapter consumes only champion-path
+  winner links.
+
+⸻
+
 Match Score
 
 Represents the final score of a simulated match.

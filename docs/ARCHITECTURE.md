@@ -85,6 +85,7 @@ Simulator Layer
 Location:
 
 src/lib/simulator
+src/lib/tournament-2026
 
 Responsible for:
 
@@ -93,6 +94,8 @@ Responsible for:
 - Tournament simulation
 - Monte Carlo simulations
 - Probability calculations
+- 2026 group standings and qualification logic
+- Round-of-32 bracket generation
 
 Simulator functions should:
 
@@ -114,8 +117,21 @@ Responsible for:
 - Teams
 - Ratings
 - Initial bracket structure
+- Static 2026 tournament groups and bracket slot definitions
 
 Data files should not contain business logic.
+
+The `src/lib/tournament-2026` package converts static tournament data and group
+results into a generated knockout bracket. React components should consume
+display-ready state from the app layer and should not perform standings,
+qualification, or third-place assignment logic.
+
+The 2026 tournament package has one canonical knockout topology source. It
+models explicit winner and loser advancement, including semifinal loser links
+to the third-place match. The Round-of-32 slot definitions and simulator
+adapter are validated against that topology so advancement links are not
+maintained independently in multiple places. The existing simulator adapter uses
+only the champion path until the runtime engine supports third-place output.
 
 ⸻
 
