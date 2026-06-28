@@ -154,12 +154,16 @@ Current product phase:
   feed `m104`; semifinal losers feed third-place match `m103`.
 - The existing simulator adapter remains champion-path-only and intentionally
   omits `m103` until runtime third-place-match output is added.
+- Versioned local tournament snapshots are now validated, normalized, checksummed,
+  and adapted into tournament-domain inputs. The snapshot orchestration path
+  can produce group tables, qualification, generated Round of 32, and a
+  simulator-ready champion-path bracket from one validated local snapshot.
 - The existing UI still uses the demo bracket until official group results and
   the generated official bracket are reviewed and wired.
 
 Future product work:
 
-- Add versioned official result ingestion.
+- Add a reviewed official local result snapshot.
 - Refresh the 2026 rating snapshot after the group stage.
 - Wire generated official Round-of-32 brackets into the UI.
 - Add runtime third-place-match output if the product needs to display `m103`.

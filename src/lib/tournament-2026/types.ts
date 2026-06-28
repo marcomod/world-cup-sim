@@ -52,6 +52,14 @@ export interface FairPlayRecord {
 
 export type FairPlayByTeamId = Readonly<Record<TeamId, FairPlayRecord>>;
 
+export interface FifaRankingRecord {
+  teamId: TeamId;
+  rank: number;
+  rankingDate: string;
+}
+
+export type FifaRankingByTeamId = Readonly<Record<TeamId, FifaRankingRecord>>;
+
 export type RankingMode = "official" | "development_fallback";
 
 export interface GroupTableRow {
@@ -75,6 +83,7 @@ export type TieBreakCriterion =
   | "head_to_head_goal_difference"
   | "head_to_head_goals_for"
   | "fair_play"
+  | "fifa_ranking"
   | "deterministic_fallback";
 
 export interface RankedGroupTeam extends GroupTableRow {

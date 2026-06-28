@@ -1,6 +1,7 @@
 import { compareCodePoints } from "../constants";
 import type {
   FairPlayByTeamId,
+  FifaRankingByTeamId,
   GroupId,
   GroupStageMatch,
   GroupTableRow,
@@ -12,9 +13,11 @@ import {
   getFairPlayDeductionsForTie,
   isDevelopmentFallbackEnabled,
 } from "./fairPlay";
+import { getFifaRankingsForTie } from "./fifaRanking";
 
 export interface TieBreakOptions {
   fairPlayByTeamId?: FairPlayByTeamId;
+  fifaRankingByTeamId?: FifaRankingByTeamId;
   rankingMode?: RankingMode;
   allowDeterministicFallback?: boolean;
 }
@@ -203,6 +206,34 @@ function splitByFairPlay(
   );
 }
 
+function splitByFifaRanking(
+  groupId: GroupId,
+  teams: readonly GroupTableRow[],
+  options: TieBreakOptions,
+): GroupTableRow[][] | null {
+  if (
+    (!options.fifaRankingByTeamId || Object.keys(options.fifaRankingByTeamId).length === 0) &&
+    isDevelopmentFallbackEnabled(options)
+  ) {
+    return null;
+  }
+
+  const rankings = getFifaRankingsForTie(
+    teams,
+    options.fifaRankingByTeamId,
+    `Group ${groupId} ranking`,
+  );
+
+  return sortAndSplit(
+    teams,
+    (left, right) =>
+      (rankings.get(left.teamId) ?? Number.POSITIVE_INFINITY) -
+        (rankings.get(right.teamId) ?? Number.POSITIVE_INFINITY) ||
+      compareCodePoints(left.teamId, right.teamId),
+    (team) => String(rankings.get(team.teamId)),
+  );
+}
+
 export function resolveHeadToHeadTie(
   tiedTeams: readonly GroupTableRow[],
   matches: readonly GroupStageMatch[],
@@ -307,6 +338,18 @@ function resolveEqualPointsGroup(
   groups = fairPlayResult.groups;
   if (fairPlayResult.splitOccurred) {
     usedCriteria.push("fair_play");
+  }
+
+  if (groups.every((subset) => subset.length === 1)) {
+    return { groups, criteria: usedCriteria };
+  }
+
+  const fifaRankingResult = applyGroupCriterion(groups, (subset) =>
+    splitByFifaRanking(groupId, subset, options),
+  );
+  groups = fifaRankingResult.groups;
+  if (fifaRankingResult.splitOccurred) {
+    usedCriteria.push("fifa_ranking");
   }
 
   return { groups, criteria: usedCriteria };

@@ -67,6 +67,12 @@ qualification result. The final deterministic fallback used in synthetic tests
 is development support only and is not an official substitute for drawing of
 lots or other final FIFA decisions.
 
+Versioned local snapshots can now supply the tournament layer with teams,
+fixtures, results, fair-play records, FIFA-ranking records, source references,
+and semantic checksums. Snapshot ingestion is local and deterministic; it does
+not fetch live data or change the active simulator, ratings, or probability
+formula.
+
 The group-ranking flow applies the official equal-points sequence from the FIFA
 World Cup 26 regulations. Head-to-head criteria are applied to the tied teams;
 if some teams separate and a smaller subset remains tied, the head-to-head
@@ -78,6 +84,12 @@ Fair-play data is complete-data only in official mode. Missing fair-play records
 are not interpreted as zero deductions; explicit zero deductions are accepted.
 The development fallback may be enabled for synthetic fixtures, but it is not an
 official ranking method.
+
+When football criteria and fair play do not resolve a tie, official mode uses
+explicit FIFA-ranking records from the validated snapshot. Lower numerical FIFA
+rank is better. Missing ranking records fail only when that criterion is
+reached; unrelated missing ranking records are not consulted for already
+resolved tables.
 
 The third-place slot resolver uses the complete 495-combination Annex C lookup
 from the May 2026 FIFA regulations. The lookup is checked row by row against an

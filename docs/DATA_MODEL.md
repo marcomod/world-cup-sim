@@ -148,6 +148,9 @@ The 2026 tournament layer also defines:
   development fallback behavior.
 - `FairPlayRecord`, where an explicit zero deduction is valid and a missing
   record remains missing.
+- `FifaRankingRecord`, where lower numerical rank is better and records are
+  used only for the final official tie-break criterion when earlier criteria
+  cannot resolve a tie.
 - `ThirdPlaceAssignment`, the static Annex C mapping from a canonical
   eight-group key to the eight third-place Round-of-32 slots.
 - `KnockoutTopologyMatch`, the canonical progression from `m73` through the
@@ -155,6 +158,33 @@ The 2026 tournament layer also defines:
   losers advance to the third-place match `m103`; semifinal winners advance to
   the final `m104`. The current simulator adapter consumes only champion-path
   winner links.
+
+⸻
+
+2026 Tournament Snapshot
+
+The local snapshot layer represents versioned source data before it is adapted
+into the tournament domain.
+
+export interface TournamentSnapshot {
+schemaVersion: string;
+snapshotId: string;
+snapshotVersion: string;
+tournament: "fifa-world-cup-2026";
+state:
+| "structure_only"
+| "group_stage_in_progress"
+| "group_stage_complete";
+teams: readonly SnapshotTeam[];
+fixtures: readonly SnapshotFixture[];
+fairPlay: readonly SnapshotFairPlayRecord[];
+fifaRanking: readonly SnapshotFifaRankingRecord[];
+sources: TournamentSnapshotSources;
+}
+
+Snapshot validation derives the actual state from fixture statuses, validates
+all teams and fixtures, normalizes ordering, and records a semantic checksum.
+The Node loader is not imported by React or the simulator engine.
 
 ⸻
 

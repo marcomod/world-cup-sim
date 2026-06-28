@@ -1,0 +1,6 @@
+{
+  "officialSnapshotStatus": "deferred",
+  "reason": "This phase uses synthetic local snapshots only. A verified official local snapshot should be added after the official source package is reviewed.",
+  "runtimeNetworkAccess": false,
+  "generatedFileWarning": "Do not edit official snapshots without updating provenance and checksums."
+}

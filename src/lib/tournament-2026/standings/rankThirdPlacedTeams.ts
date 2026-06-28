@@ -1,6 +1,7 @@
 import { compareCodePoints, GROUP_IDS } from "../constants";
 import type {
   FairPlayByTeamId,
+  FifaRankingByTeamId,
   GroupId,
   GroupTableRow,
   RankedGroupTeam,
@@ -12,9 +13,11 @@ import {
   getFairPlayDeductionsForTie,
   isDevelopmentFallbackEnabled,
 } from "./fairPlay";
+import { getFifaRankingsForTie } from "./fifaRanking";
 
 export interface RankThirdPlacedTeamsOptions {
   fairPlayByTeamId?: FairPlayByTeamId;
+  fifaRankingByTeamId?: FifaRankingByTeamId;
   rankingMode?: RankingMode;
   allowDeterministicFallback?: boolean;
 }
@@ -172,6 +175,29 @@ export function rankThirdPlacedTeams(
   groups = fairPlayResult.groups;
   if (fairPlayResult.splitOccurred) {
     usedCriteria.push("fair_play");
+  }
+
+  const fifaRankingResult = applyCriterion(groups, (teams) => {
+    if (
+      (!options.fifaRankingByTeamId || Object.keys(options.fifaRankingByTeamId).length === 0) &&
+      isDevelopmentFallbackEnabled(options)
+    ) {
+      return null;
+    }
+
+    const rankings = getFifaRankingsForTie(teams, options.fifaRankingByTeamId, "Third-place ranking");
+    return sortAndSplit(
+      teams,
+      (left, right) =>
+        (rankings.get(left.teamId) ?? Number.POSITIVE_INFINITY) -
+          (rankings.get(right.teamId) ?? Number.POSITIVE_INFINITY) ||
+        compareCodePoints(left.teamId, right.teamId),
+      (team) => String(rankings.get(team.teamId)),
+    );
+  });
+  groups = fifaRankingResult.groups;
+  if (fifaRankingResult.splitOccurred) {
+    usedCriteria.push("fifa_ranking");
   }
 
   if (groups.some((subset) => subset.length > 1)) {

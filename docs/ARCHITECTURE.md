@@ -126,6 +126,15 @@ results into a generated knockout bracket. React components should consume
 display-ready state from the app layer and should not perform standings,
 qualification, or third-place assignment logic.
 
+The local 2026 snapshot ingestion layer lives under
+`src/data/world-cup-2026/snapshots` and `src/lib/tournament-2026/snapshot`.
+The snapshot package has two entry points: `snapshots/index.ts` is browser-safe
+and exports validation/normalization contracts, while `snapshots/node.ts` is
+Node-only and exports filesystem loading plus SHA-256 checksum hashing.
+Browser-safe tournament code accepts already validated snapshot objects and
+remains separate from React, live network access, calibration scripts, and the
+runtime simulator engine.
+
 The 2026 tournament package has one canonical knockout topology source. It
 models explicit winner and loser advancement, including semifinal loser links
 to the third-place match. The Round-of-32 slot definitions and simulator

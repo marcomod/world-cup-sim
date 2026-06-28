@@ -1,5 +1,6 @@
 import type {
   FairPlayByTeamId,
+  FifaRankingByTeamId,
   GroupId,
   GroupStageMatch,
   GroupTableRow,
@@ -10,6 +11,7 @@ import { rankGroupTableRows } from "./tieBreakers";
 
 export interface RankGroupOptions {
   fairPlayByTeamId?: FairPlayByTeamId;
+  fifaRankingByTeamId?: FifaRankingByTeamId;
   rankingMode?: RankingMode;
   allowDeterministicFallback?: boolean;
 }

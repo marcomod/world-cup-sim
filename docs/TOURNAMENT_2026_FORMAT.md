@@ -130,6 +130,24 @@ The adapter:
 - Does not import React.
 - Does not change the production Elo divisor of `400`.
 
+Local Snapshot Ingestion
+
+The tournament layer can now be supplied by a validated local snapshot. Snapshot
+files represent teams, group assignments, fixtures, status/results, fair-play
+records, FIFA-ranking records, source provenance, and deterministic metadata.
+The snapshot loader is Node-only; browser-safe orchestration accepts validated
+snapshot objects.
+
+`buildTournamentState` orchestrates one validated snapshot through existing
+domain logic: structure validation, group tables, group ranking, third-place
+ranking, qualification, Round-of-32 generation, and simulator bracket
+adaptation. Incomplete snapshots return group tables only. Complete snapshots
+can produce a knockout-ready result when official tie resolution succeeds.
+
+FIFA-ranking records are used only at the documented final tie-break criterion.
+Lower numerical rank is better. Official mode does not silently fall back to
+team ID ordering.
+
 Data Provenance
 
 The current group and slot data are static data. They are not live fetched or
