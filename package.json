@@ -15,7 +15,11 @@
     "calibration:evaluate-elo": "node --no-warnings --experimental-strip-types scripts/calibration/evaluateHistoricalElo.ts",
     "calibration:compare-divisors": "node --no-warnings --experimental-strip-types scripts/calibration/compareHistoricalEloDivisors.ts",
     "calibration:evaluate-holdout": "node --no-warnings --experimental-strip-types scripts/calibration/evaluateHistoricalEloHoldout.ts",
-    "calibration:analyze-uncertainty": "node --no-warnings --experimental-strip-types scripts/calibration/analyzeHistoricalEloUncertainty.ts"
+    "calibration:analyze-uncertainty": "node --no-warnings --experimental-strip-types scripts/calibration/analyzeHistoricalEloUncertainty.ts",
+    "tournament2026:build-official-snapshot": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/buildOfficialSnapshot.ts",
+    "tournament2026:verify-official-snapshot": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/verifyOfficialSnapshot.ts",
+    "tournament2026:diff-snapshots": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/diffSnapshots.ts",
+    "tournament2026:build-knockout-ratings": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/buildKnockoutRatings.ts"
   },
   "dependencies": {
     "next": "16.2.9",

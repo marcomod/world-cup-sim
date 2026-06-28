@@ -1,0 +1,356 @@
+{
+  "generatedFileWarning": "Do not edit manually. Normalized extract from official FIFA API responses.",
+  "sourceAuthority": "FIFA",
+  "sourceTitle": "FIFA men's ranking approved API for participating teams",
+  "sourceUrl": "https://api.fifa.com/api/v3/fifarankings/rankings/approved?gender=1&count=300&language=en&sportType=0",
+  "rankingScheduleUrl": "https://api.fifa.com/api/v3/fifarankings/rankingschedules/all?gender=1&type=0&count=30",
+  "sourcePublishedOrUpdateDate": "2026-06-11",
+  "sourceVersion": "FRS_Male_Football_20260401",
+  "accessDate": "2026-06-28",
+  "extractionMethod": "One-time official FIFA API inspection; latest approved men's ranking schedule was selected and filtered to the 48 snapshot teams.",
+  "normalizationVersion": "official-source-extract-v1",
+  "rankingSchedule": {
+    "idRankingSchedule": "FRS_Male_Football_20260401",
+    "publicationDateUtc": "2026-06-11T10:00:59.636Z",
+    "rankingApproved": true
+  },
+  "rankings": [
+    {
+      "teamId": "cze",
+      "fifaCode": "CZE",
+      "sourceName": "Czechia",
+      "rank": 40,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "kor",
+      "fifaCode": "KOR",
+      "sourceName": "Korea Republic",
+      "rank": 25,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "mex",
+      "fifaCode": "MEX",
+      "sourceName": "Mexico",
+      "rank": 14,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "rsa",
+      "fifaCode": "RSA",
+      "sourceName": "South Africa",
+      "rank": 60,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "bih",
+      "fifaCode": "BIH",
+      "sourceName": "Bosnia and Herzegovina",
+      "rank": 64,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "can",
+      "fifaCode": "CAN",
+      "sourceName": "Canada",
+      "rank": 30,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "qat",
+      "fifaCode": "QAT",
+      "sourceName": "Qatar",
+      "rank": 56,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "sui",
+      "fifaCode": "SUI",
+      "sourceName": "Switzerland",
+      "rank": 19,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "bra",
+      "fifaCode": "BRA",
+      "sourceName": "Brazil",
+      "rank": 6,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "hai",
+      "fifaCode": "HAI",
+      "sourceName": "Haiti",
+      "rank": 83,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "mar",
+      "fifaCode": "MAR",
+      "sourceName": "Morocco",
+      "rank": 7,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "sco",
+      "fifaCode": "SCO",
+      "sourceName": "Scotland",
+      "rank": 42,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "aus",
+      "fifaCode": "AUS",
+      "sourceName": "Australia",
+      "rank": 27,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "par",
+      "fifaCode": "PAR",
+      "sourceName": "Paraguay",
+      "rank": 41,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "tur",
+      "fifaCode": "TUR",
+      "sourceName": "Türkiye",
+      "rank": 22,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "usa",
+      "fifaCode": "USA",
+      "sourceName": "USA",
+      "rank": 17,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "civ",
+      "fifaCode": "CIV",
+      "sourceName": "Côte d'Ivoire",
+      "rank": 33,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "cuw",
+      "fifaCode": "CUW",
+      "sourceName": "Curaçao",
+      "rank": 82,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "ecu",
+      "fifaCode": "ECU",
+      "sourceName": "Ecuador",
+      "rank": 23,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "ger",
+      "fifaCode": "GER",
+      "sourceName": "Germany",
+      "rank": 10,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "jpn",
+      "fifaCode": "JPN",
+      "sourceName": "Japan",
+      "rank": 18,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "ned",
+      "fifaCode": "NED",
+      "sourceName": "Netherlands",
+      "rank": 8,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "swe",
+      "fifaCode": "SWE",
+      "sourceName": "Sweden",
+      "rank": 38,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "tun",
+      "fifaCode": "TUN",
+      "sourceName": "Tunisia",
+      "rank": 45,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "bel",
+      "fifaCode": "BEL",
+      "sourceName": "Belgium",
+      "rank": 9,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "egy",
+      "fifaCode": "EGY",
+      "sourceName": "Egypt",
+      "rank": 29,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "irn",
+      "fifaCode": "IRN",
+      "sourceName": "IR Iran",
+      "rank": 20,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "nzl",
+      "fifaCode": "NZL",
+      "sourceName": "New Zealand",
+      "rank": 85,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "cpv",
+      "fifaCode": "CPV",
+      "sourceName": "Cabo Verde",
+      "rank": 67,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "esp",
+      "fifaCode": "ESP",
+      "sourceName": "Spain",
+      "rank": 2,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "ksa",
+      "fifaCode": "KSA",
+      "sourceName": "Saudi Arabia",
+      "rank": 61,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "uru",
+      "fifaCode": "URU",
+      "sourceName": "Uruguay",
+      "rank": 16,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "fra",
+      "fifaCode": "FRA",
+      "sourceName": "France",
+      "rank": 3,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "irq",
+      "fifaCode": "IRQ",
+      "sourceName": "Iraq",
+      "rank": 57,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "nor",
+      "fifaCode": "NOR",
+      "sourceName": "Norway",
+      "rank": 31,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "sen",
+      "fifaCode": "SEN",
+      "sourceName": "Senegal",
+      "rank": 15,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "alg",
+      "fifaCode": "ALG",
+      "sourceName": "Algeria",
+      "rank": 28,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "arg",
+      "fifaCode": "ARG",
+      "sourceName": "Argentina",
+      "rank": 1,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "aut",
+      "fifaCode": "AUT",
+      "sourceName": "Austria",
+      "rank": 24,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "jor",
+      "fifaCode": "JOR",
+      "sourceName": "Jordan",
+      "rank": 63,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "cod",
+      "fifaCode": "COD",
+      "sourceName": "Congo DR",
+      "rank": 46,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "col",
+      "fifaCode": "COL",
+      "sourceName": "Colombia",
+      "rank": 13,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "por",
+      "fifaCode": "POR",
+      "sourceName": "Portugal",
+      "rank": 5,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "uzb",
+      "fifaCode": "UZB",
+      "sourceName": "Uzbekistan",
+      "rank": 50,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "cro",
+      "fifaCode": "CRO",
+      "sourceName": "Croatia",
+      "rank": 11,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "eng",
+      "fifaCode": "ENG",
+      "sourceName": "England",
+      "rank": 4,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "gha",
+      "fifaCode": "GHA",
+      "sourceName": "Ghana",
+      "rank": 73,
+      "rankingDate": "2026-06-11"
+    },
+    {
+      "teamId": "pan",
+      "fifaCode": "PAN",
+      "sourceName": "Panama",
+      "rank": 34,
+      "rankingDate": "2026-06-11"
+    }
+  ],
+  "accessCutoffUtc": "2026-06-28T03:00:00.000Z"
+}

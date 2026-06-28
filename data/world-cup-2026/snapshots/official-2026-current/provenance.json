@@ -1,0 +1,64 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "snapshotId": "fifa-world-cup-2026",
+  "snapshotVersion": "official-2026-2026-06-28-r1",
+  "declaredState": "group_stage_complete",
+  "derivedState": "group_stage_complete",
+  "accessDate": "2026-06-28",
+  "accessCutoffUtc": "2026-06-28T03:00:00.000Z",
+  "snapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "sourceSetId": "official-2026-current",
+  "sourceManifest": {
+    "generatedFileWarning": "Do not edit manually. Source manifest for the official World Cup 2026 local snapshot.",
+    "sourceSetId": "official-2026-current",
+    "accessDate": "2026-06-28",
+    "normalizationVersion": "official-source-extract-v1",
+    "artifacts": [
+      {
+        "path": "data/world-cup-2026/raw/official-2026-current/teams-and-groups.json",
+        "sha256": "b16ad86af77e56b54a6dba021b7a731840ba819abf87e7397b63dc1dac02046d",
+        "bytes": 18801
+      },
+      {
+        "path": "data/world-cup-2026/raw/official-2026-current/group-fixtures.json",
+        "sha256": "3efe0a23bdf1d2c82d1b5b607844fe81dddca1d52e1f578f8d2937ff5fcf42a3",
+        "bytes": 49416
+      },
+      {
+        "path": "data/world-cup-2026/raw/official-2026-current/fifa-ranking.json",
+        "sha256": "ce2e25011047f91cabb402a2bced8a37320795addda230478edf849c6d76ee8a",
+        "bytes": 7961
+      }
+    ],
+    "sources": [
+      {
+        "role": "teams_groups_fixtures_results",
+        "authority": "FIFA",
+        "title": "FIFA World Cup 2026 match calendar API, First Stage",
+        "url": "https://api.fifa.com/api/v3/calendar/matches?idCompetition=17&idSeason=285023&idStage=289273&language=en&count=200",
+        "publishedOrUpdateDate": null,
+        "accessDate": "2026-06-28",
+        "accessCutoffUtc": "2026-06-28T03:00:00.000Z"
+      },
+      {
+        "role": "fifa_ranking",
+        "authority": "FIFA",
+        "title": "FIFA men's ranking approved API",
+        "url": "https://api.fifa.com/api/v3/fifarankings/rankings/approved?gender=1&count=300&language=en&sportType=0",
+        "publishedOrUpdateDate": "2026-06-11",
+        "accessDate": "2026-06-28",
+        "version": "FRS_Male_Football_20260401",
+        "accessCutoffUtc": "2026-06-28T03:00:00.000Z"
+      }
+    ],
+    "unavailableSources": [
+      {
+        "role": "fair_play_totals",
+        "reason": "No stable official per-team fair-play deduction totals were available in the inspected FIFA source extracts.",
+        "accessCutoffUtc": "2026-06-28T03:00:00.000Z"
+      }
+    ],
+    "accessCutoffUtc": "2026-06-28T03:00:00.000Z"
+  },
+  "fairPlayPolicy": "Official per-team fair-play deduction totals were not available in the inspected stable FIFA source extracts. They must be added as a new source snapshot before fair play is used as an official tie-breaker."
+}

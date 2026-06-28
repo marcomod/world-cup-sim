@@ -514,3 +514,28 @@ It does not claim certainty.
 The simulator should be viewed as a tool for exploring possible tournament outcomes rather than predicting exact results.
 
 The model is inspired by HockeyStats-style simulators but is specifically adapted for soccer and is not intended to replicate their methodology.
+
+⸻
+
+World Cup 2026 Official Snapshot And Rating Refresh
+
+The official local tournament snapshot is built from checked-in normalized FIFA
+source extracts. It is not fetched at runtime. The current reviewed snapshot is
+`group_stage_complete` because the inspected FIFA first-stage match-calendar
+source contains all 72 group fixtures with results.
+
+Official qualification is not yet resolved from the available local official
+inputs. The eighth/ninth third-place cutoff reaches the fair-play criterion for
+Ecuador and Ghana, but no reviewed official fair-play totals are available in
+the source package. The project must not generate an official Round of 32 until
+that input is supplied or an official qualification source is added.
+
+The knockout-stage rating refresh remains offline. It uses the current World
+Football Elo development ratings as initial ratings, processes completed group
+matches sequentially by FIFA match number, assumes neutral sites, uses K-factor
+`20`, and keeps the production divisor at `400`. K=20 is inherited from the
+project's existing sequential-Elo reconstruction baseline and was selected
+before 2026 knockout outcomes. The historical divisor `200` research result is
+not adopted by this policy.
+
+The generated knockout rating report is not wired into the production app.

@@ -337,3 +337,28 @@ The model should support:
 - Tactical adjustments
 
 Future additions should extend existing entities rather than replacing them whenever possible.
+
+⸻
+
+World Cup 2026 Official Snapshot
+
+`TournamentSnapshot` stores the local official tournament data: 48 teams, groups
+A through L, 72 group fixtures, completed results when available, fair-play
+records when sourced, FIFA-ranking tie-break records, source references, schema
+version, snapshot ID, snapshot version, and declared state.
+
+For the official 2026 snapshot, `SnapshotTeam.name` stores the FIFA source
+display name. Product-friendly local names remain ingestion metadata and must
+not be conflated with official source names.
+
+The official snapshot artifacts are generated under
+`data/world-cup-2026/snapshots/official-2026-current/`. Source extracts live
+under `data/world-cup-2026/raw/official-2026-current/` and are checksum-verified
+before snapshot construction.
+
+`KnockoutRatingSnapshot` is a versioned offline rating artifact linked to a
+specific tournament snapshot checksum. It contains exactly 48
+`KnockoutRatingRecord` rows with pre-tournament rating, group-stage delta, and
+knockout rating. It also records K-factor policy metadata, initial-rating source
+metadata, completed match count, and fixture range. It is not the active app
+rating export.

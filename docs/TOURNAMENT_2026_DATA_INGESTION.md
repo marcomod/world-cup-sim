@@ -177,14 +177,22 @@ records, incomplete-state orchestration, and the Node/browser module boundary.
 
 Official Snapshot Status
 
-No official live snapshot is wired in this phase. A real official snapshot
-should be added only after its source package, provenance, and checksums are
-reviewed. Runtime network calls remain out of scope.
+An official local snapshot now exists under
+`data/world-cup-2026/snapshots/official-2026-current/`. It is generated from
+checked-in normalized FIFA source extracts and verified by a separate script.
+Runtime network calls remain out of scope, and the snapshot is not wired into
+the UI yet.
+
+The factual group-stage snapshot is complete, but official qualification is not
+currently resolved. The official orchestration status is
+`official_tie_unresolved` because Ecuador (`ecu`) and Ghana (`gha`) require
+fair-play data at the eighth/ninth third-place cutoff. No official Round of 32
+artifact is generated yet.
 
 Remaining Work
 
-- Add a reviewed official local snapshot when appropriate.
-- Wire the app to consume a reviewed local snapshot.
+- Add reviewed official fair-play data or another official qualification source.
+- Wire the app to consume a reviewed local snapshot only after official qualification resolves.
 - Add live ingestion adapters only after the local snapshot contract is proven.
-- Refresh ratings after the group stage.
+- Review and, if accepted, wire the generated knockout rating snapshot.
 - Replace the demo bracket after official knockout qualifiers are confirmed.

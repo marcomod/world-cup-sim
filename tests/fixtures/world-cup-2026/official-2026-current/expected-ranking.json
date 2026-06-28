@@ -1,0 +1,242 @@
+[
+  {
+    "teamId": "alg",
+    "rank": 28,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "arg",
+    "rank": 1,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "aus",
+    "rank": 27,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "aut",
+    "rank": 24,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "bel",
+    "rank": 9,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "bih",
+    "rank": 64,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "bra",
+    "rank": 6,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "can",
+    "rank": 30,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "civ",
+    "rank": 33,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "cod",
+    "rank": 46,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "col",
+    "rank": 13,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "cpv",
+    "rank": 67,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "cro",
+    "rank": 11,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "cuw",
+    "rank": 82,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "cze",
+    "rank": 40,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "ecu",
+    "rank": 23,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "egy",
+    "rank": 29,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "eng",
+    "rank": 4,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "esp",
+    "rank": 2,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "fra",
+    "rank": 3,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "ger",
+    "rank": 10,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "gha",
+    "rank": 73,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "hai",
+    "rank": 83,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "irn",
+    "rank": 20,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "irq",
+    "rank": 57,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "jor",
+    "rank": 63,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "jpn",
+    "rank": 18,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "kor",
+    "rank": 25,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "ksa",
+    "rank": 61,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "mar",
+    "rank": 7,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "mex",
+    "rank": 14,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "ned",
+    "rank": 8,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "nor",
+    "rank": 31,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "nzl",
+    "rank": 85,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "pan",
+    "rank": 34,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "par",
+    "rank": 41,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "por",
+    "rank": 5,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "qat",
+    "rank": 56,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "rsa",
+    "rank": 60,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "sco",
+    "rank": 42,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "sen",
+    "rank": 15,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "sui",
+    "rank": 19,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "swe",
+    "rank": 38,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "tun",
+    "rank": 45,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "tur",
+    "rank": 22,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "uru",
+    "rank": 16,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "usa",
+    "rank": 17,
+    "rankingDate": "2026-06-11"
+  },
+  {
+    "teamId": "uzb",
+    "rank": 50,
+    "rankingDate": "2026-06-11"
+  }
+]

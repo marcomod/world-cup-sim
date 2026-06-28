@@ -254,6 +254,18 @@ The historical dataset and calibration scripts remain outside the runtime app.
 The World Football Elo development snapshot remains the active rating source,
 and the production Elo divisor remains `400` during this foundation work.
 
+Current World Cup 2026 tournament-domain status:
+
+- Completed: official tournament domain, local snapshot schema, local
+  deterministic ingestion, snapshot orchestration, and source-backed official
+  local snapshot construction.
+- Current: official fair-play source review, FIFA-ranking tie-break input review,
+  and knockout rating refresh policy review.
+- Next: UI integration using the official snapshot, group-table presentation,
+  official Round-of-32 bracket replacement after fair-play/qualification
+  resolution, post-result snapshot update workflow, future live-data adapter,
+  and deployment monitoring.
+
 ⸻
 
 Version 8 — Community Features

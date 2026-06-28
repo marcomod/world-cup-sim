@@ -1,0 +1,788 @@
+{
+  "generatedFileWarning": "Do not edit manually. Normalized extract from official FIFA API responses.",
+  "sourceAuthority": "FIFA",
+  "sourceTitle": "FIFA World Cup 2026 match calendar API, first-stage teams and groups",
+  "sourceUrl": "https://api.fifa.com/api/v3/calendar/matches?idCompetition=17&idSeason=285023&idStage=289273&language=en&count=200",
+  "sourcePublishedOrUpdateDate": null,
+  "accessDate": "2026-06-28",
+  "extractionMethod": "One-time official FIFA API inspection; normalized to team/group fields used by the local snapshot builder.",
+  "normalizationVersion": "official-source-extract-v1",
+  "teams": [
+    {
+      "teamId": "cze",
+      "fifaTeamId": "43995",
+      "fifaCode": "CZE",
+      "sourceName": "Czechia",
+      "officialName": "Czechia",
+      "shortName": "Czechia",
+      "group": "A",
+      "sourceGroupId": "289275",
+      "sourceGroupName": "Group A",
+      "aliases": [
+        "CZE",
+        "Czech Republic",
+        "Czechia"
+      ],
+      "localDisplayName": "Czech Republic"
+    },
+    {
+      "teamId": "kor",
+      "fifaTeamId": "43822",
+      "fifaCode": "KOR",
+      "sourceName": "Korea Republic",
+      "officialName": "Korea Republic",
+      "shortName": "South Korea",
+      "group": "A",
+      "sourceGroupId": "289275",
+      "sourceGroupName": "Group A",
+      "aliases": [
+        "KOR",
+        "Korea Republic",
+        "South Korea"
+      ],
+      "localDisplayName": "South Korea"
+    },
+    {
+      "teamId": "mex",
+      "fifaTeamId": "43911",
+      "fifaCode": "MEX",
+      "sourceName": "Mexico",
+      "officialName": "Mexico",
+      "shortName": "Mexico",
+      "group": "A",
+      "sourceGroupId": "289275",
+      "sourceGroupName": "Group A",
+      "aliases": [
+        "MEX",
+        "Mexico"
+      ],
+      "localDisplayName": "Mexico"
+    },
+    {
+      "teamId": "rsa",
+      "fifaTeamId": "43883",
+      "fifaCode": "RSA",
+      "sourceName": "South Africa",
+      "officialName": "South Africa",
+      "shortName": "South Africa",
+      "group": "A",
+      "sourceGroupId": "289275",
+      "sourceGroupName": "Group A",
+      "aliases": [
+        "RSA",
+        "South Africa"
+      ],
+      "localDisplayName": "South Africa"
+    },
+    {
+      "teamId": "bih",
+      "fifaTeamId": "44037",
+      "fifaCode": "BIH",
+      "sourceName": "Bosnia and Herzegovina",
+      "officialName": "Bosnia and Herzegovina",
+      "shortName": "Bosnia and Herzegovina",
+      "group": "B",
+      "sourceGroupId": "289276",
+      "sourceGroupName": "Group B",
+      "aliases": [
+        "BIH",
+        "Bosnia and Herzegovina"
+      ],
+      "localDisplayName": "Bosnia and Herzegovina"
+    },
+    {
+      "teamId": "can",
+      "fifaTeamId": "43899",
+      "fifaCode": "CAN",
+      "sourceName": "Canada",
+      "officialName": "Canada",
+      "shortName": "Canada",
+      "group": "B",
+      "sourceGroupId": "289276",
+      "sourceGroupName": "Group B",
+      "aliases": [
+        "CAN",
+        "Canada"
+      ],
+      "localDisplayName": "Canada"
+    },
+    {
+      "teamId": "qat",
+      "fifaTeamId": "43834",
+      "fifaCode": "QAT",
+      "sourceName": "Qatar",
+      "officialName": "Qatar",
+      "shortName": "Qatar",
+      "group": "B",
+      "sourceGroupId": "289276",
+      "sourceGroupName": "Group B",
+      "aliases": [
+        "QAT",
+        "Qatar"
+      ],
+      "localDisplayName": "Qatar"
+    },
+    {
+      "teamId": "sui",
+      "fifaTeamId": "43971",
+      "fifaCode": "SUI",
+      "sourceName": "Switzerland",
+      "officialName": "Switzerland",
+      "shortName": "Switzerland",
+      "group": "B",
+      "sourceGroupId": "289276",
+      "sourceGroupName": "Group B",
+      "aliases": [
+        "SUI",
+        "Switzerland"
+      ],
+      "localDisplayName": "Switzerland"
+    },
+    {
+      "teamId": "bra",
+      "fifaTeamId": "43924",
+      "fifaCode": "BRA",
+      "sourceName": "Brazil",
+      "officialName": "Brazil",
+      "shortName": "Brazil",
+      "group": "C",
+      "sourceGroupId": "289277",
+      "sourceGroupName": "Group C",
+      "aliases": [
+        "BRA",
+        "Brazil"
+      ],
+      "localDisplayName": "Brazil"
+    },
+    {
+      "teamId": "hai",
+      "fifaTeamId": "43908",
+      "fifaCode": "HAI",
+      "sourceName": "Haiti",
+      "officialName": "Haiti",
+      "shortName": "Haiti",
+      "group": "C",
+      "sourceGroupId": "289277",
+      "sourceGroupName": "Group C",
+      "aliases": [
+        "HAI",
+        "Haiti"
+      ],
+      "localDisplayName": "Haiti"
+    },
+    {
+      "teamId": "mar",
+      "fifaTeamId": "43872",
+      "fifaCode": "MAR",
+      "sourceName": "Morocco",
+      "officialName": "Morocco",
+      "shortName": "Morocco",
+      "group": "C",
+      "sourceGroupId": "289277",
+      "sourceGroupName": "Group C",
+      "aliases": [
+        "MAR",
+        "Morocco"
+      ],
+      "localDisplayName": "Morocco"
+    },
+    {
+      "teamId": "sco",
+      "fifaTeamId": "43967",
+      "fifaCode": "SCO",
+      "sourceName": "Scotland",
+      "officialName": "Scotland",
+      "shortName": "Scotland",
+      "group": "C",
+      "sourceGroupId": "289277",
+      "sourceGroupName": "Group C",
+      "aliases": [
+        "SCO",
+        "Scotland"
+      ],
+      "localDisplayName": "Scotland"
+    },
+    {
+      "teamId": "aus",
+      "fifaTeamId": "43976",
+      "fifaCode": "AUS",
+      "sourceName": "Australia",
+      "officialName": "Australia",
+      "shortName": "Australia",
+      "group": "D",
+      "sourceGroupId": "289278",
+      "sourceGroupName": "Group D",
+      "aliases": [
+        "AUS",
+        "Australia"
+      ],
+      "localDisplayName": "Australia"
+    },
+    {
+      "teamId": "par",
+      "fifaTeamId": "43928",
+      "fifaCode": "PAR",
+      "sourceName": "Paraguay",
+      "officialName": "Paraguay",
+      "shortName": "Paraguay",
+      "group": "D",
+      "sourceGroupId": "289278",
+      "sourceGroupName": "Group D",
+      "aliases": [
+        "PAR",
+        "Paraguay"
+      ],
+      "localDisplayName": "Paraguay"
+    },
+    {
+      "teamId": "tur",
+      "fifaTeamId": "43972",
+      "fifaCode": "TUR",
+      "sourceName": "Türkiye",
+      "officialName": "Türkiye",
+      "shortName": "Turkey",
+      "group": "D",
+      "sourceGroupId": "289278",
+      "sourceGroupName": "Group D",
+      "aliases": [
+        "TUR",
+        "Turkey",
+        "Türkiye"
+      ],
+      "localDisplayName": "Turkey"
+    },
+    {
+      "teamId": "usa",
+      "fifaTeamId": "43921",
+      "fifaCode": "USA",
+      "sourceName": "USA",
+      "officialName": "USA",
+      "shortName": "USA",
+      "group": "D",
+      "sourceGroupId": "289278",
+      "sourceGroupName": "Group D",
+      "aliases": [
+        "USA",
+        "United States"
+      ],
+      "localDisplayName": "United States"
+    },
+    {
+      "teamId": "civ",
+      "fifaTeamId": "43854",
+      "fifaCode": "CIV",
+      "sourceName": "Côte d'Ivoire",
+      "officialName": "Côte d'Ivoire",
+      "shortName": "Ivory Coast",
+      "group": "E",
+      "sourceGroupId": "289279",
+      "sourceGroupName": "Group E",
+      "aliases": [
+        "CIV",
+        "Côte d'Ivoire",
+        "Ivory Coast"
+      ],
+      "localDisplayName": "Ivory Coast"
+    },
+    {
+      "teamId": "cuw",
+      "fifaTeamId": "1895293",
+      "fifaCode": "CUW",
+      "sourceName": "Curaçao",
+      "officialName": "Curaçao",
+      "shortName": "Curaçao",
+      "group": "E",
+      "sourceGroupId": "289279",
+      "sourceGroupName": "Group E",
+      "aliases": [
+        "CUW",
+        "Curaçao"
+      ],
+      "localDisplayName": "Curaçao"
+    },
+    {
+      "teamId": "ecu",
+      "fifaTeamId": "43927",
+      "fifaCode": "ECU",
+      "sourceName": "Ecuador",
+      "officialName": "Ecuador",
+      "shortName": "Ecuador",
+      "group": "E",
+      "sourceGroupId": "289279",
+      "sourceGroupName": "Group E",
+      "aliases": [
+        "ECU",
+        "Ecuador"
+      ],
+      "localDisplayName": "Ecuador"
+    },
+    {
+      "teamId": "ger",
+      "fifaTeamId": "43948",
+      "fifaCode": "GER",
+      "sourceName": "Germany",
+      "officialName": "Germany",
+      "shortName": "Germany",
+      "group": "E",
+      "sourceGroupId": "289279",
+      "sourceGroupName": "Group E",
+      "aliases": [
+        "GER",
+        "Germany"
+      ],
+      "localDisplayName": "Germany"
+    },
+    {
+      "teamId": "jpn",
+      "fifaTeamId": "43819",
+      "fifaCode": "JPN",
+      "sourceName": "Japan",
+      "officialName": "Japan",
+      "shortName": "Japan",
+      "group": "F",
+      "sourceGroupId": "289280",
+      "sourceGroupName": "Group F",
+      "aliases": [
+        "JPN",
+        "Japan"
+      ],
+      "localDisplayName": "Japan"
+    },
+    {
+      "teamId": "ned",
+      "fifaTeamId": "43960",
+      "fifaCode": "NED",
+      "sourceName": "Netherlands",
+      "officialName": "Netherlands",
+      "shortName": "Netherlands",
+      "group": "F",
+      "sourceGroupId": "289280",
+      "sourceGroupName": "Group F",
+      "aliases": [
+        "NED",
+        "Netherlands"
+      ],
+      "localDisplayName": "Netherlands"
+    },
+    {
+      "teamId": "swe",
+      "fifaTeamId": "43970",
+      "fifaCode": "SWE",
+      "sourceName": "Sweden",
+      "officialName": "Sweden",
+      "shortName": "Sweden",
+      "group": "F",
+      "sourceGroupId": "289280",
+      "sourceGroupName": "Group F",
+      "aliases": [
+        "SWE",
+        "Sweden"
+      ],
+      "localDisplayName": "Sweden"
+    },
+    {
+      "teamId": "tun",
+      "fifaTeamId": "43888",
+      "fifaCode": "TUN",
+      "sourceName": "Tunisia",
+      "officialName": "Tunisia",
+      "shortName": "Tunisia",
+      "group": "F",
+      "sourceGroupId": "289280",
+      "sourceGroupName": "Group F",
+      "aliases": [
+        "TUN",
+        "Tunisia"
+      ],
+      "localDisplayName": "Tunisia"
+    },
+    {
+      "teamId": "bel",
+      "fifaTeamId": "43935",
+      "fifaCode": "BEL",
+      "sourceName": "Belgium",
+      "officialName": "Belgium",
+      "shortName": "Belgium",
+      "group": "G",
+      "sourceGroupId": "289281",
+      "sourceGroupName": "Group G",
+      "aliases": [
+        "BEL",
+        "Belgium"
+      ],
+      "localDisplayName": "Belgium"
+    },
+    {
+      "teamId": "egy",
+      "fifaTeamId": "43855",
+      "fifaCode": "EGY",
+      "sourceName": "Egypt",
+      "officialName": "Egypt",
+      "shortName": "Egypt",
+      "group": "G",
+      "sourceGroupId": "289281",
+      "sourceGroupName": "Group G",
+      "aliases": [
+        "EGY",
+        "Egypt"
+      ],
+      "localDisplayName": "Egypt"
+    },
+    {
+      "teamId": "irn",
+      "fifaTeamId": "43817",
+      "fifaCode": "IRN",
+      "sourceName": "IR Iran",
+      "officialName": "IR Iran",
+      "shortName": "Iran",
+      "group": "G",
+      "sourceGroupId": "289281",
+      "sourceGroupName": "Group G",
+      "aliases": [
+        "IR Iran",
+        "IRN",
+        "Iran"
+      ],
+      "localDisplayName": "Iran"
+    },
+    {
+      "teamId": "nzl",
+      "fifaTeamId": "43978",
+      "fifaCode": "NZL",
+      "sourceName": "New Zealand",
+      "officialName": "New Zealand",
+      "shortName": "New Zealand",
+      "group": "G",
+      "sourceGroupId": "289281",
+      "sourceGroupName": "Group G",
+      "aliases": [
+        "NZL",
+        "New Zealand"
+      ],
+      "localDisplayName": "New Zealand"
+    },
+    {
+      "teamId": "cpv",
+      "fifaTeamId": "43850",
+      "fifaCode": "CPV",
+      "sourceName": "Cabo Verde",
+      "officialName": "Cabo Verde",
+      "shortName": "Cape Verde",
+      "group": "H",
+      "sourceGroupId": "289282",
+      "sourceGroupName": "Group H",
+      "aliases": [
+        "CPV",
+        "Cabo Verde",
+        "Cape Verde"
+      ],
+      "localDisplayName": "Cape Verde"
+    },
+    {
+      "teamId": "esp",
+      "fifaTeamId": "43969",
+      "fifaCode": "ESP",
+      "sourceName": "Spain",
+      "officialName": "Spain",
+      "shortName": "Spain",
+      "group": "H",
+      "sourceGroupId": "289282",
+      "sourceGroupName": "Group H",
+      "aliases": [
+        "ESP",
+        "Spain"
+      ],
+      "localDisplayName": "Spain"
+    },
+    {
+      "teamId": "ksa",
+      "fifaTeamId": "43835",
+      "fifaCode": "KSA",
+      "sourceName": "Saudi Arabia",
+      "officialName": "Saudi Arabia",
+      "shortName": "Saudi Arabia",
+      "group": "H",
+      "sourceGroupId": "289282",
+      "sourceGroupName": "Group H",
+      "aliases": [
+        "KSA",
+        "Saudi Arabia"
+      ],
+      "localDisplayName": "Saudi Arabia"
+    },
+    {
+      "teamId": "uru",
+      "fifaTeamId": "43930",
+      "fifaCode": "URU",
+      "sourceName": "Uruguay",
+      "officialName": "Uruguay",
+      "shortName": "Uruguay",
+      "group": "H",
+      "sourceGroupId": "289282",
+      "sourceGroupName": "Group H",
+      "aliases": [
+        "URU",
+        "Uruguay"
+      ],
+      "localDisplayName": "Uruguay"
+    },
+    {
+      "teamId": "fra",
+      "fifaTeamId": "43946",
+      "fifaCode": "FRA",
+      "sourceName": "France",
+      "officialName": "France",
+      "shortName": "France",
+      "group": "I",
+      "sourceGroupId": "289283",
+      "sourceGroupName": "Group I",
+      "aliases": [
+        "FRA",
+        "France"
+      ],
+      "localDisplayName": "France"
+    },
+    {
+      "teamId": "irq",
+      "fifaTeamId": "43818",
+      "fifaCode": "IRQ",
+      "sourceName": "Iraq",
+      "officialName": "Iraq",
+      "shortName": "Iraq",
+      "group": "I",
+      "sourceGroupId": "289283",
+      "sourceGroupName": "Group I",
+      "aliases": [
+        "IRQ",
+        "Iraq"
+      ],
+      "localDisplayName": "Iraq"
+    },
+    {
+      "teamId": "nor",
+      "fifaTeamId": "43961",
+      "fifaCode": "NOR",
+      "sourceName": "Norway",
+      "officialName": "Norway",
+      "shortName": "Norway",
+      "group": "I",
+      "sourceGroupId": "289283",
+      "sourceGroupName": "Group I",
+      "aliases": [
+        "NOR",
+        "Norway"
+      ],
+      "localDisplayName": "Norway"
+    },
+    {
+      "teamId": "sen",
+      "fifaTeamId": "43879",
+      "fifaCode": "SEN",
+      "sourceName": "Senegal",
+      "officialName": "Senegal",
+      "shortName": "Senegal",
+      "group": "I",
+      "sourceGroupId": "289283",
+      "sourceGroupName": "Group I",
+      "aliases": [
+        "SEN",
+        "Senegal"
+      ],
+      "localDisplayName": "Senegal"
+    },
+    {
+      "teamId": "alg",
+      "fifaTeamId": "43843",
+      "fifaCode": "ALG",
+      "sourceName": "Algeria",
+      "officialName": "Algeria",
+      "shortName": "Algeria",
+      "group": "J",
+      "sourceGroupId": "289284",
+      "sourceGroupName": "Group J",
+      "aliases": [
+        "ALG",
+        "Algeria"
+      ],
+      "localDisplayName": "Algeria"
+    },
+    {
+      "teamId": "arg",
+      "fifaTeamId": "43922",
+      "fifaCode": "ARG",
+      "sourceName": "Argentina",
+      "officialName": "Argentina",
+      "shortName": "Argentina",
+      "group": "J",
+      "sourceGroupId": "289284",
+      "sourceGroupName": "Group J",
+      "aliases": [
+        "ARG",
+        "Argentina"
+      ],
+      "localDisplayName": "Argentina"
+    },
+    {
+      "teamId": "aut",
+      "fifaTeamId": "43934",
+      "fifaCode": "AUT",
+      "sourceName": "Austria",
+      "officialName": "Austria",
+      "shortName": "Austria",
+      "group": "J",
+      "sourceGroupId": "289284",
+      "sourceGroupName": "Group J",
+      "aliases": [
+        "AUT",
+        "Austria"
+      ],
+      "localDisplayName": "Austria"
+    },
+    {
+      "teamId": "jor",
+      "fifaTeamId": "43820",
+      "fifaCode": "JOR",
+      "sourceName": "Jordan",
+      "officialName": "Jordan",
+      "shortName": "Jordan",
+      "group": "J",
+      "sourceGroupId": "289284",
+      "sourceGroupName": "Group J",
+      "aliases": [
+        "JOR",
+        "Jordan"
+      ],
+      "localDisplayName": "Jordan"
+    },
+    {
+      "teamId": "cod",
+      "fifaTeamId": "20014",
+      "fifaCode": "COD",
+      "sourceName": "Congo DR",
+      "officialName": "Congo DR",
+      "shortName": "DR Congo",
+      "group": "K",
+      "sourceGroupId": "289285",
+      "sourceGroupName": "Group K",
+      "aliases": [
+        "COD",
+        "Congo DR",
+        "DR Congo"
+      ],
+      "localDisplayName": "DR Congo"
+    },
+    {
+      "teamId": "col",
+      "fifaTeamId": "43926",
+      "fifaCode": "COL",
+      "sourceName": "Colombia",
+      "officialName": "Colombia",
+      "shortName": "Colombia",
+      "group": "K",
+      "sourceGroupId": "289285",
+      "sourceGroupName": "Group K",
+      "aliases": [
+        "COL",
+        "Colombia"
+      ],
+      "localDisplayName": "Colombia"
+    },
+    {
+      "teamId": "por",
+      "fifaTeamId": "43963",
+      "fifaCode": "POR",
+      "sourceName": "Portugal",
+      "officialName": "Portugal",
+      "shortName": "Portugal",
+      "group": "K",
+      "sourceGroupId": "289285",
+      "sourceGroupName": "Group K",
+      "aliases": [
+        "POR",
+        "Portugal"
+      ],
+      "localDisplayName": "Portugal"
+    },
+    {
+      "teamId": "uzb",
+      "fifaTeamId": "44005",
+      "fifaCode": "UZB",
+      "sourceName": "Uzbekistan",
+      "officialName": "Uzbekistan",
+      "shortName": "Uzbekistan",
+      "group": "K",
+      "sourceGroupId": "289285",
+      "sourceGroupName": "Group K",
+      "aliases": [
+        "UZB",
+        "Uzbekistan"
+      ],
+      "localDisplayName": "Uzbekistan"
+    },
+    {
+      "teamId": "cro",
+      "fifaTeamId": "43938",
+      "fifaCode": "CRO",
+      "sourceName": "Croatia",
+      "officialName": "Croatia",
+      "shortName": "Croatia",
+      "group": "L",
+      "sourceGroupId": "289286",
+      "sourceGroupName": "Group L",
+      "aliases": [
+        "CRO",
+        "Croatia"
+      ],
+      "localDisplayName": "Croatia"
+    },
+    {
+      "teamId": "eng",
+      "fifaTeamId": "43942",
+      "fifaCode": "ENG",
+      "sourceName": "England",
+      "officialName": "England",
+      "shortName": "England",
+      "group": "L",
+      "sourceGroupId": "289286",
+      "sourceGroupName": "Group L",
+      "aliases": [
+        "ENG",
+        "England"
+      ],
+      "localDisplayName": "England"
+    },
+    {
+      "teamId": "gha",
+      "fifaTeamId": "43860",
+      "fifaCode": "GHA",
+      "sourceName": "Ghana",
+      "officialName": "Ghana",
+      "shortName": "Ghana",
+      "group": "L",
+      "sourceGroupId": "289286",
+      "sourceGroupName": "Group L",
+      "aliases": [
+        "GHA",
+        "Ghana"
+      ],
+      "localDisplayName": "Ghana"
+    },
+    {
+      "teamId": "pan",
+      "fifaTeamId": "43914",
+      "fifaCode": "PAN",
+      "sourceName": "Panama",
+      "officialName": "Panama",
+      "shortName": "Panama",
+      "group": "L",
+      "sourceGroupId": "289286",
+      "sourceGroupName": "Group L",
+      "aliases": [
+        "PAN",
+        "Panama"
+      ],
+      "localDisplayName": "Panama"
+    }
+  ],
+  "accessCutoffUtc": "2026-06-28T03:00:00.000Z"
+}

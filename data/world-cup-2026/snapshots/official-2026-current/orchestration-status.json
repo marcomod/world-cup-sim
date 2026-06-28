@@ -1,0 +1,16 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "tournamentSnapshotId": "fifa-world-cup-2026",
+  "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "status": "official_tie_unresolved",
+  "criterion": "fair_play",
+  "teamIds": [
+    "ecu",
+    "gha"
+  ],
+  "missingDataset": "official_fair_play_records",
+  "reason": "Third-place ranking requires complete fair-play data; missing records for ecu, gha.",
+  "generatedAtPolicy": "Deterministic artifact derived from the versioned official snapshot; no wall-clock timestamp is used.",
+  "officialRoundOf32Generated": false
+}

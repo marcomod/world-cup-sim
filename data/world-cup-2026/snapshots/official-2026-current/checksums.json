@@ -1,0 +1,9 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "snapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "rawArtifactChecksums": {
+    "data/world-cup-2026/raw/official-2026-current/teams-and-groups.json": "b16ad86af77e56b54a6dba021b7a731840ba819abf87e7397b63dc1dac02046d",
+    "data/world-cup-2026/raw/official-2026-current/group-fixtures.json": "3efe0a23bdf1d2c82d1b5b607844fe81dddca1d52e1f578f8d2937ff5fcf42a3",
+    "data/world-cup-2026/raw/official-2026-current/fifa-ranking.json": "ce2e25011047f91cabb402a2bced8a37320795addda230478edf849c6d76ee8a"
+  }
+}

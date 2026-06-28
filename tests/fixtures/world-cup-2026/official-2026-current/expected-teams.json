@@ -1,0 +1,386 @@
+[
+  {
+    "teamId": "cze",
+    "officialName": "Czechia",
+    "localDisplayName": "Czech Republic",
+    "shortName": "Czechia",
+    "fifaCode": "CZE",
+    "group": "A"
+  },
+  {
+    "teamId": "kor",
+    "officialName": "Korea Republic",
+    "localDisplayName": "South Korea",
+    "shortName": "South Korea",
+    "fifaCode": "KOR",
+    "group": "A"
+  },
+  {
+    "teamId": "mex",
+    "officialName": "Mexico",
+    "localDisplayName": "Mexico",
+    "shortName": "Mexico",
+    "fifaCode": "MEX",
+    "group": "A"
+  },
+  {
+    "teamId": "rsa",
+    "officialName": "South Africa",
+    "localDisplayName": "South Africa",
+    "shortName": "South Africa",
+    "fifaCode": "RSA",
+    "group": "A"
+  },
+  {
+    "teamId": "bih",
+    "officialName": "Bosnia and Herzegovina",
+    "localDisplayName": "Bosnia and Herzegovina",
+    "shortName": "Bosnia and Herzegovina",
+    "fifaCode": "BIH",
+    "group": "B"
+  },
+  {
+    "teamId": "can",
+    "officialName": "Canada",
+    "localDisplayName": "Canada",
+    "shortName": "Canada",
+    "fifaCode": "CAN",
+    "group": "B"
+  },
+  {
+    "teamId": "qat",
+    "officialName": "Qatar",
+    "localDisplayName": "Qatar",
+    "shortName": "Qatar",
+    "fifaCode": "QAT",
+    "group": "B"
+  },
+  {
+    "teamId": "sui",
+    "officialName": "Switzerland",
+    "localDisplayName": "Switzerland",
+    "shortName": "Switzerland",
+    "fifaCode": "SUI",
+    "group": "B"
+  },
+  {
+    "teamId": "bra",
+    "officialName": "Brazil",
+    "localDisplayName": "Brazil",
+    "shortName": "Brazil",
+    "fifaCode": "BRA",
+    "group": "C"
+  },
+  {
+    "teamId": "hai",
+    "officialName": "Haiti",
+    "localDisplayName": "Haiti",
+    "shortName": "Haiti",
+    "fifaCode": "HAI",
+    "group": "C"
+  },
+  {
+    "teamId": "mar",
+    "officialName": "Morocco",
+    "localDisplayName": "Morocco",
+    "shortName": "Morocco",
+    "fifaCode": "MAR",
+    "group": "C"
+  },
+  {
+    "teamId": "sco",
+    "officialName": "Scotland",
+    "localDisplayName": "Scotland",
+    "shortName": "Scotland",
+    "fifaCode": "SCO",
+    "group": "C"
+  },
+  {
+    "teamId": "aus",
+    "officialName": "Australia",
+    "localDisplayName": "Australia",
+    "shortName": "Australia",
+    "fifaCode": "AUS",
+    "group": "D"
+  },
+  {
+    "teamId": "par",
+    "officialName": "Paraguay",
+    "localDisplayName": "Paraguay",
+    "shortName": "Paraguay",
+    "fifaCode": "PAR",
+    "group": "D"
+  },
+  {
+    "teamId": "tur",
+    "officialName": "Türkiye",
+    "localDisplayName": "Turkey",
+    "shortName": "Turkey",
+    "fifaCode": "TUR",
+    "group": "D"
+  },
+  {
+    "teamId": "usa",
+    "officialName": "USA",
+    "localDisplayName": "United States",
+    "shortName": "USA",
+    "fifaCode": "USA",
+    "group": "D"
+  },
+  {
+    "teamId": "civ",
+    "officialName": "Côte d'Ivoire",
+    "localDisplayName": "Ivory Coast",
+    "shortName": "Ivory Coast",
+    "fifaCode": "CIV",
+    "group": "E"
+  },
+  {
+    "teamId": "cuw",
+    "officialName": "Curaçao",
+    "localDisplayName": "Curaçao",
+    "shortName": "Curaçao",
+    "fifaCode": "CUW",
+    "group": "E"
+  },
+  {
+    "teamId": "ecu",
+    "officialName": "Ecuador",
+    "localDisplayName": "Ecuador",
+    "shortName": "Ecuador",
+    "fifaCode": "ECU",
+    "group": "E"
+  },
+  {
+    "teamId": "ger",
+    "officialName": "Germany",
+    "localDisplayName": "Germany",
+    "shortName": "Germany",
+    "fifaCode": "GER",
+    "group": "E"
+  },
+  {
+    "teamId": "jpn",
+    "officialName": "Japan",
+    "localDisplayName": "Japan",
+    "shortName": "Japan",
+    "fifaCode": "JPN",
+    "group": "F"
+  },
+  {
+    "teamId": "ned",
+    "officialName": "Netherlands",
+    "localDisplayName": "Netherlands",
+    "shortName": "Netherlands",
+    "fifaCode": "NED",
+    "group": "F"
+  },
+  {
+    "teamId": "swe",
+    "officialName": "Sweden",
+    "localDisplayName": "Sweden",
+    "shortName": "Sweden",
+    "fifaCode": "SWE",
+    "group": "F"
+  },
+  {
+    "teamId": "tun",
+    "officialName": "Tunisia",
+    "localDisplayName": "Tunisia",
+    "shortName": "Tunisia",
+    "fifaCode": "TUN",
+    "group": "F"
+  },
+  {
+    "teamId": "bel",
+    "officialName": "Belgium",
+    "localDisplayName": "Belgium",
+    "shortName": "Belgium",
+    "fifaCode": "BEL",
+    "group": "G"
+  },
+  {
+    "teamId": "egy",
+    "officialName": "Egypt",
+    "localDisplayName": "Egypt",
+    "shortName": "Egypt",
+    "fifaCode": "EGY",
+    "group": "G"
+  },
+  {
+    "teamId": "irn",
+    "officialName": "IR Iran",
+    "localDisplayName": "Iran",
+    "shortName": "Iran",
+    "fifaCode": "IRN",
+    "group": "G"
+  },
+  {
+    "teamId": "nzl",
+    "officialName": "New Zealand",
+    "localDisplayName": "New Zealand",
+    "shortName": "New Zealand",
+    "fifaCode": "NZL",
+    "group": "G"
+  },
+  {
+    "teamId": "cpv",
+    "officialName": "Cabo Verde",
+    "localDisplayName": "Cape Verde",
+    "shortName": "Cape Verde",
+    "fifaCode": "CPV",
+    "group": "H"
+  },
+  {
+    "teamId": "esp",
+    "officialName": "Spain",
+    "localDisplayName": "Spain",
+    "shortName": "Spain",
+    "fifaCode": "ESP",
+    "group": "H"
+  },
+  {
+    "teamId": "ksa",
+    "officialName": "Saudi Arabia",
+    "localDisplayName": "Saudi Arabia",
+    "shortName": "Saudi Arabia",
+    "fifaCode": "KSA",
+    "group": "H"
+  },
+  {
+    "teamId": "uru",
+    "officialName": "Uruguay",
+    "localDisplayName": "Uruguay",
+    "shortName": "Uruguay",
+    "fifaCode": "URU",
+    "group": "H"
+  },
+  {
+    "teamId": "fra",
+    "officialName": "France",
+    "localDisplayName": "France",
+    "shortName": "France",
+    "fifaCode": "FRA",
+    "group": "I"
+  },
+  {
+    "teamId": "irq",
+    "officialName": "Iraq",
+    "localDisplayName": "Iraq",
+    "shortName": "Iraq",
+    "fifaCode": "IRQ",
+    "group": "I"
+  },
+  {
+    "teamId": "nor",
+    "officialName": "Norway",
+    "localDisplayName": "Norway",
+    "shortName": "Norway",
+    "fifaCode": "NOR",
+    "group": "I"
+  },
+  {
+    "teamId": "sen",
+    "officialName": "Senegal",
+    "localDisplayName": "Senegal",
+    "shortName": "Senegal",
+    "fifaCode": "SEN",
+    "group": "I"
+  },
+  {
+    "teamId": "alg",
+    "officialName": "Algeria",
+    "localDisplayName": "Algeria",
+    "shortName": "Algeria",
+    "fifaCode": "ALG",
+    "group": "J"
+  },
+  {
+    "teamId": "arg",
+    "officialName": "Argentina",
+    "localDisplayName": "Argentina",
+    "shortName": "Argentina",
+    "fifaCode": "ARG",
+    "group": "J"
+  },
+  {
+    "teamId": "aut",
+    "officialName": "Austria",
+    "localDisplayName": "Austria",
+    "shortName": "Austria",
+    "fifaCode": "AUT",
+    "group": "J"
+  },
+  {
+    "teamId": "jor",
+    "officialName": "Jordan",
+    "localDisplayName": "Jordan",
+    "shortName": "Jordan",
+    "fifaCode": "JOR",
+    "group": "J"
+  },
+  {
+    "teamId": "cod",
+    "officialName": "Congo DR",
+    "localDisplayName": "DR Congo",
+    "shortName": "DR Congo",
+    "fifaCode": "COD",
+    "group": "K"
+  },
+  {
+    "teamId": "col",
+    "officialName": "Colombia",
+    "localDisplayName": "Colombia",
+    "shortName": "Colombia",
+    "fifaCode": "COL",
+    "group": "K"
+  },
+  {
+    "teamId": "por",
+    "officialName": "Portugal",
+    "localDisplayName": "Portugal",
+    "shortName": "Portugal",
+    "fifaCode": "POR",
+    "group": "K"
+  },
+  {
+    "teamId": "uzb",
+    "officialName": "Uzbekistan",
+    "localDisplayName": "Uzbekistan",
+    "shortName": "Uzbekistan",
+    "fifaCode": "UZB",
+    "group": "K"
+  },
+  {
+    "teamId": "cro",
+    "officialName": "Croatia",
+    "localDisplayName": "Croatia",
+    "shortName": "Croatia",
+    "fifaCode": "CRO",
+    "group": "L"
+  },
+  {
+    "teamId": "eng",
+    "officialName": "England",
+    "localDisplayName": "England",
+    "shortName": "England",
+    "fifaCode": "ENG",
+    "group": "L"
+  },
+  {
+    "teamId": "gha",
+    "officialName": "Ghana",
+    "localDisplayName": "Ghana",
+    "shortName": "Ghana",
+    "fifaCode": "GHA",
+    "group": "L"
+  },
+  {
+    "teamId": "pan",
+    "officialName": "Panama",
+    "localDisplayName": "Panama",
+    "shortName": "Panama",
+    "fifaCode": "PAN",
+    "group": "L"
+  }
+]

@@ -1,0 +1,938 @@
+[
+  {
+    "fifaMatchNumber": 1,
+    "group": "A",
+    "homeTeamId": "mex",
+    "awayTeamId": "rsa",
+    "kickoffUtc": "2026-06-11T19:00:00.000Z",
+    "venueId": "400222084",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 2,
+    "group": "A",
+    "homeTeamId": "kor",
+    "awayTeamId": "cze",
+    "kickoffUtc": "2026-06-12T02:00:00.000Z",
+    "venueId": "400252150",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 3,
+    "group": "B",
+    "homeTeamId": "can",
+    "awayTeamId": "bih",
+    "kickoffUtc": "2026-06-12T19:00:00.000Z",
+    "venueId": "400242032",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 4,
+    "group": "D",
+    "homeTeamId": "usa",
+    "awayTeamId": "par",
+    "kickoffUtc": "2026-06-13T01:00:00.000Z",
+    "venueId": "400017978",
+    "status": "completed",
+    "result": {
+      "homeGoals": 4,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 5,
+    "group": "C",
+    "homeTeamId": "hai",
+    "awayTeamId": "sco",
+    "kickoffUtc": "2026-06-14T01:00:00.000Z",
+    "venueId": "400248623",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 6,
+    "group": "D",
+    "homeTeamId": "aus",
+    "awayTeamId": "tur",
+    "kickoffUtc": "2026-06-14T04:00:00.000Z",
+    "venueId": "400248370",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 7,
+    "group": "C",
+    "homeTeamId": "bra",
+    "awayTeamId": "mar",
+    "kickoffUtc": "2026-06-13T22:00:00.000Z",
+    "venueId": "400257536",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 8,
+    "group": "B",
+    "homeTeamId": "qat",
+    "awayTeamId": "sui",
+    "kickoffUtc": "2026-06-13T19:00:00.000Z",
+    "venueId": "400257521",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 9,
+    "group": "E",
+    "homeTeamId": "civ",
+    "awayTeamId": "ecu",
+    "kickoffUtc": "2026-06-14T23:00:00.000Z",
+    "venueId": "400248622",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 10,
+    "group": "E",
+    "homeTeamId": "ger",
+    "awayTeamId": "cuw",
+    "kickoffUtc": "2026-06-14T17:00:00.000Z",
+    "venueId": "400249385",
+    "status": "completed",
+    "result": {
+      "homeGoals": 7,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 11,
+    "group": "F",
+    "homeTeamId": "ned",
+    "awayTeamId": "jpn",
+    "kickoffUtc": "2026-06-14T20:00:00.000Z",
+    "venueId": "400257526",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 12,
+    "group": "F",
+    "homeTeamId": "swe",
+    "awayTeamId": "tun",
+    "kickoffUtc": "2026-06-15T02:00:00.000Z",
+    "venueId": "400238450",
+    "status": "completed",
+    "result": {
+      "homeGoals": 5,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 13,
+    "group": "H",
+    "homeTeamId": "ksa",
+    "awayTeamId": "uru",
+    "kickoffUtc": "2026-06-15T22:00:00.000Z",
+    "venueId": "400257525",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 14,
+    "group": "H",
+    "homeTeamId": "esp",
+    "awayTeamId": "cpv",
+    "kickoffUtc": "2026-06-15T16:00:00.000Z",
+    "venueId": "400098290",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 15,
+    "group": "G",
+    "homeTeamId": "irn",
+    "awayTeamId": "nzl",
+    "kickoffUtc": "2026-06-16T01:00:00.000Z",
+    "venueId": "400017978",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 16,
+    "group": "G",
+    "homeTeamId": "bel",
+    "awayTeamId": "egy",
+    "kickoffUtc": "2026-06-15T19:00:00.000Z",
+    "venueId": "400216606",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 17,
+    "group": "I",
+    "homeTeamId": "fra",
+    "awayTeamId": "sen",
+    "kickoffUtc": "2026-06-16T19:00:00.000Z",
+    "venueId": "400257536",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 18,
+    "group": "I",
+    "homeTeamId": "irq",
+    "awayTeamId": "nor",
+    "kickoffUtc": "2026-06-16T22:00:00.000Z",
+    "venueId": "400248623",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 4
+    }
+  },
+  {
+    "fifaMatchNumber": 19,
+    "group": "J",
+    "homeTeamId": "arg",
+    "awayTeamId": "alg",
+    "kickoffUtc": "2026-06-17T01:00:00.000Z",
+    "venueId": "400254717",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 20,
+    "group": "J",
+    "homeTeamId": "aut",
+    "awayTeamId": "jor",
+    "kickoffUtc": "2026-06-17T04:00:00.000Z",
+    "venueId": "400257521",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 21,
+    "group": "L",
+    "homeTeamId": "gha",
+    "awayTeamId": "pan",
+    "kickoffUtc": "2026-06-17T23:00:00.000Z",
+    "venueId": "400242032",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 22,
+    "group": "L",
+    "homeTeamId": "eng",
+    "awayTeamId": "cro",
+    "kickoffUtc": "2026-06-17T20:00:00.000Z",
+    "venueId": "400257526",
+    "status": "completed",
+    "result": {
+      "homeGoals": 4,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 23,
+    "group": "K",
+    "homeTeamId": "por",
+    "awayTeamId": "cod",
+    "kickoffUtc": "2026-06-17T17:00:00.000Z",
+    "venueId": "400249385",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 24,
+    "group": "K",
+    "homeTeamId": "uzb",
+    "awayTeamId": "col",
+    "kickoffUtc": "2026-06-18T02:00:00.000Z",
+    "venueId": "400222084",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 3
+    }
+  },
+  {
+    "fifaMatchNumber": 25,
+    "group": "A",
+    "homeTeamId": "cze",
+    "awayTeamId": "rsa",
+    "kickoffUtc": "2026-06-18T16:00:00.000Z",
+    "venueId": "400098290",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 26,
+    "group": "B",
+    "homeTeamId": "sui",
+    "awayTeamId": "bih",
+    "kickoffUtc": "2026-06-18T19:00:00.000Z",
+    "venueId": "400017978",
+    "status": "completed",
+    "result": {
+      "homeGoals": 4,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 27,
+    "group": "B",
+    "homeTeamId": "can",
+    "awayTeamId": "qat",
+    "kickoffUtc": "2026-06-18T22:00:00.000Z",
+    "venueId": "400248370",
+    "status": "completed",
+    "result": {
+      "homeGoals": 6,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 28,
+    "group": "A",
+    "homeTeamId": "mex",
+    "awayTeamId": "kor",
+    "kickoffUtc": "2026-06-19T01:00:00.000Z",
+    "venueId": "400252150",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 29,
+    "group": "C",
+    "homeTeamId": "bra",
+    "awayTeamId": "hai",
+    "kickoffUtc": "2026-06-20T00:30:00.000Z",
+    "venueId": "400248622",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 30,
+    "group": "C",
+    "homeTeamId": "sco",
+    "awayTeamId": "mar",
+    "kickoffUtc": "2026-06-19T22:00:00.000Z",
+    "venueId": "400248623",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 31,
+    "group": "D",
+    "homeTeamId": "tur",
+    "awayTeamId": "par",
+    "kickoffUtc": "2026-06-20T03:00:00.000Z",
+    "venueId": "400257521",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 32,
+    "group": "D",
+    "homeTeamId": "usa",
+    "awayTeamId": "aus",
+    "kickoffUtc": "2026-06-19T19:00:00.000Z",
+    "venueId": "400216606",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 33,
+    "group": "E",
+    "homeTeamId": "ger",
+    "awayTeamId": "civ",
+    "kickoffUtc": "2026-06-20T20:00:00.000Z",
+    "venueId": "400242032",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 34,
+    "group": "E",
+    "homeTeamId": "ecu",
+    "awayTeamId": "cuw",
+    "kickoffUtc": "2026-06-21T00:00:00.000Z",
+    "venueId": "400254717",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 35,
+    "group": "F",
+    "homeTeamId": "ned",
+    "awayTeamId": "swe",
+    "kickoffUtc": "2026-06-20T17:00:00.000Z",
+    "venueId": "400249385",
+    "status": "completed",
+    "result": {
+      "homeGoals": 5,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 36,
+    "group": "F",
+    "homeTeamId": "tun",
+    "awayTeamId": "jpn",
+    "kickoffUtc": "2026-06-21T04:00:00.000Z",
+    "venueId": "400238450",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 4
+    }
+  },
+  {
+    "fifaMatchNumber": 37,
+    "group": "H",
+    "homeTeamId": "uru",
+    "awayTeamId": "cpv",
+    "kickoffUtc": "2026-06-21T22:00:00.000Z",
+    "venueId": "400257525",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 38,
+    "group": "H",
+    "homeTeamId": "esp",
+    "awayTeamId": "ksa",
+    "kickoffUtc": "2026-06-21T16:00:00.000Z",
+    "venueId": "400098290",
+    "status": "completed",
+    "result": {
+      "homeGoals": 4,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 39,
+    "group": "G",
+    "homeTeamId": "bel",
+    "awayTeamId": "irn",
+    "kickoffUtc": "2026-06-21T19:00:00.000Z",
+    "venueId": "400017978",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 40,
+    "group": "G",
+    "homeTeamId": "nzl",
+    "awayTeamId": "egy",
+    "kickoffUtc": "2026-06-22T01:00:00.000Z",
+    "venueId": "400248370",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 3
+    }
+  },
+  {
+    "fifaMatchNumber": 41,
+    "group": "I",
+    "homeTeamId": "nor",
+    "awayTeamId": "sen",
+    "kickoffUtc": "2026-06-23T00:00:00.000Z",
+    "venueId": "400257536",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 42,
+    "group": "I",
+    "homeTeamId": "fra",
+    "awayTeamId": "irq",
+    "kickoffUtc": "2026-06-22T21:00:00.000Z",
+    "venueId": "400248622",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 43,
+    "group": "J",
+    "homeTeamId": "arg",
+    "awayTeamId": "aut",
+    "kickoffUtc": "2026-06-22T17:00:00.000Z",
+    "venueId": "400257526",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 44,
+    "group": "J",
+    "homeTeamId": "jor",
+    "awayTeamId": "alg",
+    "kickoffUtc": "2026-06-23T03:00:00.000Z",
+    "venueId": "400257521",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 45,
+    "group": "L",
+    "homeTeamId": "eng",
+    "awayTeamId": "gha",
+    "kickoffUtc": "2026-06-23T20:00:00.000Z",
+    "venueId": "400248623",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 46,
+    "group": "L",
+    "homeTeamId": "pan",
+    "awayTeamId": "cro",
+    "kickoffUtc": "2026-06-23T23:00:00.000Z",
+    "venueId": "400242032",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 47,
+    "group": "K",
+    "homeTeamId": "por",
+    "awayTeamId": "uzb",
+    "kickoffUtc": "2026-06-23T17:00:00.000Z",
+    "venueId": "400249385",
+    "status": "completed",
+    "result": {
+      "homeGoals": 5,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 48,
+    "group": "K",
+    "homeTeamId": "col",
+    "awayTeamId": "cod",
+    "kickoffUtc": "2026-06-24T02:00:00.000Z",
+    "venueId": "400252150",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 49,
+    "group": "C",
+    "homeTeamId": "sco",
+    "awayTeamId": "bra",
+    "kickoffUtc": "2026-06-24T22:00:00.000Z",
+    "venueId": "400257525",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 3
+    }
+  },
+  {
+    "fifaMatchNumber": 50,
+    "group": "C",
+    "homeTeamId": "mar",
+    "awayTeamId": "hai",
+    "kickoffUtc": "2026-06-24T22:00:00.000Z",
+    "venueId": "400098290",
+    "status": "completed",
+    "result": {
+      "homeGoals": 4,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 51,
+    "group": "B",
+    "homeTeamId": "sui",
+    "awayTeamId": "can",
+    "kickoffUtc": "2026-06-24T19:00:00.000Z",
+    "venueId": "400248370",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 52,
+    "group": "B",
+    "homeTeamId": "bih",
+    "awayTeamId": "qat",
+    "kickoffUtc": "2026-06-24T19:00:00.000Z",
+    "venueId": "400216606",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 53,
+    "group": "A",
+    "homeTeamId": "cze",
+    "awayTeamId": "mex",
+    "kickoffUtc": "2026-06-25T01:00:00.000Z",
+    "venueId": "400222084",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 3
+    }
+  },
+  {
+    "fifaMatchNumber": 54,
+    "group": "A",
+    "homeTeamId": "rsa",
+    "awayTeamId": "kor",
+    "kickoffUtc": "2026-06-25T01:00:00.000Z",
+    "venueId": "400238450",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 55,
+    "group": "E",
+    "homeTeamId": "cuw",
+    "awayTeamId": "civ",
+    "kickoffUtc": "2026-06-25T20:00:00.000Z",
+    "venueId": "400248622",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 56,
+    "group": "E",
+    "homeTeamId": "ecu",
+    "awayTeamId": "ger",
+    "kickoffUtc": "2026-06-25T20:00:00.000Z",
+    "venueId": "400257536",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 57,
+    "group": "F",
+    "homeTeamId": "jpn",
+    "awayTeamId": "swe",
+    "kickoffUtc": "2026-06-25T23:00:00.000Z",
+    "venueId": "400257526",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 58,
+    "group": "F",
+    "homeTeamId": "tun",
+    "awayTeamId": "ned",
+    "kickoffUtc": "2026-06-25T23:00:00.000Z",
+    "venueId": "400254717",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 3
+    }
+  },
+  {
+    "fifaMatchNumber": 59,
+    "group": "D",
+    "homeTeamId": "tur",
+    "awayTeamId": "usa",
+    "kickoffUtc": "2026-06-26T02:00:00.000Z",
+    "venueId": "400017978",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 60,
+    "group": "D",
+    "homeTeamId": "par",
+    "awayTeamId": "aus",
+    "kickoffUtc": "2026-06-26T02:00:00.000Z",
+    "venueId": "400257521",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 61,
+    "group": "I",
+    "homeTeamId": "nor",
+    "awayTeamId": "fra",
+    "kickoffUtc": "2026-06-26T19:00:00.000Z",
+    "venueId": "400248623",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 4
+    }
+  },
+  {
+    "fifaMatchNumber": 62,
+    "group": "I",
+    "homeTeamId": "sen",
+    "awayTeamId": "irq",
+    "kickoffUtc": "2026-06-26T19:00:00.000Z",
+    "venueId": "400242032",
+    "status": "completed",
+    "result": {
+      "homeGoals": 5,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 63,
+    "group": "G",
+    "homeTeamId": "egy",
+    "awayTeamId": "irn",
+    "kickoffUtc": "2026-06-27T03:00:00.000Z",
+    "venueId": "400216606",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 64,
+    "group": "G",
+    "homeTeamId": "nzl",
+    "awayTeamId": "bel",
+    "kickoffUtc": "2026-06-27T03:00:00.000Z",
+    "venueId": "400248370",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 5
+    }
+  },
+  {
+    "fifaMatchNumber": 65,
+    "group": "H",
+    "homeTeamId": "cpv",
+    "awayTeamId": "ksa",
+    "kickoffUtc": "2026-06-27T00:00:00.000Z",
+    "venueId": "400249385",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 66,
+    "group": "H",
+    "homeTeamId": "uru",
+    "awayTeamId": "esp",
+    "kickoffUtc": "2026-06-27T00:00:00.000Z",
+    "venueId": "400252150",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 67,
+    "group": "L",
+    "homeTeamId": "pan",
+    "awayTeamId": "eng",
+    "kickoffUtc": "2026-06-27T21:00:00.000Z",
+    "venueId": "400257536",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 2
+    }
+  },
+  {
+    "fifaMatchNumber": 68,
+    "group": "L",
+    "homeTeamId": "cro",
+    "awayTeamId": "gha",
+    "kickoffUtc": "2026-06-27T21:00:00.000Z",
+    "venueId": "400248622",
+    "status": "completed",
+    "result": {
+      "homeGoals": 2,
+      "awayGoals": 1
+    }
+  },
+  {
+    "fifaMatchNumber": 69,
+    "group": "J",
+    "homeTeamId": "alg",
+    "awayTeamId": "aut",
+    "kickoffUtc": "2026-06-28T02:00:00.000Z",
+    "venueId": "400254717",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 3
+    }
+  },
+  {
+    "fifaMatchNumber": 70,
+    "group": "J",
+    "homeTeamId": "jor",
+    "awayTeamId": "arg",
+    "kickoffUtc": "2026-06-28T02:00:00.000Z",
+    "venueId": "400257526",
+    "status": "completed",
+    "result": {
+      "homeGoals": 1,
+      "awayGoals": 3
+    }
+  },
+  {
+    "fifaMatchNumber": 71,
+    "group": "K",
+    "homeTeamId": "col",
+    "awayTeamId": "por",
+    "kickoffUtc": "2026-06-27T23:30:00.000Z",
+    "venueId": "400257525",
+    "status": "completed",
+    "result": {
+      "homeGoals": 0,
+      "awayGoals": 0
+    }
+  },
+  {
+    "fifaMatchNumber": 72,
+    "group": "K",
+    "homeTeamId": "cod",
+    "awayTeamId": "uzb",
+    "kickoffUtc": "2026-06-27T23:30:00.000Z",
+    "venueId": "400098290",
+    "status": "completed",
+    "result": {
+      "homeGoals": 3,
+      "awayGoals": 1
+    }
+  }
+]

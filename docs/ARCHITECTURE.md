@@ -296,3 +296,18 @@ Responsible for:
 - Test coverage
 
 Should not implement features.
+
+⸻
+
+Official 2026 Snapshot Boundary
+
+The official World Cup 2026 snapshot pipeline is offline and script-driven:
+
+checked-in normalized FIFA extracts -> builder -> validated snapshot artifacts
+-> independent verifier -> optional server/test orchestration.
+
+The app and simulator do not fetch FIFA data and do not import the official
+snapshot scripts. UI wiring is deferred until the official knockout bracket is
+ready to replace the demo bracket. The current official snapshot is a complete
+72-match group-stage results record, but official qualification remains blocked
+until missing fair-play inputs for Ecuador and Ghana are resolved.

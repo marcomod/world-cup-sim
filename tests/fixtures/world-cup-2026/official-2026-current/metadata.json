@@ -1,0 +1,14 @@
+{
+  "sourceAuthority": "FIFA",
+  "sourceTitle": "FIFA World Cup 2026 official expected verification fixture",
+  "sourceUrl": "https://api.fifa.com/api/v3/calendar/matches?idCompetition=17&idSeason=285023&idStage=289273&language=en&count=200",
+  "rankingSourceUrl": "https://api.fifa.com/api/v3/fifarankings/rankings/approved?gender=1&count=300&language=en&sportType=0",
+  "accessDate": "2026-06-28",
+  "accessCutoffUtc": "2026-06-28T03:00:00.000Z",
+  "normalizationVersion": "official-expected-verification-v1",
+  "checksums": {
+    "expected-teams.json": "b52c8e3f4c806017ddceab225e793a51b0b3d9b5421f8acb6879a9b70db3fe51",
+    "expected-fixtures.json": "9f1bf09697018b4197e709a533df6535c49c0dd6d412d9dd1918c583427b7205",
+    "expected-ranking.json": "7d566c95856a57d25791e228122501bdace615f024d240b50ec8f405dd67ec81"
+  }
+}

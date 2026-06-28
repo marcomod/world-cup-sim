@@ -1,0 +1,588 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "ratingSnapshotId": "world-cup-2026-knockout-ratings",
+  "ratingSnapshotVersion": "official-2026-2026-06-28-r1-ratings-r1",
+  "modelVersion": "world-cup-2026-group-stage-elo-refresh-v1",
+  "tournamentSnapshotId": "fifa-world-cup-2026",
+  "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "divisor": 400,
+  "kFactor": 20,
+  "kFactorPolicy": {
+    "value": 20,
+    "policyId": "project-sequential-elo-k20-neutral-v1",
+    "rationale": "K=20 matches the existing project sequential Elo reconstruction baseline and is a conservative pre-registered update for three neutral-site group matches. It was selected before any 2026 knockout outcomes and is not tuned from knockout results.",
+    "selectedBeforeKnockoutResults": true
+  },
+  "initialRatingSource": {
+    "sourceName": "World Football Elo Ratings",
+    "modelVersion": "v2",
+    "snapshotLabel": "world-football-elo-development",
+    "snapshotDate": "2026-06-18",
+    "sourceUrl": "https://eloratings.net/",
+    "sourceArtifact": "data/generated/world-football-elo-development/team-ratings-v2.json",
+    "inputChecksum": "aa2737ecf28cff98d0606c0b26ac7f65125f5590860711c82b9c27115f4dd684",
+    "metadataChecksum": "923a704518087b76966bd2cd2e0705a4e1402d6002bb13e3a8ef4eda31f575a2",
+    "teamIdentityMappingVersion": "official-world-cup-2026-team-identities-v1",
+    "ratingBasis": "World Football Elo values preserved as overall ratings.",
+    "normalizationNotes": "The development rating artifact uses Elo-derived compatibility proxy fields; this refresh reads only overall ratings."
+  },
+  "completedMatchCount": 72,
+  "fixtureRangeUsed": {
+    "firstFifaMatchNumber": 1,
+    "lastFifaMatchNumber": 72
+  },
+  "ratingChecksum": "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5",
+  "outputChecksum": "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5",
+  "qualificationIndependence": "This all-48-team rating report processes completed group-stage results and does not require official fair-play qualification resolution.",
+  "records": [
+    {
+      "teamId": "alg",
+      "preTournamentRating": 1759,
+      "groupStageDelta": 7.488381,
+      "knockoutRating": 1766.488381,
+      "preTournamentRank": 28,
+      "knockoutRank": 28
+    },
+    {
+      "teamId": "arg",
+      "preTournamentRating": 2128,
+      "groupStageDelta": 6.76143,
+      "knockoutRating": 2134.76143,
+      "preTournamentRank": 2,
+      "knockoutRank": 1
+    },
+    {
+      "teamId": "aus",
+      "preTournamentRating": 1839,
+      "groupStageDelta": -2.990369,
+      "knockoutRating": 1836.009631,
+      "preTournamentRank": 21,
+      "knockoutRank": 21
+    },
+    {
+      "teamId": "aut",
+      "preTournamentRating": 1857,
+      "groupStageDelta": -1.445617,
+      "knockoutRating": 1855.554383,
+      "preTournamentRank": 18,
+      "knockoutRank": 17
+    },
+    {
+      "teamId": "bel",
+      "preTournamentRating": 1879,
+      "groupStageDelta": -4.797888,
+      "knockoutRating": 1874.202112,
+      "preTournamentRank": 16,
+      "knockoutRank": 16
+    },
+    {
+      "teamId": "bih",
+      "preTournamentRating": 1596,
+      "groupStageDelta": 7.213329,
+      "knockoutRating": 1603.213329,
+      "preTournamentRank": 40,
+      "knockoutRank": 40
+    },
+    {
+      "teamId": "bra",
+      "preTournamentRating": 1978,
+      "groupStageDelta": 2.772049,
+      "knockoutRating": 1980.772049,
+      "preTournamentRank": 6,
+      "knockoutRank": 6
+    },
+    {
+      "teamId": "can",
+      "preTournamentRating": 1777,
+      "groupStageDelta": -9.205192,
+      "knockoutRating": 1767.794808,
+      "preTournamentRank": 27,
+      "knockoutRank": 27
+    },
+    {
+      "teamId": "civ",
+      "preTournamentRating": 1743,
+      "groupStageDelta": 11.598302,
+      "knockoutRating": 1754.598302,
+      "preTournamentRank": 31,
+      "knockoutRank": 30
+    },
+    {
+      "teamId": "cod",
+      "preTournamentRating": 1674,
+      "groupStageDelta": 14.523168,
+      "knockoutRating": 1688.523168,
+      "preTournamentRank": 36,
+      "knockoutRank": 33
+    },
+    {
+      "teamId": "col",
+      "preTournamentRating": 1998,
+      "groupStageDelta": 4.605873,
+      "knockoutRating": 2002.605873,
+      "preTournamentRank": 5,
+      "knockoutRank": 5
+    },
+    {
+      "teamId": "cpv",
+      "preTournamentRating": 1606,
+      "groupStageDelta": 14.691576,
+      "knockoutRating": 1620.691576,
+      "preTournamentRank": 38,
+      "knockoutRank": 38
+    },
+    {
+      "teamId": "cro",
+      "preTournamentRating": 1881,
+      "groupStageDelta": 2.311061,
+      "knockoutRating": 1883.311061,
+      "preTournamentRank": 14,
+      "knockoutRank": 14
+    },
+    {
+      "teamId": "cuw",
+      "preTournamentRating": 1427,
+      "groupStageDelta": 4.83337,
+      "knockoutRating": 1431.83337,
+      "preTournamentRank": 48,
+      "knockoutRank": 48
+    },
+    {
+      "teamId": "cze",
+      "preTournamentRating": 1696,
+      "groupStageDelta": -16.527656,
+      "knockoutRating": 1679.472344,
+      "preTournamentRank": 34,
+      "knockoutRank": 35
+    },
+    {
+      "teamId": "ecu",
+      "preTournamentRating": 1890,
+      "groupStageDelta": -10.398519,
+      "knockoutRating": 1879.601481,
+      "preTournamentRank": 12,
+      "knockoutRank": 15
+    },
+    {
+      "teamId": "egy",
+      "preTournamentRating": 1711,
+      "groupStageDelta": 11.787496,
+      "knockoutRating": 1722.787496,
+      "preTournamentRank": 32,
+      "knockoutRank": 32
+    },
+    {
+      "teamId": "eng",
+      "preTournamentRating": 2055,
+      "groupStageDelta": -1.553325,
+      "knockoutRating": 2053.446675,
+      "preTournamentRank": 4,
+      "knockoutRank": 4
+    },
+    {
+      "teamId": "esp",
+      "preTournamentRating": 2129,
+      "groupStageDelta": -4.485223,
+      "knockoutRating": 2124.514777,
+      "preTournamentRank": 1,
+      "knockoutRank": 2
+    },
+    {
+      "teamId": "fra",
+      "preTournamentRating": 2084,
+      "groupStageDelta": 10.925257,
+      "knockoutRating": 2094.925257,
+      "preTournamentRank": 3,
+      "knockoutRank": 3
+    },
+    {
+      "teamId": "ger",
+      "preTournamentRating": 1939,
+      "groupStageDelta": -6.033153,
+      "knockoutRating": 1932.966847,
+      "preTournamentRank": 9,
+      "knockoutRank": 9
+    },
+    {
+      "teamId": "gha",
+      "preTournamentRating": 1557,
+      "groupStageDelta": 19.345018,
+      "knockoutRating": 1576.345018,
+      "preTournamentRank": 44,
+      "knockoutRank": 42
+    },
+    {
+      "teamId": "hai",
+      "preTournamentRating": 1536,
+      "groupStageDelta": -7.864104,
+      "knockoutRating": 1528.135896,
+      "preTournamentRank": 45,
+      "knockoutRank": 46
+    },
+    {
+      "teamId": "irn",
+      "preTournamentRating": 1756,
+      "groupStageDelta": -2.254877,
+      "knockoutRating": 1753.745123,
+      "preTournamentRank": 29,
+      "knockoutRank": 31
+    },
+    {
+      "teamId": "irq",
+      "preTournamentRating": 1592,
+      "groupStageDelta": -7.613881,
+      "knockoutRating": 1584.386119,
+      "preTournamentRank": 41,
+      "knockoutRank": 41
+    },
+    {
+      "teamId": "jor",
+      "preTournamentRating": 1653,
+      "groupStageDelta": -12.804194,
+      "knockoutRating": 1640.195806,
+      "preTournamentRank": 37,
+      "knockoutRank": 37
+    },
+    {
+      "teamId": "jpn",
+      "preTournamentRating": 1910,
+      "groupStageDelta": -0.704787,
+      "knockoutRating": 1909.295213,
+      "preTournamentRank": 11,
+      "knockoutRank": 11
+    },
+    {
+      "teamId": "kor",
+      "preTournamentRating": 1786,
+      "groupStageDelta": -16.292366,
+      "knockoutRating": 1769.707634,
+      "preTournamentRank": 24,
+      "knockoutRank": 26
+    },
+    {
+      "teamId": "ksa",
+      "preTournamentRating": 1598,
+      "groupStageDelta": 6.071755,
+      "knockoutRating": 1604.071755,
+      "preTournamentRank": 39,
+      "knockoutRank": 39
+    },
+    {
+      "teamId": "mar",
+      "preTournamentRating": 1840,
+      "groupStageDelta": 15.171202,
+      "knockoutRating": 1855.171202,
+      "preTournamentRank": 20,
+      "knockoutRank": 18
+    },
+    {
+      "teamId": "mex",
+      "preTournamentRating": 1881,
+      "groupStageDelta": 14.443154,
+      "knockoutRating": 1895.443154,
+      "preTournamentRank": 15,
+      "knockoutRank": 12
+    },
+    {
+      "teamId": "ned",
+      "preTournamentRating": 1944,
+      "groupStageDelta": 6.316382,
+      "knockoutRating": 1950.316382,
+      "preTournamentRank": 8,
+      "knockoutRank": 8
+    },
+    {
+      "teamId": "nor",
+      "preTournamentRating": 1929,
+      "groupStageDelta": 3.878881,
+      "knockoutRating": 1932.878881,
+      "preTournamentRank": 10,
+      "knockoutRank": 10
+    },
+    {
+      "teamId": "nzl",
+      "preTournamentRating": 1578,
+      "groupStageDelta": -4.73473,
+      "knockoutRating": 1573.26527,
+      "preTournamentRank": 43,
+      "knockoutRank": 44
+    },
+    {
+      "teamId": "pan",
+      "preTournamentRating": 1683,
+      "groupStageDelta": -20.102755,
+      "knockoutRating": 1662.897245,
+      "preTournamentRank": 35,
+      "knockoutRank": 36
+    },
+    {
+      "teamId": "par",
+      "preTournamentRating": 1780,
+      "groupStageDelta": 3.540357,
+      "knockoutRating": 1783.540357,
+      "preTournamentRank": 25,
+      "knockoutRank": 25
+    },
+    {
+      "teamId": "por",
+      "preTournamentRating": 1967,
+      "groupStageDelta": -2.157006,
+      "knockoutRating": 1964.842994,
+      "preTournamentRank": 7,
+      "knockoutRank": 7
+    },
+    {
+      "teamId": "qat",
+      "preTournamentRating": 1437,
+      "groupStageDelta": 0.116424,
+      "knockoutRating": 1437.116424,
+      "preTournamentRank": 47,
+      "knockoutRank": 47
+    },
+    {
+      "teamId": "rsa",
+      "preTournamentRating": 1527,
+      "groupStageDelta": 18.376869,
+      "knockoutRating": 1545.376869,
+      "preTournamentRank": 46,
+      "knockoutRank": 45
+    },
+    {
+      "teamId": "sco",
+      "preTournamentRating": 1794,
+      "groupStageDelta": -10.079147,
+      "knockoutRating": 1783.920853,
+      "preTournamentRank": 23,
+      "knockoutRank": 24
+    },
+    {
+      "teamId": "sen",
+      "preTournamentRating": 1839,
+      "groupStageDelta": -7.190257,
+      "knockoutRating": 1831.809743,
+      "preTournamentRank": 22,
+      "knockoutRank": 22
+    },
+    {
+      "teamId": "sui",
+      "preTournamentRating": 1885,
+      "groupStageDelta": 1.875439,
+      "knockoutRating": 1886.875439,
+      "preTournamentRank": 13,
+      "knockoutRank": 13
+    },
+    {
+      "teamId": "swe",
+      "preTournamentRating": 1755,
+      "groupStageDelta": 4.546954,
+      "knockoutRating": 1759.546954,
+      "preTournamentRank": 30,
+      "knockoutRank": 29
+    },
+    {
+      "teamId": "tun",
+      "preTournamentRating": 1585,
+      "groupStageDelta": -10.158549,
+      "knockoutRating": 1574.841451,
+      "preTournamentRank": 42,
+      "knockoutRank": 43
+    },
+    {
+      "teamId": "tur",
+      "preTournamentRating": 1849,
+      "groupStageDelta": -12.960373,
+      "knockoutRating": 1836.039627,
+      "preTournamentRank": 19,
+      "knockoutRank": 20
+    },
+    {
+      "teamId": "uru",
+      "preTournamentRating": 1870,
+      "groupStageDelta": -16.278108,
+      "knockoutRating": 1853.721892,
+      "preTournamentRank": 17,
+      "knockoutRank": 19
+    },
+    {
+      "teamId": "usa",
+      "preTournamentRating": 1780,
+      "groupStageDelta": 12.410385,
+      "knockoutRating": 1792.410385,
+      "preTournamentRank": 26,
+      "knockoutRank": 23
+    },
+    {
+      "teamId": "uzb",
+      "preTournamentRating": 1698,
+      "groupStageDelta": -16.972035,
+      "knockoutRating": 1681.027965,
+      "preTournamentRank": 33,
+      "knockoutRank": 34
+    }
+  ],
+  "largestIncreases": [
+    {
+      "teamId": "gha",
+      "preTournamentRating": 1557,
+      "groupStageDelta": 19.345018,
+      "knockoutRating": 1576.345018,
+      "preTournamentRank": 44,
+      "knockoutRank": 42
+    },
+    {
+      "teamId": "rsa",
+      "preTournamentRating": 1527,
+      "groupStageDelta": 18.376869,
+      "knockoutRating": 1545.376869,
+      "preTournamentRank": 46,
+      "knockoutRank": 45
+    },
+    {
+      "teamId": "mar",
+      "preTournamentRating": 1840,
+      "groupStageDelta": 15.171202,
+      "knockoutRating": 1855.171202,
+      "preTournamentRank": 20,
+      "knockoutRank": 18
+    },
+    {
+      "teamId": "cpv",
+      "preTournamentRating": 1606,
+      "groupStageDelta": 14.691576,
+      "knockoutRating": 1620.691576,
+      "preTournamentRank": 38,
+      "knockoutRank": 38
+    },
+    {
+      "teamId": "cod",
+      "preTournamentRating": 1674,
+      "groupStageDelta": 14.523168,
+      "knockoutRating": 1688.523168,
+      "preTournamentRank": 36,
+      "knockoutRank": 33
+    },
+    {
+      "teamId": "mex",
+      "preTournamentRating": 1881,
+      "groupStageDelta": 14.443154,
+      "knockoutRating": 1895.443154,
+      "preTournamentRank": 15,
+      "knockoutRank": 12
+    },
+    {
+      "teamId": "usa",
+      "preTournamentRating": 1780,
+      "groupStageDelta": 12.410385,
+      "knockoutRating": 1792.410385,
+      "preTournamentRank": 26,
+      "knockoutRank": 23
+    },
+    {
+      "teamId": "egy",
+      "preTournamentRating": 1711,
+      "groupStageDelta": 11.787496,
+      "knockoutRating": 1722.787496,
+      "preTournamentRank": 32,
+      "knockoutRank": 32
+    },
+    {
+      "teamId": "civ",
+      "preTournamentRating": 1743,
+      "groupStageDelta": 11.598302,
+      "knockoutRating": 1754.598302,
+      "preTournamentRank": 31,
+      "knockoutRank": 30
+    },
+    {
+      "teamId": "fra",
+      "preTournamentRating": 2084,
+      "groupStageDelta": 10.925257,
+      "knockoutRating": 2094.925257,
+      "preTournamentRank": 3,
+      "knockoutRank": 3
+    }
+  ],
+  "largestDecreases": [
+    {
+      "teamId": "pan",
+      "preTournamentRating": 1683,
+      "groupStageDelta": -20.102755,
+      "knockoutRating": 1662.897245,
+      "preTournamentRank": 35,
+      "knockoutRank": 36
+    },
+    {
+      "teamId": "uzb",
+      "preTournamentRating": 1698,
+      "groupStageDelta": -16.972035,
+      "knockoutRating": 1681.027965,
+      "preTournamentRank": 33,
+      "knockoutRank": 34
+    },
+    {
+      "teamId": "cze",
+      "preTournamentRating": 1696,
+      "groupStageDelta": -16.527656,
+      "knockoutRating": 1679.472344,
+      "preTournamentRank": 34,
+      "knockoutRank": 35
+    },
+    {
+      "teamId": "kor",
+      "preTournamentRating": 1786,
+      "groupStageDelta": -16.292366,
+      "knockoutRating": 1769.707634,
+      "preTournamentRank": 24,
+      "knockoutRank": 26
+    },
+    {
+      "teamId": "uru",
+      "preTournamentRating": 1870,
+      "groupStageDelta": -16.278108,
+      "knockoutRating": 1853.721892,
+      "preTournamentRank": 17,
+      "knockoutRank": 19
+    },
+    {
+      "teamId": "tur",
+      "preTournamentRating": 1849,
+      "groupStageDelta": -12.960373,
+      "knockoutRating": 1836.039627,
+      "preTournamentRank": 19,
+      "knockoutRank": 20
+    },
+    {
+      "teamId": "jor",
+      "preTournamentRating": 1653,
+      "groupStageDelta": -12.804194,
+      "knockoutRating": 1640.195806,
+      "preTournamentRank": 37,
+      "knockoutRank": 37
+    },
+    {
+      "teamId": "ecu",
+      "preTournamentRating": 1890,
+      "groupStageDelta": -10.398519,
+      "knockoutRating": 1879.601481,
+      "preTournamentRank": 12,
+      "knockoutRank": 15
+    },
+    {
+      "teamId": "tun",
+      "preTournamentRating": 1585,
+      "groupStageDelta": -10.158549,
+      "knockoutRating": 1574.841451,
+      "preTournamentRank": 42,
+      "knockoutRank": 43
+    },
+    {
+      "teamId": "sco",
+      "preTournamentRating": 1794,
+      "groupStageDelta": -10.079147,
+      "knockoutRating": 1783.920853,
+      "preTournamentRank": 23,
+      "knockoutRank": 24
+    }
+  ]
+}
