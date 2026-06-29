@@ -13,11 +13,13 @@ import { verifyOfficialSnapshot } from "@/scripts/tournament-2026/verifyOfficial
 import { diffTournamentSnapshots } from "@/scripts/tournament-2026/diffSnapshots";
 import {
   OFFICIAL_EXPECTED_TEAMS_FILE,
+  RAW_FAIR_PLAY_SOURCE_GAP_FILE,
   OFFICIAL_SNAPSHOT_CHECKSUMS_FILE,
   OFFICIAL_SNAPSHOT_FILE,
   OFFICIAL_SNAPSHOT_ORCHESTRATION_STATUS_FILE,
   OFFICIAL_SNAPSHOT_SOURCE_MANIFEST_FILE,
 } from "@/scripts/tournament-2026/officialSnapshotPaths";
+import { verifyFairPlaySourceGap } from "@/scripts/tournament-2026/verifyFairPlaySourceGap";
 import { buildTournamentState } from "@/src/lib/tournament-2026/snapshot/buildTournamentState";
 import { worldFootballEloDevelopmentByTeamId } from "@/src/data/generated/worldFootballEloDevelopment.generated";
 import { loadTournamentSnapshot } from "@/src/data/world-cup-2026/snapshots/node";
@@ -150,6 +152,86 @@ describe("official World Cup 2026 local snapshot", () => {
       criterion: "fair_play",
       teamIds: ["ecu", "gha"],
       officialRoundOf32Generated: false,
+    });
+  });
+
+  it("documents the official fair-play source gap without generating qualification artifacts", () => {
+    const gap = JSON.parse(readFileSync(RAW_FAIR_PLAY_SOURCE_GAP_FILE, "utf8")) as {
+      reportId: string;
+      tournamentSnapshotVersion: string;
+      accessTimestampUtc: string;
+      sourcesSearched: {
+        id: string;
+        authority: string;
+        role: string;
+        responseSha256: string | null;
+        usableForFairPlay: boolean;
+        usableForQualificationResolution: boolean;
+      }[];
+      missingFields: string[];
+      affectedTie: {
+        criterionReached: string;
+        teamIds: string[];
+        ecuFairPlayTotal: number | null;
+        ghaFairPlayTotal: number | null;
+        resolution: string;
+      };
+      conclusion: {
+        status: string;
+        retainOrchestrationStatus: string;
+        qualificationGenerated: boolean;
+        roundOf32Generated: boolean;
+        simulatorInputGenerated: boolean;
+        ratingValuesChanged: boolean;
+        productionDivisor: number;
+      };
+    };
+
+    expect(gap.reportId).toBe("official-2026-fair-play-source-gap");
+    expect(gap.tournamentSnapshotVersion).toBe("official-2026-2026-06-28-r1");
+    expect(gap.accessTimestampUtc).toBe("2026-06-28T17:05:00.000Z");
+    expect(gap.sourcesSearched).toHaveLength(7);
+    expect(gap.sourcesSearched.map((source) => source.id)).toEqual([
+      "fifa-first-stage-calendar",
+      "fifa-full-calendar",
+      "fifa-approved-rankings",
+      "fifa-ranking-schedule",
+      "fifa-match-detail",
+      "fifa-live-events",
+      "fifa-standings",
+    ]);
+    expect(gap.sourcesSearched.every((source) => source.authority === "FIFA")).toBe(true);
+    expect(gap.sourcesSearched.every((source) => source.usableForFairPlay === false)).toBe(true);
+    expect(gap.sourcesSearched.every((source) => source.usableForQualificationResolution === false)).toBe(true);
+    expect(gap.sourcesSearched.filter((source) => source.responseSha256 !== null)).toHaveLength(4);
+    expect(gap.sourcesSearched.map((source) => source.role)).toEqual(
+      expect.arrayContaining([
+        "teams_groups_fixtures_results",
+        "official_round_of_32_listing_cross_check",
+        "fifa_ranking_tie_break_input",
+        "ranking_release_metadata",
+      ]),
+    );
+    expect(gap.missingFields).toContain("official fair-play comparison for Ecuador and Ghana");
+    expect(gap.affectedTie).toMatchObject({
+      criterionReached: "fair_play",
+      teamIds: ["ecu", "gha"],
+      ecuFairPlayTotal: null,
+      ghaFairPlayTotal: null,
+      resolution: "unresolved",
+    });
+    expect(gap.conclusion).toMatchObject({
+      status: "official_fair_play_source_unavailable",
+      retainOrchestrationStatus: "official_tie_unresolved",
+      qualificationGenerated: false,
+      roundOf32Generated: false,
+      simulatorInputGenerated: false,
+      ratingValuesChanged: false,
+      productionDivisor: 400,
+    });
+    expect(verifyFairPlaySourceGap()).toMatchObject({
+      sourceCount: gap.sourcesSearched.length,
+      orchestrationStatus: "official_tie_unresolved",
     });
   });
 

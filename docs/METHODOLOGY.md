@@ -530,6 +530,18 @@ Ecuador and Ghana, but no reviewed official fair-play totals are available in
 the source package. The project must not generate an official Round of 32 until
 that input is supplied or an official qualification source is added.
 
+A fixed follow-up review at `2026-06-28T17:05:00.000Z` checked the available
+FIFA match-calendar, ranking, ranking-schedule, match-detail/event-feed, and
+standings endpoint candidates. The review is documented in
+`fair-play-source-gap.json` with exactly seven stable source candidate IDs and
+structured insufficiency outcomes. It found no stable official disciplinary
+events, fair-play deduction totals, or third-place ranking table with fair-play
+tie-break details for Ecuador and Ghana in those reviewed candidates at the
+fixed cutoff. The populated FIFA Round-of-32 calendar listing is treated as a
+cross-check only; it does not provide the missing fair-play methodology or
+totals. The conclusion is bounded to the reviewed sources and cutoff, and
+future official evidence can create a new snapshot revision.
+
 The knockout-stage rating refresh remains offline. It uses the current World
 Football Elo development ratings as initial ratings, processes completed group
 matches sequentially by FIFA match number, assumes neutral sites, uses K-factor

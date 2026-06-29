@@ -259,8 +259,11 @@ Current World Cup 2026 tournament-domain status:
 - Completed: official tournament domain, local snapshot schema, local
   deterministic ingestion, snapshot orchestration, and source-backed official
   local snapshot construction.
-- Current: official fair-play source review, FIFA-ranking tie-break input review,
-  and knockout rating refresh policy review.
+- Current: official fair-play source gap documented with seven stable reviewed
+  FIFA candidate IDs and structured insufficiency outcomes; FIFA-ranking
+  tie-break input and knockout rating refresh policy reviewed; official
+  qualification still unresolved because Ecuador/Ghana fair-play totals are not
+  sourced.
 - Next: UI integration using the official snapshot, group-table presentation,
   official Round-of-32 bracket replacement after fair-play/qualification
   resolution, post-result snapshot update workflow, future live-data adapter,

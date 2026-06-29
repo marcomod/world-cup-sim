@@ -189,6 +189,19 @@ currently resolved. The official orchestration status is
 fair-play data at the eighth/ninth third-place cutoff. No official Round of 32
 artifact is generated yet.
 
+A fixed fair-play source-gap review is tracked at
+`data/world-cup-2026/raw/official-2026-current/fair-play-source-gap.json`. It
+records exactly seven official FIFA sources and endpoint candidates searched at
+`2026-06-28T17:05:00.000Z`. Each candidate has a stable source ID and structured
+access/evidence outcomes. The reviewed sources did not provide stable
+disciplinary events, fair-play deduction totals, or a third-place ranking table
+with fair-play tie-break details for Ecuador and Ghana. A populated FIFA
+Round-of-32 calendar listing was available as a cross-check, but it is not a
+substitute for reviewed fair-play deductions when the implementation is
+specifically ingesting fair-play data. The verifier checks the exact candidate
+manifest and directly verifies that official qualification, Round-of-32, and
+simulator-input artifacts remain absent while the source gap is unresolved.
+
 Remaining Work
 
 - Add reviewed official fair-play data or another official qualification source.

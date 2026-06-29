@@ -362,3 +362,11 @@ specific tournament snapshot checksum. It contains exactly 48
 knockout rating. It also records K-factor policy metadata, initial-rating source
 metadata, completed match count, and fixture range. It is not the active app
 rating export.
+
+`fair-play-source-gap.json` is a raw-source review artifact, not a tournament
+snapshot. It records official FIFA sources searched, fixed access timestamps,
+response checksums when responses were available, missing fair-play fields, and
+the retained unresolved Ecuador/Ghana fair-play tie. Each reviewed source uses a
+stable source candidate ID plus structured access and fair-play-evidence result
+fields so the verifier can require exact identity and insufficiency semantics.
+It must not be converted into zero-deduction fair-play records.

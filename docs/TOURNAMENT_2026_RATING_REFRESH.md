@@ -78,3 +78,9 @@ simulator logic.
 
 The official snapshot currently returns `official_tie_unresolved`, so official
 bracket integration remains blocked. The UI path remains deferred.
+
+The fair-play source-gap review did not produce a new finalized tournament
+snapshot. Therefore the existing rating report remains linked to
+`official-2026-2026-06-28-r1`, and numeric rating values are unchanged. A new
+rating report revision is required only after a verified snapshot revision
+changes the tournament snapshot checksum.

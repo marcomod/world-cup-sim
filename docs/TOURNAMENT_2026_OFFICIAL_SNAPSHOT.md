@@ -48,6 +48,20 @@ They are therefore absent rather than fabricated. If qualification reaches a
 tie that requires fair play, orchestration must return an unresolved official
 tie until a reviewed fair-play source snapshot is added.
 
+A later fixed source-gap review is recorded in
+`data/world-cup-2026/raw/official-2026-current/fair-play-source-gap.json` with
+access timestamp `2026-06-28T17:05:00.000Z`. The artifact records exactly
+seven reviewed FIFA candidates using stable candidate IDs and structured
+outcomes for access, fair-play evidence, and source-specific insufficiency. The
+reviewed FIFA match-calendar, ranking, ranking-schedule, match-detail,
+event-feed, and standings endpoint candidates did not provide stable official
+disciplinary events, per-team fair-play deduction totals, or a third-place
+ranking table with fair-play tie-break details. The full FIFA match-calendar
+endpoint contained populated Round-of-32 participants, but that listing is only
+a cross-check while the fair-play values remain unavailable. The conclusion is
+bounded to those reviewed sources and cutoff and is not a claim that official
+fair-play evidence cannot exist elsewhere or later.
+
 That is the current official orchestration state. The group-stage results
 snapshot is complete, but official qualification is unresolved because the
 eighth/ninth third-place cutoff requires fair-play data for Ecuador (`ecu`) and
@@ -71,6 +85,26 @@ The verifier checks team count, official FIFA names, group count, fixture count,
 match numbers, independent expected fixture rows, source-manifest checksums,
 result consistency, precise access cutoff, derived state, semantic checksum,
 current unresolved fair-play readiness, and absence of synthetic source markers.
+
+Verify the documented fair-play source gap:
+
+```bash
+npm run tournament2026:verify-fair-play-source-gap
+```
+
+This verifier confirms the source review remains unresolved, Ecuador and Ghana
+fair-play totals remain missing rather than zero, qualification artifacts are
+not generated, and the production divisor remains `400`. It validates exact
+candidate identity, structured insufficiency outcomes, bounded conclusion
+wording, absence of machine-local paths, and direct absence of official
+qualification, Round-of-32, simulator-input, finalized-bracket, and
+knockout-ready artifacts. The all-48-team knockout rating report remains
+allowed because it is not a qualification artifact.
+
+Source-gap artifacts must not contain machine-local absolute paths. Official
+HTTP(S) URLs are allowed, but `file://` URLs, Unix absolute paths, Windows drive
+paths, and UNC paths are rejected recursively in source records, metadata, and
+conclusion text.
 
 ## Versioning
 
@@ -103,3 +137,13 @@ scores, fair play, ranking, source metadata, normalization version, and checksum
 The official snapshot is not wired into React components or the active demo app.
 The demo bracket remains separate. Official bracket UI integration is blocked
 until fair-play data or another official source resolves qualification.
+
+Readiness gate for official UI integration:
+
+- verified official snapshot,
+- verified fair-play source or another official qualification source with
+  sufficient tie-break detail,
+- `knockout_ready` official orchestration without development fallback,
+- exact official Round of 32 verified,
+- rating linkage verified against the finalized snapshot checksum,
+- deterministic simulator-input artifact generated.

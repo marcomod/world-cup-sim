@@ -57,6 +57,11 @@ Missing fair-play data is not treated as zero. Explicit zero deductions are
 valid. The development fallback is not an official replacement for FIFA ranking
 or other final FIFA decisions.
 
+The current official 2026 source-gap review did not find stable fair-play
+deduction totals or disciplinary events for Ecuador and Ghana. The implementation
+therefore keeps official qualification unresolved rather than treating missing
+records as zero or using development fallback.
+
 Best Third-Placed Teams
 
 The third-place ranking takes exactly the third-placed team from each group and

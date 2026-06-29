@@ -311,3 +311,12 @@ snapshot scripts. UI wiring is deferred until the official knockout bracket is
 ready to replace the demo bracket. The current official snapshot is a complete
 72-match group-stage results record, but official qualification remains blocked
 until missing fair-play inputs for Ecuador and Ghana are resolved.
+
+The fair-play source-gap verifier is also offline and script-driven. It checks
+the reviewed source-gap artifact, confirms Ecuador/Ghana fair-play totals remain
+missing rather than zero, and preserves the unresolved official orchestration
+state. The verifier uses a fixed seven-candidate manifest with stable candidate
+IDs, structured source outcomes, bounded-conclusion checks, and direct
+filesystem checks that official qualification, Round-of-32, simulator-input,
+finalized-bracket, and knockout-ready artifacts are absent. It does not
+generate those artifacts.
