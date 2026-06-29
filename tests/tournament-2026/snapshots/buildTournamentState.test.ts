@@ -245,13 +245,13 @@ describe("buildTournamentState", () => {
     });
   });
 
-  it("does not silently fall back when official tie data is missing", () => {
+  it("does not block when missing official tie data cannot affect knockout decisions", () => {
     const snapshot = completeSnapshot();
     snapshot.fifaRanking = [];
     const validated = validateTournamentSnapshot(snapshot);
     const state = buildTournamentState(validated, { ratingsByTeamId: teamRatingsV2ByTeamId });
 
-    expect(state.status).toBe("official_tie_unresolved");
+    expect(state.status).toBe("knockout_ready");
   });
 
   it("uses development fallback only when explicitly requested", () => {

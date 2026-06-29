@@ -225,13 +225,13 @@ export function verifyOfficialSnapshot(): OfficialSnapshotVerificationSummary {
     rankingMode: "official",
   });
   if (
-    state.status !== "official_tie_unresolved" ||
-    orchestrationStatus.status !== "official_tie_unresolved" ||
-    orchestrationStatus.criterion !== "fair_play" ||
-    JSON.stringify(orchestrationStatus.teamIds) !== JSON.stringify(["ecu", "gha"]) ||
-    orchestrationStatus.officialRoundOf32Generated !== false
+    state.status !== "knockout_ready" ||
+    orchestrationStatus.status !== "knockout_ready" ||
+    orchestrationStatus.criterion !== undefined ||
+    orchestrationStatus.teamIds !== undefined ||
+    orchestrationStatus.officialRoundOf32Generated !== true
   ) {
-    throw new Error("Official snapshot readiness must be recorded as unresolved fair-play qualification for ecu and gha.");
+    throw new Error("Official snapshot readiness must be recorded as knockout-ready.");
   }
 
   return {

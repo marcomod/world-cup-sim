@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { computeTournamentSnapshotChecksum } from "@/src/data/world-cup-2026/snapshots/node";
 import { validateTournamentSnapshot } from "@/src/data/world-cup-2026/snapshots";
-import { GROUP_IDS } from "@/src/lib/tournament-2026/constants";
+import { compareCodePoints, GROUP_IDS } from "@/src/lib/tournament-2026/constants";
 import {
   officialWorldCup2026TeamIdentities,
   resolveOfficialWorldCup2026TeamAlias,
@@ -115,7 +115,7 @@ describe("official World Cup 2026 local snapshot", () => {
       fixtureCount: 72,
       completedFixtureCount: 72,
       state: "group_stage_complete",
-      orchestrationStatus: "official_tie_unresolved",
+      orchestrationStatus: "knockout_ready",
     });
   });
 
@@ -130,7 +130,7 @@ describe("official World Cup 2026 local snapshot", () => {
     }
   });
 
-  it("records official qualification as unresolved because Ecuador and Ghana require fair-play data", () => {
+  it("records official qualification as knockout-ready with Ecuador and Ghana both qualified", () => {
     const snapshot = loadTournamentSnapshot(OFFICIAL_SNAPSHOT_FILE);
     const state = buildTournamentState(snapshot, {
       ratingsByTeamId: worldFootballEloDevelopmentByTeamId,
@@ -143,19 +143,47 @@ describe("official World Cup 2026 local snapshot", () => {
       officialRoundOf32Generated: boolean;
     };
 
-    expect(state.status).toBe("official_tie_unresolved");
-    if (state.status === "official_tie_unresolved") {
-      expect(state.reason).toMatch(/ecu, gha/);
+    expect(state.status).toBe("knockout_ready");
+    if (state.status !== "knockout_ready") {
+      throw new Error("Expected official snapshot to be knockout-ready.");
     }
+    const qualifiers = [
+      ...Object.values(state.qualification.groupWinners).map((team) => team.teamId),
+      ...Object.values(state.qualification.groupRunnersUp).map((team) => team.teamId),
+      ...state.qualification.qualifiedThirdPlacedTeams.map((team) => team.teamId),
+    ];
+    const roundOf32Participants = state.roundOf32.flatMap((match) => [match.homeTeamId, match.awayTeamId]);
+    const ecuador = state.qualification.qualifiedThirdPlacedTeams.find((team) => team.teamId === "ecu");
+    const ghana = state.qualification.qualifiedThirdPlacedTeams.find((team) => team.teamId === "gha");
+
+    expect(state.qualification.qualifiedThirdPlacedTeams.map((team) => team.group).sort(compareCodePoints).join("")).toBe(
+      "BDEFIJKL",
+    );
+    expect(qualifiers).toHaveLength(32);
+    expect(new Set(qualifiers).size).toBe(32);
+    expect(state.roundOf32).toHaveLength(16);
+    expect(roundOf32Participants).toHaveLength(32);
+    expect(new Set(roundOf32Participants).size).toBe(32);
+    expect(ecuador).toMatchObject({ teamId: "ecu", thirdPlaceRank: 3, qualified: true });
+    expect(ghana).toMatchObject({ teamId: "gha", thirdPlaceRank: 3, qualified: true });
+    expect(ecuador?.appliedTieBreakers).not.toContain("deterministic_fallback");
+    expect(ghana?.appliedTieBreakers).not.toContain("deterministic_fallback");
+    expect(state.roundOf32.find((match) => match.matchId === "m79")).toMatchObject({
+      homeTeamId: "mex",
+      awayTeamId: "ecu",
+    });
+    expect(state.roundOf32.find((match) => match.matchId === "m87")).toMatchObject({
+      homeTeamId: "col",
+      awayTeamId: "gha",
+    });
+    expect(snapshot.snapshot.fairPlay).toHaveLength(0);
     expect(status).toMatchObject({
-      status: "official_tie_unresolved",
-      criterion: "fair_play",
-      teamIds: ["ecu", "gha"],
-      officialRoundOf32Generated: false,
+      status: "knockout_ready",
+      officialRoundOf32Generated: true,
     });
   });
 
-  it("documents the official fair-play source gap without generating qualification artifacts", () => {
+  it("documents the official fair-play source gap without claiming generated artifacts exist", () => {
     const gap = JSON.parse(readFileSync(RAW_FAIR_PLAY_SOURCE_GAP_FILE, "utf8")) as {
       reportId: string;
       tournamentSnapshotVersion: string;
@@ -179,9 +207,15 @@ describe("official World Cup 2026 local snapshot", () => {
       conclusion: {
         status: string;
         retainOrchestrationStatus: string;
-        qualificationGenerated: boolean;
-        roundOf32Generated: boolean;
-        simulatorInputGenerated: boolean;
+        qualificationDecisionResolved: boolean;
+        roundOf32Resolvable: boolean;
+        simulatorInputResolvable: boolean;
+        qualificationArtifactGenerated: boolean;
+        roundOf32ArtifactGenerated: boolean;
+        simulatorInputArtifactGenerated: boolean;
+        strictThirdPlaceOrderingResolved: boolean;
+        unresolvedOrderingAffectsTournamentDecision: boolean;
+        qualifyingThirdPlaceGroupKey: string;
         ratingValuesChanged: boolean;
         productionDivisor: number;
       };
@@ -222,16 +256,22 @@ describe("official World Cup 2026 local snapshot", () => {
     });
     expect(gap.conclusion).toMatchObject({
       status: "official_fair_play_source_unavailable",
-      retainOrchestrationStatus: "official_tie_unresolved",
-      qualificationGenerated: false,
-      roundOf32Generated: false,
-      simulatorInputGenerated: false,
+      retainOrchestrationStatus: "knockout_ready",
+      qualificationDecisionResolved: true,
+      roundOf32Resolvable: true,
+      simulatorInputResolvable: true,
+      qualificationArtifactGenerated: false,
+      roundOf32ArtifactGenerated: false,
+      simulatorInputArtifactGenerated: false,
+      strictThirdPlaceOrderingResolved: false,
+      unresolvedOrderingAffectsTournamentDecision: false,
+      qualifyingThirdPlaceGroupKey: "BDEFIJKL",
       ratingValuesChanged: false,
       productionDivisor: 400,
     });
     expect(verifyFairPlaySourceGap()).toMatchObject({
       sourceCount: gap.sourcesSearched.length,
-      orchestrationStatus: "official_tie_unresolved",
+      orchestrationStatus: "knockout_ready",
     });
   });
 

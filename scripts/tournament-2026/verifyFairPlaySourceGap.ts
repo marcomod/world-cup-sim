@@ -107,12 +107,12 @@ const EXPECTED_CANDIDATE_IDS = EXPECTED_FAIR_PLAY_SOURCE_CANDIDATES.map((candida
 
 export interface VerifiedFairPlaySourceGap {
   sourceCount: number;
-  orchestrationStatus: "official_tie_unresolved";
+  orchestrationStatus: "knockout_ready";
   affectedTeamIds: readonly ["ecu", "gha"];
 }
 
 export interface FairPlaySourceGapVerificationContext {
-  prohibitedArtifactExists: {
+  artifactExists: {
     qualification: boolean;
     roundOf32: boolean;
     simulatorInput: boolean;
@@ -167,12 +167,15 @@ interface FairPlaySourceGapReport {
     status: string;
     retainSnapshotVersion: string;
     retainOrchestrationStatus: string;
-    qualificationGenerated: boolean;
-    roundOf32Generated: boolean;
-    simulatorInputGenerated: boolean;
-    officialQualificationAvailable: boolean;
-    officialRoundOf32Available: boolean;
-    simulatorInputAvailable: boolean;
+    qualificationDecisionResolved: boolean;
+    roundOf32Resolvable: boolean;
+    simulatorInputResolvable: boolean;
+    qualificationArtifactGenerated: boolean;
+    roundOf32ArtifactGenerated: boolean;
+    simulatorInputArtifactGenerated: boolean;
+    strictThirdPlaceOrderingResolved: boolean;
+    unresolvedOrderingAffectsTournamentDecision: boolean;
+    qualifyingThirdPlaceGroupKey: string;
     developmentFallbackProhibited: boolean;
     fabricationProhibited: boolean;
     ratingValuesChanged: boolean;
@@ -182,7 +185,7 @@ interface FairPlaySourceGapReport {
     reviewedSourceCandidateIds: readonly string[];
     limitedToReviewedFifaCandidates: boolean;
     notUniversalNoEvidenceClaim: boolean;
-    futureOfficialEvidenceMayUnblock: boolean;
+    futureOfficialEvidenceMayResolveOrdering: boolean;
     summary: string;
   };
 }
@@ -401,7 +404,10 @@ function assertSourceCandidate(source: FairPlaySourceRecord, expected: Candidate
   }
 }
 
-function validateConclusion(report: FairPlaySourceGapReport, context: FairPlaySourceGapVerificationContext): void {
+function validateConclusion(
+  report: FairPlaySourceGapReport,
+  context: FairPlaySourceGapVerificationContext,
+): void {
   if (report.tournamentSnapshotId !== "fifa-world-cup-2026") {
     throw new Error("Fair-play source-gap report has the wrong tournamentSnapshotId.");
   }
@@ -439,16 +445,33 @@ function validateConclusion(report: FairPlaySourceGapReport, context: FairPlaySo
   assertString(report.affectedTie.reason, "fair-play source-gap affectedTie.reason");
 
   const conclusion = report.conclusion;
+  const conclusionRecord = conclusion as unknown as Record<string, unknown>;
+  for (const staleField of [
+    "qualificationGenerated",
+    "roundOf32Generated",
+    "simulatorInputGenerated",
+    "officialQualificationAvailable",
+    "officialRoundOf32Available",
+    "simulatorInputAvailable",
+  ]) {
+    if (staleField in conclusionRecord) {
+      throw new Error(`Fair-play source-gap conclusion must not use stale artifact field "${staleField}".`);
+    }
+  }
+
   if (
     conclusion.status !== "official_fair_play_source_unavailable" ||
     conclusion.retainSnapshotVersion !== OFFICIAL_SNAPSHOT_VERSION ||
-    conclusion.retainOrchestrationStatus !== "official_tie_unresolved" ||
-    conclusion.qualificationGenerated !== false ||
-    conclusion.roundOf32Generated !== false ||
-    conclusion.simulatorInputGenerated !== false ||
-    conclusion.officialQualificationAvailable !== false ||
-    conclusion.officialRoundOf32Available !== false ||
-    conclusion.simulatorInputAvailable !== false ||
+    conclusion.retainOrchestrationStatus !== "knockout_ready" ||
+    conclusion.qualificationDecisionResolved !== true ||
+    conclusion.roundOf32Resolvable !== true ||
+    conclusion.simulatorInputResolvable !== true ||
+    conclusion.qualificationArtifactGenerated !== context.artifactExists.qualification ||
+    conclusion.roundOf32ArtifactGenerated !== context.artifactExists.roundOf32 ||
+    conclusion.simulatorInputArtifactGenerated !== context.artifactExists.simulatorInput ||
+    conclusion.strictThirdPlaceOrderingResolved !== false ||
+    conclusion.unresolvedOrderingAffectsTournamentDecision !== false ||
+    conclusion.qualifyingThirdPlaceGroupKey !== "BDEFIJKL" ||
     conclusion.developmentFallbackProhibited !== true ||
     conclusion.fabricationProhibited !== true ||
     conclusion.ratingValuesChanged !== false ||
@@ -457,33 +480,24 @@ function validateConclusion(report: FairPlaySourceGapReport, context: FairPlaySo
     conclusion.reviewedSourceCandidateCount !== EXPECTED_FAIR_PLAY_SOURCE_CANDIDATES.length ||
     conclusion.limitedToReviewedFifaCandidates !== true ||
     conclusion.notUniversalNoEvidenceClaim !== true ||
-    conclusion.futureOfficialEvidenceMayUnblock !== true
+    conclusion.futureOfficialEvidenceMayResolveOrdering !== true
   ) {
-    throw new Error("Fair-play source-gap conclusion must retain unresolved official status and prohibit fallback or fabrication.");
+    throw new Error("Fair-play source-gap conclusion must distinguish resolved domain decisions from generated artifacts.");
   }
   if (JSON.stringify(conclusion.reviewedSourceCandidateIds) !== JSON.stringify(EXPECTED_CANDIDATE_IDS)) {
     throw new Error("Fair-play source-gap conclusion must list the exact reviewed source candidate IDs.");
   }
   assertNoUniversalNoEvidenceClaim(report);
-  if (!conclusion.summary.includes("seven reviewed FIFA candidates") || !conclusion.summary.includes(EXPECTED_ACCESS_TIMESTAMP)) {
-    throw new Error("Fair-play source-gap conclusion summary must be bounded to the seven reviewed FIFA candidates and cutoff.");
+  if (
+    !conclusion.summary.includes("seven reviewed FIFA candidates") ||
+    !conclusion.summary.includes(EXPECTED_ACCESS_TIMESTAMP) ||
+    !conclusion.summary.includes("does not affect qualification") ||
+    !conclusion.summary.includes("BDEFIJKL") ||
+    !conclusion.summary.includes("artifacts are not generated")
+  ) {
+    throw new Error("Fair-play source-gap conclusion summary must be bounded to the reviewed candidates and non-blocking decision.");
   }
 
-  if (context.prohibitedArtifactExists.qualification) {
-    throw new Error("Official qualification artifact must be absent while fair-play source gap is unresolved.");
-  }
-  if (context.prohibitedArtifactExists.roundOf32) {
-    throw new Error("Official Round-of-32 artifact must be absent while fair-play source gap is unresolved.");
-  }
-  if (context.prohibitedArtifactExists.simulatorInput) {
-    throw new Error("Official simulator-input artifact must be absent while fair-play source gap is unresolved.");
-  }
-  if (context.prohibitedArtifactExists.finalizedBracket) {
-    throw new Error("Official finalized-bracket artifact must be absent while fair-play source gap is unresolved.");
-  }
-  if (context.prohibitedArtifactExists.knockoutReady) {
-    throw new Error("Official knockout-ready artifact must be absent while fair-play source gap is unresolved.");
-  }
 }
 
 export function verifyFairPlaySourceGapArtifact(
@@ -514,12 +528,12 @@ export function verifyFairPlaySourceGapArtifact(
 
   return {
     sourceCount: report.sourcesSearched.length,
-    orchestrationStatus: "official_tie_unresolved",
+    orchestrationStatus: "knockout_ready",
     affectedTeamIds: ["ecu", "gha"],
   };
 }
 
-function prohibitedArtifactExists(filePath: string, context: string): boolean {
+function generatedArtifactExists(filePath: string, context: string): boolean {
   try {
     statSync(filePath);
     return true;
@@ -527,17 +541,17 @@ function prohibitedArtifactExists(filePath: string, context: string): boolean {
     if (error instanceof Error && "code" in error && error.code === "ENOENT") {
       return false;
     }
-    throw new Error(`Unable to inspect prohibited ${context} artifact path.`);
+    throw new Error(`Unable to inspect generated ${context} artifact path.`);
   }
 }
 
-export function readProhibitedArtifactState(): FairPlaySourceGapVerificationContext["prohibitedArtifactExists"] {
+export function readGeneratedArtifactState(): FairPlaySourceGapVerificationContext["artifactExists"] {
   return {
-    qualification: prohibitedArtifactExists(OFFICIAL_QUALIFICATION_ARTIFACT_FILE, "qualification"),
-    roundOf32: prohibitedArtifactExists(OFFICIAL_ROUND_OF_32_ARTIFACT_FILE, "Round-of-32"),
-    simulatorInput: prohibitedArtifactExists(OFFICIAL_SIMULATOR_INPUT_ARTIFACT_FILE, "simulator-input"),
-    finalizedBracket: prohibitedArtifactExists(OFFICIAL_FINALIZED_BRACKET_ARTIFACT_FILE, "finalized-bracket"),
-    knockoutReady: prohibitedArtifactExists(OFFICIAL_KNOCKOUT_READY_ARTIFACT_FILE, "knockout-ready"),
+    qualification: generatedArtifactExists(OFFICIAL_QUALIFICATION_ARTIFACT_FILE, "qualification"),
+    roundOf32: generatedArtifactExists(OFFICIAL_ROUND_OF_32_ARTIFACT_FILE, "Round-of-32"),
+    simulatorInput: generatedArtifactExists(OFFICIAL_SIMULATOR_INPUT_ARTIFACT_FILE, "simulator-input"),
+    finalizedBracket: generatedArtifactExists(OFFICIAL_FINALIZED_BRACKET_ARTIFACT_FILE, "finalized-bracket"),
+    knockoutReady: generatedArtifactExists(OFFICIAL_KNOCKOUT_READY_ARTIFACT_FILE, "knockout-ready"),
   };
 }
 
@@ -554,15 +568,22 @@ export function verifyFairPlaySourceGap(): {
   }
 
   const verified = verifyFairPlaySourceGapArtifact(report, {
-    prohibitedArtifactExists: readProhibitedArtifactState(),
+    artifactExists: readGeneratedArtifactState(),
   });
 
   const state = buildTournamentState(loaded, {
     ratingsByTeamId: worldFootballEloDevelopmentByTeamId,
     rankingMode: "official",
   });
-  if (state.status !== "official_tie_unresolved") {
-    throw new Error("Official snapshot must remain unresolved while fair-play data is unavailable.");
+  if (state.status !== "knockout_ready") {
+    throw new Error("Official snapshot must be knockout-ready when missing fair-play ordering is non-blocking.");
+  }
+  const qualifiedThirdPlaceGroupKey = state.qualification.qualifiedThirdPlacedTeams
+    .map((team) => team.group)
+    .sort()
+    .join("");
+  if (qualifiedThirdPlaceGroupKey !== "BDEFIJKL") {
+    throw new Error("Official snapshot qualified third-place group key must remain BDEFIJKL.");
   }
 
   return {

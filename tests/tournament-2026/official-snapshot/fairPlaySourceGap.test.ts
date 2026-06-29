@@ -18,7 +18,7 @@ import { loadTournamentSnapshot } from "@/src/data/world-cup-2026/snapshots/node
 type JsonObject = Record<string, unknown>;
 
 const validContext = {
-  prohibitedArtifactExists: {
+  artifactExists: {
     qualification: false,
     roundOf32: false,
     simulatorInput: false,
@@ -57,7 +57,7 @@ describe("official fair-play source-gap verifier", () => {
 
     expect(verifyFairPlaySourceGapArtifact(artifact, validContext)).toEqual({
       sourceCount: 7,
-      orchestrationStatus: "official_tie_unresolved",
+      orchestrationStatus: "knockout_ready",
       affectedTeamIds: ["ecu", "gha"],
     });
     expect(sources(artifact).map((source) => source.id)).toEqual(
@@ -192,9 +192,9 @@ describe("official fair-play source-gap verifier", () => {
     affectedTie(ghanaZero).ghaFairPlayTotal = 0;
     expectInvalid(ghanaZero, /must not fabricate a Ghana fair-play total/);
 
-    const knockoutReady = cloneArtifact();
-    conclusion(knockoutReady).retainOrchestrationStatus = "knockout_ready";
-    expectInvalid(knockoutReady, /retain unresolved official status/);
+    const unresolved = cloneArtifact();
+    conclusion(unresolved).retainOrchestrationStatus = "official_tie_unresolved";
+    expectInvalid(unresolved, /resolved domain decisions from generated artifacts/);
 
     const wrongCriterion = cloneArtifact();
     affectedTie(wrongCriterion).criterionReached = "fifa_ranking";
@@ -214,55 +214,49 @@ describe("official fair-play source-gap verifier", () => {
 
     const fallbackEnabled = cloneArtifact();
     conclusion(fallbackEnabled).developmentFallbackProhibited = false;
-    expectInvalid(fallbackEnabled, /prohibit fallback or fabrication/);
+    expectInvalid(fallbackEnabled, /resolved domain decisions from generated artifacts/);
 
     const fabricationAllowed = cloneArtifact();
     conclusion(fabricationAllowed).fabricationProhibited = false;
-    expectInvalid(fabricationAllowed, /prohibit fallback or fabrication/);
+    expectInvalid(fabricationAllowed, /resolved domain decisions from generated artifacts/);
   });
 
-  it("rejects each prohibited downstream artifact independently", () => {
+  it("rejects stale artifact availability fields and mismatched filesystem artifact state", () => {
+    const staleField = cloneArtifact();
+    conclusion(staleField).qualificationGenerated = true;
+    expectInvalid(staleField, /stale artifact field "qualificationGenerated"/);
+
+    const qualificationGenerated = cloneArtifact();
+    conclusion(qualificationGenerated).qualificationArtifactGenerated = true;
+    expectInvalid(qualificationGenerated, /resolved domain decisions from generated artifacts/);
+
     expect(() =>
       verifyFairPlaySourceGapArtifact(readArtifact(), {
-        prohibitedArtifactExists: { ...validContext.prohibitedArtifactExists, qualification: true },
+        artifactExists: {
+          qualification: true,
+          roundOf32: false,
+          simulatorInput: false,
+          finalizedBracket: false,
+          knockoutReady: false,
+        },
       }),
-    ).toThrow(/qualification artifact must be absent/);
-    expect(() =>
-      verifyFairPlaySourceGapArtifact(readArtifact(), {
-        prohibitedArtifactExists: { ...validContext.prohibitedArtifactExists, roundOf32: true },
-      }),
-    ).toThrow(/Round-of-32 artifact must be absent/);
-    expect(() =>
-      verifyFairPlaySourceGapArtifact(readArtifact(), {
-        prohibitedArtifactExists: { ...validContext.prohibitedArtifactExists, simulatorInput: true },
-      }),
-    ).toThrow(/simulator-input artifact must be absent/);
-    expect(() =>
-      verifyFairPlaySourceGapArtifact(readArtifact(), {
-        prohibitedArtifactExists: { ...validContext.prohibitedArtifactExists, finalizedBracket: true },
-      }),
-    ).toThrow(/finalized-bracket artifact must be absent/);
-    expect(() =>
-      verifyFairPlaySourceGapArtifact(readArtifact(), {
-        prohibitedArtifactExists: { ...validContext.prohibitedArtifactExists, knockoutReady: true },
-      }),
-    ).toThrow(/knockout-ready artifact must be absent/);
+    ).toThrow(/resolved domain decisions from generated artifacts/);
   });
 
-  it("allows the all-48-team rating report while prohibited downstream artifacts remain absent", () => {
+  it("allows the all-48-team rating report while finalized downstream artifacts remain absent", () => {
     expect(
       verifyFairPlaySourceGapArtifact(readArtifact(), {
-        prohibitedArtifactExists: validContext.prohibitedArtifactExists,
+        artifactExists: validContext.artifactExists,
         allowedArtifactExists: { ratingReport: true },
       }),
     ).toEqual({
       sourceCount: 7,
-      orchestrationStatus: "official_tie_unresolved",
+      orchestrationStatus: "knockout_ready",
       affectedTeamIds: ["ecu", "gha"],
     });
   });
 
-  it("preserves unresolved official snapshot and rating readiness boundaries", () => {
+  it("preserves knockout-ready official snapshot and rating readiness boundaries", () => {
     const loaded = loadTournamentSnapshot(OFFICIAL_SNAPSHOT_FILE);
     const state = buildTournamentState(loaded, {
       ratingsByTeamId: worldFootballEloDevelopmentByTeamId,
@@ -275,10 +269,10 @@ describe("official fair-play source-gap verifier", () => {
 
     expect(loaded.snapshot.snapshotVersion).toBe("official-2026-2026-06-28-r1");
     expect(loaded.metadata.snapshotChecksum).toBe("1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7");
-    expect(state.status).toBe("official_tie_unresolved");
-    expect("qualification" in state).toBe(false);
-    expect("roundOf32" in state).toBe(false);
-    expect("simulatorBracket" in state).toBe(false);
+    expect(state.status).toBe("knockout_ready");
+    expect("qualification" in state).toBe(true);
+    expect("roundOf32" in state).toBe(true);
+    expect("simulatorBracket" in state).toBe(true);
     expect(ratingReport.ratingChecksum).toBe("f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5");
     expect(ratingReport.divisor).toBe(400);
     expect(OFFICIAL_QUALIFICATION_ARTIFACT_FILE).toBe("data/generated/world-cup-2026/official-qualification.json");

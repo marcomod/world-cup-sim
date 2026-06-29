@@ -20,7 +20,7 @@
       "Complete official fair-play records for all 12 third-placed teams.",
       "Complete official fair-play records for every team still tied when fair play is reached.",
       "An official FIFA publication that explicitly provides the final third-place ranking and the tie-break basis.",
-      "An official FIFA Round-of-32 listing may confirm participants, but by itself does not provide fair-play deduction totals or the exact third-place ranking tie-break basis."
+      "An official FIFA Round-of-32 listing may confirm participants, but by itself does not provide fair-play deduction totals or the exact Ecuador/Ghana ordering basis."
     ],
     "notAccepted": [
       "Inferred card totals from unsourced summaries.",
@@ -62,7 +62,7 @@
       "extractionMethod": "Inspected the full competition calendar for official Round-of-32 participants and disciplinary fields.",
       "responseSha256": "0c32fcd1d75c049bf7e909ed17a832d5de6595aed3ebe7bfa88f2cff3265a73f",
       "result": "Contains populated Round-of-32 participants, but does not expose fair-play deductions, disciplinary events, or the exact third-place ranking tie-break basis.",
-      "insufficiencyReason": "The full calendar is retained only as a Round-of-32 cross-check; it does not provide the fair-play totals or tie-break basis needed by this ingestion path.",
+      "insufficiencyReason": "The full calendar is retained only as a Round-of-32 cross-check; it does not provide fair-play totals or the Ecuador/Ghana ordering tie-break basis.",
       "usableForFairPlay": false,
       "usableForQualificationResolution": false,
       "suppliesOfficialFairPlayTotals": false,
@@ -167,7 +167,7 @@
   "missingFields": [
     "official per-team fair-play deduction totals",
     "official disciplinary/card event records for group-stage matches 1 through 72",
-    "official third-place ranking table with fair-play tie-break details",
+    "official third-place ranking table with fair-play tie-break details for Ecuador and Ghana",
     "official fair-play comparison for Ecuador and Ghana"
   ],
   "affectedTie": {
@@ -184,13 +184,16 @@
   "conclusion": {
     "status": "official_fair_play_source_unavailable",
     "retainSnapshotVersion": "official-2026-2026-06-28-r1",
-    "retainOrchestrationStatus": "official_tie_unresolved",
-    "qualificationGenerated": false,
-    "roundOf32Generated": false,
-    "simulatorInputGenerated": false,
-    "officialQualificationAvailable": false,
-    "officialRoundOf32Available": false,
-    "simulatorInputAvailable": false,
+    "retainOrchestrationStatus": "knockout_ready",
+    "qualificationDecisionResolved": true,
+    "roundOf32Resolvable": true,
+    "simulatorInputResolvable": true,
+    "qualificationArtifactGenerated": false,
+    "roundOf32ArtifactGenerated": false,
+    "simulatorInputArtifactGenerated": false,
+    "strictThirdPlaceOrderingResolved": false,
+    "unresolvedOrderingAffectsTournamentDecision": false,
+    "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
     "developmentFallbackProhibited": true,
     "fabricationProhibited": true,
     "ratingValuesChanged": false,
@@ -208,7 +211,7 @@
     ],
     "limitedToReviewedFifaCandidates": true,
     "notUniversalNoEvidenceClaim": true,
-    "futureOfficialEvidenceMayUnblock": true,
-    "summary": "No usable official fair-play evidence was found in the seven reviewed FIFA candidates as of 2026-06-28T17:05:00.000Z. This is limited to the reviewed candidates and does not claim no official evidence exists anywhere; future official evidence may unblock qualification."
+    "futureOfficialEvidenceMayResolveOrdering": true,
+    "summary": "No usable official fair-play evidence was found in the seven reviewed FIFA candidates as of 2026-06-28T17:05:00.000Z. This is limited to the reviewed candidates and does not claim no official evidence exists anywhere; the missing Ecuador/Ghana ordering does not affect qualification membership, qualifying group set BDEFIJKL, Annex C, or Round-of-32 participants. Finalized checked-in qualification, Round-of-32, and simulator-input artifacts are not generated in this source-gap artifact."
   }
 }
