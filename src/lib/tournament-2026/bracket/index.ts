@@ -1,6 +1,15 @@
 export { generateRoundOf32 } from "./generateRoundOf32";
 export { adaptRoundOf32ToSimulatorBracket } from "./adaptToSimulatorBracket";
 export {
+  prepareMixedOfficialSimulatorBracket,
+  simulateMixedOfficialBracket,
+} from "./adaptOfficialKnockoutResults";
+export type {
+  KnockoutResultsForSimulator,
+  MixedOfficialMatchStatus,
+  MixedOfficialSimulatorMatch,
+} from "./adaptOfficialKnockoutResults";
+export {
   THIRD_PLACE_ASSIGNMENT_LOOKUP,
   THIRD_PLACE_ASSIGNMENT_METADATA,
 } from "./thirdPlaceAssignmentLookup";

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "world-cup-2026-official-knockout-results-source-v1",
+  "sourceFileVersion": "official-2026-current-knockout-results-source-r1",
+  "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+  "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7",
+  "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+  "sourceAccessTimestampUtc": "2026-07-04T00:00:00Z",
+  "sources": [
+    {
+      "sourceId": "manual-official-knockout-results",
+      "sourceTitle": "Manual official knockout result entries",
+      "sourceRole": "official_knockout_result_lock",
+      "accessTimestampUtc": "2026-07-04T00:00:00Z",
+      "offlineOnly": true
+    }
+  ],
+  "results": []
+}

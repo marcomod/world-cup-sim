@@ -139,6 +139,10 @@ export function WorldCupSimulator() {
               across 10,000 runs using the existing sandbox bracket and active
               production ratings.
             </p>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#a8afb9]">
+              Simulation projections shown here are sandbox outputs, not official
+              knockout results.
+            </p>
             <p
               className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8c929d]"
               aria-label="Ratings and bracket status"

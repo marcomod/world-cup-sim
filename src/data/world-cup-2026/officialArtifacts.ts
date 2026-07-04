@@ -1,5 +1,6 @@
 import qualificationArtifactJson from "@/data/world-cup-2026/snapshots/official-2026-current/qualification.json";
 import roundOf32ArtifactJson from "@/data/world-cup-2026/snapshots/official-2026-current/round-of-32.json";
+import knockoutResultsArtifactJson from "@/data/world-cup-2026/snapshots/official-2026-current/knockout-results.json";
 import ratingLinkageArtifactJson from "@/data/generated/world-cup-2026/official-rating-linkage.json";
 import simulatorInputArtifactJson from "@/data/generated/world-cup-2026/official-simulator-input.json";
 
@@ -104,6 +105,69 @@ interface OfficialSimulatorInputArtifact {
   simulatorInputChecksum: string;
 }
 
+export interface OfficialKnockoutResultScore {
+  participantAGoals: number;
+  participantBGoals: number;
+  decidedBy: "regular_time" | "extra_time" | "penalties";
+  participantAPenalties?: number;
+  participantBPenalties?: number;
+}
+
+export interface OfficialKnockoutParticipant {
+  teamId: string;
+  displayName: string;
+  sourceSlot: string;
+}
+
+export interface OfficialCompletedKnockoutMatchRecord {
+  matchId: string;
+  round: string;
+  participantA: OfficialKnockoutParticipant;
+  participantB: OfficialKnockoutParticipant;
+  score: OfficialKnockoutResultScore;
+  winnerId: string;
+  resultStatus: "official_final";
+}
+
+export interface OfficialPendingKnockoutMatchRecord {
+  matchId: string;
+  round: string;
+  sourceSlots: {
+    participantA: string;
+    participantB: string;
+  };
+  knownParticipants: {
+    participantA?: OfficialKnockoutParticipant;
+    participantB?: OfficialKnockoutParticipant;
+  };
+  unresolvedParticipantSlots: {
+    participantA?: string;
+    participantB?: string;
+  };
+  status: "pending";
+}
+
+interface OfficialKnockoutResultsArtifact {
+  artifactVersion: string;
+  tournamentSnapshotId: string;
+  tournamentSnapshotVersion: string;
+  tournamentSnapshotChecksum: string;
+  qualificationChecksum: string;
+  roundOf32Checksum: string;
+  topologyChecksum: string;
+  source: {
+    sourcePath: string;
+    sourceFileVersion: string;
+    sourceAccessTimestampUtc: string;
+    runtimeFetch: false;
+  };
+  completedMatchCount: number;
+  pendingMatchCount: number;
+  completedMatches: OfficialCompletedKnockoutMatchRecord[];
+  pendingMatches: OfficialPendingKnockoutMatchRecord[];
+  resultChecksum: string;
+}
+
 export interface OfficialRoundOf32Match {
   id: string;
   teamAName: string;
@@ -112,6 +176,23 @@ export interface OfficialRoundOf32Match {
   teamBSlot: string;
   teamARatingLabel: string;
   teamBRatingLabel: string;
+}
+
+export interface OfficialKnockoutStatusMatch {
+  id: string;
+  roundLabel: string;
+  participantALabel: string;
+  participantBLabel: string;
+  statusLabel: "Official completed" | "Pending official";
+  statusTone: "completed" | "pending";
+  scoreLabel: string;
+  winnerLabel: string;
+}
+
+export interface OfficialKnockoutStatusSummary {
+  completedCount: number;
+  pendingCount: number;
+  totalCount: number;
 }
 
 export interface OfficialRatingRow {
@@ -139,6 +220,8 @@ export interface OfficialArtifactTraceabilityRow {
 
 export interface OfficialTournamentUiData {
   roundOf32Matches: OfficialRoundOf32Match[];
+  knockoutStatusSummary: OfficialKnockoutStatusSummary;
+  knockoutStatusMatches: OfficialKnockoutStatusMatch[];
   ratingRows: OfficialRatingRow[];
   detailRows: OfficialDetailRow[];
   artifactTraceabilityRows: OfficialArtifactTraceabilityRow[];
@@ -149,6 +232,8 @@ export interface OfficialTournamentUiData {
 
 const roundOf32Artifact =
   roundOf32ArtifactJson as OfficialRoundOf32Artifact;
+const knockoutResultsArtifact =
+  knockoutResultsArtifactJson as OfficialKnockoutResultsArtifact;
 const qualificationArtifact =
   qualificationArtifactJson as OfficialQualificationArtifact;
 const ratingLinkageArtifact =
@@ -182,6 +267,76 @@ function shortChecksum(value: string): string {
   return value.slice(0, 12);
 }
 
+function formatRound(value: string): string {
+  return value
+    .split("_")
+    .map((part) => part[0].toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function formatScore(score: OfficialKnockoutResultScore): string {
+  const base = `${score.participantAGoals}-${score.participantBGoals}`;
+  if (score.decidedBy === "extra_time") {
+    return `${base} AET`;
+  }
+  if (score.decidedBy === "penalties") {
+    return `${base} (${score.participantAPenalties}-${score.participantBPenalties} pens)`;
+  }
+  return base;
+}
+
+function pendingParticipantLabel(
+  participant: OfficialKnockoutParticipant | undefined,
+  unresolvedSlot: string | undefined,
+): string {
+  return participant?.displayName ?? unresolvedSlot ?? "Unresolved";
+}
+
+export function createOfficialKnockoutStatusMatches(input: {
+  completedMatches: OfficialCompletedKnockoutMatchRecord[];
+  pendingMatches: OfficialPendingKnockoutMatchRecord[];
+}): OfficialKnockoutStatusMatch[] {
+  const completedRows = input.completedMatches.map((match) => ({
+    id: match.matchId,
+    roundLabel: formatRound(match.round),
+    participantALabel: match.participantA.displayName,
+    participantBLabel: match.participantB.displayName,
+    statusLabel: "Official completed" as const,
+    statusTone: "completed" as const,
+    scoreLabel: formatScore(match.score),
+    winnerLabel:
+      match.winnerId === match.participantA.teamId
+        ? match.participantA.displayName
+        : match.participantB.displayName,
+  }));
+
+  const pendingRows = input.pendingMatches.map((match) => ({
+    id: match.matchId,
+    roundLabel: formatRound(match.round),
+    participantALabel: pendingParticipantLabel(
+      match.knownParticipants.participantA,
+      match.unresolvedParticipantSlots.participantA,
+    ),
+    participantBLabel: pendingParticipantLabel(
+      match.knownParticipants.participantB,
+      match.unresolvedParticipantSlots.participantB,
+    ),
+    statusLabel: "Pending official" as const,
+    statusTone: "pending" as const,
+    scoreLabel: "No official score",
+    winnerLabel: "Not official",
+  }));
+
+  return [...completedRows, ...pendingRows].sort(
+    (left, right) => Number(left.id.slice(1)) - Number(right.id.slice(1)),
+  );
+}
+
+const knockoutStatusMatches = createOfficialKnockoutStatusMatches({
+  completedMatches: knockoutResultsArtifact.completedMatches,
+  pendingMatches: knockoutResultsArtifact.pendingMatches,
+});
+
 export const officialTournamentUiData: OfficialTournamentUiData = {
   roundOf32Matches: roundOf32Artifact.matches.map((match) => {
     const teamARating = ratingByTeamId.get(match.participantA.teamId);
@@ -197,6 +352,14 @@ export const officialTournamentUiData: OfficialTournamentUiData = {
       teamBRatingLabel: formatRating(teamBRating?.overall),
     };
   }),
+  knockoutStatusSummary: {
+    completedCount: knockoutResultsArtifact.completedMatchCount,
+    pendingCount: knockoutResultsArtifact.pendingMatchCount,
+    totalCount:
+      knockoutResultsArtifact.completedMatchCount +
+      knockoutResultsArtifact.pendingMatchCount,
+  },
+  knockoutStatusMatches,
   ratingRows: [...ratingLinkageArtifact.qualifiedTeamRatings]
     .sort((teamA, teamB) => teamB.overall - teamA.overall)
     .map((rating) => ({
@@ -226,6 +389,16 @@ export const officialTournamentUiData: OfficialTournamentUiData = {
       value: `${simulatorInputArtifact.championPathMatchCount} matches; opening round ${simulatorInputArtifact.openingRoundMatchCount}; ${formatStatus(
         simulatorInputArtifact.laterRoundsStatus,
       )}`,
+    },
+    {
+      label: "Knockout results",
+      value: `${knockoutResultsArtifact.completedMatchCount} official completed; ${knockoutResultsArtifact.pendingMatchCount} pending; checksum ${shortChecksum(
+        knockoutResultsArtifact.resultChecksum,
+      )}`,
+    },
+    {
+      label: "Knockout source",
+      value: `${knockoutResultsArtifact.source.sourcePath}; accessed ${knockoutResultsArtifact.source.sourceAccessTimestampUtc}; runtime fetch ${knockoutResultsArtifact.source.runtimeFetch ? "yes" : "no"}`,
     },
     {
       label: "Source status",
@@ -280,6 +453,20 @@ export const officialTournamentUiData: OfficialTournamentUiData = {
       artifactPath: "data/generated/world-cup-2026/official-simulator-input.json",
       checksumLabel: "Simulator-input checksum",
       checksum: simulatorInputArtifact.simulatorInputChecksum,
+    },
+    {
+      label: "Knockout results",
+      artifactVersion: knockoutResultsArtifact.artifactVersion,
+      artifactPath:
+        "data/world-cup-2026/snapshots/official-2026-current/knockout-results.json",
+      checksumLabel: "Knockout-results checksum",
+      checksum: knockoutResultsArtifact.resultChecksum,
+    },
+    {
+      label: "Knockout source",
+      artifactVersion: knockoutResultsArtifact.source.sourceFileVersion,
+      artifactPath: knockoutResultsArtifact.source.sourcePath,
+      value: `${knockoutResultsArtifact.source.sourceAccessTimestampUtc}; no runtime fetch`,
     },
     {
       label: "Numeric ratings",

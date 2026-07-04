@@ -22,6 +22,10 @@ export const OFFICIAL_QUALIFICATION_ARTIFACT_FILE =
   `${OFFICIAL_SNAPSHOT_DIR}/qualification.json`;
 export const OFFICIAL_ROUND_OF_32_ARTIFACT_FILE =
   `${OFFICIAL_SNAPSHOT_DIR}/round-of-32.json`;
+export const OFFICIAL_KNOCKOUT_RESULTS_SOURCE_FILE =
+  "data/world-cup-2026/sources/official-knockout-results.json";
+export const OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE =
+  `${OFFICIAL_SNAPSHOT_DIR}/knockout-results.json`;
 export const OFFICIAL_SIMULATOR_INPUT_ARTIFACT_FILE =
   "data/generated/world-cup-2026/official-simulator-input.json";
 export const OFFICIAL_RATING_LINKAGE_ARTIFACT_FILE =

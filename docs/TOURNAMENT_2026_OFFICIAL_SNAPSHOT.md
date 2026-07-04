@@ -84,6 +84,71 @@ The finalized artifacts for this snapshot are:
   `f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5`.
 - `data/generated/world-cup-2026/official-simulator-input.json` with checksum
   `d3a981a86c13037061994e700301db835ac2a35c5d251a47fb06cbfa4a0bf477`.
+- `data/world-cup-2026/snapshots/official-2026-current/knockout-results.json`
+  with checksum
+  `ea30bbc73ad102f3e0d6617410369356e0f3e861031b0397b590ed7518c1808f`.
+
+## Official Knockout Results
+
+The editable source for real completed knockout results is:
+
+`data/world-cup-2026/sources/official-knockout-results.json`
+
+This is the only file where future official knockout results should be entered
+manually. The generated artifact is:
+
+`data/world-cup-2026/snapshots/official-2026-current/knockout-results.json`
+
+The source file records fixed lineage values for the tournament snapshot,
+qualification artifact, Round of 32 artifact, and canonical topology. It also
+records a fixed `sourceAccessTimestampUtc` (`2026-07-04T00:00:00Z` in the
+initial empty source). Builders do not write current-time timestamps into the
+artifact. The artifact records `runtimeFetch: false`; no live API or network
+call is used.
+
+To add a completed official result, append one entry to `results` in the source
+file:
+
+```json
+{
+  "matchId": "m73",
+  "participantAId": "rsa",
+  "participantBId": "can",
+  "score": {
+    "participantAGoals": 1,
+    "participantBGoals": 0,
+    "decidedBy": "regular_time"
+  },
+  "winnerId": "rsa",
+  "resultStatus": "official_final",
+  "resultSource": "manual-official-knockout-results"
+}
+```
+
+For extra time use `"decidedBy": "extra_time"`. For penalties, keep match
+goals tied and include `participantAPenalties` and `participantBPenalties`.
+After editing the source file, run:
+
+```bash
+npm run tournament2026:build-knockout-results
+npm run tournament2026:verify-knockout-results
+```
+
+The builder validates every result before writing the artifact. It rejects
+unknown match IDs, non-knockout match IDs, duplicate match results, impossible
+score shapes, winners outside the participants, score/winner mismatches,
+completed matches whose prerequisite participants are unresolved, participant
+mismatches against the official bracket, winner routing that does not match the
+canonical topology, stale lineage checksums, current-time-generated artifact
+timestamp fields, and non-deterministic ordering. With no result entries, the
+artifact remains valid and records all 32 topology matches as pending.
+
+Completed matches are official locks. Pending matches are unresolved official
+matches. The mixed official/simulated adapter uses completed official winners
+to populate future champion-path slots and simulates only unresolved
+champion-path matches. It does not change simulator probability math, active
+ratings, calibration artifacts, Annex C values, topology, official group-stage
+results, rating values, or the production divisor `400`.
 
 ## Build And Verify
 
@@ -99,6 +164,10 @@ Artifact ownership:
 - `build-simulator-input` owns finalized rating-linkage and simulator-input
   artifacts. It updates those links after validating qualification and
   Round-of-32 linkage.
+- `build-knockout-results` owns only the versioned knockout-results artifact.
+  It reads the local editable knockout source, Round of 32 artifact, and
+  canonical topology. It is intentionally not part of the normal app build or
+  finalized-artifacts aggregate command.
 - `orchestration-status.json` is a derived index over the current local
   snapshot and any finalized artifacts that exist. Builders may rewrite it, but
   only after validating existing finalized artifact files and reconstructing
@@ -215,14 +284,19 @@ third-placed teams are `cod`, `swe`, `ecu`, `gha`, `bih`, `alg`, `par`, and
 
 ## Deferred UI Wiring
 
-The official snapshot is not wired into React components or the active demo app.
-The demo bracket remains separate. Official bracket UI integration is the next
-phase after these artifacts.
+The official snapshot, Round of 32, ratings linkage, simulator input, and
+knockout-results status are wired into the official tournament overview. The
+overview labels official completed matches, pending official matches, and the
+separate simulation sandbox. It never displays fabricated knockout scores.
 
-Readiness gate for official UI integration:
+The demo simulation sandbox remains separate and is labelled as projection
+output. Existing sandbox controls continue to use the active production ratings.
+
+Readiness gate for continued official UI integration:
 
 - verified official snapshot,
 - `knockout_ready` official orchestration without development fallback,
 - exact official Round of 32 verified,
 - rating linkage verified against the finalized snapshot checksum,
-- deterministic simulator-input artifact generated.
+- deterministic simulator-input artifact generated,
+- verified knockout-results artifact with no runtime fetch.

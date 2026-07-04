@@ -79,6 +79,65 @@ export function OfficialTournamentOverview() {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-6 overflow-x-auto border border-white/10">
+            <table
+              className="min-w-[920px] w-full border-collapse text-left text-sm"
+              aria-label="Official knockout result status"
+            >
+              <thead className="bg-white/6 text-[10px] uppercase tracking-[0.12em] text-[#8c929d]">
+                <tr>
+                  <th className="px-3 py-2 font-bold">Match</th>
+                  <th className="px-3 py-2 font-bold">Round</th>
+                  <th className="px-3 py-2 font-bold">Team A</th>
+                  <th className="px-3 py-2 font-bold">Team B</th>
+                  <th className="px-3 py-2 font-bold">Official status</th>
+                  <th className="px-3 py-2 font-bold">Official score</th>
+                  <th className="px-3 py-2 font-bold">Official winner</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/8">
+                {officialTournamentUiData.knockoutStatusMatches.map((match) => (
+                  <tr
+                    key={match.id}
+                    data-official-knockout-match-id={match.id}
+                    data-official-knockout-status={match.statusTone}
+                    className="bg-[#12161c] text-[#edf0f4]"
+                  >
+                    <td className="px-3 py-2 font-mono text-xs font-bold text-sky-200">
+                      {match.id}
+                    </td>
+                    <td className="px-3 py-2 text-xs text-[#b6bec9]">
+                      {match.roundLabel}
+                    </td>
+                    <td className="px-3 py-2 font-semibold">
+                      {match.participantALabel}
+                    </td>
+                    <td className="px-3 py-2 font-semibold">
+                      {match.participantBLabel}
+                    </td>
+                    <td className="px-3 py-2">
+                      <span
+                        className={
+                          match.statusTone === "completed"
+                            ? "border border-emerald-300/30 bg-emerald-300/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-emerald-200"
+                            : "border border-amber-300/30 bg-amber-300/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-amber-200"
+                        }
+                      >
+                        {match.statusLabel}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2 font-mono text-xs text-[#b6bec9]">
+                      {match.scoreLabel}
+                    </td>
+                    <td className="px-3 py-2 text-xs text-[#d7dce3]">
+                      {match.winnerLabel}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <aside

@@ -163,6 +163,7 @@ The official 2026 snapshot now has checked-in derived artifacts:
 
 - `data/world-cup-2026/snapshots/official-2026-current/qualification.json`
 - `data/world-cup-2026/snapshots/official-2026-current/round-of-32.json`
+- `data/world-cup-2026/snapshots/official-2026-current/knockout-results.json`
 - `data/generated/world-cup-2026/official-rating-linkage.json`
 - `data/generated/world-cup-2026/official-simulator-input.json`
 
@@ -171,7 +172,33 @@ qualified third-placed teams, and Ecuador/Ghana as a shared-rank equivalence
 group at rank 3. It does not serialize a strict official ordering between them
 and does not include fabricated fair-play totals. The simulator-input artifact
 contains the 31-match champion path with populated `m73`-`m88` openers and
-unresolved later-round participants; the app does not consume it yet.
+unresolved later-round participants. The app surfaces this official artifact
+state separately from the development simulation sandbox.
+
+The knockout-results artifact is generated from
+`data/world-cup-2026/sources/official-knockout-results.json`. The source file is
+offline and manually edited when real knockout matches become official. The
+generated artifact records:
+
+- schema and artifact versions,
+- tournament snapshot, qualification, Round-of-32, and topology checksums,
+- fixed source metadata and source-access timestamp,
+- `completedMatches`, where winners are official locks,
+- `pendingMatches`, where participants are either known from official results
+  or represented as unresolved source slots,
+- a semantic `resultChecksum`.
+
+Completed knockout rows include the match ID, participant A/B, official score,
+winner, result status, result source, extra-time/penalty flags, and topology
+derived winner routing. Pending rows include the match ID, source slots, known
+participants if already determined, unresolved participant slots, and
+`status: "pending"`.
+
+The mixed official/simulated adapter prepares a champion-path `Match[]` where
+completed official matches are locked and pending matches remain simulatable.
+Official winners are propagated into future slots before unresolved matches are
+simulated. The adapter delegates pending match outcomes to the existing
+simulator functions and does not alter probability math or rating values.
 
 ⸻
 

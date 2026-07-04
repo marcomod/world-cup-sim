@@ -12,7 +12,10 @@ import {
 } from "@/src/components/viewModels/bracketViewModels";
 import { initialBracket } from "@/src/data/initialBracket";
 import { mockTeams } from "@/src/data/mockTeams";
-import { officialTournamentUiData } from "@/src/data/world-cup-2026/officialArtifacts";
+import {
+  createOfficialKnockoutStatusMatches,
+  officialTournamentUiData,
+} from "@/src/data/world-cup-2026/officialArtifacts";
 import { teamRatingsV2ByTeamId } from "@/src/data/teamRatingsV2";
 import {
   fallbackTeamFlagPath,
@@ -74,6 +77,34 @@ function getOfficialMatchRowMarkup(markup: string, matchId: string): string {
   }
 
   return match[1];
+}
+
+function createOfficialKnockoutStatusFixtureMarkup(
+  matches: typeof officialTournamentUiData.knockoutStatusMatches,
+): string {
+  return renderToStaticMarkup(
+    createElement(
+      "table",
+      null,
+      createElement(
+        "tbody",
+        null,
+        matches.map((match) =>
+          createElement(
+            "tr",
+            {
+              key: match.id,
+              "data-official-knockout-match-id": match.id,
+              "data-official-knockout-status": match.statusTone,
+            },
+            createElement("td", null, match.statusLabel),
+            createElement("td", null, match.scoreLabel),
+            createElement("td", null, match.winnerLabel),
+          ),
+        ),
+      ),
+    ),
+  );
 }
 
 function getModuleSpecifiers(sourceText: string): string[] {
@@ -283,6 +314,148 @@ describe("official tournament UI integration", () => {
 
     expect(markup).toContain("Official tournament bracket/data");
     expect(markup).toContain("Simulation sandbox");
+    expect(markup).toContain("Simulation projections shown here are sandbox outputs");
+  });
+
+  it("labels official knockout completed, pending, and sandbox projection states distinctly", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+    const completedRows = officialTournamentUiData.knockoutStatusMatches.filter(
+      (match) => match.statusTone === "completed",
+    );
+    const pendingRows = officialTournamentUiData.knockoutStatusMatches.filter(
+      (match) => match.statusTone === "pending",
+    );
+    const completedMarkupMatches =
+      markup.match(/data-official-knockout-status="completed"/g) ?? [];
+    const pendingMarkupMatches =
+      markup.match(/data-official-knockout-status="pending"/g) ?? [];
+
+    expect(markup).toContain("Official knockout result status");
+    expect(markup).toContain("Simulation projections");
+    expect(completedRows).toHaveLength(
+      officialTournamentUiData.knockoutStatusSummary.completedCount,
+    );
+    expect(pendingRows).toHaveLength(
+      officialTournamentUiData.knockoutStatusSummary.pendingCount,
+    );
+    expect(completedMarkupMatches).toHaveLength(
+      officialTournamentUiData.knockoutStatusSummary.completedCount,
+    );
+    expect(pendingMarkupMatches).toHaveLength(
+      officialTournamentUiData.knockoutStatusSummary.pendingCount,
+    );
+    expect(officialTournamentUiData.knockoutStatusMatches).toHaveLength(
+      officialTournamentUiData.knockoutStatusSummary.totalCount,
+    );
+    expect(officialTournamentUiData.knockoutStatusSummary.totalCount).toBe(
+      officialTournamentUiData.knockoutStatusSummary.completedCount +
+        officialTournamentUiData.knockoutStatusSummary.pendingCount,
+    );
+
+    if (officialTournamentUiData.knockoutStatusSummary.pendingCount > 0) {
+      expect(markup).toContain("Pending official");
+      expect(markup).toContain("No official score");
+      expect(markup).toContain('data-official-knockout-status="pending"');
+    }
+
+    if (officialTournamentUiData.knockoutStatusSummary.completedCount > 0) {
+      expect(markup).toContain("Official completed");
+      expect(markup).toContain('data-official-knockout-status="completed"');
+    }
+  });
+
+  it("records the current empty knockout source state without blocking future official results", () => {
+    expect(officialTournamentUiData.knockoutStatusSummary).toEqual({
+      completedCount: 0,
+      pendingCount: 32,
+      totalCount: 32,
+    });
+  });
+
+  it("formats a controlled pending official knockout row", () => {
+    const rows = createOfficialKnockoutStatusMatches({
+      completedMatches: [],
+      pendingMatches: [
+        {
+          matchId: "m90",
+          round: "round_of_16",
+          sourceSlots: {
+            participantA: "winner of m73",
+            participantB: "winner of m75",
+          },
+          knownParticipants: {
+            participantA: {
+              teamId: "rsa",
+              displayName: "South Africa",
+              sourceSlot: "winner of m73",
+            },
+          },
+          unresolvedParticipantSlots: {
+            participantB: "winner of m75",
+          },
+          status: "pending",
+        },
+      ],
+    });
+    const markup = createOfficialKnockoutStatusFixtureMarkup(rows);
+
+    expect(rows).toEqual([
+      expect.objectContaining({
+        id: "m90",
+        statusLabel: "Pending official",
+        statusTone: "pending",
+        scoreLabel: "No official score",
+        winnerLabel: "Not official",
+      }),
+    ]);
+    expect(markup).toContain("Pending official");
+    expect(markup).toContain("No official score");
+    expect(markup).toContain('data-official-knockout-status="pending"');
+  });
+
+  it("formats a controlled official completed knockout row", () => {
+    const rows = createOfficialKnockoutStatusMatches({
+      completedMatches: [
+        {
+          matchId: "m73",
+          round: "round_of_32",
+          participantA: {
+            teamId: "rsa",
+            displayName: "South Africa",
+            sourceSlot: "2A",
+          },
+          participantB: {
+            teamId: "can",
+            displayName: "Canada",
+            sourceSlot: "2B",
+          },
+          score: {
+            participantAGoals: 1,
+            participantBGoals: 0,
+            decidedBy: "regular_time",
+          },
+          winnerId: "rsa",
+          resultStatus: "official_final",
+        },
+      ],
+      pendingMatches: [],
+    });
+
+    expect(rows).toEqual([
+      expect.objectContaining({
+        id: "m73",
+        statusLabel: "Official completed",
+        statusTone: "completed",
+        scoreLabel: "1-0",
+        winnerLabel: "South Africa",
+      }),
+    ]);
+    const markup = createOfficialKnockoutStatusFixtureMarkup(rows);
+
+    expect(markup).toContain("Official completed");
+    expect(markup).toContain("1-0");
+    expect(markup).toContain("South Africa");
+    expect(markup).toContain('data-official-knockout-status="completed"');
   });
 
   it("does not display fabricated fair-play totals for Ecuador or Ghana", () => {
@@ -377,6 +550,7 @@ describe("official tournament UI integration", () => {
         allowedSpecifiers: new Set([
           "@/data/world-cup-2026/snapshots/official-2026-current/qualification.json",
           "@/data/world-cup-2026/snapshots/official-2026-current/round-of-32.json",
+          "@/data/world-cup-2026/snapshots/official-2026-current/knockout-results.json",
           "@/data/generated/world-cup-2026/official-rating-linkage.json",
           "@/data/generated/world-cup-2026/official-simulator-input.json",
         ]),
