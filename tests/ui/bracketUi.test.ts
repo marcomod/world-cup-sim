@@ -12,6 +12,7 @@ import {
 } from "@/src/components/viewModels/bracketViewModels";
 import { initialBracket } from "@/src/data/initialBracket";
 import { mockTeams } from "@/src/data/mockTeams";
+import { officialTournamentUiData } from "@/src/data/world-cup-2026/officialArtifacts";
 import { teamRatingsV2ByTeamId } from "@/src/data/teamRatingsV2";
 import {
   fallbackTeamFlagPath,
@@ -59,6 +60,26 @@ function getRoundColumnMarkup(
   }
 
   return match[1];
+}
+
+function getOfficialMatchRowMarkup(markup: string, matchId: string): string {
+  const match = markup.match(
+    new RegExp(
+      `<tr[^>]*data-official-match-id="${matchId}"[^>]*>([\\s\\S]*?)</tr>`,
+    ),
+  );
+
+  if (!match) {
+    throw new Error(`Missing official Round-of-32 row for ${matchId}.`);
+  }
+
+  return match[1];
+}
+
+function getModuleSpecifiers(sourceText: string): string[] {
+  return [...sourceText.matchAll(/\b(?:import|export)\s+(?:[\s\S]*?\s+from\s+)?["']([^"']+)["']/g)].map(
+    (match) => match[1],
+  );
 }
 
 describe("knockout bracket UI", () => {
@@ -223,6 +244,208 @@ describe("knockout bracket UI", () => {
 
     expect(markup).toContain("Snapshot label: 2026-06-18");
     expect(markup).not.toContain("Snapshot: 2026-06-18");
+  });
+});
+
+describe("official tournament UI integration", () => {
+  it("renders the finalized official Round of 32 from m73 through m88", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+
+    for (let matchNumber = 73; matchNumber <= 88; matchNumber += 1) {
+      expect(
+        markup.match(
+          new RegExp(`data-official-match-id="m${matchNumber}"`, "g"),
+        ),
+      ).toHaveLength(1);
+    }
+  });
+
+  it("renders m79 as Mexico vs Ecuador", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+    const rowMarkup = getOfficialMatchRowMarkup(markup, "m79");
+
+    expect(rowMarkup).toContain("Mexico");
+    expect(rowMarkup).toContain("Ecuador");
+    expect(rowMarkup.indexOf("Mexico")).toBeLessThan(rowMarkup.indexOf("Ecuador"));
+  });
+
+  it("renders m87 as Colombia vs Ghana", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+    const rowMarkup = getOfficialMatchRowMarkup(markup, "m87");
+
+    expect(rowMarkup).toContain("Colombia");
+    expect(rowMarkup).toContain("Ghana");
+    expect(rowMarkup.indexOf("Colombia")).toBeLessThan(rowMarkup.indexOf("Ghana"));
+  });
+
+  it("keeps official and simulation labels visible", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+
+    expect(markup).toContain("Official tournament bracket/data");
+    expect(markup).toContain("Simulation sandbox");
+  });
+
+  it("does not display fabricated fair-play totals for Ecuador or Ghana", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+
+    expect(markup).toContain("Ecuador and Ghana both qualified");
+    expect(markup).toContain("No fair-play values are shown for Ecuador or Ghana");
+    expect(markup).not.toMatch(/Ecuador[^<]*(fair-play|fair play)[^<]*\d/i);
+    expect(markup).not.toMatch(/Ghana[^<]*(fair-play|fair play)[^<]*\d/i);
+    expect(markup).not.toContain("Fair-play total");
+    expect(markup).not.toContain("fair-play total");
+  });
+
+  it("keeps the simulator sandbox controls and demo bracket available", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+
+    expect(markup).toContain("Simulate One Bracket");
+    expect(markup).toContain("Run 10,000 Simulations");
+    expect(markup).toContain('data-match-id="r32-1"');
+    expect(markup).toContain("Demo bracket");
+  });
+
+  it("exposes exact official artifact traceability values in adapter data", () => {
+    const traceabilityRowsByLabel = new Map(
+      officialTournamentUiData.artifactTraceabilityRows.map((row) => [
+        row.label,
+        row,
+      ]),
+    );
+
+    expect(traceabilityRowsByLabel.get("Tournament snapshot")).toMatchObject({
+      id: "official-2026-2026-06-28-r1",
+      artifactVersion: "official-2026-2026-06-28-r1",
+      checksum: "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+    });
+    expect(traceabilityRowsByLabel.get("Qualification")).toMatchObject({
+      artifactVersion: "official-2026-2026-06-28-r1-qualification-r1",
+      checksum: "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+    });
+    expect(traceabilityRowsByLabel.get("Round of 32")).toMatchObject({
+      artifactVersion: "official-2026-2026-06-28-r1-round-of-32-r1",
+      checksum: "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7",
+    });
+    expect(traceabilityRowsByLabel.get("Rating linkage")).toMatchObject({
+      artifactVersion: "official-2026-2026-06-28-r1-rating-linkage-r1",
+      checksum: "3b245dd833f9f73824108793025b336877d9073d994f5cce5f9e73e4e6dd236c",
+    });
+    expect(traceabilityRowsByLabel.get("Simulator input")).toMatchObject({
+      artifactVersion: "official-2026-2026-06-28-r1-simulator-input-r1",
+      checksum: "d3a981a86c13037061994e700301db835ac2a35c5d251a47fb06cbfa4a0bf477",
+    });
+    expect(traceabilityRowsByLabel.get("Numeric ratings")).toMatchObject({
+      id: "world-cup-2026-knockout-ratings",
+      artifactVersion: "official-2026-2026-06-28-r1-ratings-r1",
+      checksum: "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5",
+    });
+    expect(traceabilityRowsByLabel.get("Third-place group key")).toMatchObject({
+      value: "BDEFIJKL",
+    });
+  });
+
+  it("renders exact official artifact checksums in the status details", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+
+    expect(markup).toContain("Exact artifact checksums");
+    expect(markup).toContain("official-2026-2026-06-28-r1");
+    expect(markup).toContain(
+      "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+    );
+    expect(markup).toContain(
+      "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+    );
+    expect(markup).toContain(
+      "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7",
+    );
+    expect(markup).toContain(
+      "3b245dd833f9f73824108793025b336877d9073d994f5cce5f9e73e4e6dd236c",
+    );
+    expect(markup).toContain(
+      "d3a981a86c13037061994e700301db835ac2a35c5d251a47fb06cbfa4a0bf477",
+    );
+    expect(markup).toContain(
+      "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5",
+    );
+    expect(markup).toContain("BDEFIJKL");
+  });
+
+  it("keeps official UI integration imports deterministic and browser safe", async () => {
+    const sourceFiles = [
+      {
+        filePath: "src/data/world-cup-2026/officialArtifacts.ts",
+        allowedSpecifiers: new Set([
+          "@/data/world-cup-2026/snapshots/official-2026-current/qualification.json",
+          "@/data/world-cup-2026/snapshots/official-2026-current/round-of-32.json",
+          "@/data/generated/world-cup-2026/official-rating-linkage.json",
+          "@/data/generated/world-cup-2026/official-simulator-input.json",
+        ]),
+      },
+      {
+        filePath: "src/components/OfficialTournamentOverview.tsx",
+        allowedSpecifiers: new Set([
+          "@/src/data/world-cup-2026/officialArtifacts",
+        ]),
+      },
+      {
+        filePath: "src/components/WorldCupSimulator.tsx",
+        allowedSpecifiers: new Set([
+          "react",
+          "@/src/data/initialBracket",
+          "@/src/data/mockTeams",
+          "@/src/data/teamRatingsV2",
+          "@/src/components/Bracket/Bracket",
+          "@/src/components/OfficialTournamentOverview",
+          "@/src/components/Odds/MatchupOddsTable",
+          "@/src/components/Odds/TournamentOddsTable",
+          "@/src/components/viewModels/bracketViewModels",
+          "@/src/components/viewModels/tournamentOddsViewModels",
+          "@/src/lib/simulator/monteCarlo",
+          "@/src/lib/simulator/rng",
+          "@/src/lib/simulator/simulateBracket",
+          "@/src/lib/simulator/types",
+        ]),
+      },
+    ];
+    const forbiddenSpecifiers = [
+      "node:fs",
+      "node:fs/promises",
+      "fs",
+      "fs/promises",
+      "node:path",
+      "path",
+      "node:crypto",
+      "crypto",
+    ];
+    const forbiddenSpecifierPatterns = [
+      /^@\/src\/lib\/simulator\/probability(?:$|\/)/,
+      /^@\/src\/data\/generated\/teamRatingsV2\.generated$/,
+      /^@\/data\/generated\/team-ratings-v2(?:$|\/)/,
+      /^@\/data\/generated\/world-football-elo-development(?:$|\/)/,
+      /^@\/data\/generated\/calibration(?:$|\/)/,
+      /^@\/data\/raw\/historical(?:$|\/)/,
+      /^@\/tests\/fixtures\/world-cup-2026\/annex-c-expected\.json$/,
+      /^@\/src\/lib\/tournament-2026\/bracket(?:$|\/)/,
+      /^@\/src\/lib\/tournament-2026\/constants$/,
+      /^@\/scripts(?:$|\/)/,
+    ];
+
+    for (const { filePath, allowedSpecifiers } of sourceFiles) {
+      const sourceText = await readFile(filePath, "utf8");
+      const specifiers = getModuleSpecifiers(sourceText);
+
+      expect(specifiers, filePath).toEqual([...allowedSpecifiers]);
+      expect(
+        specifiers.filter((specifier) => forbiddenSpecifiers.includes(specifier)),
+        filePath,
+      ).toEqual([]);
+      expect(
+        specifiers.filter((specifier) =>
+          forbiddenSpecifierPatterns.some((pattern) => pattern.test(specifier)),
+        ),
+        filePath,
+      ).toEqual([]);
+    }
   });
 });
 

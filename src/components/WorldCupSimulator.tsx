@@ -8,6 +8,7 @@ import {
   teamRatingsV2SourceMetadata,
 } from "@/src/data/teamRatingsV2";
 import { Bracket } from "@/src/components/Bracket/Bracket";
+import { OfficialTournamentOverview } from "@/src/components/OfficialTournamentOverview";
 import { MatchupOddsTable } from "@/src/components/Odds/MatchupOddsTable";
 import { TournamentOddsTable } from "@/src/components/Odds/TournamentOddsTable";
 import {
@@ -107,31 +108,50 @@ export function WorldCupSimulator() {
 
   return (
     <main className="min-h-screen bg-[#101318] pb-10 text-[#edf0f4]">
-      <header className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-4 py-6 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:py-8">
+      <header className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-4 py-6 sm:px-6 lg:py-8">
         <div className="max-w-3xl">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">
-            Post-group-stage simulator
+            World Cup 2026 knockout workspace
           </p>
           <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
             World Cup Knockout Simulator
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-[#a8afb9] sm:text-base">
-            Explore the development Round of 32, simulate one complete path to the
-            trophy, or compare tournament odds across 10,000 runs.
-          </p>
-          <p
-            className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8c929d]"
-            aria-label="Ratings and bracket status"
-          >
-            <span>Ratings: {teamRatingsV2SourceMetadata.sourceName}</span>
-            <span aria-hidden="true">/</span>
-            <span>Snapshot label: {teamRatingsV2SourceMetadata.snapshotDate}</span>
-            <span aria-hidden="true">/</span>
-            <span>Demo bracket</span>
+            Inspect the finalized official Round of 32 and keep simulation
+            experiments isolated in the sandbox below.
           </p>
         </div>
+      </header>
 
-        <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap lg:max-w-[620px] lg:justify-end">
+      <OfficialTournamentOverview />
+
+      <section aria-labelledby="simulation-sandbox-heading">
+        <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 border-t border-white/10 px-4 py-6 sm:px-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">
+              Simulation sandbox
+            </p>
+            <h2 id="simulation-sandbox-heading" className="mt-2 text-2xl font-bold text-white">
+              Development bracket simulator
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#a8afb9]">
+              Simulate one complete path to the trophy or compare tournament odds
+              across 10,000 runs using the existing sandbox bracket and active
+              production ratings.
+            </p>
+            <p
+              className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8c929d]"
+              aria-label="Ratings and bracket status"
+            >
+              <span>Ratings: {teamRatingsV2SourceMetadata.sourceName}</span>
+              <span aria-hidden="true">/</span>
+              <span>Snapshot label: {teamRatingsV2SourceMetadata.snapshotDate}</span>
+              <span aria-hidden="true">/</span>
+              <span>Demo bracket</span>
+            </p>
+          </div>
+
+          <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap lg:max-w-[620px] lg:justify-end">
             <button
               type="button"
               onClick={handleSimulateBracket}
@@ -159,20 +179,21 @@ export function WorldCupSimulator() {
             >
               Last seed: {lastSeed ?? "Not simulated"}
             </p>
+          </div>
         </div>
-      </header>
 
-      <Bracket matches={bracketMatches} champion={champion} />
+        <Bracket matches={bracketMatches} champion={champion} />
 
-      <div className="mx-auto mt-8 flex w-full max-w-7xl flex-col gap-6 px-4 text-slate-950 sm:px-6 lg:px-8">
-        <MatchupOddsTable rows={matchupOddsRows} hasSimulated={champion.isKnown} />
-        {monteCarloResult ? (
-          <TournamentOddsTable
-            rows={tournamentOddsRows}
-            simulationCountLabel={tournamentOddsSimulationCountLabel}
-          />
-        ) : null}
-      </div>
+        <div className="mx-auto mt-8 flex w-full max-w-7xl flex-col gap-6 px-4 text-slate-950 sm:px-6 lg:px-8">
+          <MatchupOddsTable rows={matchupOddsRows} hasSimulated={champion.isKnown} />
+          {monteCarloResult ? (
+            <TournamentOddsTable
+              rows={tournamentOddsRows}
+              simulationCountLabel={tournamentOddsSimulationCountLabel}
+            />
+          ) : null}
+        </div>
+      </section>
     </main>
   );
 }
