@@ -19,9 +19,9 @@ type JsonObject = Record<string, unknown>;
 
 const validContext = {
   artifactExists: {
-    qualification: false,
-    roundOf32: false,
-    simulatorInput: false,
+    qualification: true,
+    roundOf32: true,
+    simulatorInput: true,
     finalizedBracket: false,
     knockoutReady: false,
   },
@@ -226,14 +226,14 @@ describe("official fair-play source-gap verifier", () => {
     conclusion(staleField).qualificationGenerated = true;
     expectInvalid(staleField, /stale artifact field "qualificationGenerated"/);
 
-    const qualificationGenerated = cloneArtifact();
-    conclusion(qualificationGenerated).qualificationArtifactGenerated = true;
-    expectInvalid(qualificationGenerated, /resolved domain decisions from generated artifacts/);
+    const qualificationNotGenerated = cloneArtifact();
+    conclusion(qualificationNotGenerated).qualificationArtifactGenerated = false;
+    expectInvalid(qualificationNotGenerated, /resolved domain decisions from generated artifacts/);
 
     expect(() =>
       verifyFairPlaySourceGapArtifact(readArtifact(), {
         artifactExists: {
-          qualification: true,
+          qualification: false,
           roundOf32: false,
           simulatorInput: false,
           finalizedBracket: false,
@@ -243,7 +243,7 @@ describe("official fair-play source-gap verifier", () => {
     ).toThrow(/resolved domain decisions from generated artifacts/);
   });
 
-  it("allows the all-48-team rating report while finalized downstream artifacts remain absent", () => {
+  it("allows the all-48-team rating report while finalized downstream artifacts exist", () => {
     expect(
       verifyFairPlaySourceGapArtifact(readArtifact(), {
         artifactExists: validContext.artifactExists,
@@ -275,8 +275,8 @@ describe("official fair-play source-gap verifier", () => {
     expect("simulatorBracket" in state).toBe(true);
     expect(ratingReport.ratingChecksum).toBe("f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5");
     expect(ratingReport.divisor).toBe(400);
-    expect(OFFICIAL_QUALIFICATION_ARTIFACT_FILE).toBe("data/generated/world-cup-2026/official-qualification.json");
-    expect(OFFICIAL_ROUND_OF_32_ARTIFACT_FILE).toBe("data/generated/world-cup-2026/official-round-of-32.json");
+    expect(OFFICIAL_QUALIFICATION_ARTIFACT_FILE).toBe("data/world-cup-2026/snapshots/official-2026-current/qualification.json");
+    expect(OFFICIAL_ROUND_OF_32_ARTIFACT_FILE).toBe("data/world-cup-2026/snapshots/official-2026-current/round-of-32.json");
     expect(OFFICIAL_SIMULATOR_INPUT_ARTIFACT_FILE).toBe("data/generated/world-cup-2026/official-simulator-input.json");
   });
 });

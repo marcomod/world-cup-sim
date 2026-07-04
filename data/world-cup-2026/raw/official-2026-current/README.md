@@ -28,8 +28,11 @@ fair-play deduction totals, or an official third-place ranking with fair-play
 tie-break details for Ecuador and Ghana. The full FIFA match-calendar endpoint
 does expose populated Round-of-32 participants as a cross-check, but that
 listing is not treated as a fair-play source and does not provide the missing
-deduction totals. This conclusion is limited to the reviewed candidates and
-fixed cutoff; future official evidence can create a new snapshot revision.
+deduction totals. The current qualification decision is still resolved because
+Ecuador and Ghana both qualify at shared rank 3; strict ordering is unresolved
+but irrelevant to `BDEFIJKL`, Annex C, the Round of 32, and simulator input.
+This conclusion is limited to the reviewed candidates and fixed cutoff; future
+official evidence can create a new snapshot revision.
 
 Do not replace these files by silently editing generated values. Create a new
 snapshot version when official source data or normalization rules change.

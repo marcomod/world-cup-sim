@@ -1,0 +1,344 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "schemaVersion": "world-cup-2026-official-rating-linkage-v1",
+  "artifactVersion": "official-2026-2026-06-28-r1-rating-linkage-r1",
+  "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+  "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7",
+  "ratingSnapshotId": "world-cup-2026-knockout-ratings",
+  "ratingSnapshotVersion": "official-2026-2026-06-28-r1-ratings-r1",
+  "ratingSnapshotChecksum": "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5",
+  "numericRatingChecksum": "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5",
+  "metadataChecksumPolicy": "This linkage checksum may change when tournament linkage changes; numericRatingChecksum tracks unchanged rating values.",
+  "modelVersion": "world-cup-2026-group-stage-elo-refresh-v1",
+  "divisor": 400,
+  "totalRatingRecordCount": 48,
+  "qualifiedRatingRecordCount": 32,
+  "allQualifiersCovered": true,
+  "productionRatingsOverwritten": false,
+  "qualifiedTeamRatings": [
+    {
+      "teamId": "mex",
+      "modelVersion": "v2",
+      "overall": 1895.4431536017912,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    {
+      "teamId": "sui",
+      "modelVersion": "v2",
+      "overall": 1886.875438676995,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    {
+      "teamId": "bra",
+      "modelVersion": "v2",
+      "overall": 1980.7720487610163,
+      "attack": 90,
+      "defense": 90,
+      "recentForm": 90,
+      "squadStrength": 90,
+      "penalties": 80
+    },
+    {
+      "teamId": "usa",
+      "modelVersion": "v2",
+      "overall": 1792.4103851198213,
+      "attack": 84,
+      "defense": 84,
+      "recentForm": 84,
+      "squadStrength": 84,
+      "penalties": 80
+    },
+    {
+      "teamId": "ger",
+      "modelVersion": "v2",
+      "overall": 1932.9668474071598,
+      "attack": 89,
+      "defense": 89,
+      "recentForm": 89,
+      "squadStrength": 89,
+      "penalties": 80
+    },
+    {
+      "teamId": "ned",
+      "modelVersion": "v2",
+      "overall": 1950.3163822324343,
+      "attack": 89,
+      "defense": 89,
+      "recentForm": 89,
+      "squadStrength": 89,
+      "penalties": 80
+    },
+    {
+      "teamId": "bel",
+      "modelVersion": "v2",
+      "overall": 1874.2021115308667,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    {
+      "teamId": "esp",
+      "modelVersion": "v2",
+      "overall": 2124.5147768342877,
+      "attack": 95,
+      "defense": 95,
+      "recentForm": 95,
+      "squadStrength": 95,
+      "penalties": 80
+    },
+    {
+      "teamId": "fra",
+      "modelVersion": "v2",
+      "overall": 2094.925256722523,
+      "attack": 94,
+      "defense": 94,
+      "recentForm": 94,
+      "squadStrength": 94,
+      "penalties": 80
+    },
+    {
+      "teamId": "arg",
+      "modelVersion": "v2",
+      "overall": 2134.761430385707,
+      "attack": 95,
+      "defense": 95,
+      "recentForm": 95,
+      "squadStrength": 95,
+      "penalties": 80
+    },
+    {
+      "teamId": "col",
+      "modelVersion": "v2",
+      "overall": 2002.6058731127732,
+      "attack": 91,
+      "defense": 91,
+      "recentForm": 91,
+      "squadStrength": 91,
+      "penalties": 80
+    },
+    {
+      "teamId": "eng",
+      "modelVersion": "v2",
+      "overall": 2053.446675211353,
+      "attack": 93,
+      "defense": 93,
+      "recentForm": 93,
+      "squadStrength": 93,
+      "penalties": 80
+    },
+    {
+      "teamId": "rsa",
+      "modelVersion": "v2",
+      "overall": 1545.3768687220254,
+      "attack": 75,
+      "defense": 75,
+      "recentForm": 75,
+      "squadStrength": 75,
+      "penalties": 80
+    },
+    {
+      "teamId": "can",
+      "modelVersion": "v2",
+      "overall": 1767.7948078698196,
+      "attack": 83,
+      "defense": 83,
+      "recentForm": 83,
+      "squadStrength": 83,
+      "penalties": 80
+    },
+    {
+      "teamId": "mar",
+      "modelVersion": "v2",
+      "overall": 1855.1712023765044,
+      "attack": 86,
+      "defense": 86,
+      "recentForm": 86,
+      "squadStrength": 86,
+      "penalties": 80
+    },
+    {
+      "teamId": "aus",
+      "modelVersion": "v2",
+      "overall": 1836.0096309148832,
+      "attack": 85,
+      "defense": 85,
+      "recentForm": 85,
+      "squadStrength": 85,
+      "penalties": 80
+    },
+    {
+      "teamId": "civ",
+      "modelVersion": "v2",
+      "overall": 1754.5983019277205,
+      "attack": 82,
+      "defense": 82,
+      "recentForm": 82,
+      "squadStrength": 82,
+      "penalties": 80
+    },
+    {
+      "teamId": "jpn",
+      "modelVersion": "v2",
+      "overall": 1909.2952129635662,
+      "attack": 88,
+      "defense": 88,
+      "recentForm": 88,
+      "squadStrength": 88,
+      "penalties": 80
+    },
+    {
+      "teamId": "egy",
+      "modelVersion": "v2",
+      "overall": 1722.7874956894184,
+      "attack": 81,
+      "defense": 81,
+      "recentForm": 81,
+      "squadStrength": 81,
+      "penalties": 80
+    },
+    {
+      "teamId": "cpv",
+      "modelVersion": "v2",
+      "overall": 1620.691576479283,
+      "attack": 78,
+      "defense": 78,
+      "recentForm": 78,
+      "squadStrength": 78,
+      "penalties": 80
+    },
+    {
+      "teamId": "nor",
+      "modelVersion": "v2",
+      "overall": 1932.878880677751,
+      "attack": 88,
+      "defense": 88,
+      "recentForm": 88,
+      "squadStrength": 88,
+      "penalties": 80
+    },
+    {
+      "teamId": "aut",
+      "modelVersion": "v2",
+      "overall": 1855.5543825530603,
+      "attack": 86,
+      "defense": 86,
+      "recentForm": 86,
+      "squadStrength": 86,
+      "penalties": 80
+    },
+    {
+      "teamId": "por",
+      "modelVersion": "v2",
+      "overall": 1964.8429937664762,
+      "attack": 90,
+      "defense": 90,
+      "recentForm": 90,
+      "squadStrength": 90,
+      "penalties": 80
+    },
+    {
+      "teamId": "cro",
+      "modelVersion": "v2",
+      "overall": 1883.3110613910915,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    {
+      "teamId": "cod",
+      "modelVersion": "v2",
+      "overall": 1688.5231677680597,
+      "attack": 80,
+      "defense": 80,
+      "recentForm": 80,
+      "squadStrength": 80,
+      "penalties": 80
+    },
+    {
+      "teamId": "swe",
+      "modelVersion": "v2",
+      "overall": 1759.5469541580508,
+      "attack": 83,
+      "defense": 83,
+      "recentForm": 83,
+      "squadStrength": 83,
+      "penalties": 80
+    },
+    {
+      "teamId": "ecu",
+      "modelVersion": "v2",
+      "overall": 1879.6014810852698,
+      "attack": 87,
+      "defense": 87,
+      "recentForm": 87,
+      "squadStrength": 87,
+      "penalties": 80
+    },
+    {
+      "teamId": "gha",
+      "modelVersion": "v2",
+      "overall": 1576.3450184238109,
+      "attack": 76,
+      "defense": 76,
+      "recentForm": 76,
+      "squadStrength": 76,
+      "penalties": 80
+    },
+    {
+      "teamId": "bih",
+      "modelVersion": "v2",
+      "overall": 1603.2133291743924,
+      "attack": 78,
+      "defense": 78,
+      "recentForm": 78,
+      "squadStrength": 78,
+      "penalties": 80
+    },
+    {
+      "teamId": "alg",
+      "modelVersion": "v2",
+      "overall": 1766.488380734854,
+      "attack": 83,
+      "defense": 83,
+      "recentForm": 83,
+      "squadStrength": 83,
+      "penalties": 80
+    },
+    {
+      "teamId": "par",
+      "modelVersion": "v2",
+      "overall": 1783.5403574404718,
+      "attack": 84,
+      "defense": 84,
+      "recentForm": 84,
+      "squadStrength": 84,
+      "penalties": 80
+    },
+    {
+      "teamId": "sen",
+      "modelVersion": "v2",
+      "overall": 1831.8097431304557,
+      "attack": 85,
+      "defense": 85,
+      "recentForm": 85,
+      "squadStrength": 85,
+      "penalties": 80
+    }
+  ],
+  "ratingLinkageChecksum": "3b245dd833f9f73824108793025b336877d9073d994f5cce5f9e73e4e6dd236c"
+}

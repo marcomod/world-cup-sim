@@ -183,7 +183,7 @@ describe("official World Cup 2026 local snapshot", () => {
     });
   });
 
-  it("documents the official fair-play source gap without claiming generated artifacts exist", () => {
+  it("documents the official fair-play source gap without fabricating fair-play totals", () => {
     const gap = JSON.parse(readFileSync(RAW_FAIR_PLAY_SOURCE_GAP_FILE, "utf8")) as {
       reportId: string;
       tournamentSnapshotVersion: string;
@@ -260,9 +260,9 @@ describe("official World Cup 2026 local snapshot", () => {
       qualificationDecisionResolved: true,
       roundOf32Resolvable: true,
       simulatorInputResolvable: true,
-      qualificationArtifactGenerated: false,
-      roundOf32ArtifactGenerated: false,
-      simulatorInputArtifactGenerated: false,
+      qualificationArtifactGenerated: true,
+      roundOf32ArtifactGenerated: true,
+      simulatorInputArtifactGenerated: true,
       strictThirdPlaceOrderingResolved: false,
       unresolvedOrderingAffectsTournamentDecision: false,
       qualifyingThirdPlaceGroupKey: "BDEFIJKL",

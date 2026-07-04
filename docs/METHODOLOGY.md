@@ -44,10 +44,11 @@ For each playable match:
 
 Scorelines do not replace winner probabilities yet. They are explanatory simulation output for single-bracket runs.
 
-The current bracket is still a development/demo bracket. Its 32 demo teams are
-drawn from the actual 2026 tournament field, but the matchups are not the
-official Round of 32 bracket. The bracket should be replaced after the group
-stage once the official knockout qualifiers and matchups are known.
+The current UI bracket is still a development/demo bracket. Its 32 demo teams
+are drawn from the actual 2026 tournament field, but the UI is not yet wired to
+the finalized official Round-of-32 artifact. The official qualifiers,
+Round-of-32 matchups, rating-linkage artifact, and simulator-input artifact now
+exist; UI consumption is the next implementation phase.
 
 2026 Tournament Format Layer
 
@@ -105,6 +106,19 @@ tested separately from official adjacency validation so graph guarantees, such
 as champion paths reaching the final and `m103` staying outside champion
 progression, are covered without relaxing the official FIFA topology checks.
 
+For the current official 2026 snapshot, the group-stage results resolve to
+`knockout_ready` without using fair-play totals. Ecuador and Ghana share
+third-place rank 3 on available criteria; both qualify, and no strict ordering
+between them is recorded because it does not affect the top-eight third-place
+membership, Annex C key `BDEFIJKL`, or Round of 32. The generated Round of 32
+includes `m79` Mexico-Ecuador and `m87` Colombia-Ghana.
+
+The server-safe simulator-input artifact keeps the runtime model unchanged. It
+uses the post-group-stage rating checksum
+`f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5`, records
+divisor `400`, populates the 16 Round-of-32 matches, and leaves later rounds
+unresolved until simulation.
+
 ⸻
 
 Team Strength
@@ -127,9 +141,10 @@ and penalties are Elo-derived compatibility proxies normalized to 0-100 for
 documentation and future model extensions.
 
 The active V2 snapshot is not live fetched, scraped at runtime, or automatically
-updated. It was captured during the 2026 World Cup group stage and must be
-refreshed after the group stage before final knockout use. The official Round of
-32 bracket is not loaded yet.
+updated. It was captured during the 2026 World Cup group stage. A separate
+post-group-stage rating-linkage artifact now covers the finalized official
+qualifiers; the official Round of 32 is available as generated data but is not
+loaded by the UI yet.
 
 Future versions may incorporate:
 

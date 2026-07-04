@@ -9,6 +9,52 @@
   "checksums": {
     "expected-teams.json": "b52c8e3f4c806017ddceab225e793a51b0b3d9b5421f8acb6879a9b70db3fe51",
     "expected-fixtures.json": "9f1bf09697018b4197e709a533df6535c49c0dd6d412d9dd1918c583427b7205",
-    "expected-ranking.json": "7d566c95856a57d25791e228122501bdace615f024d240b50ec8f405dd67ec81"
-  }
+    "expected-ranking.json": "7d566c95856a57d25791e228122501bdace615f024d240b50ec8f405dd67ec81",
+    "expected-qualification.json": "94b1aa83238bc66fd336fe1b1938bbe957d763e25c6a5052a922b2936c439983",
+    "expected-third-place-ranking.json": "f1869a9cb28ce398f249e13ccfe1ca7b844bc5f336393cdce7f353708be11e68",
+    "expected-round-of-32.json": "a3bd76ca3a5365d7e425c20259e44f6aa4d9a82c36076d29921c5c18ce95075c"
+  },
+  "expectedFixtures": [
+    {
+      "fixtureFilename": "expected-qualification.json",
+      "fixtureSchemaVersion": "world-cup-2026-expected-qualification-v1",
+      "semanticChecksum": "94b1aa83238bc66fd336fe1b1938bbe957d763e25c6a5052a922b2936c439983",
+      "sourceAuthority": "FIFA",
+      "sourceTitle": "FIFA World Cup 2026 match calendar API, first-stage results and qualification inputs",
+      "sourceUrl": "https://api.fifa.com/api/v3/calendar/matches?idCompetition=17&idSeason=285023&idStage=289273&language=en&count=200",
+      "stableSourceId": "fifa-first-stage-calendar",
+      "sourceRole": "official_qualification_membership_expected_fixture",
+      "fixedAccessTimestampUtc": "2026-06-28T17:05:00.000Z",
+      "normalizationVersion": "official-expected-verification-v1",
+      "purpose": "Verify finalized qualification membership, group key, and Ecuador/Ghana shared-rank semantics independently of production builders."
+    },
+    {
+      "fixtureFilename": "expected-third-place-ranking.json",
+      "fixtureSchemaVersion": "world-cup-2026-expected-third-place-ranking-v1",
+      "semanticChecksum": "f1869a9cb28ce398f249e13ccfe1ca7b844bc5f336393cdce7f353708be11e68",
+      "sourceAuthority": "FIFA",
+      "sourceTitle": "FIFA World Cup 2026 match calendar API, first-stage results and third-place ranking inputs",
+      "sourceUrl": "https://api.fifa.com/api/v3/calendar/matches?idCompetition=17&idSeason=285023&idStage=289273&language=en&count=200",
+      "stableSourceId": "fifa-first-stage-calendar",
+      "sourceRole": "official_third_place_ranking_expected_fixture",
+      "fixedAccessTimestampUtc": "2026-06-28T17:05:00.000Z",
+      "normalizationVersion": "official-expected-verification-v1",
+      "purpose": "Verify finalized third-place ranking rows and Ecuador/Ghana shared rank without fabricating fair-play totals."
+    },
+    {
+      "fixtureFilename": "expected-round-of-32.json",
+      "fixtureSchemaVersion": "world-cup-2026-expected-round-of-32-v1",
+      "semanticChecksum": "a3bd76ca3a5365d7e425c20259e44f6aa4d9a82c36076d29921c5c18ce95075c",
+      "sourceAuthority": "FIFA",
+      "sourceTitle": "FIFA World Cup 2026 full match calendar API, knockout listing",
+      "sourceUrl": "https://api.fifa.com/api/v3/calendar/matches?idCompetition=17&idSeason=285023&language=en&count=200",
+      "stableSourceId": "fifa-full-calendar",
+      "sourceRole": "official_round_of_32_participant_cross_check",
+      "fixedAccessTimestampUtc": "2026-06-28T17:05:00.000Z",
+      "normalizationVersion": "official-expected-verification-v1",
+      "purpose": "Cross-check finalized Round-of-32 participants against the official FIFA full-calendar knockout listing.",
+      "result": "16 Round-of-32 fixtures/participants available",
+      "normalizedSourceChecksum": "0c32fcd1d75c049bf7e909ed17a832d5de6595aed3ebe7bfa88f2cff3265a73f"
+    }
+  ]
 }

@@ -1,0 +1,110 @@
+[
+  {
+    "teamId": "cod",
+    "group": "K",
+    "thirdPlaceRank": 1,
+    "qualified": true,
+    "points": 4,
+    "goalDifference": 1,
+    "goalsFor": 4
+  },
+  {
+    "teamId": "swe",
+    "group": "F",
+    "thirdPlaceRank": 2,
+    "qualified": true,
+    "points": 4,
+    "goalDifference": 0,
+    "goalsFor": 7
+  },
+  {
+    "teamId": "ecu",
+    "group": "E",
+    "thirdPlaceRank": 3,
+    "qualified": true,
+    "points": 4,
+    "goalDifference": 0,
+    "goalsFor": 2
+  },
+  {
+    "teamId": "gha",
+    "group": "L",
+    "thirdPlaceRank": 3,
+    "qualified": true,
+    "points": 4,
+    "goalDifference": 0,
+    "goalsFor": 2
+  },
+  {
+    "teamId": "bih",
+    "group": "B",
+    "thirdPlaceRank": 5,
+    "qualified": true,
+    "points": 4,
+    "goalDifference": -1,
+    "goalsFor": 5
+  },
+  {
+    "teamId": "alg",
+    "group": "J",
+    "thirdPlaceRank": 6,
+    "qualified": true,
+    "points": 4,
+    "goalDifference": -2,
+    "goalsFor": 5
+  },
+  {
+    "teamId": "par",
+    "group": "D",
+    "thirdPlaceRank": 7,
+    "qualified": true,
+    "points": 4,
+    "goalDifference": -2,
+    "goalsFor": 2
+  },
+  {
+    "teamId": "sen",
+    "group": "I",
+    "thirdPlaceRank": 8,
+    "qualified": true,
+    "points": 3,
+    "goalDifference": 2,
+    "goalsFor": 8
+  },
+  {
+    "teamId": "irn",
+    "group": "G",
+    "thirdPlaceRank": 9,
+    "qualified": false,
+    "points": 3,
+    "goalDifference": 0,
+    "goalsFor": 3
+  },
+  {
+    "teamId": "kor",
+    "group": "A",
+    "thirdPlaceRank": 10,
+    "qualified": false,
+    "points": 3,
+    "goalDifference": -1,
+    "goalsFor": 2
+  },
+  {
+    "teamId": "sco",
+    "group": "C",
+    "thirdPlaceRank": 11,
+    "qualified": false,
+    "points": 3,
+    "goalDifference": -3,
+    "goalsFor": 1
+  },
+  {
+    "teamId": "uru",
+    "group": "H",
+    "thirdPlaceRank": 12,
+    "qualified": false,
+    "points": 2,
+    "goalDifference": -1,
+    "goalsFor": 3
+  }
+]

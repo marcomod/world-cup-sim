@@ -1,9 +1,32 @@
 {
   "generatedFileWarning": "Do not edit manually.",
-  "tournamentSnapshotId": "fifa-world-cup-2026",
+  "tournamentSnapshotId": "official-2026-2026-06-28-r1",
   "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
   "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
   "status": "knockout_ready",
-  "generatedAtPolicy": "Deterministic artifact derived from the versioned official snapshot; no wall-clock timestamp is used.",
-  "officialRoundOf32Generated": true
+  "qualificationDecisionResolved": true,
+  "strictEcuadorGhanaOrderingResolved": false,
+  "unresolvedOrderingAffectsTournamentOutput": false,
+  "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+  "qualificationArtifact": {
+    "path": "data/world-cup-2026/snapshots/official-2026-current/qualification.json",
+    "checksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491"
+  },
+  "roundOf32Artifact": {
+    "path": "data/world-cup-2026/snapshots/official-2026-current/round-of-32.json",
+    "checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+  },
+  "ratingLinkageArtifact": {
+    "path": "data/generated/world-cup-2026/official-rating-linkage.json",
+    "checksum": "3b245dd833f9f73824108793025b336877d9073d994f5cce5f9e73e4e6dd236c",
+    "numericRatingChecksum": "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5"
+  },
+  "simulatorInputStatus": "generated",
+  "simulatorInputArtifact": {
+    "path": "data/generated/world-cup-2026/official-simulator-input.json",
+    "checksum": "d3a981a86c13037061994e700301db835ac2a35c5d251a47fb06cbfa4a0bf477"
+  },
+  "noFabricatedFairPlayValues": true,
+  "officialRoundOf32Generated": true,
+  "generatedAtPolicy": "Deterministic artifact derived from checked-in local files; no wall-clock timestamp is used."
 }

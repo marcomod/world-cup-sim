@@ -76,11 +76,23 @@ references the exact tournament snapshot checksum. It can then produce the
 existing simulator-ready bracket through `buildTournamentState` without changing
 simulator logic.
 
-The official snapshot currently returns `official_tie_unresolved`, so official
-bracket integration remains blocked. The UI path remains deferred.
+The official snapshot currently returns `knockout_ready`. Rating linkage is
+recorded separately in
+`data/generated/world-cup-2026/official-rating-linkage.json`, which references
+the tournament snapshot checksum, qualification checksum
+`2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491`, and
+Round-of-32 checksum
+`8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7`. It covers
+all 32 qualifiers exactly once while preserving all 48 rating records in the
+all-team report.
+
+The UI path remains deferred.
 
 The fair-play source-gap review did not produce a new finalized tournament
 snapshot. Therefore the existing rating report remains linked to
-`official-2026-2026-06-28-r1`, and numeric rating values are unchanged. A new
-rating report revision is required only after a verified snapshot revision
-changes the tournament snapshot checksum.
+`official-2026-2026-06-28-r1`, and numeric rating values are unchanged:
+`f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5`. Linkage
+metadata may change as artifacts are added, but this must be distinguished from
+numeric rating changes. A new rating report revision is required only after a
+verified snapshot revision changes the tournament snapshot checksum or rating
+inputs.

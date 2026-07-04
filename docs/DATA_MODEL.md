@@ -159,6 +159,20 @@ The 2026 tournament layer also defines:
   the final `m104`. The current simulator adapter consumes only champion-path
   winner links.
 
+The official 2026 snapshot now has checked-in derived artifacts:
+
+- `data/world-cup-2026/snapshots/official-2026-current/qualification.json`
+- `data/world-cup-2026/snapshots/official-2026-current/round-of-32.json`
+- `data/generated/world-cup-2026/official-rating-linkage.json`
+- `data/generated/world-cup-2026/official-simulator-input.json`
+
+The qualification artifact records `BDEFIJKL`, 32 unique qualifiers, eight
+qualified third-placed teams, and Ecuador/Ghana as a shared-rank equivalence
+group at rank 3. It does not serialize a strict official ordering between them
+and does not include fabricated fair-play totals. The simulator-input artifact
+contains the 31-match champion path with populated `m73`-`m88` openers and
+unresolved later-round participants; the app does not consume it yet.
+
 ⸻
 
 2026 Tournament Snapshot

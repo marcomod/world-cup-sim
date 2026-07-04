@@ -1,0 +1,1279 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "schemaVersion": "world-cup-2026-official-qualification-v1",
+  "artifactVersion": "official-2026-2026-06-28-r1-qualification-r1",
+  "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "status": "knockout_ready",
+  "serializationPolicy": "Rows are emitted in canonical deterministic order only; equal third-place ranks do not imply official ordering.",
+  "groupWinners": [
+    {
+      "qualificationSource": "1A",
+      "group": "A",
+      "teamId": "mex",
+      "displayName": "Mexico",
+      "groupPosition": 1,
+      "points": 9,
+      "goalDifference": 6,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "1B",
+      "group": "B",
+      "teamId": "sui",
+      "displayName": "Switzerland",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 4,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1C",
+      "group": "C",
+      "teamId": "bra",
+      "displayName": "Brazil",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 6,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1D",
+      "group": "D",
+      "teamId": "usa",
+      "displayName": "USA",
+      "groupPosition": 1,
+      "points": 6,
+      "goalDifference": 4,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1E",
+      "group": "E",
+      "teamId": "ger",
+      "displayName": "Germany",
+      "groupPosition": 1,
+      "points": 6,
+      "goalDifference": 6,
+      "goalsFor": 10,
+      "appliedTieBreakers": [
+        "overall_points",
+        "head_to_head_points"
+      ]
+    },
+    {
+      "qualificationSource": "1F",
+      "group": "F",
+      "teamId": "ned",
+      "displayName": "Netherlands",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 6,
+      "goalsFor": 10,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "1G",
+      "group": "G",
+      "teamId": "bel",
+      "displayName": "Belgium",
+      "groupPosition": 1,
+      "points": 5,
+      "goalDifference": 4,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1H",
+      "group": "H",
+      "teamId": "esp",
+      "displayName": "Spain",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 5,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1I",
+      "group": "I",
+      "teamId": "fra",
+      "displayName": "France",
+      "groupPosition": 1,
+      "points": 9,
+      "goalDifference": 8,
+      "goalsFor": 10,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "1J",
+      "group": "J",
+      "teamId": "arg",
+      "displayName": "Argentina",
+      "groupPosition": 1,
+      "points": 9,
+      "goalDifference": 7,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1K",
+      "group": "K",
+      "teamId": "col",
+      "displayName": "Colombia",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 3,
+      "goalsFor": 4,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "1L",
+      "group": "L",
+      "teamId": "eng",
+      "displayName": "England",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 4,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    }
+  ],
+  "groupRunnersUp": [
+    {
+      "qualificationSource": "2A",
+      "group": "A",
+      "teamId": "rsa",
+      "displayName": "South Africa",
+      "groupPosition": 2,
+      "points": 4,
+      "goalDifference": -1,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2B",
+      "group": "B",
+      "teamId": "can",
+      "displayName": "Canada",
+      "groupPosition": 2,
+      "points": 4,
+      "goalDifference": 5,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2C",
+      "group": "C",
+      "teamId": "mar",
+      "displayName": "Morocco",
+      "groupPosition": 2,
+      "points": 7,
+      "goalDifference": 3,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2D",
+      "group": "D",
+      "teamId": "aus",
+      "displayName": "Australia",
+      "groupPosition": 2,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2E",
+      "group": "E",
+      "teamId": "civ",
+      "displayName": "Côte d'Ivoire",
+      "groupPosition": 2,
+      "points": 6,
+      "goalDifference": 2,
+      "goalsFor": 4,
+      "appliedTieBreakers": [
+        "overall_points",
+        "head_to_head_points"
+      ]
+    },
+    {
+      "qualificationSource": "2F",
+      "group": "F",
+      "teamId": "jpn",
+      "displayName": "Japan",
+      "groupPosition": 2,
+      "points": 5,
+      "goalDifference": 4,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2G",
+      "group": "G",
+      "teamId": "egy",
+      "displayName": "Egypt",
+      "groupPosition": 2,
+      "points": 5,
+      "goalDifference": 2,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2H",
+      "group": "H",
+      "teamId": "cpv",
+      "displayName": "Cabo Verde",
+      "groupPosition": 2,
+      "points": 3,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2I",
+      "group": "I",
+      "teamId": "nor",
+      "displayName": "Norway",
+      "groupPosition": 2,
+      "points": 6,
+      "goalDifference": 1,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2J",
+      "group": "J",
+      "teamId": "aut",
+      "displayName": "Austria",
+      "groupPosition": 2,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2K",
+      "group": "K",
+      "teamId": "por",
+      "displayName": "Portugal",
+      "groupPosition": 2,
+      "points": 5,
+      "goalDifference": 5,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2L",
+      "group": "L",
+      "teamId": "cro",
+      "displayName": "Croatia",
+      "groupPosition": 2,
+      "points": 6,
+      "goalDifference": 0,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    }
+  ],
+  "thirdPlacedTeams": [
+    {
+      "group": "K",
+      "teamId": "cod",
+      "displayName": "Congo DR",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 1,
+      "goalsFor": 4,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 1,
+      "qualified": true
+    },
+    {
+      "group": "F",
+      "teamId": "swe",
+      "displayName": "Sweden",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 2,
+      "qualified": true
+    },
+    {
+      "group": "E",
+      "teamId": "ecu",
+      "displayName": "Ecuador",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "head_to_head_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 3,
+      "qualified": true
+    },
+    {
+      "group": "L",
+      "teamId": "gha",
+      "displayName": "Ghana",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 3,
+      "qualified": true
+    },
+    {
+      "group": "B",
+      "teamId": "bih",
+      "displayName": "Bosnia and Herzegovina",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -1,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 5,
+      "qualified": true
+    },
+    {
+      "group": "J",
+      "teamId": "alg",
+      "displayName": "Algeria",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -2,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 6,
+      "qualified": true
+    },
+    {
+      "group": "D",
+      "teamId": "par",
+      "displayName": "Paraguay",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -2,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 7,
+      "qualified": true
+    },
+    {
+      "group": "I",
+      "teamId": "sen",
+      "displayName": "Senegal",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": 2,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 8,
+      "qualified": true
+    },
+    {
+      "group": "G",
+      "teamId": "irn",
+      "displayName": "IR Iran",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": 0,
+      "goalsFor": 3,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 9,
+      "qualified": false
+    },
+    {
+      "group": "A",
+      "teamId": "kor",
+      "displayName": "Korea Republic",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": -1,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 10,
+      "qualified": false
+    },
+    {
+      "group": "C",
+      "teamId": "sco",
+      "displayName": "Scotland",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": -3,
+      "goalsFor": 1,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 11,
+      "qualified": false
+    },
+    {
+      "group": "H",
+      "teamId": "uru",
+      "displayName": "Uruguay",
+      "groupPosition": 3,
+      "points": 2,
+      "goalDifference": -1,
+      "goalsFor": 3,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 12,
+      "qualified": false
+    }
+  ],
+  "thirdPlaceEquivalenceGroups": [
+    {
+      "sharedRank": 3,
+      "teamIds": [
+        "ecu",
+        "gha"
+      ],
+      "groups": [
+        "E",
+        "L"
+      ],
+      "semantics": "not_officially_ordered",
+      "serializationOrder": "canonical_team_id_only",
+      "affectsQualification": false
+    }
+  ],
+  "qualifiedThirdPlacedTeams": [
+    {
+      "group": "K",
+      "teamId": "cod",
+      "displayName": "Congo DR",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 1,
+      "goalsFor": 4,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 1,
+      "qualified": true
+    },
+    {
+      "group": "F",
+      "teamId": "swe",
+      "displayName": "Sweden",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 2,
+      "qualified": true
+    },
+    {
+      "group": "E",
+      "teamId": "ecu",
+      "displayName": "Ecuador",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "head_to_head_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 3,
+      "qualified": true
+    },
+    {
+      "group": "L",
+      "teamId": "gha",
+      "displayName": "Ghana",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 3,
+      "qualified": true
+    },
+    {
+      "group": "B",
+      "teamId": "bih",
+      "displayName": "Bosnia and Herzegovina",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -1,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 5,
+      "qualified": true
+    },
+    {
+      "group": "J",
+      "teamId": "alg",
+      "displayName": "Algeria",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -2,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 6,
+      "qualified": true
+    },
+    {
+      "group": "D",
+      "teamId": "par",
+      "displayName": "Paraguay",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -2,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 7,
+      "qualified": true
+    },
+    {
+      "group": "I",
+      "teamId": "sen",
+      "displayName": "Senegal",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": 2,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 8,
+      "qualified": true
+    }
+  ],
+  "eliminatedThirdPlacedTeams": [
+    {
+      "group": "G",
+      "teamId": "irn",
+      "displayName": "IR Iran",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": 0,
+      "goalsFor": 3,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 9,
+      "qualified": false
+    },
+    {
+      "group": "A",
+      "teamId": "kor",
+      "displayName": "Korea Republic",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": -1,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 10,
+      "qualified": false
+    },
+    {
+      "group": "C",
+      "teamId": "sco",
+      "displayName": "Scotland",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": -3,
+      "goalsFor": 1,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 11,
+      "qualified": false
+    },
+    {
+      "group": "H",
+      "teamId": "uru",
+      "displayName": "Uruguay",
+      "groupPosition": 3,
+      "points": 2,
+      "goalDifference": -1,
+      "goalsFor": 3,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 12,
+      "qualified": false
+    }
+  ],
+  "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+  "qualifiers": [
+    {
+      "qualificationSource": "1A",
+      "group": "A",
+      "teamId": "mex",
+      "displayName": "Mexico",
+      "groupPosition": 1,
+      "points": 9,
+      "goalDifference": 6,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "1B",
+      "group": "B",
+      "teamId": "sui",
+      "displayName": "Switzerland",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 4,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1C",
+      "group": "C",
+      "teamId": "bra",
+      "displayName": "Brazil",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 6,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1D",
+      "group": "D",
+      "teamId": "usa",
+      "displayName": "USA",
+      "groupPosition": 1,
+      "points": 6,
+      "goalDifference": 4,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1E",
+      "group": "E",
+      "teamId": "ger",
+      "displayName": "Germany",
+      "groupPosition": 1,
+      "points": 6,
+      "goalDifference": 6,
+      "goalsFor": 10,
+      "appliedTieBreakers": [
+        "overall_points",
+        "head_to_head_points"
+      ]
+    },
+    {
+      "qualificationSource": "1F",
+      "group": "F",
+      "teamId": "ned",
+      "displayName": "Netherlands",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 6,
+      "goalsFor": 10,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "1G",
+      "group": "G",
+      "teamId": "bel",
+      "displayName": "Belgium",
+      "groupPosition": 1,
+      "points": 5,
+      "goalDifference": 4,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1H",
+      "group": "H",
+      "teamId": "esp",
+      "displayName": "Spain",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 5,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1I",
+      "group": "I",
+      "teamId": "fra",
+      "displayName": "France",
+      "groupPosition": 1,
+      "points": 9,
+      "goalDifference": 8,
+      "goalsFor": 10,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "1J",
+      "group": "J",
+      "teamId": "arg",
+      "displayName": "Argentina",
+      "groupPosition": 1,
+      "points": 9,
+      "goalDifference": 7,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "1K",
+      "group": "K",
+      "teamId": "col",
+      "displayName": "Colombia",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 3,
+      "goalsFor": 4,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "1L",
+      "group": "L",
+      "teamId": "eng",
+      "displayName": "England",
+      "groupPosition": 1,
+      "points": 7,
+      "goalDifference": 4,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2A",
+      "group": "A",
+      "teamId": "rsa",
+      "displayName": "South Africa",
+      "groupPosition": 2,
+      "points": 4,
+      "goalDifference": -1,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2B",
+      "group": "B",
+      "teamId": "can",
+      "displayName": "Canada",
+      "groupPosition": 2,
+      "points": 4,
+      "goalDifference": 5,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2C",
+      "group": "C",
+      "teamId": "mar",
+      "displayName": "Morocco",
+      "groupPosition": 2,
+      "points": 7,
+      "goalDifference": 3,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2D",
+      "group": "D",
+      "teamId": "aus",
+      "displayName": "Australia",
+      "groupPosition": 2,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2E",
+      "group": "E",
+      "teamId": "civ",
+      "displayName": "Côte d'Ivoire",
+      "groupPosition": 2,
+      "points": 6,
+      "goalDifference": 2,
+      "goalsFor": 4,
+      "appliedTieBreakers": [
+        "overall_points",
+        "head_to_head_points"
+      ]
+    },
+    {
+      "qualificationSource": "2F",
+      "group": "F",
+      "teamId": "jpn",
+      "displayName": "Japan",
+      "groupPosition": 2,
+      "points": 5,
+      "goalDifference": 4,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2G",
+      "group": "G",
+      "teamId": "egy",
+      "displayName": "Egypt",
+      "groupPosition": 2,
+      "points": 5,
+      "goalDifference": 2,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2H",
+      "group": "H",
+      "teamId": "cpv",
+      "displayName": "Cabo Verde",
+      "groupPosition": 2,
+      "points": 3,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2I",
+      "group": "I",
+      "teamId": "nor",
+      "displayName": "Norway",
+      "groupPosition": 2,
+      "points": 6,
+      "goalDifference": 1,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2J",
+      "group": "J",
+      "teamId": "aut",
+      "displayName": "Austria",
+      "groupPosition": 2,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference"
+      ]
+    },
+    {
+      "qualificationSource": "2K",
+      "group": "K",
+      "teamId": "por",
+      "displayName": "Portugal",
+      "groupPosition": 2,
+      "points": 5,
+      "goalDifference": 5,
+      "goalsFor": 6,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "2L",
+      "group": "L",
+      "teamId": "cro",
+      "displayName": "Croatia",
+      "groupPosition": 2,
+      "points": 6,
+      "goalDifference": 0,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points"
+      ]
+    },
+    {
+      "qualificationSource": "3K",
+      "group": "K",
+      "teamId": "cod",
+      "displayName": "Congo DR",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 1,
+      "goalsFor": 4,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 1,
+      "qualified": true
+    },
+    {
+      "qualificationSource": "3F",
+      "group": "F",
+      "teamId": "swe",
+      "displayName": "Sweden",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 7,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 2,
+      "qualified": true
+    },
+    {
+      "qualificationSource": "3E",
+      "group": "E",
+      "teamId": "ecu",
+      "displayName": "Ecuador",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "head_to_head_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 3,
+      "qualified": true
+    },
+    {
+      "qualificationSource": "3L",
+      "group": "L",
+      "teamId": "gha",
+      "displayName": "Ghana",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": 0,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 3,
+      "qualified": true
+    },
+    {
+      "qualificationSource": "3B",
+      "group": "B",
+      "teamId": "bih",
+      "displayName": "Bosnia and Herzegovina",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -1,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 5,
+      "qualified": true
+    },
+    {
+      "qualificationSource": "3J",
+      "group": "J",
+      "teamId": "alg",
+      "displayName": "Algeria",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -2,
+      "goalsFor": 5,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 6,
+      "qualified": true
+    },
+    {
+      "qualificationSource": "3D",
+      "group": "D",
+      "teamId": "par",
+      "displayName": "Paraguay",
+      "groupPosition": 3,
+      "points": 4,
+      "goalDifference": -2,
+      "goalsFor": 2,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_goal_difference",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 7,
+      "qualified": true
+    },
+    {
+      "qualificationSource": "3I",
+      "group": "I",
+      "teamId": "sen",
+      "displayName": "Senegal",
+      "groupPosition": 3,
+      "points": 3,
+      "goalDifference": 2,
+      "goalsFor": 8,
+      "appliedTieBreakers": [
+        "overall_points",
+        "overall_points",
+        "overall_goal_difference",
+        "overall_goals_for"
+      ],
+      "thirdPlaceRank": 8,
+      "qualified": true
+    }
+  ],
+  "qualifierCount": 32,
+  "uniqueQualifierCount": 32,
+  "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+  "fairPlay": {
+    "totalsIncluded": false,
+    "fabricatedTotals": false,
+    "sourceStatus": "unavailable_in_reviewed_fifa_sources",
+    "records": []
+  },
+  "tieSemantics": {
+    "ecuadorGhanaSharedRank": 3,
+    "strictEcuadorGhanaOrderingResolved": false,
+    "deterministicFallbackRecorded": false,
+    "teamIdFallbackRecorded": false,
+    "alphabeticalFallbackRecorded": false,
+    "affectsQualification": false
+  },
+  "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491"
+}

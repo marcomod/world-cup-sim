@@ -1,0 +1,95 @@
+{
+  "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "status": "knockout_ready",
+  "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+  "groupWinners": {
+    "A": "mex",
+    "B": "sui",
+    "C": "bra",
+    "D": "usa",
+    "E": "ger",
+    "F": "ned",
+    "G": "bel",
+    "H": "esp",
+    "I": "fra",
+    "J": "arg",
+    "K": "col",
+    "L": "eng"
+  },
+  "groupRunnersUp": {
+    "A": "rsa",
+    "B": "can",
+    "C": "mar",
+    "D": "aus",
+    "E": "civ",
+    "F": "jpn",
+    "G": "egy",
+    "H": "cpv",
+    "I": "nor",
+    "J": "aut",
+    "K": "por",
+    "L": "cro"
+  },
+  "qualifiers": [
+    "mex",
+    "sui",
+    "bra",
+    "usa",
+    "ger",
+    "ned",
+    "bel",
+    "esp",
+    "fra",
+    "arg",
+    "col",
+    "eng",
+    "rsa",
+    "can",
+    "mar",
+    "aus",
+    "civ",
+    "jpn",
+    "egy",
+    "cpv",
+    "nor",
+    "aut",
+    "por",
+    "cro",
+    "cod",
+    "swe",
+    "ecu",
+    "gha",
+    "bih",
+    "alg",
+    "par",
+    "sen"
+  ],
+  "qualifiedThirdPlacedTeams": [
+    "cod",
+    "swe",
+    "ecu",
+    "gha",
+    "bih",
+    "alg",
+    "par",
+    "sen"
+  ],
+  "eliminatedThirdPlacedTeams": [
+    "irn",
+    "kor",
+    "sco",
+    "uru"
+  ],
+  "thirdPlaceEquivalenceGroups": [
+    {
+      "sharedRank": 3,
+      "teamIds": [
+        "ecu",
+        "gha"
+      ],
+      "semantics": "not_officially_ordered",
+      "affectsQualification": false
+    }
+  ]
+}

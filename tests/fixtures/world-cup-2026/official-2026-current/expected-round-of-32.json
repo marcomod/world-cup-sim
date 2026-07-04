@@ -1,0 +1,130 @@
+[
+  {
+    "matchId": "m73",
+    "participantAId": "rsa",
+    "participantBId": "can",
+    "sourceSlots": { "participantA": "2A", "participantB": "2B" },
+    "nextMatchId": "m90",
+    "nextSide": "teamAId"
+  },
+  {
+    "matchId": "m74",
+    "participantAId": "ger",
+    "participantBId": "par",
+    "sourceSlots": { "participantA": "1E", "participantB": "3D" },
+    "nextMatchId": "m89",
+    "nextSide": "teamAId"
+  },
+  {
+    "matchId": "m75",
+    "participantAId": "ned",
+    "participantBId": "mar",
+    "sourceSlots": { "participantA": "1F", "participantB": "2C" },
+    "nextMatchId": "m90",
+    "nextSide": "teamBId"
+  },
+  {
+    "matchId": "m76",
+    "participantAId": "bra",
+    "participantBId": "jpn",
+    "sourceSlots": { "participantA": "1C", "participantB": "2F" },
+    "nextMatchId": "m91",
+    "nextSide": "teamAId"
+  },
+  {
+    "matchId": "m77",
+    "participantAId": "fra",
+    "participantBId": "swe",
+    "sourceSlots": { "participantA": "1I", "participantB": "3F" },
+    "nextMatchId": "m89",
+    "nextSide": "teamBId"
+  },
+  {
+    "matchId": "m78",
+    "participantAId": "civ",
+    "participantBId": "nor",
+    "sourceSlots": { "participantA": "2E", "participantB": "2I" },
+    "nextMatchId": "m91",
+    "nextSide": "teamBId"
+  },
+  {
+    "matchId": "m79",
+    "participantAId": "mex",
+    "participantBId": "ecu",
+    "sourceSlots": { "participantA": "1A", "participantB": "3E" },
+    "nextMatchId": "m92",
+    "nextSide": "teamAId"
+  },
+  {
+    "matchId": "m80",
+    "participantAId": "eng",
+    "participantBId": "cod",
+    "sourceSlots": { "participantA": "1L", "participantB": "3K" },
+    "nextMatchId": "m92",
+    "nextSide": "teamBId"
+  },
+  {
+    "matchId": "m81",
+    "participantAId": "usa",
+    "participantBId": "bih",
+    "sourceSlots": { "participantA": "1D", "participantB": "3B" },
+    "nextMatchId": "m94",
+    "nextSide": "teamAId"
+  },
+  {
+    "matchId": "m82",
+    "participantAId": "bel",
+    "participantBId": "sen",
+    "sourceSlots": { "participantA": "1G", "participantB": "3I" },
+    "nextMatchId": "m94",
+    "nextSide": "teamBId"
+  },
+  {
+    "matchId": "m83",
+    "participantAId": "por",
+    "participantBId": "cro",
+    "sourceSlots": { "participantA": "2K", "participantB": "2L" },
+    "nextMatchId": "m93",
+    "nextSide": "teamAId"
+  },
+  {
+    "matchId": "m84",
+    "participantAId": "esp",
+    "participantBId": "aut",
+    "sourceSlots": { "participantA": "1H", "participantB": "2J" },
+    "nextMatchId": "m93",
+    "nextSide": "teamBId"
+  },
+  {
+    "matchId": "m85",
+    "participantAId": "sui",
+    "participantBId": "alg",
+    "sourceSlots": { "participantA": "1B", "participantB": "3J" },
+    "nextMatchId": "m96",
+    "nextSide": "teamAId"
+  },
+  {
+    "matchId": "m86",
+    "participantAId": "arg",
+    "participantBId": "cpv",
+    "sourceSlots": { "participantA": "1J", "participantB": "2H" },
+    "nextMatchId": "m95",
+    "nextSide": "teamAId"
+  },
+  {
+    "matchId": "m87",
+    "participantAId": "col",
+    "participantBId": "gha",
+    "sourceSlots": { "participantA": "1K", "participantB": "3L" },
+    "nextMatchId": "m96",
+    "nextSide": "teamBId"
+  },
+  {
+    "matchId": "m88",
+    "participantAId": "aus",
+    "participantBId": "egy",
+    "sourceSlots": { "participantA": "2D", "participantB": "2G" },
+    "nextMatchId": "m95",
+    "nextSide": "teamBId"
+  }
+]

@@ -44,9 +44,11 @@ No Wikipedia, score aggregator, betting, or unofficial API data is used as a
 primary source.
 
 Fair-play totals were not available in a stable per-team FIFA source extract.
-They are therefore absent rather than fabricated. If qualification reaches a
-tie that requires fair play, orchestration must return an unresolved official
-tie until a reviewed fair-play source snapshot is added.
+They are therefore absent rather than fabricated. If strict ordering would
+affect qualification membership in a future snapshot, orchestration must return
+an unresolved official tie until a reviewed fair-play source snapshot is added.
+For the current snapshot, Ecuador and Ghana are both inside the qualifying band,
+so the missing strict order does not affect qualification membership.
 
 A later fixed source-gap review is recorded in
 `data/world-cup-2026/raw/official-2026-current/fair-play-source-gap.json` with
@@ -62,18 +64,84 @@ a cross-check while the fair-play values remain unavailable. The conclusion is
 bounded to those reviewed sources and cutoff and is not a claim that official
 fair-play evidence cannot exist elsewhere or later.
 
-That is the current official orchestration state. The group-stage results
-snapshot is complete, but official qualification is unresolved because the
-eighth/ninth third-place cutoff requires fair-play data for Ecuador (`ecu`) and
-Ghana (`gha`). No official Round of 32 artifact is generated from this snapshot.
+That source-gap review remains true for strict Ecuador/Ghana ordering only. The
+group-stage results snapshot is complete and official qualification is resolved:
+Ecuador (`ecu`) and Ghana (`gha`) share third-place rank 3 on available
+criteria, both qualify, and the unresolved strict ordering does not affect
+qualification membership, Annex C, or the Round of 32. No fair-play totals are
+fabricated.
+
+The finalized artifacts for this snapshot are:
+
+- `data/world-cup-2026/snapshots/official-2026-current/qualification.json`
+  with checksum
+  `2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491`.
+- `data/world-cup-2026/snapshots/official-2026-current/round-of-32.json`
+  with checksum
+  `8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7`.
+- `data/generated/world-cup-2026/official-rating-linkage.json` with stable
+  numeric rating checksum
+  `f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5`.
+- `data/generated/world-cup-2026/official-simulator-input.json` with checksum
+  `d3a981a86c13037061994e700301db835ac2a35c5d251a47fb06cbfa4a0bf477`.
 
 ## Build And Verify
 
-Build the artifact:
+Artifact ownership:
+
+- `build-official-snapshot` owns the local official snapshot, checksum,
+  provenance, source manifest, and snapshot README. It rebuilds snapshot-owned
+  files only, then reconstructs `orchestration-status.json` from validated
+  artifact files already on disk.
+- `build-qualification` owns finalized qualification and Round-of-32 artifacts.
+  It updates those links in `orchestration-status.json` and preserves valid
+  rating-linkage and simulator-input links when they already exist.
+- `build-simulator-input` owns finalized rating-linkage and simulator-input
+  artifacts. It updates those links after validating qualification and
+  Round-of-32 linkage.
+- `orchestration-status.json` is a derived index over the current local
+  snapshot and any finalized artifacts that exist. Builders may rewrite it, but
+  only after validating existing finalized artifact files and reconstructing
+  their links. A builder must not downgrade valid links owned by another phase
+  to null just because it did not generate those artifacts. If a downstream
+  artifact file exists but has stale checksum or broken linkage, the builder
+  fails clearly instead of silently erasing the link.
+
+Canonical regeneration:
+
+```bash
+npm run tournament2026:build-finalized-artifacts
+```
+
+This aggregate command runs snapshot, rating, qualification, and simulator-input
+builders in dependency order. The lower-level commands remain useful for focused
+work. The builders are order-safe with finalized artifacts already present, so
+rerunning `build-official-snapshot` or `build-qualification` after
+`build-simulator-input` must preserve the valid rating-linkage and
+simulator-input references.
+
+Build only the local official snapshot:
 
 ```bash
 npm run tournament2026:build-official-snapshot
 ```
+
+Partial-state behavior is deterministic:
+
+- With no finalized artifacts present, orchestration status records no artifact
+  links and `simulatorInputStatus: "not_generated_by_snapshot_builder"`.
+- With qualification only, it records the qualification link and marks simulator
+  input not generated.
+- With qualification and Round of 32, it records both links and marks simulator
+  input not generated.
+- With qualification, Round of 32, and rating linkage, it records those three
+  links and keeps simulator input not generated until the simulator-input file
+  exists.
+- With all finalized artifacts present, it records qualification, Round of 32,
+  rating-linkage, and simulator-input links with their validated checksums.
+
+Absent artifacts are not claimed as generated. Valid generated artifact
+references are not erased when present.
 
 Verify independently:
 
@@ -84,7 +152,7 @@ npm run tournament2026:verify-official-snapshot
 The verifier checks team count, official FIFA names, group count, fixture count,
 match numbers, independent expected fixture rows, source-manifest checksums,
 result consistency, precise access cutoff, derived state, semantic checksum,
-current unresolved fair-play readiness, and absence of synthetic source markers.
+current qualification readiness, and absence of synthetic source markers.
 
 Verify the documented fair-play source gap:
 
@@ -92,14 +160,14 @@ Verify the documented fair-play source gap:
 npm run tournament2026:verify-fair-play-source-gap
 ```
 
-This verifier confirms the source review remains unresolved, Ecuador and Ghana
-fair-play totals remain missing rather than zero, qualification artifacts are
-not generated, and the production divisor remains `400`. It validates exact
+This verifier confirms the source review remains unresolved for strict
+Ecuador/Ghana ordering, Ecuador and Ghana fair-play totals remain missing rather
+than zero, generated artifacts do not fabricate fair-play values, and the
+production divisor remains `400`. It validates exact
 candidate identity, structured insufficiency outcomes, bounded conclusion
 wording, absence of machine-local paths, and direct absence of official
-qualification, Round-of-32, simulator-input, finalized-bracket, and
-knockout-ready artifacts. The all-48-team knockout rating report remains
-allowed because it is not a qualification artifact.
+finalized-bracket and knockout-ready legacy artifacts. The all-48-team knockout
+rating report remains independent of qualification.
 
 Source-gap artifacts must not contain machine-local absolute paths. Official
 HTTP(S) URLs are allowed, but `file://` URLs, Unix absolute paths, Windows drive
@@ -132,17 +200,28 @@ npm run tournament2026:diff-snapshots -- <left.json> <right.json>
 The diff reports semantic changes in teams, groups, fixtures, match status,
 scores, fair play, ranking, source metadata, normalization version, and checksum.
 
+## Build Finalized Artifacts
+
+```bash
+npm run tournament2026:build-qualification
+npm run tournament2026:verify-qualification
+npm run tournament2026:build-simulator-input
+```
+
+The qualification artifact records 32 unique qualifiers. The qualified
+third-placed teams are `cod`, `swe`, `ecu`, `gha`, `bih`, `alg`, `par`, and
+`sen`, giving Annex C key `BDEFIJKL`. The eliminated third-placed teams are
+`irn`, `kor`, `sco`, and `uru`.
+
 ## Deferred UI Wiring
 
 The official snapshot is not wired into React components or the active demo app.
-The demo bracket remains separate. Official bracket UI integration is blocked
-until fair-play data or another official source resolves qualification.
+The demo bracket remains separate. Official bracket UI integration is the next
+phase after these artifacts.
 
 Readiness gate for official UI integration:
 
 - verified official snapshot,
-- verified fair-play source or another official qualification source with
-  sufficient tie-break detail,
 - `knockout_ready` official orchestration without development fallback,
 - exact official Round of 32 verified,
 - rating linkage verified against the finalized snapshot checksum,

@@ -58,9 +58,12 @@ valid. The development fallback is not an official replacement for FIFA ranking
 or other final FIFA decisions.
 
 The current official 2026 source-gap review did not find stable fair-play
-deduction totals or disciplinary events for Ecuador and Ghana. The implementation
-therefore keeps official qualification unresolved rather than treating missing
-records as zero or using development fallback.
+deduction totals or disciplinary events for Ecuador and Ghana. Ecuador and Ghana
+therefore remain strictly unordered on available official criteria, but both
+share third-place rank 3 and both are inside the eight-team qualifying band. The
+unresolved strict order does not affect qualification membership, the qualifying
+third-place group key `BDEFIJKL`, Annex C assignment, or the official Round of
+32. No fair-play totals are fabricated.
 
 Best Third-Placed Teams
 

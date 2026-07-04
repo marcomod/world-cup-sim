@@ -493,7 +493,8 @@ function validateConclusion(
     !conclusion.summary.includes(EXPECTED_ACCESS_TIMESTAMP) ||
     !conclusion.summary.includes("does not affect qualification") ||
     !conclusion.summary.includes("BDEFIJKL") ||
-    !conclusion.summary.includes("artifacts are not generated")
+    !conclusion.summary.includes("may be generated") ||
+    !conclusion.summary.includes("without fabricating fair-play totals")
   ) {
     throw new Error("Fair-play source-gap conclusion summary must be bounded to the reviewed candidates and non-blocking decision.");
   }

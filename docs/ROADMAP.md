@@ -158,14 +158,17 @@ Current product phase:
   and adapted into tournament-domain inputs. The snapshot orchestration path
   can produce group tables, qualification, generated Round of 32, and a
   simulator-ready champion-path bracket from one validated local snapshot.
+- The official 2026 snapshot now resolves to `knockout_ready`. Checked-in
+  qualification, Round-of-32, rating-linkage, and server-safe simulator-input
+  artifacts exist for the `official-2026-2026-06-28-r1` snapshot. Ecuador and
+  Ghana share third-place rank 3; both qualify, and no fair-play totals are
+  fabricated.
 - The existing UI still uses the demo bracket until official group results and
   the generated official bracket are reviewed and wired.
 
 Future product work:
 
-- Add a reviewed official local result snapshot.
-- Refresh the 2026 rating snapshot after the group stage.
-- Wire generated official Round-of-32 brackets into the UI.
+- Wire generated official Round-of-32 and simulator-input artifacts into the UI.
 - Add runtime third-place-match output if the product needs to display `m103`.
 - Add group-stage scenario tools or simulation only after the deterministic
   result-ingestion path is proven.
@@ -257,17 +260,16 @@ and the production Elo divisor remains `400` during this foundation work.
 Current World Cup 2026 tournament-domain status:
 
 - Completed: official tournament domain, local snapshot schema, local
-  deterministic ingestion, snapshot orchestration, and source-backed official
-  local snapshot construction.
-- Current: official fair-play source gap documented with seven stable reviewed
-  FIFA candidate IDs and structured insufficiency outcomes; FIFA-ranking
-  tie-break input and knockout rating refresh policy reviewed; official
-  qualification still unresolved because Ecuador/Ghana fair-play totals are not
-  sourced.
-- Next: UI integration using the official snapshot, group-table presentation,
-  official Round-of-32 bracket replacement after fair-play/qualification
-  resolution, post-result snapshot update workflow, future live-data adapter,
-  and deployment monitoring.
+  deterministic ingestion, snapshot orchestration, source-backed official local
+  snapshot construction, finalized qualification, Round-of-32, rating-linkage,
+  and simulator-input artifacts.
+- Current: official fair-play source gap remains documented for strict
+  Ecuador/Ghana ordering only; that unresolved ordering does not affect
+  `BDEFIJKL`, the Round of 32, ratings, simulator input, or production divisor
+  `400`.
+- Next: UI integration using the official artifacts, group-table presentation,
+  post-result snapshot update workflow, future live-data adapter, and deployment
+  monitoring.
 
 ⸻
 

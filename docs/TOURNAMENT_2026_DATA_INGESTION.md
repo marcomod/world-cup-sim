@@ -63,7 +63,7 @@ Supported States
 - No results are required.
 - Fair-play and FIFA-ranking records may be absent.
 - Standings can be calculated as zero-state tables.
-- Qualification is blocked.
+- Qualification is not attempted.
 
 `group_stage_in_progress`
 
@@ -71,7 +71,7 @@ Supported States
 - At least one fixture is completed and at least one is scheduled.
 - Completed fixtures require results.
 - Scheduled fixtures forbid results.
-- Qualification is blocked.
+- Qualification is not attempted until all group fixtures are complete.
 
 `group_stage_complete`
 
@@ -162,7 +162,8 @@ counts. They exit before qualification, Annex C assignment, Round-of-32
 generation, and simulator-bracket adaptation. Completed snapshots return
 `knockout_ready` when official tie
 resolution succeeds. If official mode reaches a tie that lacks required
-fair-play or FIFA-ranking data, the result is `official_tie_unresolved`.
+fair-play or FIFA-ranking data and the unresolved order affects qualification
+membership, the result is an unresolved official tie.
 
 Synthetic Fixtures
 
@@ -183,11 +184,12 @@ checked-in normalized FIFA source extracts and verified by a separate script.
 Runtime network calls remain out of scope, and the snapshot is not wired into
 the UI yet.
 
-The factual group-stage snapshot is complete, but official qualification is not
-currently resolved. The official orchestration status is
-`official_tie_unresolved` because Ecuador (`ecu`) and Ghana (`gha`) require
-fair-play data at the eighth/ninth third-place cutoff. No official Round of 32
-artifact is generated yet.
+The factual group-stage snapshot is complete and official qualification is
+resolved as `knockout_ready`. Ecuador (`ecu`) and Ghana (`gha`) share
+third-place rank 3 on available criteria. Both qualify, and their unresolved
+strict ordering does not affect the top-eight third-place set, Annex C key
+`BDEFIJKL`, Round-of-32 participants, or simulator input. No fair-play totals
+are fabricated.
 
 A fixed fair-play source-gap review is tracked at
 `data/world-cup-2026/raw/official-2026-current/fair-play-source-gap.json`. It
@@ -199,13 +201,13 @@ with fair-play tie-break details for Ecuador and Ghana. A populated FIFA
 Round-of-32 calendar listing was available as a cross-check, but it is not a
 substitute for reviewed fair-play deductions when the implementation is
 specifically ingesting fair-play data. The verifier checks the exact candidate
-manifest and directly verifies that official qualification, Round-of-32, and
-simulator-input artifacts remain absent while the source gap is unresolved.
+manifest and directly verifies that generated qualification, Round-of-32, and
+simulator-input artifacts do not add fair-play totals or a deterministic
+Ecuador/Ghana ordering.
 
 Remaining Work
 
-- Add reviewed official fair-play data or another official qualification source.
-- Wire the app to consume a reviewed local snapshot only after official qualification resolves.
+- Wire the app to consume the reviewed qualification, Round-of-32, rating-linkage,
+  and simulator-input artifacts.
 - Add live ingestion adapters only after the local snapshot contract is proven.
-- Review and, if accepted, wire the generated knockout rating snapshot.
 - Replace the demo bracket after official knockout qualifiers are confirmed.

@@ -188,9 +188,9 @@
     "qualificationDecisionResolved": true,
     "roundOf32Resolvable": true,
     "simulatorInputResolvable": true,
-    "qualificationArtifactGenerated": false,
-    "roundOf32ArtifactGenerated": false,
-    "simulatorInputArtifactGenerated": false,
+    "qualificationArtifactGenerated": true,
+    "roundOf32ArtifactGenerated": true,
+    "simulatorInputArtifactGenerated": true,
     "strictThirdPlaceOrderingResolved": false,
     "unresolvedOrderingAffectsTournamentDecision": false,
     "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
@@ -212,6 +212,6 @@
     "limitedToReviewedFifaCandidates": true,
     "notUniversalNoEvidenceClaim": true,
     "futureOfficialEvidenceMayResolveOrdering": true,
-    "summary": "No usable official fair-play evidence was found in the seven reviewed FIFA candidates as of 2026-06-28T17:05:00.000Z. This is limited to the reviewed candidates and does not claim no official evidence exists anywhere; the missing Ecuador/Ghana ordering does not affect qualification membership, qualifying group set BDEFIJKL, Annex C, or Round-of-32 participants. Finalized checked-in qualification, Round-of-32, and simulator-input artifacts are not generated in this source-gap artifact."
+    "summary": "No usable official fair-play evidence was found in the seven reviewed FIFA candidates as of 2026-06-28T17:05:00.000Z. This is limited to the reviewed candidates and does not claim no official evidence exists anywhere; the missing Ecuador/Ghana ordering does not affect qualification membership, qualifying group set BDEFIJKL, Annex C, Round-of-32 participants, or simulator input. Finalized checked-in qualification, Round-of-32, and simulator-input artifacts may be generated from those resolved membership decisions without fabricating fair-play totals."
   }
 }

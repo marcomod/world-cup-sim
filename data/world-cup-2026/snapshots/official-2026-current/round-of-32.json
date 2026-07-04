@@ -1,0 +1,753 @@
+{
+  "generatedFileWarning": "Do not edit manually.",
+  "schemaVersion": "world-cup-2026-official-round-of-32-v1",
+  "artifactVersion": "official-2026-2026-06-28-r1-round-of-32-r1",
+  "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+  "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+  "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+  "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+  "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+  "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+  "matchCount": 16,
+  "uniqueParticipantCount": 32,
+  "matches": [
+    {
+      "matchId": "m73",
+      "participantAId": "rsa",
+      "participantBId": "can",
+      "participantADisplayName": "South Africa",
+      "participantBDisplayName": "Canada",
+      "participantA": {
+        "teamId": "rsa",
+        "displayName": "South Africa",
+        "sourceSlot": "2A",
+        "groupPositionSource": {
+          "group": "A",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "can",
+        "displayName": "Canada",
+        "sourceSlot": "2B",
+        "groupPositionSource": {
+          "group": "B",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "sourceSlots": {
+        "participantA": "2A",
+        "participantB": "2B"
+      },
+      "nextMatchId": "m90",
+      "nextSide": "teamAId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m74",
+      "participantAId": "ger",
+      "participantBId": "par",
+      "participantADisplayName": "Germany",
+      "participantBDisplayName": "Paraguay",
+      "participantA": {
+        "teamId": "ger",
+        "displayName": "Germany",
+        "sourceSlot": "1E",
+        "groupPositionSource": {
+          "group": "E",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "par",
+        "displayName": "Paraguay",
+        "sourceSlot": "3D",
+        "groupPositionSource": {
+          "group": "D",
+          "position": 3
+        },
+        "annexCSource": {
+          "assignmentKey": "third_vs_1E",
+          "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+          "sourceLabel": "3A/B/C/D/F",
+          "eligibleGroups": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "F"
+          ],
+          "assignedGroup": "D"
+        }
+      },
+      "sourceSlots": {
+        "participantA": "1E",
+        "participantB": "3D"
+      },
+      "nextMatchId": "m89",
+      "nextSide": "teamAId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m75",
+      "participantAId": "ned",
+      "participantBId": "mar",
+      "participantADisplayName": "Netherlands",
+      "participantBDisplayName": "Morocco",
+      "participantA": {
+        "teamId": "ned",
+        "displayName": "Netherlands",
+        "sourceSlot": "1F",
+        "groupPositionSource": {
+          "group": "F",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "mar",
+        "displayName": "Morocco",
+        "sourceSlot": "2C",
+        "groupPositionSource": {
+          "group": "C",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "sourceSlots": {
+        "participantA": "1F",
+        "participantB": "2C"
+      },
+      "nextMatchId": "m90",
+      "nextSide": "teamBId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m76",
+      "participantAId": "bra",
+      "participantBId": "jpn",
+      "participantADisplayName": "Brazil",
+      "participantBDisplayName": "Japan",
+      "participantA": {
+        "teamId": "bra",
+        "displayName": "Brazil",
+        "sourceSlot": "1C",
+        "groupPositionSource": {
+          "group": "C",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "jpn",
+        "displayName": "Japan",
+        "sourceSlot": "2F",
+        "groupPositionSource": {
+          "group": "F",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "sourceSlots": {
+        "participantA": "1C",
+        "participantB": "2F"
+      },
+      "nextMatchId": "m91",
+      "nextSide": "teamAId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m77",
+      "participantAId": "fra",
+      "participantBId": "swe",
+      "participantADisplayName": "France",
+      "participantBDisplayName": "Sweden",
+      "participantA": {
+        "teamId": "fra",
+        "displayName": "France",
+        "sourceSlot": "1I",
+        "groupPositionSource": {
+          "group": "I",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "swe",
+        "displayName": "Sweden",
+        "sourceSlot": "3F",
+        "groupPositionSource": {
+          "group": "F",
+          "position": 3
+        },
+        "annexCSource": {
+          "assignmentKey": "third_vs_1I",
+          "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+          "sourceLabel": "3C/D/F/G/H",
+          "eligibleGroups": [
+            "C",
+            "D",
+            "F",
+            "G",
+            "H"
+          ],
+          "assignedGroup": "F"
+        }
+      },
+      "sourceSlots": {
+        "participantA": "1I",
+        "participantB": "3F"
+      },
+      "nextMatchId": "m89",
+      "nextSide": "teamBId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m78",
+      "participantAId": "civ",
+      "participantBId": "nor",
+      "participantADisplayName": "Côte d'Ivoire",
+      "participantBDisplayName": "Norway",
+      "participantA": {
+        "teamId": "civ",
+        "displayName": "Côte d'Ivoire",
+        "sourceSlot": "2E",
+        "groupPositionSource": {
+          "group": "E",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "nor",
+        "displayName": "Norway",
+        "sourceSlot": "2I",
+        "groupPositionSource": {
+          "group": "I",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "sourceSlots": {
+        "participantA": "2E",
+        "participantB": "2I"
+      },
+      "nextMatchId": "m91",
+      "nextSide": "teamBId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m79",
+      "participantAId": "mex",
+      "participantBId": "ecu",
+      "participantADisplayName": "Mexico",
+      "participantBDisplayName": "Ecuador",
+      "participantA": {
+        "teamId": "mex",
+        "displayName": "Mexico",
+        "sourceSlot": "1A",
+        "groupPositionSource": {
+          "group": "A",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "ecu",
+        "displayName": "Ecuador",
+        "sourceSlot": "3E",
+        "groupPositionSource": {
+          "group": "E",
+          "position": 3
+        },
+        "annexCSource": {
+          "assignmentKey": "third_vs_1A",
+          "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+          "sourceLabel": "3C/E/F/H/I",
+          "eligibleGroups": [
+            "C",
+            "E",
+            "F",
+            "H",
+            "I"
+          ],
+          "assignedGroup": "E"
+        }
+      },
+      "sourceSlots": {
+        "participantA": "1A",
+        "participantB": "3E"
+      },
+      "nextMatchId": "m92",
+      "nextSide": "teamAId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m80",
+      "participantAId": "eng",
+      "participantBId": "cod",
+      "participantADisplayName": "England",
+      "participantBDisplayName": "Congo DR",
+      "participantA": {
+        "teamId": "eng",
+        "displayName": "England",
+        "sourceSlot": "1L",
+        "groupPositionSource": {
+          "group": "L",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "cod",
+        "displayName": "Congo DR",
+        "sourceSlot": "3K",
+        "groupPositionSource": {
+          "group": "K",
+          "position": 3
+        },
+        "annexCSource": {
+          "assignmentKey": "third_vs_1L",
+          "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+          "sourceLabel": "3E/H/I/J/K",
+          "eligibleGroups": [
+            "E",
+            "H",
+            "I",
+            "J",
+            "K"
+          ],
+          "assignedGroup": "K"
+        }
+      },
+      "sourceSlots": {
+        "participantA": "1L",
+        "participantB": "3K"
+      },
+      "nextMatchId": "m92",
+      "nextSide": "teamBId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m81",
+      "participantAId": "usa",
+      "participantBId": "bih",
+      "participantADisplayName": "USA",
+      "participantBDisplayName": "Bosnia and Herzegovina",
+      "participantA": {
+        "teamId": "usa",
+        "displayName": "USA",
+        "sourceSlot": "1D",
+        "groupPositionSource": {
+          "group": "D",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "bih",
+        "displayName": "Bosnia and Herzegovina",
+        "sourceSlot": "3B",
+        "groupPositionSource": {
+          "group": "B",
+          "position": 3
+        },
+        "annexCSource": {
+          "assignmentKey": "third_vs_1D",
+          "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+          "sourceLabel": "3B/E/F/I/J",
+          "eligibleGroups": [
+            "B",
+            "E",
+            "F",
+            "I",
+            "J"
+          ],
+          "assignedGroup": "B"
+        }
+      },
+      "sourceSlots": {
+        "participantA": "1D",
+        "participantB": "3B"
+      },
+      "nextMatchId": "m94",
+      "nextSide": "teamAId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m82",
+      "participantAId": "bel",
+      "participantBId": "sen",
+      "participantADisplayName": "Belgium",
+      "participantBDisplayName": "Senegal",
+      "participantA": {
+        "teamId": "bel",
+        "displayName": "Belgium",
+        "sourceSlot": "1G",
+        "groupPositionSource": {
+          "group": "G",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "sen",
+        "displayName": "Senegal",
+        "sourceSlot": "3I",
+        "groupPositionSource": {
+          "group": "I",
+          "position": 3
+        },
+        "annexCSource": {
+          "assignmentKey": "third_vs_1G",
+          "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+          "sourceLabel": "3A/E/H/I/J",
+          "eligibleGroups": [
+            "A",
+            "E",
+            "H",
+            "I",
+            "J"
+          ],
+          "assignedGroup": "I"
+        }
+      },
+      "sourceSlots": {
+        "participantA": "1G",
+        "participantB": "3I"
+      },
+      "nextMatchId": "m94",
+      "nextSide": "teamBId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m83",
+      "participantAId": "por",
+      "participantBId": "cro",
+      "participantADisplayName": "Portugal",
+      "participantBDisplayName": "Croatia",
+      "participantA": {
+        "teamId": "por",
+        "displayName": "Portugal",
+        "sourceSlot": "2K",
+        "groupPositionSource": {
+          "group": "K",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "cro",
+        "displayName": "Croatia",
+        "sourceSlot": "2L",
+        "groupPositionSource": {
+          "group": "L",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "sourceSlots": {
+        "participantA": "2K",
+        "participantB": "2L"
+      },
+      "nextMatchId": "m93",
+      "nextSide": "teamAId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m84",
+      "participantAId": "esp",
+      "participantBId": "aut",
+      "participantADisplayName": "Spain",
+      "participantBDisplayName": "Austria",
+      "participantA": {
+        "teamId": "esp",
+        "displayName": "Spain",
+        "sourceSlot": "1H",
+        "groupPositionSource": {
+          "group": "H",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "aut",
+        "displayName": "Austria",
+        "sourceSlot": "2J",
+        "groupPositionSource": {
+          "group": "J",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "sourceSlots": {
+        "participantA": "1H",
+        "participantB": "2J"
+      },
+      "nextMatchId": "m93",
+      "nextSide": "teamBId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m85",
+      "participantAId": "sui",
+      "participantBId": "alg",
+      "participantADisplayName": "Switzerland",
+      "participantBDisplayName": "Algeria",
+      "participantA": {
+        "teamId": "sui",
+        "displayName": "Switzerland",
+        "sourceSlot": "1B",
+        "groupPositionSource": {
+          "group": "B",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "alg",
+        "displayName": "Algeria",
+        "sourceSlot": "3J",
+        "groupPositionSource": {
+          "group": "J",
+          "position": 3
+        },
+        "annexCSource": {
+          "assignmentKey": "third_vs_1B",
+          "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+          "sourceLabel": "3E/F/G/I/J",
+          "eligibleGroups": [
+            "E",
+            "F",
+            "G",
+            "I",
+            "J"
+          ],
+          "assignedGroup": "J"
+        }
+      },
+      "sourceSlots": {
+        "participantA": "1B",
+        "participantB": "3J"
+      },
+      "nextMatchId": "m96",
+      "nextSide": "teamAId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m86",
+      "participantAId": "arg",
+      "participantBId": "cpv",
+      "participantADisplayName": "Argentina",
+      "participantBDisplayName": "Cabo Verde",
+      "participantA": {
+        "teamId": "arg",
+        "displayName": "Argentina",
+        "sourceSlot": "1J",
+        "groupPositionSource": {
+          "group": "J",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "cpv",
+        "displayName": "Cabo Verde",
+        "sourceSlot": "2H",
+        "groupPositionSource": {
+          "group": "H",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "sourceSlots": {
+        "participantA": "1J",
+        "participantB": "2H"
+      },
+      "nextMatchId": "m95",
+      "nextSide": "teamAId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m87",
+      "participantAId": "col",
+      "participantBId": "gha",
+      "participantADisplayName": "Colombia",
+      "participantBDisplayName": "Ghana",
+      "participantA": {
+        "teamId": "col",
+        "displayName": "Colombia",
+        "sourceSlot": "1K",
+        "groupPositionSource": {
+          "group": "K",
+          "position": 1
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "gha",
+        "displayName": "Ghana",
+        "sourceSlot": "3L",
+        "groupPositionSource": {
+          "group": "L",
+          "position": 3
+        },
+        "annexCSource": {
+          "assignmentKey": "third_vs_1K",
+          "qualifyingThirdPlaceGroupKey": "BDEFIJKL",
+          "sourceLabel": "3D/E/I/J/L",
+          "eligibleGroups": [
+            "D",
+            "E",
+            "I",
+            "J",
+            "L"
+          ],
+          "assignedGroup": "L"
+        }
+      },
+      "sourceSlots": {
+        "participantA": "1K",
+        "participantB": "3L"
+      },
+      "nextMatchId": "m96",
+      "nextSide": "teamBId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    },
+    {
+      "matchId": "m88",
+      "participantAId": "aus",
+      "participantBId": "egy",
+      "participantADisplayName": "Australia",
+      "participantBDisplayName": "Egypt",
+      "participantA": {
+        "teamId": "aus",
+        "displayName": "Australia",
+        "sourceSlot": "2D",
+        "groupPositionSource": {
+          "group": "D",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "participantB": {
+        "teamId": "egy",
+        "displayName": "Egypt",
+        "sourceSlot": "2G",
+        "groupPositionSource": {
+          "group": "G",
+          "position": 2
+        },
+        "annexCSource": null
+      },
+      "sourceSlots": {
+        "participantA": "2D",
+        "participantB": "2G"
+      },
+      "nextMatchId": "m95",
+      "nextSide": "teamBId",
+      "tournamentSnapshotId": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotVersion": "official-2026-2026-06-28-r1",
+      "tournamentSnapshotChecksum": "1e7d0c321be1905f652d3103baf88b911d327ff4ea02c6ea11fe7f6002a0d8f7",
+      "qualificationChecksum": "2a4d4864b42c0b52bb49e5a872f2d2292d0d23316f62f49b37d883089e753491",
+      "annexCChecksum": "98d8210db1b57ed9837e183e68fc03dc1f3faf2fcc3198e2ac7d341775651e42",
+      "topologyChecksum": "2f9b0165b349387b3ff989a782de8328d32334c8b735656638f4a3b6558e23df",
+      "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+    }
+  ],
+  "roundOf32Checksum": "8fa685fb4b11fe1703c2af7b3d89e53353983779baaf0e3766c65691945d97f7"
+}

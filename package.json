@@ -20,7 +20,11 @@
     "tournament2026:verify-official-snapshot": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/verifyOfficialSnapshot.ts",
     "tournament2026:verify-fair-play-source-gap": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/verifyFairPlaySourceGap.ts",
     "tournament2026:diff-snapshots": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/diffSnapshots.ts",
-    "tournament2026:build-knockout-ratings": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/buildKnockoutRatings.ts"
+    "tournament2026:build-knockout-ratings": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/buildKnockoutRatings.ts",
+    "tournament2026:build-qualification": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/buildOfficialQualification.ts",
+    "tournament2026:verify-qualification": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/verifyOfficialQualification.ts",
+    "tournament2026:build-simulator-input": "node --no-warnings --loader ./scripts/tournament-2026/tsPathAliasLoader.mjs --experimental-strip-types scripts/tournament-2026/buildOfficialSimulatorInput.ts",
+    "tournament2026:build-finalized-artifacts": "npm run tournament2026:build-official-snapshot && npm run tournament2026:build-knockout-ratings && npm run tournament2026:build-qualification && npm run tournament2026:build-simulator-input"
   },
   "dependencies": {
     "next": "16.2.9",
