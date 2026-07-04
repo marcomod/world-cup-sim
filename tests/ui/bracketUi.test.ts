@@ -79,6 +79,20 @@ function getOfficialMatchRowMarkup(markup: string, matchId: string): string {
   return match[1];
 }
 
+function getOfficialKnockoutStatusRowMarkup(markup: string, matchId: string): string {
+  const match = markup.match(
+    new RegExp(
+      `<tr[^>]*data-official-knockout-match-id="${matchId}"[^>]*>([\\s\\S]*?)</tr>`,
+    ),
+  );
+
+  if (!match) {
+    throw new Error(`Missing official knockout status row for ${matchId}.`);
+  }
+
+  return match[1];
+}
+
 function createOfficialKnockoutStatusFixtureMarkup(
   matches: typeof officialTournamentUiData.knockoutStatusMatches,
 ): string {
@@ -364,12 +378,78 @@ describe("official tournament UI integration", () => {
     }
   });
 
-  it("records the current empty knockout source state without blocking future official results", () => {
+  it("records the current official Round-of-32 results and future pending state", () => {
+    const completedRows = officialTournamentUiData.knockoutStatusMatches.filter(
+      (match) => match.statusTone === "completed",
+    );
+    const pendingRows = officialTournamentUiData.knockoutStatusMatches.filter(
+      (match) => match.statusTone === "pending",
+    );
+
     expect(officialTournamentUiData.knockoutStatusSummary).toEqual({
-      completedCount: 0,
-      pendingCount: 32,
+      completedCount: 16,
+      pendingCount: 16,
       totalCount: 32,
     });
+    expect(completedRows.map((match) => match.id)).toEqual(
+      Array.from({ length: 16 }, (_, index) => `m${index + 73}`),
+    );
+    expect(pendingRows.map((match) => match.id)).toEqual(
+      Array.from({ length: 16 }, (_, index) => `m${index + 89}`),
+    );
+    expect(pendingRows.every((match) => match.scoreLabel === "No official score")).toBe(true);
+    expect(pendingRows.every((match) => match.winnerLabel === "Not official")).toBe(true);
+  });
+
+  it("renders official completed Round-of-32 scores and winners", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+    const canadaRow = getOfficialKnockoutStatusRowMarkup(markup, "m73");
+    const mexicoRow = getOfficialKnockoutStatusRowMarkup(markup, "m79");
+    const colombiaRow = getOfficialKnockoutStatusRowMarkup(markup, "m87");
+    const egyptRow = getOfficialKnockoutStatusRowMarkup(markup, "m88");
+
+    expect(canadaRow).toContain("South Africa");
+    expect(canadaRow).toContain("Canada");
+    expect(canadaRow).toContain("Official completed");
+    expect(canadaRow).toContain("0-1");
+    expect(canadaRow).toContain("Canada");
+
+    expect(mexicoRow).toContain("Mexico");
+    expect(mexicoRow).toContain("Ecuador");
+    expect(mexicoRow).toContain("2-0");
+    expect(mexicoRow).toContain("Mexico");
+
+    expect(colombiaRow).toContain("Colombia");
+    expect(colombiaRow).toContain("Ghana");
+    expect(colombiaRow).toContain("1-0");
+    expect(colombiaRow).toContain("Colombia");
+
+    expect(egyptRow).toContain("Australia");
+    expect(egyptRow).toContain("Egypt");
+    expect(egyptRow).toContain("1-1 (2-4 pens)");
+    expect(egyptRow).toContain("Egypt");
+  });
+
+  it("renders future official knockout matches as pending without fabricated scores", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+    const roundOf16Rows = officialTournamentUiData.knockoutStatusMatches.filter(
+      (match) => match.id >= "m89" && match.id <= "m96",
+    );
+    const m89Row = getOfficialKnockoutStatusRowMarkup(markup, "m89");
+    const m90Row = getOfficialKnockoutStatusRowMarkup(markup, "m90");
+
+    expect(roundOf16Rows).toHaveLength(8);
+    expect(roundOf16Rows.every((match) => match.statusTone === "pending")).toBe(true);
+    expect(roundOf16Rows.every((match) => match.scoreLabel === "No official score")).toBe(true);
+    expect(roundOf16Rows.every((match) => match.winnerLabel === "Not official")).toBe(true);
+    expect(m89Row).toContain("Paraguay");
+    expect(m89Row).toContain("France");
+    expect(m89Row).toContain("Pending official");
+    expect(m89Row).toContain("No official score");
+    expect(m89Row).toContain("Not official");
+    expect(m90Row).toContain("Canada");
+    expect(m90Row).toContain("Morocco");
+    expect(m90Row).not.toMatch(/\d-\d/);
   });
 
   it("formats a controlled pending official knockout row", () => {
@@ -507,6 +587,10 @@ describe("official tournament UI integration", () => {
       artifactVersion: "official-2026-2026-06-28-r1-simulator-input-r1",
       checksum: "d3a981a86c13037061994e700301db835ac2a35c5d251a47fb06cbfa4a0bf477",
     });
+    expect(traceabilityRowsByLabel.get("Knockout results")).toMatchObject({
+      artifactVersion: "official-2026-2026-06-28-r1-knockout-results-r1",
+      checksum: "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1",
+    });
     expect(traceabilityRowsByLabel.get("Numeric ratings")).toMatchObject({
       id: "world-cup-2026-knockout-ratings",
       artifactVersion: "official-2026-2026-06-28-r1-ratings-r1",
@@ -539,6 +623,9 @@ describe("official tournament UI integration", () => {
     );
     expect(markup).toContain(
       "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5",
+    );
+    expect(markup).toContain(
+      "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1",
     );
     expect(markup).toContain("BDEFIJKL");
   });

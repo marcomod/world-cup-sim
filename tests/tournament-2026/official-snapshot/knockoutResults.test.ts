@@ -40,8 +40,225 @@ function clone<T>(value: T): T {
 
 const qualification = readJson<QualificationArtifact>(OFFICIAL_QUALIFICATION_ARTIFACT_FILE);
 const roundOf32 = readJson<RoundArtifact>(OFFICIAL_ROUND_OF_32_ARTIFACT_FILE);
-const emptySource = readJson<KnockoutResultsSource>(OFFICIAL_KNOCKOUT_RESULTS_SOURCE_FILE);
+const knockoutSource = readJson<KnockoutResultsSource>(OFFICIAL_KNOCKOUT_RESULTS_SOURCE_FILE);
 const simulatorInput = readJson<SimulatorInputArtifact>(OFFICIAL_SIMULATOR_INPUT_ARTIFACT_FILE);
+
+const expectedCompletedRoundOf32Results: KnockoutResultSourceEntry[] = [
+  {
+    matchId: "m73",
+    participantAId: "rsa",
+    participantBId: "can",
+    score: {
+      participantAGoals: 0,
+      participantBGoals: 1,
+      decidedBy: "regular_time",
+    },
+    winnerId: "can",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m74",
+    participantAId: "ger",
+    participantBId: "par",
+    score: {
+      participantAGoals: 1,
+      participantBGoals: 1,
+      decidedBy: "penalties",
+      participantAPenalties: 3,
+      participantBPenalties: 4,
+    },
+    winnerId: "par",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m75",
+    participantAId: "ned",
+    participantBId: "mar",
+    score: {
+      participantAGoals: 1,
+      participantBGoals: 1,
+      decidedBy: "penalties",
+      participantAPenalties: 2,
+      participantBPenalties: 3,
+    },
+    winnerId: "mar",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m76",
+    participantAId: "bra",
+    participantBId: "jpn",
+    score: {
+      participantAGoals: 2,
+      participantBGoals: 1,
+      decidedBy: "regular_time",
+    },
+    winnerId: "bra",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m77",
+    participantAId: "fra",
+    participantBId: "swe",
+    score: {
+      participantAGoals: 3,
+      participantBGoals: 0,
+      decidedBy: "regular_time",
+    },
+    winnerId: "fra",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m78",
+    participantAId: "civ",
+    participantBId: "nor",
+    score: {
+      participantAGoals: 1,
+      participantBGoals: 2,
+      decidedBy: "regular_time",
+    },
+    winnerId: "nor",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m79",
+    participantAId: "mex",
+    participantBId: "ecu",
+    score: {
+      participantAGoals: 2,
+      participantBGoals: 0,
+      decidedBy: "regular_time",
+    },
+    winnerId: "mex",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m80",
+    participantAId: "eng",
+    participantBId: "cod",
+    score: {
+      participantAGoals: 2,
+      participantBGoals: 1,
+      decidedBy: "regular_time",
+    },
+    winnerId: "eng",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m81",
+    participantAId: "usa",
+    participantBId: "bih",
+    score: {
+      participantAGoals: 2,
+      participantBGoals: 0,
+      decidedBy: "regular_time",
+    },
+    winnerId: "usa",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m82",
+    participantAId: "bel",
+    participantBId: "sen",
+    score: {
+      participantAGoals: 3,
+      participantBGoals: 2,
+      decidedBy: "extra_time",
+    },
+    winnerId: "bel",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m83",
+    participantAId: "por",
+    participantBId: "cro",
+    score: {
+      participantAGoals: 2,
+      participantBGoals: 1,
+      decidedBy: "regular_time",
+    },
+    winnerId: "por",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m84",
+    participantAId: "esp",
+    participantBId: "aut",
+    score: {
+      participantAGoals: 3,
+      participantBGoals: 0,
+      decidedBy: "regular_time",
+    },
+    winnerId: "esp",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m85",
+    participantAId: "sui",
+    participantBId: "alg",
+    score: {
+      participantAGoals: 2,
+      participantBGoals: 0,
+      decidedBy: "regular_time",
+    },
+    winnerId: "sui",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m86",
+    participantAId: "arg",
+    participantBId: "cpv",
+    score: {
+      participantAGoals: 3,
+      participantBGoals: 2,
+      decidedBy: "extra_time",
+    },
+    winnerId: "arg",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m87",
+    participantAId: "col",
+    participantBId: "gha",
+    score: {
+      participantAGoals: 1,
+      participantBGoals: 0,
+      decidedBy: "regular_time",
+    },
+    winnerId: "col",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m88",
+    participantAId: "aus",
+    participantBId: "egy",
+    score: {
+      participantAGoals: 1,
+      participantBGoals: 1,
+      decidedBy: "penalties",
+      participantAPenalties: 2,
+      participantBPenalties: 4,
+    },
+    winnerId: "egy",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+];
 
 const m73Result: KnockoutResultSourceEntry = {
   matchId: "m73",
@@ -76,7 +293,7 @@ function buildWithResults(results: KnockoutResultSourceEntry[]): KnockoutResults
     qualification,
     roundOf32,
     source: {
-      ...emptySource,
+      ...knockoutSource,
       results,
     },
   });
@@ -89,33 +306,125 @@ function ratingsByTeamId(): RatingsByTeamId {
 }
 
 describe("official knockout results artifact", () => {
-  it("builds and verifies the checked-in empty source as all pending", () => {
-    const artifact = buildWithResults([]);
+  it("builds and verifies the checked-in source with completed Round-of-32 results", () => {
+    const artifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
+    const verification = verifyKnockoutResults();
 
-    expect(artifact.completedMatchCount).toBe(0);
-    expect(artifact.pendingMatchCount).toBe(32);
-    expect(artifact.completedMatches).toEqual([]);
-    expect(artifact.pendingMatches.map((match) => match.matchId)).toEqual(
-      Array.from({ length: 32 }, (_, index) => `m${index + 73}`),
+    expect(knockoutSource.results).toHaveLength(16);
+    expect(artifact.completedMatchCount).toBe(16);
+    expect(artifact.pendingMatchCount).toBe(16);
+    expect(artifact.resultChecksum).toBe(
+      "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1",
     );
-    expect(artifact.pendingMatches.find((match) => match.matchId === "m73")).toMatchObject({
+    expect(artifact.completedMatches.map((match) => match.matchId)).toEqual(
+      Array.from({ length: 16 }, (_, index) => `m${index + 73}`),
+    );
+    expect(artifact.pendingMatches.map((match) => match.matchId)).toEqual(
+      Array.from({ length: 16 }, (_, index) => `m${index + 89}`),
+    );
+    expect(artifact.pendingMatches.find((match) => match.matchId === "m90")).toMatchObject({
       knownParticipants: {
-        participantA: { teamId: "rsa" },
-        participantB: { teamId: "can" },
+        participantA: { teamId: "can" },
+        participantB: { teamId: "mar" },
       },
       unresolvedParticipantSlots: {},
     });
-    expect(artifact.pendingMatches.find((match) => match.matchId === "m90")).toMatchObject({
-      unresolvedParticipantSlots: {
-        participantA: "winner of m73",
-        participantB: "winner of m75",
-      },
+
+    for (const pending of artifact.pendingMatches) {
+      expect(pending.status).toBe("pending");
+      expect("score" in pending).toBe(false);
+      expect("winnerId" in pending).toBe(false);
+    }
+
+    expect(verification).toMatchObject({
+      completedMatchCount: 16,
+      pendingMatchCount: 16,
+      resultChecksum: "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1",
     });
-    expect(verifyKnockoutResults()).toMatchObject({
-      completedMatchCount: 0,
-      pendingMatchCount: 32,
-      resultChecksum: artifact.resultChecksum,
+  });
+
+  it("records the exact official Round-of-32 results in the source and generated artifact", () => {
+    const artifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
+    const sourceResultsById = new Map(knockoutSource.results.map((result) => [result.matchId, result]));
+    const completedById = new Map(artifact.completedMatches.map((match) => [match.matchId, match]));
+
+    expect(knockoutSource.results.map((result) => result.matchId)).toEqual(
+      expectedCompletedRoundOf32Results.map((result) => result.matchId),
+    );
+
+    for (const expected of expectedCompletedRoundOf32Results) {
+      expect(sourceResultsById.get(expected.matchId)).toEqual(expected);
+      expect(completedById.get(expected.matchId)).toMatchObject({
+        matchId: expected.matchId,
+        participantA: { teamId: expected.participantAId },
+        participantB: { teamId: expected.participantBId },
+        score: expected.score,
+        winnerId: expected.winnerId,
+        resultStatus: "official_final",
+      });
+    }
+  });
+
+  it("propagates Round-of-32 winners into pending Round-of-16 slots without future scores", () => {
+    const artifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
+    const pendingById = new Map(artifact.pendingMatches.map((match) => [match.matchId, match]));
+    const roundOf16 = artifact.pendingMatches.filter((match) => match.round === "round_of_16");
+    const roundOf16TeamIds = new Set(
+      roundOf16.flatMap((match) => [
+        match.knownParticipants.participantA?.teamId,
+        match.knownParticipants.participantB?.teamId,
+      ]).filter((teamId): teamId is string => teamId !== undefined),
+    );
+
+    expect(roundOf16.map((match) => match.matchId)).toEqual([
+      "m89",
+      "m90",
+      "m91",
+      "m92",
+      "m93",
+      "m94",
+      "m95",
+      "m96",
+    ]);
+    expect(
+      Object.fromEntries(
+        roundOf16.map((match) => [
+          match.matchId,
+          [
+            match.knownParticipants.participantA?.teamId,
+            match.knownParticipants.participantB?.teamId,
+          ],
+        ]),
+      ),
+    ).toEqual({
+      m89: ["par", "fra"],
+      m90: ["can", "mar"],
+      m91: ["bra", "nor"],
+      m92: ["mex", "eng"],
+      m93: ["por", "esp"],
+      m94: ["usa", "bel"],
+      m95: ["arg", "egy"],
+      m96: ["sui", "col"],
     });
+
+    for (const completed of artifact.completedMatches) {
+      const routing = completed.nextMatchRouting.find((route) => route.outcome === "winner");
+      expect(routing).toBeDefined();
+      expect(routing?.toMatchId).toMatch(/^m(?:89|9[0-6])$/);
+      const nextMatch = pendingById.get(String(routing?.toMatchId));
+      expect(nextMatch).toBeDefined();
+      expect(nextMatch?.round).toBe("round_of_16");
+      const side = routing?.toSlot === "teamAId" ? "participantA" : "participantB";
+      expect(nextMatch?.knownParticipants[side]?.teamId).toBe(completed.winnerId);
+      expect(roundOf16TeamIds.has(completed.loserId)).toBe(false);
+    }
+
+    for (const pending of roundOf16) {
+      expect(pending.status).toBe("pending");
+      expect(pending.unresolvedParticipantSlots).toEqual({});
+      expect("score" in pending).toBe(false);
+      expect("winnerId" in pending).toBe(false);
+    }
   });
 
   it("accepts a completed official result and propagates the winner to the routed next match side", () => {
@@ -219,7 +528,7 @@ describe("official knockout results artifact", () => {
         qualification,
         roundOf32,
         source: {
-          ...emptySource,
+          ...knockoutSource,
           topologyChecksum: "0".repeat(64),
           results: [],
         },
@@ -245,7 +554,7 @@ describe("official knockout results artifact", () => {
       verifyKnockoutResultsArtifacts({
         qualification,
         roundOf32,
-        source: { ...emptySource, results: [m73Result] },
+        source: { ...knockoutSource, results: [m73Result] },
         artifact: fabricatedPending,
       }),
     ).toThrow(/semantics/);
@@ -260,7 +569,7 @@ describe("official knockout results artifact", () => {
       verifyKnockoutResultsArtifacts({
         qualification,
         roundOf32,
-        source: { ...emptySource, results: [m73Result] },
+        source: { ...knockoutSource, results: [m73Result] },
         artifact: wrongRouting,
       }),
     ).toThrow(/semantics/);
@@ -275,21 +584,21 @@ describe("official knockout results artifact", () => {
   });
 
   it("passes verification only for the exact canonical generated artifact bytes", () => {
-    const artifact = buildWithResults([]);
+    const artifact = buildWithResults(knockoutSource.results);
     const canonicalText = stableJson(artifact);
 
     expect(() =>
       verifyKnockoutResultsArtifacts({
         qualification,
         roundOf32,
-        source: emptySource,
+        source: knockoutSource,
         artifactText: canonicalText,
       }),
     ).not.toThrow();
   });
 
   it("rejects semantic-equivalent raw artifact text when object keys are reordered", () => {
-    const artifact = buildWithResults([]);
+    const artifact = buildWithResults(knockoutSource.results);
     const reordered = {
       schemaVersion: artifact.schemaVersion,
       generatedFileWarning: artifact.generatedFileWarning,
@@ -301,20 +610,20 @@ describe("official knockout results artifact", () => {
       verifyKnockoutResultsArtifacts({
         qualification,
         roundOf32,
-        source: emptySource,
+        source: knockoutSource,
         artifactText: stableJson(reordered),
       }),
     ).toThrow(/raw bytes differ.*regenerate/i);
   });
 
   it("rejects semantic-equivalent raw artifact text when whitespace is not canonical", () => {
-    const artifact = buildWithResults([]);
+    const artifact = buildWithResults(knockoutSource.results);
 
     expect(() =>
       verifyKnockoutResultsArtifacts({
         qualification,
         roundOf32,
-        source: emptySource,
+        source: knockoutSource,
         artifactText: `${JSON.stringify(artifact, null, 4)}\n`,
       }),
     ).toThrow(/raw bytes differ.*regenerate/i);
