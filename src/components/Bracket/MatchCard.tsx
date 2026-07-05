@@ -19,7 +19,9 @@ export function MatchCard({ match }: MatchCardProps) {
             {match.id}
           </span>
           <span className="min-w-0 truncate text-[9px] font-semibold uppercase tracking-[0.08em] text-[#a8afb9]">
-            {match.decisionLabel ?? match.statusLabel}
+            {match.decisionLabel
+              ? `${match.statusLabel} · ${match.decisionLabel}`
+              : match.statusLabel}
           </span>
         </div>
 

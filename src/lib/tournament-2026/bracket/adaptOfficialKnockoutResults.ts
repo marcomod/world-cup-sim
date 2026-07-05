@@ -1,8 +1,10 @@
+import { runMonteCarloAccounting } from "@/src/lib/simulator/monteCarlo";
 import { simulateMatch } from "@/src/lib/simulator/simulateMatch";
 import type {
   BracketSimulationOptions,
   Match,
   MatchScore,
+  MonteCarloResult,
   RatingsByTeamId,
   RNG,
   TeamId,
@@ -54,6 +56,13 @@ export interface MixedOfficialSimulatorMatch extends Match {
 export interface KnockoutResultsForSimulator {
   completedMatches: CompletedKnockoutArtifactMatch[];
   pendingMatches: PendingKnockoutArtifactMatch[];
+}
+
+export interface MixedOfficialMonteCarloOptions {
+  matches: readonly MixedOfficialSimulatorMatch[];
+  ratingsByTeamId: RatingsByTeamId;
+  simulationCount: number;
+  rng: RNG;
 }
 
 function toSimulatorScore(score: KnockoutArtifactScore): MatchScore {
@@ -165,4 +174,13 @@ export function simulateMixedOfficialBracket(
     championId: finalMatch.winnerId,
     matches: simulatedMatches,
   };
+}
+
+export function runMixedOfficialMonteCarlo(
+  options: MixedOfficialMonteCarloOptions,
+): MonteCarloResult {
+  return runMonteCarloAccounting({
+    ...options,
+    simulateTournament: simulateMixedOfficialBracket,
+  });
 }

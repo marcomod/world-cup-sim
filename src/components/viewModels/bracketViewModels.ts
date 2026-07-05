@@ -52,6 +52,11 @@ export type PlayableMatch = Match & {
   winnerId?: undefined;
 };
 
+type MixedOfficialLikeMatch = Match & {
+  officialResultLocked?: boolean;
+  mixedOfficialStatus?: "official_completed" | "pending_simulation";
+};
+
 export function isPlayableMatch(match: Match): match is PlayableMatch {
   return match.teamAId !== null && match.teamBId !== null && !match.winnerId;
 }
@@ -98,10 +103,7 @@ export function createMatchCardViewModel(
     teamBScoreLabel: match.score ? String(match.score.teamBGoals) : null,
     scorelineLabel: formatScoreline(match),
     decisionLabel: match.score ? formatDecisionLabel(match.score.decidedBy) : null,
-    resultDetailLabel:
-      match.score && match.winnerId
-        ? `Winner: ${getTeamDisplayName(match.winnerId, teamsById)} · ${formatDecisionLabel(match.score.decidedBy)}`
-        : null,
+    resultDetailLabel: getResultDetailLabel(match, teamsById),
     accessibleLabel: formatAccessibleMatchLabel(
       match,
       teamAName,
@@ -136,7 +138,7 @@ export function createChampionViewModel(
     isKnown: true,
     teamName,
     flagPath: getTeamFlagPath(championId),
-    statusLabel: "Tournament winner",
+    statusLabel: "Simulation projection",
   };
 }
 
@@ -167,6 +169,18 @@ function createMatchupOddsRow(
 }
 
 function getMatchStatusLabel(match: Match, teamsById: TeamsById): string {
+  if (isMixedOfficialMatch(match)) {
+    if (match.mixedOfficialStatus === "official_completed") {
+      return "Official completed";
+    }
+
+    if (match.winnerId) {
+      return "Simulation projection";
+    }
+
+    return "Pending official";
+  }
+
   if (match.winnerId) {
     return `Winner: ${getTeamDisplayName(match.winnerId, teamsById)}`;
   }
@@ -176,6 +190,28 @@ function getMatchStatusLabel(match: Match, teamsById: TeamsById): string {
   }
 
   return "Ready";
+}
+
+function getResultDetailLabel(match: Match, teamsById: TeamsById): string | null {
+  if (!match.score || !match.winnerId) {
+    return null;
+  }
+
+  const winnerLabel = `Winner: ${getTeamDisplayName(match.winnerId, teamsById)}`;
+  const decisionLabel = formatDecisionLabel(match.score.decidedBy);
+
+  if (isMixedOfficialMatch(match)) {
+    return `${getMatchStatusLabel(match, teamsById)}: ${winnerLabel} · ${decisionLabel}`;
+  }
+
+  return `${winnerLabel} · ${decisionLabel}`;
+}
+
+function isMixedOfficialMatch(match: Match): match is MixedOfficialLikeMatch {
+  return (
+    "mixedOfficialStatus" in match &&
+    (match as MixedOfficialLikeMatch).mixedOfficialStatus !== undefined
+  );
 }
 
 function formatScoreline(match: Match): string | null {
@@ -211,9 +247,12 @@ function formatAccessibleMatchLabel(
   const parts = [`${match.id}: ${teamAName} vs ${teamBName}.`];
 
   if (match.winnerId) {
+    if (isMixedOfficialMatch(match)) {
+      parts.push(`${getMatchStatusLabel(match, teamsById)}.`);
+    }
     parts.push(`Winner: ${getTeamDisplayName(match.winnerId, teamsById)}.`);
   } else {
-    parts.push("Not simulated.");
+    parts.push(`${getMatchStatusLabel(match, teamsById)}.`);
   }
 
   if (match.score) {

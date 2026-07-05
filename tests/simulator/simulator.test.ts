@@ -7,7 +7,10 @@ import {
   teamRatingsV2ByTeamId,
   teamRatingsV2SourceMetadata,
 } from "@/src/data/teamRatingsV2";
-import { runMonteCarlo } from "@/src/lib/simulator/monteCarlo";
+import {
+  runMonteCarlo,
+  runMonteCarloAccounting,
+} from "@/src/lib/simulator/monteCarlo";
 import {
   calculateMatchupProbability,
   calculateWinProbabilityFromOverall,
@@ -405,6 +408,25 @@ describe("Monte Carlo", () => {
     });
 
     expect(resultA).toEqual(resultB);
+  });
+
+  it("keeps baseline Monte Carlo on the shared odds accounting path", () => {
+    const directResult = runMonteCarlo({
+      matches: cloneInitialBracket(),
+      ratingsByTeamId: teamRatingsV2ByTeamId,
+      simulationCount: 100,
+      rng: createSeededRng(305),
+    });
+    const sharedAccountingResult = runMonteCarloAccounting({
+      matches: cloneInitialBracket(),
+      ratingsByTeamId: teamRatingsV2ByTeamId,
+      simulationCount: 100,
+      rng: createSeededRng(305),
+      simulateTournament: (matches, ratingsByTeamId, rng) =>
+        simulateBracket([...matches], ratingsByTeamId, rng),
+    });
+
+    expect(directResult).toEqual(sharedAccountingResult);
   });
 
   it("remains scoreless", () => {

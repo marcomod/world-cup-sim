@@ -3,6 +3,7 @@ import roundOf32ArtifactJson from "@/data/world-cup-2026/snapshots/official-2026
 import knockoutResultsArtifactJson from "@/data/world-cup-2026/snapshots/official-2026-current/knockout-results.json";
 import ratingLinkageArtifactJson from "@/data/generated/world-cup-2026/official-rating-linkage.json";
 import simulatorInputArtifactJson from "@/data/generated/world-cup-2026/official-simulator-input.json";
+import type { Match, Team } from "@/src/lib/simulator/types";
 
 interface OfficialParticipant {
   teamId: string;
@@ -99,8 +100,8 @@ interface OfficialSimulatorInputArtifact {
   openingRoundMatchCount: number;
   championPathMatchCount: number;
   laterRoundsStatus: string;
-  matches: Array<{
-    id: string;
+  matches: Array<Match & {
+    simulatorInputChecksum: string;
   }>;
   simulatorInputChecksum: string;
 }
@@ -241,12 +242,35 @@ const ratingLinkageArtifact =
 const simulatorInputArtifact =
   simulatorInputArtifactJson as OfficialSimulatorInputArtifact;
 
+export const officialKnockoutResultsForSimulator = {
+  completedMatches: knockoutResultsArtifact.completedMatches,
+  pendingMatches: knockoutResultsArtifact.pendingMatches,
+};
+
+export const officialSimulatorInputMatches: Match[] =
+  simulatorInputArtifact.matches.map((match) => ({
+    id: match.id,
+    round: match.round,
+    teamAId: match.teamAId,
+    teamBId: match.teamBId,
+    nextMatchId: match.nextMatchId,
+    nextSlot: match.nextSlot,
+  }));
+
 const teamNameById = new Map<string, string>();
 
 for (const match of roundOf32Artifact.matches) {
   teamNameById.set(match.participantA.teamId, match.participantADisplayName);
   teamNameById.set(match.participantB.teamId, match.participantBDisplayName);
 }
+
+export const officialTournamentTeams: Team[] = Array.from(teamNameById.entries())
+  .sort(([leftTeamId], [rightTeamId]) => leftTeamId.localeCompare(rightTeamId))
+  .map(([teamId, name]) => ({
+    id: teamId,
+    name,
+    abbreviation: teamId.toUpperCase(),
+  }));
 
 const ratingByTeamId = new Map<string, OfficialRatingRecord>(
   ratingLinkageArtifact.qualifiedTeamRatings.map((rating) => [

@@ -2,10 +2,12 @@ export { generateRoundOf32 } from "./generateRoundOf32";
 export { adaptRoundOf32ToSimulatorBracket } from "./adaptToSimulatorBracket";
 export {
   prepareMixedOfficialSimulatorBracket,
+  runMixedOfficialMonteCarlo,
   simulateMixedOfficialBracket,
 } from "./adaptOfficialKnockoutResults";
 export type {
   KnockoutResultsForSimulator,
+  MixedOfficialMonteCarloOptions,
   MixedOfficialMatchStatus,
   MixedOfficialSimulatorMatch,
 } from "./adaptOfficialKnockoutResults";

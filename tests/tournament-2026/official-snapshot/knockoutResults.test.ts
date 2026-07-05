@@ -18,8 +18,11 @@ import {
 import { stableJson } from "@/scripts/tournament-2026/stableJson";
 import {
   prepareMixedOfficialSimulatorBracket,
+  runMixedOfficialMonteCarlo,
   simulateMixedOfficialBracket,
 } from "@/src/lib/tournament-2026/bracket";
+import { runMonteCarloAccounting } from "@/src/lib/simulator/monteCarlo";
+import { createSeededRng } from "@/src/lib/simulator/rng";
 import type { Match, RatingsByTeamId } from "@/src/lib/simulator/types";
 
 type QualificationArtifact = Parameters<typeof buildKnockoutResultsArtifact>[0]["qualification"];
@@ -631,6 +634,176 @@ describe("official knockout results artifact", () => {
 });
 
 describe("mixed official knockout simulator adapter", () => {
+  it("starts the current-state sandbox from locked official Round-of-32 winners and propagated Round-of-16 fixtures", () => {
+    const currentArtifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
+    const mixed = prepareMixedOfficialSimulatorBracket(
+      simulatorInput.matches,
+      currentArtifact,
+    );
+    const matchesById = new Map(mixed.map((match) => [match.id, match]));
+    const completedById = new Map(
+      currentArtifact.completedMatches.map((match) => [match.matchId, match]),
+    );
+    const officialLoserIds = new Set(
+      currentArtifact.completedMatches.map((match) => match.loserId),
+    );
+
+    for (let matchNumber = 73; matchNumber <= 88; matchNumber += 1) {
+      const matchId = `m${matchNumber}`;
+      const completed = completedById.get(matchId);
+
+      expect(completed).toBeDefined();
+      expect(matchesById.get(matchId)).toMatchObject({
+        officialResultLocked: true,
+        mixedOfficialStatus: "official_completed",
+        winnerId: completed?.winnerId,
+        score: {
+          teamAGoals: completed?.score.participantAGoals,
+          teamBGoals: completed?.score.participantBGoals,
+          decidedBy: completed?.score.decidedBy,
+        },
+      });
+    }
+
+    expect(
+      Object.fromEntries(
+        mixed
+          .filter((match) => match.round === "round_of_16")
+          .map((match) => [match.id, [match.teamAId, match.teamBId]]),
+      ),
+    ).toEqual({
+      m89: ["par", "fra"],
+      m90: ["can", "mar"],
+      m91: ["bra", "nor"],
+      m92: ["mex", "eng"],
+      m93: ["por", "esp"],
+      m94: ["usa", "bel"],
+      m95: ["arg", "egy"],
+      m96: ["sui", "col"],
+    });
+
+    for (const match of mixed.filter((match) => match.round !== "round_of_32")) {
+      expect(officialLoserIds.has(String(match.teamAId))).toBe(false);
+      expect(officialLoserIds.has(String(match.teamBId))).toBe(false);
+    }
+  });
+
+  it("simulates only pending current-state matches without overwriting official completed results", () => {
+    const currentArtifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
+    const mixed = prepareMixedOfficialSimulatorBracket(
+      simulatorInput.matches,
+      currentArtifact,
+    );
+    const result = simulateMixedOfficialBracket(
+      mixed,
+      ratingsByTeamId(),
+      createSeededRng(20260704),
+      {
+        includeScoreline: true,
+        scoreRng: createSeededRng(20260705),
+      },
+    );
+    const projectedById = new Map(result.matches.map((match) => [match.id, match]));
+    const officialLoserIds = new Set(
+      currentArtifact.completedMatches.map((match) => match.loserId),
+    );
+
+    for (const completed of currentArtifact.completedMatches) {
+      expect(projectedById.get(completed.matchId)).toMatchObject({
+        officialResultLocked: true,
+        mixedOfficialStatus: "official_completed",
+        winnerId: completed.winnerId,
+        score: {
+          teamAGoals: completed.score.participantAGoals,
+          teamBGoals: completed.score.participantBGoals,
+          decidedBy: completed.score.decidedBy,
+        },
+      });
+    }
+
+    for (const matchId of [
+      "m89",
+      "m90",
+      "m91",
+      "m92",
+      "m93",
+      "m94",
+      "m95",
+      "m96",
+      "m97",
+      "m98",
+      "m99",
+      "m100",
+      "m101",
+      "m102",
+      "m104",
+    ]) {
+      const match = projectedById.get(matchId);
+
+      expect(match).toMatchObject({
+        officialResultLocked: false,
+        mixedOfficialStatus: "pending_simulation",
+      });
+      expect(match?.winnerId).toEqual(expect.any(String));
+    }
+
+    for (const match of result.matches.filter((match) => match.round !== "round_of_32")) {
+      expect(officialLoserIds.has(String(match.teamAId))).toBe(false);
+      expect(officialLoserIds.has(String(match.teamBId))).toBe(false);
+      expect(officialLoserIds.has(String(match.winnerId))).toBe(false);
+    }
+
+    expect(projectedById.get("m97")?.teamAId).toBe(projectedById.get("m89")?.winnerId);
+    expect(projectedById.get("m97")?.teamBId).toBe(projectedById.get("m90")?.winnerId);
+    expect(result.championId).toEqual(projectedById.get("m104")?.winnerId);
+  });
+
+  it("counts current-state tournament odds with official Round-of-32 winners locked", () => {
+    const currentArtifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
+    const mixed = prepareMixedOfficialSimulatorBracket(
+      simulatorInput.matches,
+      currentArtifact,
+    );
+    const result = runMixedOfficialMonteCarlo({
+      matches: mixed,
+      ratingsByTeamId: ratingsByTeamId(),
+      simulationCount: 4,
+      rng: { next: () => 0 },
+    });
+    const oddsByTeamId = new Map(result.teamOdds.map((row) => [row.teamId, row]));
+
+    expect(result.simulationCount).toBe(4);
+    expect(oddsByTeamId.get("can")?.roundOf16Probability).toBe(1);
+    expect(oddsByTeamId.get("rsa")?.roundOf16Probability).toBe(0);
+    expect(oddsByTeamId.get("rsa")?.championProbability).toBe(0);
+    expect(
+      result.teamOdds.some((row) => row.championProbability > 0),
+    ).toBe(true);
+  });
+
+  it("uses shared Monte Carlo accounting with the mixed-official simulator", () => {
+    const currentArtifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
+    const mixed = prepareMixedOfficialSimulatorBracket(
+      simulatorInput.matches,
+      currentArtifact,
+    );
+    const mixedOfficialResult = runMixedOfficialMonteCarlo({
+      matches: mixed,
+      ratingsByTeamId: ratingsByTeamId(),
+      simulationCount: 50,
+      rng: createSeededRng(20260706),
+    });
+    const sharedAccountingResult = runMonteCarloAccounting({
+      matches: mixed,
+      ratingsByTeamId: ratingsByTeamId(),
+      simulationCount: 50,
+      rng: createSeededRng(20260706),
+      simulateTournament: simulateMixedOfficialBracket,
+    });
+
+    expect(mixedOfficialResult).toEqual(sharedAccountingResult);
+  });
+
   it("locks completed official winners while leaving pending matches simulatable", () => {
     const lockedCanada = buildWithResults([
       {

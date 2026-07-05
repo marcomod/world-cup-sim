@@ -5,7 +5,14 @@ import { describe, expect, it } from "vitest";
 import { Bracket } from "@/src/components/Bracket/Bracket";
 import { ChampionPanel } from "@/src/components/Bracket/ChampionPanel";
 import { MatchCard } from "@/src/components/Bracket/MatchCard";
-import { WorldCupSimulator } from "@/src/components/WorldCupSimulator";
+import {
+  createBaselineBracketSimulationState,
+  createBaselineMonteCarloState,
+  createCurrentStateBracketSimulationState,
+  createCurrentStateMonteCarloState,
+  getSimulationSandboxCopy,
+  WorldCupSimulator,
+} from "@/src/components/WorldCupSimulator";
 import {
   createChampionViewModel,
   createMatchCardViewModel,
@@ -91,6 +98,65 @@ function getOfficialKnockoutStatusRowMarkup(markup: string, matchId: string): st
   }
 
   return match[1];
+}
+
+function getBracketMatchMarkup(markup: string, matchId: string): string {
+  const match = markup.match(
+    new RegExp(
+      `<article[^>]*data-match-id="${matchId}"[^>]*>([\\s\\S]*?)</article>`,
+    ),
+  );
+
+  if (!match) {
+    throw new Error(`Missing bracket match card for ${matchId}.`);
+  }
+
+  return match[1];
+}
+
+function getMatchById(matches: Match[], matchId: string): Match {
+  const match = matches.find((candidate) => candidate.id === matchId);
+
+  if (!match) {
+    throw new Error(`Missing match ${matchId}.`);
+  }
+
+  return match;
+}
+
+function getRoundOf32LoserIds(matches: Match[]): Set<string> {
+  return new Set(
+    matches
+      .filter((match) => match.round === "round_of_32")
+      .flatMap((match) =>
+        [match.teamAId, match.teamBId].filter(
+          (teamId): teamId is string =>
+            teamId !== null && teamId !== match.winnerId,
+        ),
+      ),
+  );
+}
+
+function expectNoRoundOf32LosersInLaterVisibleMatches(matches: Match[]) {
+  const loserIds = getRoundOf32LoserIds(matches);
+
+  for (const match of matches.filter((candidate) => candidate.round !== "round_of_32")) {
+    expect(loserIds.has(String(match.teamAId))).toBe(false);
+    expect(loserIds.has(String(match.teamBId))).toBe(false);
+    expect(loserIds.has(String(match.winnerId))).toBe(false);
+  }
+}
+
+function findBaselineSimulationWithOfficialM73LoserAdvancing() {
+  for (let seed = 1; seed <= 1_000; seed += 1) {
+    const state = createBaselineBracketSimulationState(seed);
+
+    if (getMatchById(state.matches, "m73").winnerId === "rsa") {
+      return state;
+    }
+  }
+
+  throw new Error("Could not find a deterministic baseline simulation with South Africa advancing from m73.");
 }
 
 function createOfficialKnockoutStatusFixtureMarkup(
@@ -328,7 +394,9 @@ describe("official tournament UI integration", () => {
 
     expect(markup).toContain("Official tournament bracket/data");
     expect(markup).toContain("Simulation sandbox");
-    expect(markup).toContain("Simulation projections shown here are sandbox outputs");
+    expect(markup).toContain("Current official state simulation");
+    expect(markup).toContain("Official completed means a real result");
+    expect(markup).toContain("Simulation projection means");
   });
 
   it("labels official knockout completed, pending, and sandbox projection states distinctly", () => {
@@ -345,7 +413,7 @@ describe("official tournament UI integration", () => {
       markup.match(/data-official-knockout-status="pending"/g) ?? [];
 
     expect(markup).toContain("Official knockout result status");
-    expect(markup).toContain("Simulation projections");
+    expect(markup).toContain("Simulation projection");
     expect(completedRows).toHaveLength(
       officialTournamentUiData.knockoutStatusSummary.completedCount,
     );
@@ -549,13 +617,138 @@ describe("official tournament UI integration", () => {
     expect(markup).not.toContain("fair-play total");
   });
 
-  it("keeps the simulator sandbox controls and demo bracket available", () => {
+  it("keeps the main simulator sandbox on current official state and labels baseline separately", () => {
     const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
 
-    expect(markup).toContain("Simulate One Bracket");
-    expect(markup).toContain("Run 10,000 Simulations");
-    expect(markup).toContain('data-match-id="r32-1"');
-    expect(markup).toContain("Demo bracket");
+    expect(markup).toContain("Simulate Current State");
+    expect(markup).toContain("Run 10,000 Current-State Simulations");
+    expect(markup).toContain("Baseline: Ignore Official Results");
+    expect(markup).toContain("Run 10,000 Baseline Simulations");
+    expect(markup).toContain("Current-state simulation");
+    expect(markup).toContain('data-match-id="m73"');
+    expect(markup).toContain('data-match-id="m104"');
+    expect(markup).not.toContain('data-match-id="r32-1"');
+    expect(markup).not.toContain("Demo bracket");
+  });
+
+  it("derives sandbox heading and explanatory copy from the active mode", () => {
+    expect(getSimulationSandboxCopy("current_official_state")).toEqual({
+      modeLabel: "Current-state simulation",
+      heading: "Current official state simulation",
+      description:
+        "Official completed matches are locked from the knockout-results artifact, completed winners are propagated into the Round of 16, and pending official fixtures are simulated from the current bracket state.",
+      oddsDescription:
+        "Based on current-state simulations after locking official completed knockout results.",
+    });
+    expect(getSimulationSandboxCopy("baseline")).toEqual({
+      modeLabel: "Baseline simulation",
+      heading: "Baseline simulation",
+      description:
+        "Baseline simulations start from the original Round-of-32 simulator input and ignore official knockout results.",
+      oddsDescription:
+        "Based on baseline simulations from the original Round-of-32 simulator input; official knockout results are ignored.",
+    });
+  });
+
+  it("renders current-state Round-of-16 sandbox matchups from propagated official winners", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+
+    expect(getBracketMatchMarkup(markup, "m89")).toContain("Paraguay");
+    expect(getBracketMatchMarkup(markup, "m89")).toContain("France");
+    expect(getBracketMatchMarkup(markup, "m90")).toContain("Canada");
+    expect(getBracketMatchMarkup(markup, "m90")).toContain("Morocco");
+    expect(getBracketMatchMarkup(markup, "m91")).toContain("Brazil");
+    expect(getBracketMatchMarkup(markup, "m91")).toContain("Norway");
+    expect(getBracketMatchMarkup(markup, "m96")).toContain("Switzerland");
+    expect(getBracketMatchMarkup(markup, "m96")).toContain("Colombia");
+    expect(getBracketMatchMarkup(markup, "m89")).toContain("Pending official");
+    expect(getBracketMatchMarkup(markup, "m73")).toContain("Official completed");
+    expect(getBracketMatchMarkup(markup, "m73")).toContain("0");
+    expect(getBracketMatchMarkup(markup, "m73")).toContain("1");
+  });
+
+  it("resets visible baseline bracket state when current-state Monte Carlo runs", () => {
+    const staleBaselineState =
+      findBaselineSimulationWithOfficialM73LoserAdvancing();
+    const currentState = createCurrentStateMonteCarloState(20260705);
+    const currentOddsByTeamId = new Map(
+      currentState.monteCarloResult?.teamOdds.map((row) => [row.teamId, row]),
+    );
+
+    expect(staleBaselineState.sandboxMode).toBe("baseline");
+    expect(getMatchById(staleBaselineState.matches, "m73")).toMatchObject({
+      winnerId: "rsa",
+    });
+    expect(getMatchById(staleBaselineState.matches, "m90").teamAId).toBe("rsa");
+
+    expect(currentState.sandboxMode).toBe("current_official_state");
+    expect(currentState.lastSeed).toBeNull();
+    expect(getMatchById(currentState.matches, "m73")).toMatchObject({
+      winnerId: "can",
+      officialResultLocked: true,
+      mixedOfficialStatus: "official_completed",
+      score: {
+        teamAGoals: 0,
+        teamBGoals: 1,
+        decidedBy: "regular_time",
+      },
+    });
+    expect(getMatchById(currentState.matches, "m90")).toMatchObject({
+      teamAId: "can",
+      teamBId: "mar",
+      mixedOfficialStatus: "pending_simulation",
+    });
+    expect(getMatchById(currentState.matches, "m90").winnerId).toBeUndefined();
+    expect(
+      Object.fromEntries(
+        currentState.matches
+          .filter((match) => match.round === "round_of_16")
+          .map((match) => [match.id, [match.teamAId, match.teamBId]]),
+      ),
+    ).toEqual({
+      m89: ["par", "fra"],
+      m90: ["can", "mar"],
+      m91: ["bra", "nor"],
+      m92: ["mex", "eng"],
+      m93: ["por", "esp"],
+      m94: ["usa", "bel"],
+      m95: ["arg", "egy"],
+      m96: ["sui", "col"],
+    });
+    expectNoRoundOf32LosersInLaterVisibleMatches(currentState.matches);
+    expect(currentOddsByTeamId.get("can")?.roundOf16Probability).toBe(1);
+    expect(currentOddsByTeamId.get("rsa")?.roundOf16Probability).toBe(0);
+  });
+
+  it("resets visible current-state bracket state when baseline Monte Carlo runs", () => {
+    const currentSimulationState = createCurrentStateBracketSimulationState(20260704);
+    const baselineState = createBaselineMonteCarloState(20260705);
+    const baselineOddsByTeamId = new Map(
+      baselineState.monteCarloResult?.teamOdds.map((row) => [row.teamId, row]),
+    );
+
+    expect(currentSimulationState.sandboxMode).toBe("current_official_state");
+    expect(getMatchById(currentSimulationState.matches, "m73")).toMatchObject({
+      winnerId: "can",
+      officialResultLocked: true,
+      mixedOfficialStatus: "official_completed",
+    });
+
+    expect(baselineState.sandboxMode).toBe("baseline");
+    expect(baselineState.lastSeed).toBeNull();
+    expect(getMatchById(baselineState.matches, "m73")).toMatchObject({
+      teamAId: "rsa",
+      teamBId: "can",
+    });
+    expect(getMatchById(baselineState.matches, "m73").winnerId).toBeUndefined();
+    expect("officialResultLocked" in getMatchById(baselineState.matches, "m73")).toBe(false);
+    expect(getMatchById(baselineState.matches, "m89")).toMatchObject({
+      teamAId: null,
+      teamBId: null,
+    });
+    expect(getMatchById(baselineState.matches, "m89").winnerId).toBeUndefined();
+    expect(baselineOddsByTeamId.get("can")?.roundOf16Probability).toBeLessThan(1);
+    expect(baselineOddsByTeamId.get("rsa")?.roundOf16Probability).toBeGreaterThan(0);
   });
 
   it("exposes exact official artifact traceability values in adapter data", () => {
@@ -640,6 +833,7 @@ describe("official tournament UI integration", () => {
           "@/data/world-cup-2026/snapshots/official-2026-current/knockout-results.json",
           "@/data/generated/world-cup-2026/official-rating-linkage.json",
           "@/data/generated/world-cup-2026/official-simulator-input.json",
+          "@/src/lib/simulator/types",
         ]),
       },
       {
@@ -652,9 +846,8 @@ describe("official tournament UI integration", () => {
         filePath: "src/components/WorldCupSimulator.tsx",
         allowedSpecifiers: new Set([
           "react",
-          "@/src/data/initialBracket",
-          "@/src/data/mockTeams",
           "@/src/data/teamRatingsV2",
+          "@/src/data/world-cup-2026/officialArtifacts",
           "@/src/components/Bracket/Bracket",
           "@/src/components/OfficialTournamentOverview",
           "@/src/components/Odds/MatchupOddsTable",
@@ -664,6 +857,7 @@ describe("official tournament UI integration", () => {
           "@/src/lib/simulator/monteCarlo",
           "@/src/lib/simulator/rng",
           "@/src/lib/simulator/simulateBracket",
+          "@/src/lib/tournament-2026/bracket",
           "@/src/lib/simulator/types",
         ]),
       },
@@ -686,7 +880,6 @@ describe("official tournament UI integration", () => {
       /^@\/data\/generated\/calibration(?:$|\/)/,
       /^@\/data\/raw\/historical(?:$|\/)/,
       /^@\/tests\/fixtures\/world-cup-2026\/annex-c-expected\.json$/,
-      /^@\/src\/lib\/tournament-2026\/bracket(?:$|\/)/,
       /^@\/src\/lib\/tournament-2026\/constants$/,
       /^@\/scripts(?:$|\/)/,
     ];

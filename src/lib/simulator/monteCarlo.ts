@@ -5,6 +5,9 @@ import type {
   MonteCarloResult,
   TeamId,
   TeamTournamentOdds,
+  RatingsByTeamId,
+  RNG,
+  TournamentSimulationResult,
 } from "./types";
 
 interface TeamTournamentOddsCounts {
@@ -16,8 +19,36 @@ interface TeamTournamentOddsCounts {
   championCount: number;
 }
 
+export interface MonteCarloAccountingOptions<TMatch extends Match> {
+  matches: readonly TMatch[];
+  ratingsByTeamId: RatingsByTeamId;
+  simulationCount: number;
+  rng: RNG;
+  simulateTournament: (
+    matches: readonly TMatch[],
+    ratingsByTeamId: RatingsByTeamId,
+    rng: RNG,
+  ) => TournamentSimulationResult;
+}
+
 export function runMonteCarlo(options: MonteCarloOptions): MonteCarloResult {
-  const { matches, ratingsByTeamId, simulationCount, rng } = options;
+  return runMonteCarloAccounting({
+    ...options,
+    simulateTournament: (matches, ratingsByTeamId, rng) =>
+      simulateBracket([...matches], ratingsByTeamId, rng),
+  });
+}
+
+export function runMonteCarloAccounting<TMatch extends Match>(
+  options: MonteCarloAccountingOptions<TMatch>,
+): MonteCarloResult {
+  const {
+    matches,
+    ratingsByTeamId,
+    simulationCount,
+    rng,
+    simulateTournament,
+  } = options;
 
   if (!Number.isInteger(simulationCount) || simulationCount <= 0) {
     throw new Error("simulationCount must be a positive integer.");
@@ -27,7 +58,7 @@ export function runMonteCarlo(options: MonteCarloOptions): MonteCarloResult {
   const countsByTeamId = createCountsByTeamId(teamIds);
 
   for (let simulationIndex = 0; simulationIndex < simulationCount; simulationIndex += 1) {
-    const result = simulateBracket(matches, ratingsByTeamId, rng);
+    const result = simulateTournament(matches, ratingsByTeamId, rng);
 
     for (const match of result.matches) {
       if (!match.winnerId) {
@@ -46,7 +77,7 @@ export function runMonteCarlo(options: MonteCarloOptions): MonteCarloResult {
   };
 }
 
-function getInitialTeamIds(matches: Match[]): TeamId[] {
+function getInitialTeamIds(matches: readonly Match[]): TeamId[] {
   const teamIds: TeamId[] = [];
   const seenTeamIds = new Set<TeamId>();
 

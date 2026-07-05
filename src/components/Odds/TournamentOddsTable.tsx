@@ -3,11 +3,13 @@ import type { TournamentOddsRowViewModel } from "@/src/components/viewModels/tou
 interface TournamentOddsTableProps {
   rows: TournamentOddsRowViewModel[];
   simulationCountLabel: string;
+  description: string;
 }
 
 export function TournamentOddsTable({
   rows,
   simulationCountLabel,
+  description,
 }: TournamentOddsTableProps) {
   return (
     <section className="rounded-lg border border-slate-200 bg-white shadow-sm">
@@ -16,8 +18,7 @@ export function TournamentOddsTable({
           Tournament Odds
         </h2>
         <p className="mt-1 text-sm text-slate-600">
-          Based on {simulationCountLabel} simulations using early V2 team-strength
-          ratings.
+          {description} Sample size: {simulationCountLabel}.
         </p>
       </div>
 
