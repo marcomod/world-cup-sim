@@ -395,8 +395,8 @@ describe("official tournament UI integration", () => {
     expect(markup).toContain("Official tournament bracket/data");
     expect(markup).toContain("Simulation sandbox");
     expect(markup).toContain("Current official state simulation");
-    expect(markup).toContain("Official completed means a real result");
-    expect(markup).toContain("Simulation projection means");
+    expect(markup).toContain("Final results are locked.");
+    expect(markup).toContain("Model-generated outcome.");
   });
 
   it("labels official knockout completed, pending, and sandbox projection states distinctly", () => {
@@ -624,7 +624,8 @@ describe("official tournament UI integration", () => {
     expect(markup).toContain("Run 10,000 Current-State Simulations");
     expect(markup).toContain("Baseline: Ignore Official Results");
     expect(markup).toContain("Run 10,000 Baseline Simulations");
-    expect(markup).toContain("Current-state simulation");
+    expect(markup).toContain("Current official state simulation");
+    expect(markup).toContain("Baseline simulation / ignores official results");
     expect(markup).toContain('data-match-id="m73"');
     expect(markup).toContain('data-match-id="m104"');
     expect(markup).not.toContain('data-match-id="r32-1"');
@@ -633,20 +634,20 @@ describe("official tournament UI integration", () => {
 
   it("derives sandbox heading and explanatory copy from the active mode", () => {
     expect(getSimulationSandboxCopy("current_official_state")).toEqual({
-      modeLabel: "Current-state simulation",
+      modeLabel: "Current official state simulation",
       heading: "Current official state simulation",
       description:
-        "Official completed matches are locked from the knockout-results artifact, completed winners are propagated into the Round of 16, and pending official fixtures are simulated from the current bracket state.",
+        "Uses official completed results, carries their winners forward, and simulates only unresolved fixtures.",
       oddsDescription:
-        "Based on current-state simulations after locking official completed knockout results.",
+        "Uses official completed results, then simulates unresolved fixtures from the current bracket state.",
     });
     expect(getSimulationSandboxCopy("baseline")).toEqual({
-      modeLabel: "Baseline simulation",
-      heading: "Baseline simulation",
+      modeLabel: "Baseline simulation / ignores official results",
+      heading: "Baseline simulation / ignores official results",
       description:
-        "Baseline simulations start from the original Round-of-32 simulator input and ignore official knockout results.",
+        "Starts from the original Round of 32 as if official knockout results had not been played.",
       oddsDescription:
-        "Based on baseline simulations from the original Round-of-32 simulator input; official knockout results are ignored.",
+        "Starts from the original Round of 32 and ignores official knockout results.",
     });
   });
 
@@ -961,8 +962,9 @@ describe("desktop bracket sizing", () => {
     const widthMatch = css.match(/--bracket-width:\s*(\d+)px/);
 
     expect(widthMatch).not.toBeNull();
-    expect(Number(widthMatch?.[1])).toBe(1752);
+    expect(Number(widthMatch?.[1])).toBe(1764);
     expect(Number(widthMatch?.[1])).toBeLessThan(1920);
+    expect(css).toContain("--bracket-opening-connector-width: 48px");
     expect(css).toContain("width: var(--bracket-width)");
     expect(css).toContain("min-width: var(--bracket-width)");
   });

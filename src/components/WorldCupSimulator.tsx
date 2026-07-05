@@ -61,22 +61,22 @@ export function getSimulationSandboxCopy(
 ): SimulationSandboxCopy {
   if (sandboxMode === "current_official_state") {
     return {
-      modeLabel: "Current-state simulation",
+      modeLabel: "Current official state simulation",
       heading: "Current official state simulation",
       description:
-        "Official completed matches are locked from the knockout-results artifact, completed winners are propagated into the Round of 16, and pending official fixtures are simulated from the current bracket state.",
+        "Uses official completed results, carries their winners forward, and simulates only unresolved fixtures.",
       oddsDescription:
-        "Based on current-state simulations after locking official completed knockout results.",
+        "Uses official completed results, then simulates unresolved fixtures from the current bracket state.",
     };
   }
 
   return {
-    modeLabel: "Baseline simulation",
-    heading: "Baseline simulation",
+    modeLabel: "Baseline simulation / ignores official results",
+    heading: "Baseline simulation / ignores official results",
     description:
-      "Baseline simulations start from the original Round-of-32 simulator input and ignore official knockout results.",
+      "Starts from the original Round of 32 as if official knockout results had not been played.",
     oddsDescription:
-      "Based on baseline simulations from the original Round-of-32 simulator input; official knockout results are ignored.",
+      "Starts from the original Round of 32 and ignores official knockout results.",
   };
 }
 
@@ -249,27 +249,42 @@ export function WorldCupSimulator() {
 
   return (
     <main className="min-h-screen bg-[#101318] pb-10 text-[#edf0f4]">
-      <header className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 px-4 py-6 sm:px-6 lg:py-8">
+      <header className="mx-auto flex w-full max-w-[1800px] flex-col gap-6 px-4 py-6 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:py-9">
         <div className="max-w-3xl">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-400">
             World Cup 2026 knockout workspace
           </p>
-          <h1 className="mt-2 text-3xl font-bold sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold leading-tight sm:text-5xl">
             World Cup Knockout Simulator
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-[#a8afb9] sm:text-base">
-            Inspect official completed and pending knockout matches, then project
-            unresolved fixtures in the simulation sandbox below.
+            Track the official knockout bracket, then project the remaining
+            path with either the current official state or a baseline that
+            ignores official results.
           </p>
+        </div>
+        <div className="grid gap-2 text-xs text-[#b6bec9] sm:grid-cols-3 lg:min-w-[520px]">
+          <div className="border border-emerald-300/25 bg-emerald-300/8 px-3 py-2">
+            <p className="font-bold text-emerald-200">Official completed</p>
+            <p className="mt-1 text-[#8c929d]">Final results are locked.</p>
+          </div>
+          <div className="border border-amber-300/25 bg-amber-300/8 px-3 py-2">
+            <p className="font-bold text-amber-200">Pending official</p>
+            <p className="mt-1 text-[#8c929d]">Fixture has no official score.</p>
+          </div>
+          <div className="border border-sky-300/25 bg-sky-300/8 px-3 py-2">
+            <p className="font-bold text-sky-200">Simulation projection</p>
+            <p className="mt-1 text-[#8c929d]">Model-generated outcome.</p>
+          </div>
         </div>
       </header>
 
       <OfficialTournamentOverview />
 
       <section aria-labelledby="simulation-sandbox-heading">
-        <div className="mx-auto flex w-full max-w-[1800px] flex-col gap-5 border-t border-white/10 px-4 py-6 sm:px-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mx-auto grid w-full max-w-[1800px] gap-5 border-t border-white/10 px-4 py-6 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.75fr)] lg:items-end">
           <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-400">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-emerald-400">
               Simulation sandbox
             </p>
             <h2 id="simulation-sandbox-heading" className="mt-2 text-2xl font-bold text-white">
@@ -278,61 +293,67 @@ export function WorldCupSimulator() {
             <p className="mt-3 max-w-2xl text-sm leading-6 text-[#a8afb9]">
               {sandboxCopy.description}
             </p>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#a8afb9]">
-              Official completed means a real result; Pending official means a
-              future fixture with no official score; Simulation projection means
-              a model-generated outcome.
-            </p>
             <p
-              className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8c929d]"
+              className="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8c929d]"
               aria-label="Ratings and bracket status"
             >
-              <span>Ratings: {teamRatingsV2SourceMetadata.sourceName}</span>
-              <span aria-hidden="true">/</span>
-              <span>Snapshot label: {teamRatingsV2SourceMetadata.snapshotDate}</span>
-              <span aria-hidden="true">/</span>
-              <span>{sandboxCopy.modeLabel}</span>
+              <span className="border border-white/10 bg-white/5 px-2.5 py-1">
+                Ratings: {teamRatingsV2SourceMetadata.sourceName}
+              </span>
+              <span className="border border-white/10 bg-white/5 px-2.5 py-1">
+                Snapshot label: {teamRatingsV2SourceMetadata.snapshotDate}
+              </span>
+              <span className="border border-emerald-300/20 bg-emerald-300/8 px-2.5 py-1 text-emerald-200">
+                {sandboxCopy.modeLabel}
+              </span>
             </p>
           </div>
 
-          <div className="flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap lg:max-w-[620px] lg:justify-end">
-            <button
-              type="button"
-              onClick={handleSimulateCurrentStateBracket}
-              className="h-11 rounded-md bg-emerald-500 px-5 text-sm font-bold text-[#07130e] shadow-sm transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-[#101318]"
-            >
-              Simulate Current State
-            </button>
-            <button
-              type="button"
-              onClick={handleRunCurrentStateMonteCarlo}
-              className="h-11 rounded-md bg-white px-5 text-sm font-bold text-[#101318] shadow-sm transition hover:bg-[#dfe3e8] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#101318]"
-            >
-              Run 10,000 Current-State Simulations
-            </button>
-            <button
-              type="button"
-              onClick={handleSimulateBaselineBracket}
-              className="h-11 rounded-md border border-white/20 bg-transparent px-5 text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
-            >
-              Baseline: Ignore Official Results
-            </button>
-            <button
-              type="button"
-              onClick={handleRunBaselineMonteCarlo}
-              className="h-11 rounded-md border border-white/20 bg-transparent px-5 text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
-            >
-              Run 10,000 Baseline Simulations
-            </button>
+          <div className="grid gap-3 border border-white/10 bg-[#12161c] p-3 sm:p-4">
+            <div className="grid gap-2 sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={handleSimulateCurrentStateBracket}
+                className="min-h-11 bg-emerald-500 px-4 py-3 text-left text-sm font-bold text-[#07130e] shadow-sm transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-[#101318]"
+              >
+                Simulate Current State
+              </button>
+              <button
+                type="button"
+                onClick={handleRunCurrentStateMonteCarlo}
+                className="min-h-11 bg-white px-4 py-3 text-left text-sm font-bold text-[#101318] shadow-sm transition hover:bg-[#dfe3e8] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#101318]"
+              >
+                Run 10,000 Current-State Simulations
+              </button>
+            </div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#8c929d]">
+              Baseline simulation / ignores official results
+            </p>
+            <div className="grid gap-2 sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={handleSimulateBaselineBracket}
+                className="min-h-11 border border-white/20 bg-transparent px-4 py-3 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
+              >
+                Baseline: Ignore Official Results
+              </button>
+              <button
+                type="button"
+                onClick={handleRunBaselineMonteCarlo}
+                className="min-h-11 border border-white/20 bg-transparent px-4 py-3 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
+              >
+                Run 10,000 Baseline Simulations
+              </button>
+            </div>
             <button
               type="button"
               onClick={handleResetBracket}
-              className="h-11 rounded-md border border-white/20 bg-transparent px-5 text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
+              className="min-h-10 border border-white/20 bg-transparent px-4 py-2 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
             >
-              Reset
+              Reset to current official state
             </button>
             <p
-              className="basis-full pt-1 text-right font-mono text-[10px] text-[#747c88]"
+              className="font-mono text-[10px] text-[#747c88]"
               aria-live="polite"
             >
               Mode: {sandboxCopy.modeLabel} / Last seed: {lastSeed ?? "Not simulated"}

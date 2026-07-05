@@ -26,14 +26,15 @@ body {
 }
 
 .knockout-bracket-grid {
-  --bracket-width: 1752px;
+  --bracket-width: 1764px;
   --bracket-card-width: 164px;
   --bracket-connector-width: 26px;
+  --bracket-opening-connector-width: 48px;
   --bracket-center-width: 200px;
 
   display: grid;
   grid-template-columns:
-    var(--bracket-card-width) var(--bracket-connector-width)
+    var(--bracket-card-width) var(--bracket-opening-connector-width)
     var(--bracket-card-width) var(--bracket-connector-width)
     var(--bracket-card-width) var(--bracket-connector-width)
     var(--bracket-card-width) var(--bracket-connector-width)
@@ -41,7 +42,7 @@ body {
     var(--bracket-connector-width) var(--bracket-card-width)
     var(--bracket-connector-width) var(--bracket-card-width)
     var(--bracket-connector-width) var(--bracket-card-width)
-    var(--bracket-connector-width) var(--bracket-card-width);
+    var(--bracket-opening-connector-width) var(--bracket-card-width);
   width: var(--bracket-width);
   min-width: var(--bracket-width);
   align-items: start;

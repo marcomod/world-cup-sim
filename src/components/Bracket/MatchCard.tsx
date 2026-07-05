@@ -5,6 +5,26 @@ interface MatchCardProps {
   match: MatchCardViewModel;
 }
 
+function getMatchStatusClass(statusLabel: string) {
+  if (statusLabel === "Official completed") {
+    return "border-emerald-300/30 bg-emerald-300/10 text-emerald-200";
+  }
+
+  if (statusLabel === "Pending official") {
+    return "border-amber-300/30 bg-amber-300/10 text-amber-200";
+  }
+
+  if (statusLabel === "Simulation projection") {
+    return "border-sky-300/30 bg-sky-300/10 text-sky-200";
+  }
+
+  if (statusLabel.startsWith("Winner:")) {
+    return "border-amber-300/30 bg-amber-300/10 text-amber-200";
+  }
+
+  return "border-white/10 bg-white/5 text-[#a8afb9]";
+}
+
 export function MatchCard({ match }: MatchCardProps) {
   return (
     <article
@@ -18,7 +38,9 @@ export function MatchCard({ match }: MatchCardProps) {
           <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#747c88]">
             {match.id}
           </span>
-          <span className="min-w-0 truncate text-[9px] font-semibold uppercase tracking-[0.08em] text-[#a8afb9]">
+          <span
+            className={`min-w-0 truncate border px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.08em] ${getMatchStatusClass(match.statusLabel)}`}
+          >
             {match.decisionLabel
               ? `${match.statusLabel} · ${match.decisionLabel}`
               : match.statusLabel}

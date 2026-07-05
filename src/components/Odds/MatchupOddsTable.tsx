@@ -10,11 +10,14 @@ export function MatchupOddsTable({
   hasSimulated,
 }: MatchupOddsTableProps) {
   return (
-    <section className="rounded-lg border border-slate-200 bg-white shadow-sm">
+    <section className="border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-slate-200 px-4 py-3">
         <h2 className="text-base font-semibold text-slate-950">
-          Current Rating-Based Matchup Odds
+          Ready Matchup Odds
         </h2>
+        <p className="mt-1 text-sm text-slate-600">
+          Probabilities for fixtures with both teams currently known.
+        </p>
       </div>
 
       {rows.length > 0 ? (
@@ -59,7 +62,7 @@ export function MatchupOddsTable({
       ) : (
         <p className="px-4 py-6 text-sm text-slate-600">
           {hasSimulated
-            ? "All matchups have been simulated."
+            ? "All currently visible matchups have been simulated."
             : "No ready matchups are available."}
         </p>
       )}

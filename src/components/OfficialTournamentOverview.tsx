@@ -1,42 +1,87 @@
 import { officialTournamentUiData } from "@/src/data/world-cup-2026/officialArtifacts";
 
+function getOfficialStatusClass(statusTone: "completed" | "pending") {
+  if (statusTone === "completed") {
+    return "border-emerald-300/30 bg-emerald-300/10 text-emerald-200";
+  }
+
+  return "border-amber-300/30 bg-amber-300/10 text-amber-200";
+}
+
 export function OfficialTournamentOverview() {
   return (
     <section
       className="mx-auto w-full max-w-[1800px] px-4 pb-8 sm:px-6"
       aria-labelledby="official-tournament-heading"
     >
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.45fr)_minmax(360px,0.55fr)]">
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.45fr)_minmax(360px,0.55fr)]">
         <div className="min-w-0">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-sky-300">
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-sky-300">
                 Official tournament bracket/data
               </p>
               <h2 id="official-tournament-heading" className="mt-2 text-2xl font-bold text-white">
-                Finalized Round of 32
+                Official bracket and result status
               </h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-[#b6bec9]">
+                The Round of 32 field is fixed. Completed official results are
+                shown beside pending fixtures that still need simulation.
+              </p>
             </div>
-            <div className="flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-[0.1em] text-[#d7dce3]">
-              <span className="border border-sky-300/30 bg-sky-300/10 px-2.5 py-1">
-                {officialTournamentUiData.thirdPlaceGroupKeyLabel}
-              </span>
-              <span className="border border-emerald-300/30 bg-emerald-300/10 px-2.5 py-1">
-                Post-group-stage model ratings
-              </span>
+            <div className="grid grid-cols-3 gap-2 text-center text-xs sm:min-w-[330px]">
+              <div className="border border-emerald-300/25 bg-emerald-300/8 px-3 py-2">
+                <p className="text-lg font-bold text-emerald-200">
+                  {officialTournamentUiData.knockoutStatusSummary.completedCount}
+                </p>
+                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.1em] text-[#8c929d]">
+                  Completed
+                </p>
+              </div>
+              <div className="border border-amber-300/25 bg-amber-300/8 px-3 py-2">
+                <p className="text-lg font-bold text-amber-200">
+                  {officialTournamentUiData.knockoutStatusSummary.pendingCount}
+                </p>
+                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.1em] text-[#8c929d]">
+                  Pending
+                </p>
+              </div>
+              <div className="border border-white/10 bg-white/5 px-3 py-2">
+                <p className="text-lg font-bold text-white">
+                  {officialTournamentUiData.knockoutStatusSummary.totalCount}
+                </p>
+                <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.1em] text-[#8c929d]">
+                  Tracked
+                </p>
+              </div>
             </div>
           </div>
 
-          <p className="mt-4 max-w-4xl text-sm leading-6 text-[#b6bec9]">
-            {officialTournamentUiData.ecuadorGhanaNote}
-          </p>
-          <p className="mt-2 max-w-4xl text-sm leading-6 text-[#b6bec9]">
-            {officialTournamentUiData.fairPlayStatusLabel}
-          </p>
+          <details className="mt-4 border border-white/10 bg-white/[0.03] px-3 py-2">
+            <summary className="cursor-pointer text-xs font-bold text-sky-200">
+              Qualification notes and fair-play handling
+            </summary>
+            <div className="mt-3 space-y-2 text-sm leading-6 text-[#b6bec9]">
+              <p>{officialTournamentUiData.ecuadorGhanaNote}</p>
+              <p>{officialTournamentUiData.fairPlayStatusLabel}</p>
+              <p className="font-mono text-xs text-[#8c929d]">
+                {officialTournamentUiData.thirdPlaceGroupKeyLabel}
+              </p>
+            </div>
+          </details>
 
-          <div className="mt-5 overflow-x-auto border border-white/10">
+          <div className="mt-5 border border-white/10 bg-[#12161c]">
+            <div className="border-b border-white/10 px-3 py-3">
+              <h3 className="text-sm font-bold text-white">
+                Finalized Round of 32
+              </h3>
+              <p className="mt-1 text-xs text-[#8c929d]">
+                Official pairings with post-group-stage model ratings.
+              </p>
+            </div>
+            <div className="overflow-x-auto">
             <table
-              className="min-w-[920px] w-full border-collapse text-left text-sm"
+              className="w-full min-w-[780px] border-collapse text-left text-sm"
               aria-label="Finalized official Round of 32"
             >
               <thead className="bg-white/6 text-[10px] uppercase tracking-[0.12em] text-[#8c929d]">
@@ -78,11 +123,31 @@ export function OfficialTournamentOverview() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
 
-          <div className="mt-6 overflow-x-auto border border-white/10">
+          <div className="mt-5 border border-white/10 bg-[#12161c]">
+            <div className="flex flex-col gap-3 border-b border-white/10 px-3 py-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <h3 className="text-sm font-bold text-white">
+                  Official knockout result status
+                </h3>
+                <p className="mt-1 text-xs text-[#8c929d]">
+                  Completed and pending official fixtures for the sandbox below.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-[0.1em]">
+                <span className="border border-emerald-300/30 bg-emerald-300/10 px-2 py-1 text-emerald-200">
+                  Official completed
+                </span>
+                <span className="border border-amber-300/30 bg-amber-300/10 px-2 py-1 text-amber-200">
+                  Pending official
+                </span>
+              </div>
+            </div>
+            <div className="overflow-x-auto">
             <table
-              className="min-w-[920px] w-full border-collapse text-left text-sm"
+              className="w-full min-w-[820px] border-collapse text-left text-sm"
               aria-label="Official knockout result status"
             >
               <thead className="bg-white/6 text-[10px] uppercase tracking-[0.12em] text-[#8c929d]">
@@ -118,11 +183,7 @@ export function OfficialTournamentOverview() {
                     </td>
                     <td className="px-3 py-2">
                       <span
-                        className={
-                          match.statusTone === "completed"
-                            ? "border border-emerald-300/30 bg-emerald-300/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-emerald-200"
-                            : "border border-amber-300/30 bg-amber-300/10 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-amber-200"
-                        }
+                        className={`inline-flex whitespace-nowrap border px-2 py-1 text-[10px] font-bold uppercase tracking-[0.1em] ${getOfficialStatusClass(match.statusTone)}`}
                       >
                         {match.statusLabel}
                       </span>
@@ -137,6 +198,7 @@ export function OfficialTournamentOverview() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
 
@@ -145,20 +207,30 @@ export function OfficialTournamentOverview() {
           aria-labelledby="official-details-heading"
         >
           <h3 id="official-details-heading" className="text-sm font-bold text-white">
-            Source/artifact status
+            Sources and model inputs
           </h3>
-          <dl className="mt-4 space-y-3">
-            {officialTournamentUiData.detailRows.map((row) => (
-              <div key={row.label}>
-                <dt className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#8c929d]">
-                  {row.label}
-                </dt>
-                <dd className="mt-1 text-xs leading-5 text-[#d7dce3]">{row.value}</dd>
-              </div>
-            ))}
-          </dl>
+          <p className="mt-2 text-xs leading-5 text-[#8c929d]">
+            Main controls stay focused on bracket state. Provenance, checksums,
+            and rating inputs remain available here.
+          </p>
 
-          <details className="mt-5 border-t border-white/10 pt-4">
+          <details className="mt-4 border-t border-white/10 pt-4">
+            <summary className="cursor-pointer text-xs font-bold text-sky-200">
+              Source summary
+            </summary>
+            <dl className="mt-4 space-y-3">
+              {officialTournamentUiData.detailRows.map((row) => (
+                <div key={row.label}>
+                  <dt className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#8c929d]">
+                    {row.label}
+                  </dt>
+                  <dd className="mt-1 text-xs leading-5 text-[#d7dce3]">{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </details>
+
+          <details className="mt-4 border-t border-white/10 pt-4">
             <summary className="cursor-pointer text-xs font-bold text-sky-200">
               Exact artifact checksums
             </summary>
@@ -210,10 +282,10 @@ export function OfficialTournamentOverview() {
             </dl>
           </details>
 
-          <div className="mt-6 border-t border-white/10 pt-4">
-            <h3 className="text-sm font-bold text-white">
+          <details className="mt-4 border-t border-white/10 pt-4" open>
+            <summary className="cursor-pointer text-xs font-bold text-sky-200">
               Post-group-stage model ratings
-            </h3>
+            </summary>
             <div className="mt-3 max-h-[520px] overflow-auto pr-1">
               <table className="w-full text-left text-xs" aria-label="Official qualified team ratings">
                 <thead className="sticky top-0 bg-[#12161c] text-[9px] uppercase tracking-[0.1em] text-[#8c929d]">
@@ -244,7 +316,7 @@ export function OfficialTournamentOverview() {
                 </tbody>
               </table>
             </div>
-          </div>
+          </details>
         </aside>
       </div>
     </section>
