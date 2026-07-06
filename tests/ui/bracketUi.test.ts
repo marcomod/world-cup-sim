@@ -31,6 +31,7 @@ import {
 } from "@/src/data/teamFlags";
 import { createSeededRng } from "@/src/lib/simulator/rng";
 import { simulateBracket } from "@/src/lib/simulator/simulateBracket";
+import { knockoutTopology } from "@/src/lib/tournament-2026";
 import type { Match, Team, TeamsById } from "@/src/lib/simulator/types";
 
 function createTeamsById(teams: Team[]): TeamsById {
@@ -112,6 +113,90 @@ function getBracketMatchMarkup(markup: string, matchId: string): string {
   }
 
   return match[1];
+}
+
+function getMatchIdsInMarkup(markup: string): string[] {
+  return [...markup.matchAll(/data-match-id="([^"]+)"/g)].map((match) => match[1]);
+}
+
+type ChampionPathTree = {
+  childrenByParent: Map<string, { teamA?: string; teamB?: string }>;
+  parentById: Map<string, string>;
+  roundById: Map<string, string>;
+  finalId: string;
+};
+
+// Rebuild the champion-path tree straight from the canonical topology (winner
+// links only) so bracket-layout expectations are derived from the source of
+// truth, not copied from render output.
+function buildChampionPathTree(): ChampionPathTree {
+  const childrenByParent = new Map<string, { teamA?: string; teamB?: string }>();
+  const parentById = new Map<string, string>();
+  const roundById = new Map<string, string>();
+
+  for (const match of knockoutTopology) {
+    roundById.set(match.matchId, match.round);
+
+    for (const advancement of match.advancements) {
+      if (advancement.outcome !== "winner") {
+        continue;
+      }
+
+      parentById.set(match.matchId, advancement.toMatchId);
+      const entry = childrenByParent.get(advancement.toMatchId) ?? {};
+
+      if (advancement.toSlot === "teamAId") {
+        entry.teamA = match.matchId;
+      } else {
+        entry.teamB = match.matchId;
+      }
+
+      childrenByParent.set(advancement.toMatchId, entry);
+    }
+  }
+
+  const finalMatch = knockoutTopology.find((match) => match.round === "final");
+
+  if (!finalMatch) {
+    throw new Error("Champion-path topology has no final match.");
+  }
+
+  return { childrenByParent, parentById, roundById, finalId: finalMatch.matchId };
+}
+
+// In-order walk (teamA subtree -> node -> teamB subtree) of one subtree,
+// bucketed per round: the crossing-free vertical order the bracket must render.
+function inOrderByRound(
+  rootId: string | undefined,
+  tree: ChampionPathTree,
+): Record<string, string[]> {
+  const byRound: Record<string, string[]> = {};
+
+  if (!rootId) {
+    return byRound;
+  }
+
+  const walk = (id: string) => {
+    const children = tree.childrenByParent.get(id);
+
+    if (children?.teamA) {
+      walk(children.teamA);
+    }
+
+    const round = tree.roundById.get(id);
+
+    if (round) {
+      (byRound[round] ??= []).push(id);
+    }
+
+    if (children?.teamB) {
+      walk(children.teamB);
+    }
+  };
+
+  walk(rootId);
+
+  return byRound;
 }
 
 function getMatchById(matches: Match[], matchId: string): Match {
@@ -660,12 +745,88 @@ describe("official tournament UI integration", () => {
     expect(getBracketMatchMarkup(markup, "m90")).toContain("Morocco");
     expect(getBracketMatchMarkup(markup, "m91")).toContain("Brazil");
     expect(getBracketMatchMarkup(markup, "m91")).toContain("Norway");
+    expect(getBracketMatchMarkup(markup, "m92")).toContain("Mexico");
+    expect(getBracketMatchMarkup(markup, "m92")).toContain("England");
+    expect(getBracketMatchMarkup(markup, "m93")).toContain("Portugal");
+    expect(getBracketMatchMarkup(markup, "m93")).toContain("Spain");
+    expect(getBracketMatchMarkup(markup, "m94")).toContain("USA");
+    expect(getBracketMatchMarkup(markup, "m94")).toContain("Belgium");
+    expect(getBracketMatchMarkup(markup, "m95")).toContain("Argentina");
+    expect(getBracketMatchMarkup(markup, "m95")).toContain("Egypt");
     expect(getBracketMatchMarkup(markup, "m96")).toContain("Switzerland");
     expect(getBracketMatchMarkup(markup, "m96")).toContain("Colombia");
+    expect(getBracketMatchMarkup(markup, "m89")).not.toContain("Canada");
+    expect(getBracketMatchMarkup(markup, "m90")).not.toContain("Brazil");
+    expect(getBracketMatchMarkup(markup, "m91")).not.toContain("France");
+    expect(getBracketMatchMarkup(markup, "m95")).not.toContain("Switzerland");
+    expect(getBracketMatchMarkup(markup, "m96")).not.toContain("Egypt");
     expect(getBracketMatchMarkup(markup, "m89")).toContain("Pending official");
     expect(getBracketMatchMarkup(markup, "m73")).toContain("Official completed");
     expect(getBracketMatchMarkup(markup, "m73")).toContain("0");
     expect(getBracketMatchMarkup(markup, "m73")).toContain("1");
+  });
+
+  it("lays out current-state bracket columns from the champion-path tree with no crossing connectors", () => {
+    const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
+    const tree = buildChampionPathTree();
+    const finalChildren = tree.childrenByParent.get(tree.finalId);
+    const leftByRound = inOrderByRound(finalChildren?.teamA, tree);
+    const rightByRound = inOrderByRound(finalChildren?.teamB, tree);
+    const columnRounds = [
+      "round_of_32",
+      "round_of_16",
+      "quarterfinal",
+      "semifinal",
+    ] as const;
+
+    // Anchor the tree-derived expectation so a topology drift can't silently
+    // redefine what "correct" means here.
+    expect(leftByRound).toEqual({
+      round_of_32: ["m74", "m77", "m73", "m75", "m83", "m84", "m81", "m82"],
+      round_of_16: ["m89", "m90", "m93", "m94"],
+      quarterfinal: ["m97", "m98"],
+      semifinal: ["m101"],
+    });
+    expect(rightByRound).toEqual({
+      round_of_32: ["m76", "m78", "m79", "m80", "m86", "m88", "m85", "m87"],
+      round_of_16: ["m91", "m92", "m95", "m96"],
+      quarterfinal: ["m99", "m100"],
+      semifinal: ["m102"],
+    });
+
+    // Rendered columns must equal the in-order traversal of the tree: this pins
+    // membership, side, and each parent being centered over its two children.
+    for (const round of columnRounds) {
+      expect(getMatchIdsInMarkup(getRoundColumnMarkup(markup, round, "left"))).toEqual(
+        leftByRound[round] ?? [],
+      );
+      expect(getMatchIdsInMarkup(getRoundColumnMarkup(markup, round, "right"))).toEqual(
+        rightByRound[round] ?? [],
+      );
+    }
+
+    // No-crossing invariant, read from the rendered output independently of the
+    // arrays above: every card's winner-link parent sits on the same bracket
+    // side (the semifinals' parent is the final, which belongs to neither side).
+    const sideByMatchId = new Map<string, "left" | "right">();
+    for (const side of ["left", "right"] as const) {
+      for (const round of columnRounds) {
+        for (const id of getMatchIdsInMarkup(getRoundColumnMarkup(markup, round, side))) {
+          sideByMatchId.set(id, side);
+        }
+      }
+    }
+
+    expect(sideByMatchId.size).toBe(30);
+    for (const [matchId, side] of sideByMatchId) {
+      const parentId = tree.parentById.get(matchId);
+
+      if (!parentId || parentId === tree.finalId) {
+        continue;
+      }
+
+      expect(sideByMatchId.get(parentId)).toBe(side);
+    }
   });
 
   it("resets visible baseline bracket state when current-state Monte Carlo runs", () => {
@@ -716,6 +877,17 @@ describe("official tournament UI integration", () => {
       m95: ["arg", "egy"],
       m96: ["sui", "col"],
     });
+    expect(
+      currentState.matches
+        .filter((match) => match.round === "round_of_16")
+        .flatMap((match) => [match.teamAId, match.teamBId])
+        .sort(),
+    ).toEqual(
+      currentState.matches
+        .filter((match) => match.round === "round_of_32")
+        .map((match) => match.winnerId)
+        .sort(),
+    );
     expectNoRoundOf32LosersInLaterVisibleMatches(currentState.matches);
     expect(currentOddsByTeamId.get("can")?.roundOf16Probability).toBe(1);
     expect(currentOddsByTeamId.get("rsa")?.roundOf16Probability).toBe(0);

@@ -12,6 +12,8 @@ import type {
 export interface MatchCardViewModel {
   id: string;
   round: TournamentRound;
+  nextMatchId: string | null;
+  nextSlot: "teamAId" | "teamBId" | null;
   statusLabel: string;
   teamAName: string;
   teamBName: string;
@@ -90,6 +92,8 @@ export function createMatchCardViewModel(
   return {
     id: match.id,
     round: match.round,
+    nextMatchId: match.nextMatchId ?? null,
+    nextSlot: match.nextSlot ?? null,
     statusLabel: getMatchStatusLabel(match, teamsById),
     teamAName,
     teamBName,

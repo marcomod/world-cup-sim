@@ -107,6 +107,47 @@ describe("Round-of-32 topology", () => {
     }
   });
 
+  it("routes every winner edge to the official parent match (parent = winners of its two children)", () => {
+    const officialParentsByChildren: Record<string, readonly [string, string]> = {
+      m89: ["m74", "m77"],
+      m90: ["m73", "m75"],
+      m91: ["m76", "m78"],
+      m92: ["m79", "m80"],
+      m93: ["m83", "m84"],
+      m94: ["m81", "m82"],
+      m95: ["m86", "m88"],
+      m96: ["m85", "m87"],
+      m97: ["m89", "m90"],
+      m98: ["m93", "m94"],
+      m99: ["m91", "m92"],
+      m100: ["m95", "m96"],
+      m101: ["m97", "m98"],
+      m102: ["m99", "m100"],
+      m104: ["m101", "m102"],
+    };
+
+    const childrenByParent = new Map<string, { teamAId?: string; teamBId?: string }>();
+    for (const match of knockoutTopology) {
+      for (const advancement of match.advancements) {
+        if (advancement.outcome !== "winner") {
+          continue;
+        }
+        const slots = childrenByParent.get(advancement.toMatchId) ?? {};
+        slots[advancement.toSlot] = match.matchId;
+        childrenByParent.set(advancement.toMatchId, slots);
+      }
+    }
+
+    const actualParents = Object.fromEntries(
+      [...childrenByParent.entries()].map(([parentId, slots]) => [
+        parentId,
+        [slots.teamAId, slots.teamBId],
+      ]),
+    );
+
+    expect(actualParents).toEqual(officialParentsByChildren);
+  });
+
   it("computes the recorded semantic topology checksum", () => {
     expect(topologyChecksum()).toBe(
       worldCup2026FormatProvenance.normalizedLocalRepresentations.knockoutTopologySha256,

@@ -4,6 +4,7 @@ import type {
   BracketSimulationOptions,
   Match,
   MatchScore,
+  MatchSlot,
   MonteCarloResult,
   RatingsByTeamId,
   RNG,
@@ -25,6 +26,12 @@ type KnockoutArtifactParticipant = {
   sourceSlot: string;
 };
 
+type KnockoutArtifactRouting = {
+  outcome: "winner" | "loser";
+  toMatchId: string;
+  toSlot: MatchSlot;
+};
+
 type CompletedKnockoutArtifactMatch = {
   matchId: string;
   participantA: KnockoutArtifactParticipant;
@@ -32,6 +39,7 @@ type CompletedKnockoutArtifactMatch = {
   score: KnockoutArtifactScore;
   winnerId: TeamId;
   resultStatus: "official_final";
+  nextMatchRouting?: readonly KnockoutArtifactRouting[];
 };
 
 type PendingKnockoutArtifactMatch = {
@@ -65,6 +73,31 @@ export interface MixedOfficialMonteCarloOptions {
   rng: RNG;
 }
 
+function getWinnerRoute(
+  match: Match,
+  completed: CompletedKnockoutArtifactMatch,
+): Pick<Match, "nextMatchId" | "nextSlot"> | null {
+  const resultRouting = completed.nextMatchRouting?.find(
+    (route) => route.outcome === "winner",
+  );
+
+  if (resultRouting) {
+    return {
+      nextMatchId: resultRouting.toMatchId,
+      nextSlot: resultRouting.toSlot,
+    };
+  }
+
+  if (match.nextMatchId && match.nextSlot) {
+    return {
+      nextMatchId: match.nextMatchId,
+      nextSlot: match.nextSlot,
+    };
+  }
+
+  return null;
+}
+
 function toSimulatorScore(score: KnockoutArtifactScore): MatchScore {
   return {
     teamAGoals: score.participantAGoals,
@@ -86,7 +119,7 @@ export function prepareMixedOfficialSimulatorBracket(
     knockoutResults.pendingMatches.map((match) => [match.matchId, match]),
   );
 
-  return matches.map((match) => {
+  const mixedMatches: MixedOfficialSimulatorMatch[] = matches.map((match) => {
     const completed = completedById.get(match.id);
     if (completed) {
       return {
@@ -97,7 +130,7 @@ export function prepareMixedOfficialSimulatorBracket(
         score: toSimulatorScore(completed.score),
         officialResultLocked: true,
         officialResultStatus: completed.resultStatus,
-        mixedOfficialStatus: "official_completed",
+        mixedOfficialStatus: "official_completed" as const,
       };
     }
 
@@ -107,9 +140,40 @@ export function prepareMixedOfficialSimulatorBracket(
       teamAId: pending?.knownParticipants.participantA?.teamId ?? match.teamAId,
       teamBId: pending?.knownParticipants.participantB?.teamId ?? match.teamBId,
       officialResultLocked: false,
-      mixedOfficialStatus: "pending_simulation",
+      mixedOfficialStatus: "pending_simulation" as const,
     };
   });
+
+  const mixedMatchesById = new Map(mixedMatches.map((match) => [match.id, match]));
+
+  for (const completed of completedById.values()) {
+    const match = mixedMatchesById.get(completed.matchId);
+
+    if (!match) {
+      continue;
+    }
+
+    const route = getWinnerRoute(match, completed);
+
+    if (!route?.nextMatchId || !route.nextSlot) {
+      continue;
+    }
+
+    const nextMatch = mixedMatchesById.get(route.nextMatchId);
+
+    if (!nextMatch) {
+      throw new Error(`Official routing from "${match.id}" targets missing match "${route.nextMatchId}".`);
+    }
+
+    const existingParticipant = nextMatch[route.nextSlot];
+    if (existingParticipant && existingParticipant !== completed.winnerId) {
+      throw new Error(`Official routing conflict from "${match.id}" into "${route.nextMatchId}".`);
+    }
+
+    nextMatch[route.nextSlot] = completed.winnerId;
+  }
+
+  return mixedMatches;
 }
 
 export function simulateMixedOfficialBracket(

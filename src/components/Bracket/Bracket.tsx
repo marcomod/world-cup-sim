@@ -21,33 +21,88 @@ interface BracketProps {
   champion: ChampionViewModel;
 }
 
-function getRoundMatches(
-  matches: MatchCardViewModel[],
-  round: TournamentRound,
-): MatchCardViewModel[] {
-  return matches.filter((match) => match.round === round);
+type MatchChildren = { teamA?: MatchCardViewModel; teamB?: MatchCardViewModel };
+type RoundOrder = Partial<Record<TournamentRound, MatchCardViewModel[]>>;
+
+// Invert each match's winner-advancement link (nextMatchId + nextSlot) into a
+// parent -> { teamA, teamB } map so the bracket can be laid out from the
+// champion-path tree rather than by regrouping each round independently.
+function buildChildrenByParent(matches: MatchCardViewModel[]): Map<string, MatchChildren> {
+  const childrenByParent = new Map<string, MatchChildren>();
+
+  for (const match of matches) {
+    if (!match.nextMatchId || !match.nextSlot) {
+      continue;
+    }
+
+    const entry = childrenByParent.get(match.nextMatchId) ?? {};
+
+    if (match.nextSlot === "teamAId") {
+      entry.teamA = match;
+    } else {
+      entry.teamB = match;
+    }
+
+    childrenByParent.set(match.nextMatchId, entry);
+  }
+
+  return childrenByParent;
 }
 
-function splitRound(matches: MatchCardViewModel[]): [MatchCardViewModel[], MatchCardViewModel[]] {
-  const midpoint = Math.ceil(matches.length / 2);
+// In-order walk (teamA subtree -> node -> teamB subtree) of one subtree,
+// bucketing nodes per round. This yields, for every round, the crossing-free
+// vertical order with each parent centered between its two children.
+function collectSubtreeByRound(
+  root: MatchCardViewModel | undefined,
+  childrenByParent: Map<string, MatchChildren>,
+): RoundOrder {
+  const byRound: RoundOrder = {};
 
-  return [matches.slice(0, midpoint), matches.slice(midpoint)];
+  if (!root) {
+    return byRound;
+  }
+
+  const walk = (node: MatchCardViewModel) => {
+    const children = childrenByParent.get(node.id);
+
+    if (children?.teamA) {
+      walk(children.teamA);
+    }
+
+    (byRound[node.round] ??= []).push(node);
+
+    if (children?.teamB) {
+      walk(children.teamB);
+    }
+  };
+
+  walk(root);
+
+  return byRound;
+}
+
+function getRoundOrder(order: RoundOrder, round: TournamentRound): MatchCardViewModel[] {
+  return order[round] ?? [];
 }
 
 export function Bracket({ matches, champion }: BracketProps) {
-  const [leftRoundOf32, rightRoundOf32] = splitRound(
-    getRoundMatches(matches, "round_of_32"),
-  );
-  const [leftRoundOf16, rightRoundOf16] = splitRound(
-    getRoundMatches(matches, "round_of_16"),
-  );
-  const [leftQuarterfinals, rightQuarterfinals] = splitRound(
-    getRoundMatches(matches, "quarterfinal"),
-  );
-  const [leftSemifinals, rightSemifinals] = splitRound(
-    getRoundMatches(matches, "semifinal"),
-  );
-  const finalMatch = getRoundMatches(matches, "final")[0];
+  const childrenByParent = buildChildrenByParent(matches);
+  const finalMatch = matches.find((match) => match.round === "final");
+  const finalChildren = finalMatch ? childrenByParent.get(finalMatch.id) : undefined;
+
+  // Left/right is simply the split at the final's two children: everything in
+  // the m101 (teamA) subtree renders left, the m102 (teamB) subtree right.
+  const leftOrder = collectSubtreeByRound(finalChildren?.teamA, childrenByParent);
+  const rightOrder = collectSubtreeByRound(finalChildren?.teamB, childrenByParent);
+
+  const leftRoundOf32 = getRoundOrder(leftOrder, "round_of_32");
+  const leftRoundOf16 = getRoundOrder(leftOrder, "round_of_16");
+  const leftQuarterfinals = getRoundOrder(leftOrder, "quarterfinal");
+  const leftSemifinals = getRoundOrder(leftOrder, "semifinal");
+  const rightRoundOf32 = getRoundOrder(rightOrder, "round_of_32");
+  const rightRoundOf16 = getRoundOrder(rightOrder, "round_of_16");
+  const rightQuarterfinals = getRoundOrder(rightOrder, "quarterfinal");
+  const rightSemifinals = getRoundOrder(rightOrder, "semifinal");
 
   return (
     <section className="border-y border-white/10 bg-[#0b0d10] py-6" aria-labelledby="bracket-heading">
@@ -76,11 +131,11 @@ export function Bracket({ matches, champion }: BracketProps) {
       >
         <div className="knockout-bracket-grid mx-auto px-4" data-bracket-match-count={matches.length}>
           <BracketRound label={roundLabels.round_of_32} matches={leftRoundOf32} round="round_of_32" side="left" />
-          <BracketConnector direction="left" groups={4} />
+          <BracketConnector direction="left" groups={leftRoundOf16.length} />
           <BracketRound label={roundLabels.round_of_16} matches={leftRoundOf16} round="round_of_16" side="left" />
-          <BracketConnector direction="left" groups={2} />
+          <BracketConnector direction="left" groups={leftQuarterfinals.length} />
           <BracketRound label={roundLabels.quarterfinal} matches={leftQuarterfinals} round="quarterfinal" side="left" />
-          <BracketConnector direction="left" />
+          <BracketConnector direction="left" groups={leftSemifinals.length} />
           <BracketRound label={roundLabels.semifinal} matches={leftSemifinals} round="semifinal" side="left" />
           <BracketConnector direction="left" straight />
 
@@ -100,11 +155,11 @@ export function Bracket({ matches, champion }: BracketProps) {
 
           <BracketConnector direction="right" straight />
           <BracketRound label={roundLabels.semifinal} matches={rightSemifinals} round="semifinal" side="right" />
-          <BracketConnector direction="right" />
+          <BracketConnector direction="right" groups={rightSemifinals.length} />
           <BracketRound label={roundLabels.quarterfinal} matches={rightQuarterfinals} round="quarterfinal" side="right" />
-          <BracketConnector direction="right" groups={2} />
+          <BracketConnector direction="right" groups={rightQuarterfinals.length} />
           <BracketRound label={roundLabels.round_of_16} matches={rightRoundOf16} round="round_of_16" side="right" />
-          <BracketConnector direction="right" groups={4} />
+          <BracketConnector direction="right" groups={rightRoundOf16.length} />
           <BracketRound label={roundLabels.round_of_32} matches={rightRoundOf32} round="round_of_32" side="right" />
         </div>
       </div>

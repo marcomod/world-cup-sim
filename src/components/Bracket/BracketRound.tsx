@@ -32,7 +32,7 @@ export function BracketRound({ label, matches, round, side }: BracketRoundProps)
         style={{ gridTemplateRows: `repeat(${matches.length}, minmax(0, 1fr))` }}
       >
         {matches.map((match) => (
-          <div key={match.id} className="flex items-center">
+          <div key={match.id} className="flex items-center min-w-0">
             <MatchCard match={match} />
           </div>
         ))}
