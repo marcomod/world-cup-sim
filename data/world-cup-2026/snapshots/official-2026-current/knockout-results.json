@@ -30,8 +30,8 @@
     ],
     "runtimeFetch": false
   },
-  "completedMatchCount": 16,
-  "pendingMatchCount": 16,
+  "completedMatchCount": 20,
+  "pendingMatchCount": 12,
   "completedMatches": [
     {
       "matchId": "m73",
@@ -550,97 +550,137 @@
           "toSlot": "teamBId"
         }
       ]
-    }
-  ],
-  "pendingMatches": [
+    },
     {
       "matchId": "m89",
       "round": "round_of_16",
-      "sourceSlots": {
-        "participantA": "winner of m74",
-        "participantB": "winner of m77"
+      "participantA": {
+        "teamId": "par",
+        "displayName": "Paraguay",
+        "sourceSlot": "3D"
       },
-      "knownParticipants": {
-        "participantA": {
-          "teamId": "par",
-          "displayName": "Paraguay",
-          "sourceSlot": "3D"
-        },
-        "participantB": {
-          "teamId": "fra",
-          "displayName": "France",
-          "sourceSlot": "1I"
+      "participantB": {
+        "teamId": "fra",
+        "displayName": "France",
+        "sourceSlot": "1I"
+      },
+      "score": {
+        "participantAGoals": 0,
+        "participantBGoals": 1,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "fra",
+      "loserId": "par",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry",
+      "extraTime": false,
+      "penalties": false,
+      "nextMatchRouting": [
+        {
+          "outcome": "winner",
+          "toMatchId": "m97",
+          "toSlot": "teamAId"
         }
-      },
-      "unresolvedParticipantSlots": {},
-      "status": "pending"
+      ]
     },
     {
       "matchId": "m90",
       "round": "round_of_16",
-      "sourceSlots": {
-        "participantA": "winner of m73",
-        "participantB": "winner of m75"
+      "participantA": {
+        "teamId": "can",
+        "displayName": "Canada",
+        "sourceSlot": "2B"
       },
-      "knownParticipants": {
-        "participantA": {
-          "teamId": "can",
-          "displayName": "Canada",
-          "sourceSlot": "2B"
-        },
-        "participantB": {
-          "teamId": "mar",
-          "displayName": "Morocco",
-          "sourceSlot": "2C"
+      "participantB": {
+        "teamId": "mar",
+        "displayName": "Morocco",
+        "sourceSlot": "2C"
+      },
+      "score": {
+        "participantAGoals": 0,
+        "participantBGoals": 3,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "mar",
+      "loserId": "can",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry",
+      "extraTime": false,
+      "penalties": false,
+      "nextMatchRouting": [
+        {
+          "outcome": "winner",
+          "toMatchId": "m97",
+          "toSlot": "teamBId"
         }
-      },
-      "unresolvedParticipantSlots": {},
-      "status": "pending"
+      ]
     },
     {
       "matchId": "m91",
       "round": "round_of_16",
-      "sourceSlots": {
-        "participantA": "winner of m76",
-        "participantB": "winner of m78"
+      "participantA": {
+        "teamId": "bra",
+        "displayName": "Brazil",
+        "sourceSlot": "1C"
       },
-      "knownParticipants": {
-        "participantA": {
-          "teamId": "bra",
-          "displayName": "Brazil",
-          "sourceSlot": "1C"
-        },
-        "participantB": {
-          "teamId": "nor",
-          "displayName": "Norway",
-          "sourceSlot": "2I"
+      "participantB": {
+        "teamId": "nor",
+        "displayName": "Norway",
+        "sourceSlot": "2I"
+      },
+      "score": {
+        "participantAGoals": 1,
+        "participantBGoals": 2,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "nor",
+      "loserId": "bra",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry",
+      "extraTime": false,
+      "penalties": false,
+      "nextMatchRouting": [
+        {
+          "outcome": "winner",
+          "toMatchId": "m99",
+          "toSlot": "teamAId"
         }
-      },
-      "unresolvedParticipantSlots": {},
-      "status": "pending"
+      ]
     },
     {
       "matchId": "m92",
       "round": "round_of_16",
-      "sourceSlots": {
-        "participantA": "winner of m79",
-        "participantB": "winner of m80"
+      "participantA": {
+        "teamId": "mex",
+        "displayName": "Mexico",
+        "sourceSlot": "1A"
       },
-      "knownParticipants": {
-        "participantA": {
-          "teamId": "mex",
-          "displayName": "Mexico",
-          "sourceSlot": "1A"
-        },
-        "participantB": {
-          "teamId": "eng",
-          "displayName": "England",
-          "sourceSlot": "1L"
+      "participantB": {
+        "teamId": "eng",
+        "displayName": "England",
+        "sourceSlot": "1L"
+      },
+      "score": {
+        "participantAGoals": 2,
+        "participantBGoals": 3,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "eng",
+      "loserId": "mex",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry",
+      "extraTime": false,
+      "penalties": false,
+      "nextMatchRouting": [
+        {
+          "outcome": "winner",
+          "toMatchId": "m99",
+          "toSlot": "teamBId"
         }
-      },
-      "unresolvedParticipantSlots": {},
-      "status": "pending"
-    },
+      ]
+    }
+  ],
+  "pendingMatches": [
     {
       "matchId": "m93",
       "round": "round_of_16",
@@ -736,11 +776,19 @@
         "participantA": "winner of m89",
         "participantB": "winner of m90"
       },
-      "knownParticipants": {},
-      "unresolvedParticipantSlots": {
-        "participantA": "winner of m89",
-        "participantB": "winner of m90"
+      "knownParticipants": {
+        "participantA": {
+          "teamId": "fra",
+          "displayName": "France",
+          "sourceSlot": "1I"
+        },
+        "participantB": {
+          "teamId": "mar",
+          "displayName": "Morocco",
+          "sourceSlot": "2C"
+        }
       },
+      "unresolvedParticipantSlots": {},
       "status": "pending"
     },
     {
@@ -764,11 +812,19 @@
         "participantA": "winner of m91",
         "participantB": "winner of m92"
       },
-      "knownParticipants": {},
-      "unresolvedParticipantSlots": {
-        "participantA": "winner of m91",
-        "participantB": "winner of m92"
+      "knownParticipants": {
+        "participantA": {
+          "teamId": "nor",
+          "displayName": "Norway",
+          "sourceSlot": "2I"
+        },
+        "participantB": {
+          "teamId": "eng",
+          "displayName": "England",
+          "sourceSlot": "1L"
+        }
       },
+      "unresolvedParticipantSlots": {},
       "status": "pending"
     },
     {
@@ -842,5 +898,5 @@
       "status": "pending"
     }
   ],
-  "resultChecksum": "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1"
+  "resultChecksum": "46a67c7cac0d1931dcf0990d3274d129d3e540322a213ab2e17b7a9958a6298c"
 }

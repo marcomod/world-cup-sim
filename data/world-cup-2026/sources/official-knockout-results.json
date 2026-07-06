@@ -237,6 +237,58 @@
       "winnerId": "egy",
       "resultStatus": "official_final",
       "resultSource": "official-public-result-entry"
+    },
+    {
+      "matchId": "m89",
+      "participantAId": "par",
+      "participantBId": "fra",
+      "score": {
+        "participantAGoals": 0,
+        "participantBGoals": 1,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "fra",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry"
+    },
+    {
+      "matchId": "m90",
+      "participantAId": "can",
+      "participantBId": "mar",
+      "score": {
+        "participantAGoals": 0,
+        "participantBGoals": 3,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "mar",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry"
+    },
+    {
+      "matchId": "m91",
+      "participantAId": "bra",
+      "participantBId": "nor",
+      "score": {
+        "participantAGoals": 1,
+        "participantBGoals": 2,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "nor",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry"
+    },
+    {
+      "matchId": "m92",
+      "participantAId": "mex",
+      "participantBId": "eng",
+      "score": {
+        "participantAGoals": 2,
+        "participantBGoals": 3,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "eng",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry"
     }
   ]
 }

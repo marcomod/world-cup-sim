@@ -263,6 +263,61 @@ const expectedCompletedRoundOf32Results: KnockoutResultSourceEntry[] = [
   },
 ];
 
+const expectedCompletedRoundOf16Results: KnockoutResultSourceEntry[] = [
+  {
+    matchId: "m89",
+    participantAId: "par",
+    participantBId: "fra",
+    score: {
+      participantAGoals: 0,
+      participantBGoals: 1,
+      decidedBy: "regular_time",
+    },
+    winnerId: "fra",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m90",
+    participantAId: "can",
+    participantBId: "mar",
+    score: {
+      participantAGoals: 0,
+      participantBGoals: 3,
+      decidedBy: "regular_time",
+    },
+    winnerId: "mar",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m91",
+    participantAId: "bra",
+    participantBId: "nor",
+    score: {
+      participantAGoals: 1,
+      participantBGoals: 2,
+      decidedBy: "regular_time",
+    },
+    winnerId: "nor",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m92",
+    participantAId: "mex",
+    participantBId: "eng",
+    score: {
+      participantAGoals: 2,
+      participantBGoals: 3,
+      decidedBy: "regular_time",
+    },
+    winnerId: "eng",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+];
+
 const m73Result: KnockoutResultSourceEntry = {
   matchId: "m73",
   participantAId: "rsa",
@@ -313,21 +368,26 @@ describe("official knockout results artifact", () => {
     const artifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
     const verification = verifyKnockoutResults();
 
-    expect(knockoutSource.results).toHaveLength(16);
-    expect(artifact.completedMatchCount).toBe(16);
-    expect(artifact.pendingMatchCount).toBe(16);
+    expect(knockoutSource.results).toHaveLength(20);
+    expect(artifact.completedMatchCount).toBe(20);
+    expect(artifact.pendingMatchCount).toBe(12);
     expect(artifact.resultChecksum).toBe(
-      "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1",
+      "46a67c7cac0d1931dcf0990d3274d129d3e540322a213ab2e17b7a9958a6298c",
     );
     expect(artifact.completedMatches.map((match) => match.matchId)).toEqual(
-      Array.from({ length: 16 }, (_, index) => `m${index + 73}`),
+      Array.from({ length: 20 }, (_, index) => `m${index + 73}`),
     );
     expect(artifact.pendingMatches.map((match) => match.matchId)).toEqual(
-      Array.from({ length: 16 }, (_, index) => `m${index + 89}`),
+      Array.from({ length: 12 }, (_, index) => `m${index + 93}`),
     );
-    expect(artifact.pendingMatches.find((match) => match.matchId === "m90")).toMatchObject({
+    expect(artifact.completedMatches.find((match) => match.matchId === "m90")).toMatchObject({
+      participantA: { teamId: "can" },
+      participantB: { teamId: "mar" },
+      winnerId: "mar",
+    });
+    expect(artifact.pendingMatches.find((match) => match.matchId === "m97")).toMatchObject({
       knownParticipants: {
-        participantA: { teamId: "can" },
+        participantA: { teamId: "fra" },
         participantB: { teamId: "mar" },
       },
       unresolvedParticipantSlots: {},
@@ -340,22 +400,26 @@ describe("official knockout results artifact", () => {
     }
 
     expect(verification).toMatchObject({
-      completedMatchCount: 16,
-      pendingMatchCount: 16,
-      resultChecksum: "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1",
+      completedMatchCount: 20,
+      pendingMatchCount: 12,
+      resultChecksum: "46a67c7cac0d1931dcf0990d3274d129d3e540322a213ab2e17b7a9958a6298c",
     });
   });
 
-  it("records the exact official Round-of-32 results in the source and generated artifact", () => {
+  it("records the exact official Round-of-32 and Round-of-16 results in the source and generated artifact", () => {
     const artifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
     const sourceResultsById = new Map(knockoutSource.results.map((result) => [result.matchId, result]));
     const completedById = new Map(artifact.completedMatches.map((match) => [match.matchId, match]));
+    const expectedCompletedResults = [
+      ...expectedCompletedRoundOf32Results,
+      ...expectedCompletedRoundOf16Results,
+    ];
 
     expect(knockoutSource.results.map((result) => result.matchId)).toEqual(
-      expectedCompletedRoundOf32Results.map((result) => result.matchId),
+      expectedCompletedResults.map((result) => result.matchId),
     );
 
-    for (const expected of expectedCompletedRoundOf32Results) {
+    for (const expected of expectedCompletedResults) {
       expect(sourceResultsById.get(expected.matchId)).toEqual(expected);
       expect(completedById.get(expected.matchId)).toMatchObject({
         matchId: expected.matchId,
@@ -368,27 +432,33 @@ describe("official knockout results artifact", () => {
     }
   });
 
-  it("propagates Round-of-32 winners into pending Round-of-16 slots without future scores", () => {
+  it("propagates Round-of-32 and Round-of-16 winners into pending slots without future scores", () => {
     const artifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
     const pendingById = new Map(artifact.pendingMatches.map((match) => [match.matchId, match]));
+    const completedById = new Map(artifact.completedMatches.map((match) => [match.matchId, match]));
     const roundOf16 = artifact.pendingMatches.filter((match) => match.round === "round_of_16");
-    const roundOf16TeamIds = new Set(
-      roundOf16.flatMap((match) => [
-        match.knownParticipants.participantA?.teamId,
-        match.knownParticipants.participantB?.teamId,
-      ]).filter((teamId): teamId is string => teamId !== undefined),
+    const quarterfinals = artifact.pendingMatches.filter((match) => match.round === "quarterfinal");
+    const knownPendingTeamIds = new Set(
+      [...roundOf16, ...quarterfinals]
+        .flatMap((match) => [
+          match.knownParticipants.participantA?.teamId,
+          match.knownParticipants.participantB?.teamId,
+        ])
+        .filter((teamId): teamId is string => teamId !== undefined),
     );
 
-    expect(roundOf16.map((match) => match.matchId)).toEqual([
-      "m89",
-      "m90",
-      "m91",
-      "m92",
-      "m93",
-      "m94",
-      "m95",
-      "m96",
-    ]);
+    function teamIdAtSlot(
+      match:
+        | KnockoutResultsArtifact["completedMatches"][number]
+        | KnockoutResultsArtifact["pendingMatches"][number],
+      slot: "participantA" | "participantB",
+    ): string | undefined {
+      return "knownParticipants" in match
+        ? match.knownParticipants[slot]?.teamId
+        : match[slot].teamId;
+    }
+
+    expect(roundOf16.map((match) => match.matchId)).toEqual(["m93", "m94", "m95", "m96"]);
     expect(
       Object.fromEntries(
         roundOf16.map((match) => [
@@ -400,31 +470,59 @@ describe("official knockout results artifact", () => {
         ]),
       ),
     ).toEqual({
-      m89: ["par", "fra"],
-      m90: ["can", "mar"],
-      m91: ["bra", "nor"],
-      m92: ["mex", "eng"],
       m93: ["por", "esp"],
       m94: ["usa", "bel"],
       m95: ["arg", "egy"],
       m96: ["sui", "col"],
     });
 
+    expect(quarterfinals.map((match) => match.matchId)).toEqual(["m97", "m98", "m99", "m100"]);
+    expect(pendingById.get("m97")).toMatchObject({
+      knownParticipants: {
+        participantA: { teamId: "fra" },
+        participantB: { teamId: "mar" },
+      },
+      unresolvedParticipantSlots: {},
+    });
+    expect(pendingById.get("m99")).toMatchObject({
+      knownParticipants: {
+        participantA: { teamId: "nor" },
+        participantB: { teamId: "eng" },
+      },
+      unresolvedParticipantSlots: {},
+    });
+    expect(pendingById.get("m98")).toMatchObject({
+      knownParticipants: {},
+      unresolvedParticipantSlots: {
+        participantA: "winner of m93",
+        participantB: "winner of m94",
+      },
+    });
+    expect(pendingById.get("m100")).toMatchObject({
+      knownParticipants: {},
+      unresolvedParticipantSlots: {
+        participantA: "winner of m95",
+        participantB: "winner of m96",
+      },
+    });
+
     for (const completed of artifact.completedMatches) {
       const routing = completed.nextMatchRouting.find((route) => route.outcome === "winner");
       expect(routing).toBeDefined();
-      expect(routing?.toMatchId).toMatch(/^m(?:89|9[0-6])$/);
-      const nextMatch = pendingById.get(String(routing?.toMatchId));
+      expect(routing?.toMatchId).toMatch(/^m(?:89|9[0-9])$/);
+      const toMatchId = String(routing?.toMatchId);
+      const nextMatch = pendingById.get(toMatchId) ?? completedById.get(toMatchId);
       expect(nextMatch).toBeDefined();
-      expect(nextMatch?.round).toBe("round_of_16");
+      expect(nextMatch?.round).toBe(
+        completed.round === "round_of_32" ? "round_of_16" : "quarterfinal",
+      );
       const side = routing?.toSlot === "teamAId" ? "participantA" : "participantB";
-      expect(nextMatch?.knownParticipants[side]?.teamId).toBe(completed.winnerId);
-      expect(roundOf16TeamIds.has(completed.loserId)).toBe(false);
+      expect(nextMatch && teamIdAtSlot(nextMatch, side)).toBe(completed.winnerId);
+      expect(knownPendingTeamIds.has(completed.loserId)).toBe(false);
     }
 
-    for (const pending of roundOf16) {
+    for (const pending of [...roundOf16, ...quarterfinals]) {
       expect(pending.status).toBe("pending");
-      expect(pending.unresolvedParticipantSlots).toEqual({});
       expect("score" in pending).toBe(false);
       expect("winnerId" in pending).toBe(false);
     }
@@ -679,7 +777,7 @@ describe("mixed official knockout simulator adapter", () => {
       m96: ["sui", "col"],
     });
 
-    for (const match of mixed.filter((match) => match.round !== "round_of_32")) {
+    for (const match of mixed.filter((match) => !match.officialResultLocked)) {
       expect(officialLoserIds.has(String(match.teamAId))).toBe(false);
       expect(officialLoserIds.has(String(match.teamBId))).toBe(false);
     }
@@ -719,10 +817,6 @@ describe("mixed official knockout simulator adapter", () => {
     }
 
     for (const matchId of [
-      "m89",
-      "m90",
-      "m91",
-      "m92",
       "m93",
       "m94",
       "m95",
@@ -744,7 +838,7 @@ describe("mixed official knockout simulator adapter", () => {
       expect(match?.winnerId).toEqual(expect.any(String));
     }
 
-    for (const match of result.matches.filter((match) => match.round !== "round_of_32")) {
+    for (const match of result.matches.filter((match) => !match.officialResultLocked)) {
       expect(officialLoserIds.has(String(match.teamAId))).toBe(false);
       expect(officialLoserIds.has(String(match.teamBId))).toBe(false);
       expect(officialLoserIds.has(String(match.winnerId))).toBe(false);

@@ -540,15 +540,15 @@ describe("official tournament UI integration", () => {
     );
 
     expect(officialTournamentUiData.knockoutStatusSummary).toEqual({
-      completedCount: 16,
-      pendingCount: 16,
+      completedCount: 20,
+      pendingCount: 12,
       totalCount: 32,
     });
     expect(completedRows.map((match) => match.id)).toEqual(
-      Array.from({ length: 16 }, (_, index) => `m${index + 73}`),
+      Array.from({ length: 20 }, (_, index) => `m${index + 73}`),
     );
     expect(pendingRows.map((match) => match.id)).toEqual(
-      Array.from({ length: 16 }, (_, index) => `m${index + 89}`),
+      Array.from({ length: 12 }, (_, index) => `m${index + 93}`),
     );
     expect(pendingRows.every((match) => match.scoreLabel === "No official score")).toBe(true);
     expect(pendingRows.every((match) => match.winnerLabel === "Not official")).toBe(true);
@@ -586,23 +586,23 @@ describe("official tournament UI integration", () => {
   it("renders future official knockout matches as pending without fabricated scores", () => {
     const markup = renderToStaticMarkup(createElement(WorldCupSimulator));
     const roundOf16Rows = officialTournamentUiData.knockoutStatusMatches.filter(
-      (match) => match.id >= "m89" && match.id <= "m96",
+      (match) => match.id >= "m93" && match.id <= "m96",
     );
-    const m89Row = getOfficialKnockoutStatusRowMarkup(markup, "m89");
-    const m90Row = getOfficialKnockoutStatusRowMarkup(markup, "m90");
+    const m93Row = getOfficialKnockoutStatusRowMarkup(markup, "m93");
+    const m94Row = getOfficialKnockoutStatusRowMarkup(markup, "m94");
 
-    expect(roundOf16Rows).toHaveLength(8);
+    expect(roundOf16Rows).toHaveLength(4);
     expect(roundOf16Rows.every((match) => match.statusTone === "pending")).toBe(true);
     expect(roundOf16Rows.every((match) => match.scoreLabel === "No official score")).toBe(true);
     expect(roundOf16Rows.every((match) => match.winnerLabel === "Not official")).toBe(true);
-    expect(m89Row).toContain("Paraguay");
-    expect(m89Row).toContain("France");
-    expect(m89Row).toContain("Pending official");
-    expect(m89Row).toContain("No official score");
-    expect(m89Row).toContain("Not official");
-    expect(m90Row).toContain("Canada");
-    expect(m90Row).toContain("Morocco");
-    expect(m90Row).not.toMatch(/\d-\d/);
+    expect(m93Row).toContain("Portugal");
+    expect(m93Row).toContain("Spain");
+    expect(m93Row).toContain("Pending official");
+    expect(m93Row).toContain("No official score");
+    expect(m93Row).toContain("Not official");
+    expect(m94Row).toContain("USA");
+    expect(m94Row).toContain("Belgium");
+    expect(m94Row).not.toMatch(/\d-\d/);
   });
 
   it("formats a controlled pending official knockout row", () => {
@@ -760,7 +760,9 @@ describe("official tournament UI integration", () => {
     expect(getBracketMatchMarkup(markup, "m91")).not.toContain("France");
     expect(getBracketMatchMarkup(markup, "m95")).not.toContain("Switzerland");
     expect(getBracketMatchMarkup(markup, "m96")).not.toContain("Egypt");
-    expect(getBracketMatchMarkup(markup, "m89")).toContain("Pending official");
+    expect(getBracketMatchMarkup(markup, "m93")).toContain("Pending official");
+    expect(getBracketMatchMarkup(markup, "m89")).toContain("Official completed");
+    expect(getBracketMatchMarkup(markup, "m89")).toContain("0-1");
     expect(getBracketMatchMarkup(markup, "m73")).toContain("Official completed");
     expect(getBracketMatchMarkup(markup, "m73")).toContain("0");
     expect(getBracketMatchMarkup(markup, "m73")).toContain("1");
@@ -858,9 +860,21 @@ describe("official tournament UI integration", () => {
     expect(getMatchById(currentState.matches, "m90")).toMatchObject({
       teamAId: "can",
       teamBId: "mar",
+      winnerId: "mar",
+      officialResultLocked: true,
+      mixedOfficialStatus: "official_completed",
+      score: {
+        teamAGoals: 0,
+        teamBGoals: 3,
+        decidedBy: "regular_time",
+      },
+    });
+    expect(getMatchById(currentState.matches, "m93")).toMatchObject({
+      teamAId: "por",
+      teamBId: "esp",
       mixedOfficialStatus: "pending_simulation",
     });
-    expect(getMatchById(currentState.matches, "m90").winnerId).toBeUndefined();
+    expect(getMatchById(currentState.matches, "m93").winnerId).toBeUndefined();
     expect(
       Object.fromEntries(
         currentState.matches
@@ -955,7 +969,7 @@ describe("official tournament UI integration", () => {
     });
     expect(traceabilityRowsByLabel.get("Knockout results")).toMatchObject({
       artifactVersion: "official-2026-2026-06-28-r1-knockout-results-r1",
-      checksum: "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1",
+      checksum: "46a67c7cac0d1931dcf0990d3274d129d3e540322a213ab2e17b7a9958a6298c",
     });
     expect(traceabilityRowsByLabel.get("Numeric ratings")).toMatchObject({
       id: "world-cup-2026-knockout-ratings",
@@ -991,7 +1005,7 @@ describe("official tournament UI integration", () => {
       "f4c718c8cf2c87beb0eade1268268651eca6cb9712a4ef2ffbfddeebb01d94d5",
     );
     expect(markup).toContain(
-      "179e9f53a4502a987413fba547dbc32a4d85bee42aa1eb56a84781866a5747a1",
+      "46a67c7cac0d1931dcf0990d3274d129d3e540322a213ab2e17b7a9958a6298c",
     );
     expect(markup).toContain("BDEFIJKL");
   });
