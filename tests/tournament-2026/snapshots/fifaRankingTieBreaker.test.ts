@@ -7,6 +7,7 @@ import {
   type GroupTableRow,
   type RankedGroupTeam,
 } from "@/src/lib/tournament-2026";
+import { toGroupRecord } from "../helpers";
 
 const fairPlayByTeamId = {
   mex: { teamId: "mex", deductionPoints: 0 },
@@ -82,8 +83,8 @@ describe("FIFA ranking tie-breaker", () => {
   });
 
   it("resolves a third-place cutoff tie by FIFA ranking", () => {
-    const tables = Object.fromEntries(
-      ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"].map((groupId, index) => {
+    const tables = toGroupRecord(
+      ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"].map<[string, RankedGroupTeam[]]>((groupId, index) => {
         const teamId = index < 7 ? `q${index}` : index === 7 ? "mex" : index === 8 ? "rsa" : `nq${index}`;
         const third: RankedGroupTeam = {
           ...row(teamId, index < 7 ? 4 : index < 9 ? 3 : 1),
@@ -101,7 +102,7 @@ describe("FIFA ranking tie-breaker", () => {
           ],
         ];
       }),
-    ) as Parameters<typeof rankThirdPlacedTeams>[0];
+    );
 
     const allThirdIds = Object.values(tables).map((table) => table[2].teamId);
     const fairPlayAll = Object.fromEntries(
@@ -171,8 +172,8 @@ describe("FIFA ranking tie-breaker", () => {
   });
 
   it("does not consult FIFA ranking for third-place teams separated before the cutoff", () => {
-    const tables = Object.fromEntries(
-      ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"].map((groupId, index) => {
+    const tables = toGroupRecord(
+      ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"].map<[string, RankedGroupTeam[]]>((groupId, index) => {
         const third: RankedGroupTeam = {
           ...row(`third-${index}`, 12 - index),
           group: groupId as RankedGroupTeam["group"],
@@ -189,7 +190,7 @@ describe("FIFA ranking tie-breaker", () => {
           ],
         ];
       }),
-    ) as Parameters<typeof rankThirdPlacedTeams>[0];
+    );
 
     expect(() => rankThirdPlacedTeams(tables, { rankingMode: "official" })).not.toThrow();
   });

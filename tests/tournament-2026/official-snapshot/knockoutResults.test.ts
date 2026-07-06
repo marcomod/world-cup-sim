@@ -555,8 +555,8 @@ describe("official knockout results artifact", () => {
 
     expect(() =>
       verifyKnockoutResultsArtifacts({
-        qualification,
-        roundOf32,
+        qualification: { ...qualification },
+        roundOf32: { ...roundOf32 },
         source: { ...knockoutSource, results: [m73Result] },
         artifact: fabricatedPending,
       }),
@@ -570,8 +570,8 @@ describe("official knockout results artifact", () => {
 
     expect(() =>
       verifyKnockoutResultsArtifacts({
-        qualification,
-        roundOf32,
+        qualification: { ...qualification },
+        roundOf32: { ...roundOf32 },
         source: { ...knockoutSource, results: [m73Result] },
         artifact: wrongRouting,
       }),
@@ -592,8 +592,8 @@ describe("official knockout results artifact", () => {
 
     expect(() =>
       verifyKnockoutResultsArtifacts({
-        qualification,
-        roundOf32,
+        qualification: { ...qualification },
+        roundOf32: { ...roundOf32 },
         source: knockoutSource,
         artifactText: canonicalText,
       }),
@@ -602,17 +602,14 @@ describe("official knockout results artifact", () => {
 
   it("rejects semantic-equivalent raw artifact text when object keys are reordered", () => {
     const artifact = buildWithResults(knockoutSource.results);
-    const reordered = {
-      schemaVersion: artifact.schemaVersion,
-      generatedFileWarning: artifact.generatedFileWarning,
-      ...artifact,
-    };
+    const { schemaVersion, generatedFileWarning, ...rest } = artifact;
+    const reordered = { schemaVersion, generatedFileWarning, ...rest };
 
     expect(reordered).toEqual(artifact);
     expect(() =>
       verifyKnockoutResultsArtifacts({
-        qualification,
-        roundOf32,
+        qualification: { ...qualification },
+        roundOf32: { ...roundOf32 },
         source: knockoutSource,
         artifactText: stableJson(reordered),
       }),
@@ -624,8 +621,8 @@ describe("official knockout results artifact", () => {
 
     expect(() =>
       verifyKnockoutResultsArtifacts({
-        qualification,
-        roundOf32,
+        qualification: { ...qualification },
+        roundOf32: { ...roundOf32 },
         source: knockoutSource,
         artifactText: `${JSON.stringify(artifact, null, 4)}\n`,
       }),

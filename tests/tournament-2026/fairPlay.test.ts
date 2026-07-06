@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { rankGroupTeams, rankThirdPlacedTeams } from "@/src/lib/tournament-2026";
-import type { FairPlayByTeamId, GroupId, GroupTableRow, RankedGroupTeam, TeamId } from "@/src/lib/tournament-2026";
-import { createMatch, groupRows } from "./helpers";
+import type { FairPlayByTeamId, GroupTableRow, RankedGroupTeam, TeamId } from "@/src/lib/tournament-2026";
+import { createMatch, groupRows, toGroupRecord } from "./helpers";
 
 function row(teamId: TeamId): GroupTableRow {
   return {
@@ -112,8 +112,8 @@ describe("fair-play completeness", () => {
   });
 
   it("fails a third-place cutoff tie with incomplete fair-play data", () => {
-    const tables = Object.fromEntries(
-      "ABCDEFGHIJKL".split("").map((groupId, index) => {
+    const tables = toGroupRecord(
+      "ABCDEFGHIJKL".split("").map<[string, RankedGroupTeam[]]>((groupId, index) => {
         const third = groupRows([`${groupId.toLowerCase()}3`])[0];
         const table: RankedGroupTeam[] = [
           { ...third, teamId: `${groupId.toLowerCase()}1`, position: 1, points: 9 },
@@ -123,7 +123,7 @@ describe("fair-play completeness", () => {
         ];
         return [groupId, table];
       }),
-    ) as Record<GroupId, readonly RankedGroupTeam[]>;
+    );
 
     expect(() => rankThirdPlacedTeams(tables)).toThrow(/Third-place ranking requires complete fair-play data/);
   });

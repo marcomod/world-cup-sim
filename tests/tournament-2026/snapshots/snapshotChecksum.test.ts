@@ -20,7 +20,7 @@ function expectChecksumChanges(
   expect(checksum(mutated), label).not.toBe(checksum(baseline));
 }
 
-function reorderObject<T extends Record<string, unknown>>(value: T): T {
+function reorderObject<T extends object>(value: T): T {
   return Object.fromEntries(Object.entries(value).reverse()) as T;
 }
 
@@ -32,9 +32,9 @@ describe("tournament snapshot checksum", () => {
     reordered.fixtures = [...reordered.fixtures].reverse();
     reordered.fairPlay = [...reordered.fairPlay].reverse();
     reordered.fifaRanking = [...reordered.fifaRanking].reverse();
-    reordered.sources = reorderObject(reordered.sources as unknown as Record<string, unknown>) as typeof reordered.sources;
-    reordered.sources.teams = reorderObject(reordered.sources.teams as unknown as Record<string, unknown>) as typeof reordered.sources.teams;
-    reordered.fixtures = reordered.fixtures.map((fixture) => reorderObject(fixture as unknown as Record<string, unknown>) as typeof fixture);
+    reordered.sources = reorderObject(reordered.sources);
+    reordered.sources.teams = reorderObject(reordered.sources.teams);
+    reordered.fixtures = reordered.fixtures.map((fixture) => reorderObject(fixture));
 
     const compact = JSON.parse(JSON.stringify(reordered)) as TournamentSnapshot;
     const pretty = JSON.parse(JSON.stringify(reordered, null, 4)) as TournamentSnapshot;

@@ -63,6 +63,21 @@ export function buildRankedTables(
   ) as Record<GroupId, readonly RankedGroupTeam[]>;
 }
 
+/**
+ * Builds an exhaustive per-group record from `[groupId, value]` entries.
+ *
+ * `Object.fromEntries` widens keys to `string`, so TypeScript cannot assert the result to the
+ * finite `GroupId` key set directly (TS2352). The third-place ranking tests always emit exactly
+ * one entry per group, so narrowing here is safe. This is the single audit point for that
+ * `RankedGroupTeam`-keyed group-table construction — a future change to `RankedGroupTeam` or the
+ * `GroupId` key set surfaces in one place rather than four inline casts.
+ */
+export function toGroupRecord<V>(
+  entries: Iterable<readonly [string, V]>,
+): Record<GroupId, V> {
+  return Object.fromEntries(entries) as unknown as Record<GroupId, V>;
+}
+
 export function createMatch(
   id: string,
   group: GroupId,

@@ -25,7 +25,13 @@ const SOURCE_CHECKSUM =
   "60229eccd1652be38de9e8945696393b89cf3e482ded26cce7a20ed0c4f043ab";
 
 function createMatch(
-  overrides: Partial<NormalizedHistoricalMatch> = {},
+  // Decouple the `outcomeStatus`/`winnerTeamId` discriminant so tests can construct
+  // deliberately-invalid matches (e.g. a draw carrying a non-null winner) to exercise the
+  // reconstruction validator. The literal is still returned as a `NormalizedHistoricalMatch`.
+  overrides: Partial<Omit<NormalizedHistoricalMatch, "outcomeStatus" | "winnerTeamId">> & {
+    outcomeStatus?: NormalizedHistoricalMatch["outcomeStatus"];
+    winnerTeamId?: NormalizedHistoricalMatch["winnerTeamId"];
+  } = {},
 ): NormalizedHistoricalMatch {
   return {
     matchId: "historical:test-match",

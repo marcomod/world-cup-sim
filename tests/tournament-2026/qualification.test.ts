@@ -10,7 +10,7 @@ import {
   rankThirdPlacedTeams,
 } from "@/src/lib/tournament-2026";
 import type { GroupId, RankedGroupTeam, TeamId } from "@/src/lib/tournament-2026";
-import { buildRankedTables } from "./helpers";
+import { buildRankedTables, toGroupRecord } from "./helpers";
 
 interface ThirdPlaceFixtureRow {
   group: GroupId;
@@ -49,8 +49,8 @@ function buildThirdPlaceFixtureTables(
 ): Record<GroupId, readonly RankedGroupTeam[]> {
   const thirdByGroup = new Map(thirdPlaceRows.map((row) => [row.group, row]));
 
-  return Object.fromEntries(
-    GROUP_IDS.map((group) => {
+  return toGroupRecord(
+    GROUP_IDS.map<[GroupId, RankedGroupTeam[]]>((group) => {
       const third = thirdByGroup.get(group);
       if (!third) {
         throw new Error(`Missing test third-place row for Group ${group}.`);
@@ -73,7 +73,7 @@ function buildThirdPlaceFixtureTables(
         ],
       ];
     }),
-  ) as Record<GroupId, readonly RankedGroupTeam[]>;
+  );
 }
 
 describe("qualification", () => {

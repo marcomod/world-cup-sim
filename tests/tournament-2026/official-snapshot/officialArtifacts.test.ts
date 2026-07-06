@@ -51,60 +51,10 @@ function ids(rows: readonly { teamId: string }[]): string[] {
   return rows.map((row) => row.teamId);
 }
 
-type QualificationRow = {
-  teamId: string;
-  group: string;
-  thirdPlaceRank?: number;
-  qualified?: boolean;
-  points?: number;
-  goalDifference?: number;
-  goalsFor?: number;
-};
-
-type QualificationArtifact = {
-  status: string;
-  tournamentSnapshotId: string;
-  tournamentSnapshotVersion: string;
-  tournamentSnapshotChecksum: string;
-  qualificationChecksum: string;
-  qualifyingThirdPlaceGroupKey: string;
-  qualifiers: QualificationRow[];
-  qualifiedThirdPlacedTeams: QualificationRow[];
-  eliminatedThirdPlacedTeams: QualificationRow[];
-  thirdPlacedTeams: Required<Pick<QualificationRow, "teamId" | "group" | "thirdPlaceRank" | "qualified" | "points" | "goalDifference" | "goalsFor">>[];
-  thirdPlaceEquivalenceGroups: {
-    sharedRank: number;
-    teamIds: string[];
-    semantics: string;
-    affectsQualification: boolean;
-  }[];
-  fairPlay: { totalsIncluded: boolean; fabricatedTotals: boolean; records: unknown[] };
-  tieSemantics: Record<string, unknown>;
-};
-
-type ExpectedQualification = {
-  qualifiers: string[];
-  qualifiedThirdPlacedTeams: string[];
-  eliminatedThirdPlacedTeams: string[];
-};
-
-type RoundMatch = {
-  matchId: string;
-  participantAId: string;
-  participantBId: string;
-  sourceSlots: { participantA: string; participantB: string };
-  nextMatchId: string;
-  nextSide: string;
-};
-
-type RoundArtifact = {
-  tournamentSnapshotId: string;
-  tournamentSnapshotVersion: string;
-  tournamentSnapshotChecksum: string;
-  qualificationChecksum: string;
-  roundOf32Checksum: string;
-  matches: RoundMatch[];
-};
+// Artifact shapes are derived from the real builder/verifier signatures (below) rather than
+// hand-rolled here, so a change to those canonical types surfaces in this test instead of
+// silently drifting. `qualification`/`roundOf32` feed both the verifier and the simulator-input
+// builder, whose parameter types differ, so each is typed as the intersection of both.
 
 type RatingRecord = {
   teamId: string;
@@ -157,19 +107,6 @@ type OrchestrationStatus = {
   noFabricatedFairPlayValues: boolean;
 };
 
-type RatingReport = {
-  ratingSnapshotId: string;
-  ratingSnapshotVersion: string;
-  modelVersion: string;
-  tournamentSnapshotId: string;
-  tournamentSnapshotVersion: string;
-  tournamentSnapshotChecksum: string;
-  divisor: number;
-  records: unknown[];
-  ratingChecksum: string;
-  outputChecksum: string;
-};
-
 type ExpectedFixtureMetadata = {
   accessCutoffUtc: string;
   normalizationVersion: string;
@@ -199,15 +136,29 @@ function permute<T>(values: readonly T[]): T[] {
 }
 
 describe("official 2026 qualification and simulator-input artifacts", () => {
-  const qualification = readJson<QualificationArtifact>(OFFICIAL_QUALIFICATION_ARTIFACT_FILE);
-  const roundOf32 = readJson<RoundArtifact>(OFFICIAL_ROUND_OF_32_ARTIFACT_FILE);
-  const expectedQualification = readJson<ExpectedQualification>(OFFICIAL_EXPECTED_QUALIFICATION_FILE);
-  const expectedThirdPlace = readJson<QualificationArtifact["thirdPlacedTeams"]>(OFFICIAL_EXPECTED_THIRD_PLACE_RANKING_FILE);
-  const expectedRoundOf32 = readJson<RoundMatch[]>(OFFICIAL_EXPECTED_ROUND_OF_32_FILE);
+  const qualification = readJson<
+    Parameters<typeof verifyOfficialQualificationArtifacts>[0]["qualification"] &
+      Parameters<typeof buildOfficialSimulatorInputArtifacts>[1]
+  >(OFFICIAL_QUALIFICATION_ARTIFACT_FILE);
+  const roundOf32 = readJson<
+    Parameters<typeof verifyOfficialQualificationArtifacts>[0]["round"] &
+      Parameters<typeof buildOfficialSimulatorInputArtifacts>[2]
+  >(OFFICIAL_ROUND_OF_32_ARTIFACT_FILE);
+  const expectedQualification = readJson<
+    Parameters<typeof verifyOfficialQualificationArtifacts>[0]["expectedQualification"]
+  >(OFFICIAL_EXPECTED_QUALIFICATION_FILE);
+  const expectedThirdPlace = readJson<
+    Parameters<typeof verifyOfficialQualificationArtifacts>[0]["expectedThirdPlace"]
+  >(OFFICIAL_EXPECTED_THIRD_PLACE_RANKING_FILE);
+  const expectedRoundOf32 = readJson<
+    Parameters<typeof verifyOfficialQualificationArtifacts>[0]["expectedRound"]
+  >(OFFICIAL_EXPECTED_ROUND_OF_32_FILE);
   const expectedMetadata = readJson<ExpectedFixtureMetadata>(OFFICIAL_EXPECTED_METADATA_FILE);
   const ratingLinkage = readJson<RatingLinkageArtifact>(OFFICIAL_RATING_LINKAGE_ARTIFACT_FILE);
   const simulatorInput = readJson<SimulatorInputArtifact>(OFFICIAL_SIMULATOR_INPUT_ARTIFACT_FILE);
-  const ratingReport = readJson<RatingReport>("data/generated/world-cup-2026/knockout-rating-report.json");
+  const ratingReport = readJson<Parameters<typeof buildOfficialSimulatorInputArtifacts>[3]>(
+    "data/generated/world-cup-2026/knockout-rating-report.json",
+  );
   const snapshot = loadTournamentSnapshot(OFFICIAL_SNAPSHOT_FILE);
 
   function currentOrchestrationStatus(): OrchestrationStatus {

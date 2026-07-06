@@ -138,7 +138,7 @@ describe("strict Kaggle World Cup CSV loading", () => {
       /duplicate header/,
     );
 
-    const unknown = [...KAGGLE_WORLD_CUP_HEADERS];
+    const unknown: string[] = [...KAGGLE_WORLD_CUP_HEADERS];
     unknown[43] = "unknown_column";
     expect(() => parseKaggleWorldCupCsv(createCsv(createSourceRow(), unknown))).toThrow(
       /unknown or extra header/,
