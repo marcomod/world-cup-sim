@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type MouseEvent } from "react";
 import {
   teamRatingsV2ByTeamId,
   teamRatingsV2SourceMetadata,
@@ -188,6 +188,9 @@ export function WorldCupSimulator() {
     useState<SandboxMode>("current_official_state");
   const [monteCarloResult, setMonteCarloResult] =
     useState<MonteCarloResult | null>(null);
+  const [pendingMonteCarloMode, setPendingMonteCarloMode] =
+    useState<SandboxMode | null>(null);
+  const isMonteCarloPending = pendingMonteCarloMode !== null;
   const teamsById = useMemo(() => createTeamsById(officialTournamentTeams), []);
   const finalMatch = matches.find((match) => match.round === "final");
   const champion = useMemo(
@@ -239,12 +242,47 @@ export function WorldCupSimulator() {
     setMonteCarloResult(null);
   }
 
-  function handleRunCurrentStateMonteCarlo() {
-    applySandboxState(createCurrentStateMonteCarloState(Date.now()));
+  function startMonteCarloRun(
+    mode: SandboxMode,
+    event: MouseEvent<HTMLButtonElement>,
+  ) {
+    // The second click of a double-click carries detail > 1 even when the
+    // browser queues it during the blocking run and dispatches it after the
+    // buttons have re-enabled, where the disabled attribute can't catch it.
+    if (pendingMonteCarloMode !== null || event.detail > 1) {
+      return;
+    }
+
+    setPendingMonteCarloMode(mode);
+    // rAF fires just before the next paint; scheduling the timeout from there
+    // guarantees the busy frame is painted before the run blocks the thread.
+    requestAnimationFrame(() => {
+      window.setTimeout(() => {
+        try {
+          applySandboxState(
+            mode === "current_official_state"
+              ? createCurrentStateMonteCarloState(Date.now())
+              : createBaselineMonteCarloState(Date.now()),
+          );
+        } finally {
+          // Cleared one macrotask later so clicks queued during the blocking
+          // run are dispatched against still-disabled buttons.
+          window.setTimeout(() => setPendingMonteCarloMode(null), 0);
+        }
+      }, 0);
+    });
   }
 
-  function handleRunBaselineMonteCarlo() {
-    applySandboxState(createBaselineMonteCarloState(Date.now()));
+  function handleRunCurrentStateMonteCarlo(
+    event: MouseEvent<HTMLButtonElement>,
+  ) {
+    startMonteCarloRun("current_official_state", event);
+  }
+
+  function handleRunBaselineMonteCarlo(
+    event: MouseEvent<HTMLButtonElement>,
+  ) {
+    startMonteCarloRun("baseline", event);
   }
 
   return (
@@ -314,16 +352,21 @@ export function WorldCupSimulator() {
               <button
                 type="button"
                 onClick={handleSimulateCurrentStateBracket}
-                className="min-h-11 bg-emerald-500 px-4 py-3 text-left text-sm font-bold text-[#07130e] shadow-sm transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-[#101318]"
+                disabled={isMonteCarloPending}
+                className="min-h-11 bg-emerald-500 px-4 py-3 text-left text-sm font-bold text-[#07130e] shadow-sm transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2 focus:ring-offset-[#101318] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Simulate Current State
               </button>
               <button
                 type="button"
                 onClick={handleRunCurrentStateMonteCarlo}
-                className="min-h-11 bg-white px-4 py-3 text-left text-sm font-bold text-[#101318] shadow-sm transition hover:bg-[#dfe3e8] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#101318]"
+                disabled={isMonteCarloPending}
+                aria-busy={pendingMonteCarloMode === "current_official_state"}
+                className="min-h-11 bg-white px-4 py-3 text-left text-sm font-bold text-[#101318] shadow-sm transition hover:bg-[#dfe3e8] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#101318] disabled:cursor-not-allowed disabled:opacity-50"
               >
-                Run 10,000 Current-State Simulations
+                {pendingMonteCarloMode === "current_official_state"
+                  ? "Running 10,000 simulations…"
+                  : "Run 10,000 Current-State Simulations"}
               </button>
             </div>
             <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#8c929d]">
@@ -333,22 +376,28 @@ export function WorldCupSimulator() {
               <button
                 type="button"
                 onClick={handleSimulateBaselineBracket}
-                className="min-h-11 border border-white/20 bg-transparent px-4 py-3 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
+                disabled={isMonteCarloPending}
+                className="min-h-11 border border-white/20 bg-transparent px-4 py-3 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Baseline: Ignore Official Results
               </button>
               <button
                 type="button"
                 onClick={handleRunBaselineMonteCarlo}
-                className="min-h-11 border border-white/20 bg-transparent px-4 py-3 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
+                disabled={isMonteCarloPending}
+                aria-busy={pendingMonteCarloMode === "baseline"}
+                className="min-h-11 border border-white/20 bg-transparent px-4 py-3 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318] disabled:cursor-not-allowed disabled:opacity-50"
               >
-                Run 10,000 Baseline Simulations
+                {pendingMonteCarloMode === "baseline"
+                  ? "Running 10,000 simulations…"
+                  : "Run 10,000 Baseline Simulations"}
               </button>
             </div>
             <button
               type="button"
               onClick={handleResetBracket}
-              className="min-h-10 border border-white/20 bg-transparent px-4 py-2 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318]"
+              disabled={isMonteCarloPending}
+              className="min-h-10 border border-white/20 bg-transparent px-4 py-2 text-left text-sm font-bold text-white transition hover:bg-white/8 focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-[#101318] disabled:cursor-not-allowed disabled:opacity-50"
             >
               Reset to current official state
             </button>
@@ -356,7 +405,11 @@ export function WorldCupSimulator() {
               className="font-mono text-[10px] text-[#747c88]"
               aria-live="polite"
             >
-              Mode: {sandboxCopy.modeLabel} / Last seed: {lastSeed ?? "Not simulated"}
+              {pendingMonteCarloMode !== null
+                ? `Mode: ${getSimulationSandboxCopy(pendingMonteCarloMode).modeLabel} / Running 10,000 simulations…`
+                : monteCarloResult
+                  ? `Mode: ${sandboxCopy.modeLabel} / Seed: n/a — aggregate of ${tournamentOddsSimulationCountLabel} runs`
+                  : `Mode: ${sandboxCopy.modeLabel} / Last seed: ${lastSeed ?? "Not simulated"}`}
             </p>
           </div>
         </div>
