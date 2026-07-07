@@ -61,6 +61,10 @@ export interface MixedOfficialSimulatorMatch extends Match {
   mixedOfficialStatus: MixedOfficialMatchStatus;
 }
 
+export interface MixedOfficialSimulationResult extends TournamentSimulationResult {
+  matches: MixedOfficialSimulatorMatch[];
+}
+
 export interface KnockoutResultsForSimulator {
   completedMatches: CompletedKnockoutArtifactMatch[];
   pendingMatches: PendingKnockoutArtifactMatch[];
@@ -181,7 +185,7 @@ export function simulateMixedOfficialBracket(
   ratingsByTeamId: RatingsByTeamId,
   rng: RNG,
   options: BracketSimulationOptions = {},
-): TournamentSimulationResult {
+): MixedOfficialSimulationResult {
   const simulatedMatches = matches.map((match) => ({ ...match }));
   const matchesById = new Map(simulatedMatches.map((match) => [match.id, match]));
 
