@@ -10,12 +10,12 @@ export function MatchupOddsTable({
   hasSimulated,
 }: MatchupOddsTableProps) {
   return (
-    <section className="border border-slate-200 bg-white shadow-sm">
-      <div className="border-b border-slate-200 px-4 py-3">
-        <h2 className="text-base font-semibold text-slate-950">
+    <section className="border border-white/10 bg-[#12161c]">
+      <div className="border-b border-white/10 px-4 py-3">
+        <h2 className="text-base font-semibold text-white">
           Ready Matchup Odds
         </h2>
-        <p className="mt-1 text-sm text-slate-600">
+        <p className="mt-1 text-sm text-[#8c929d]">
           Probabilities for fixtures with both teams currently known.
         </p>
       </div>
@@ -23,7 +23,7 @@ export function MatchupOddsTable({
       {rows.length > 0 ? (
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] text-left text-sm">
-            <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-600">
+            <thead className="bg-white/6 text-xs uppercase tracking-wide text-[#8c929d]">
               <tr>
                 <th className="px-4 py-3 font-semibold">Match</th>
                 <th className="px-4 py-3 font-semibold">Team A</th>
@@ -36,22 +36,22 @@ export function MatchupOddsTable({
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200">
+            <tbody className="divide-y divide-white/8">
               {rows.map((row) => (
                 <tr key={row.matchId}>
-                  <td className="px-4 py-3 font-mono text-xs text-slate-500">
+                  <td className="px-4 py-3 font-mono text-xs text-[#8c929d]">
                     {row.matchId}
                   </td>
-                  <td className="px-4 py-3 font-medium text-slate-950">
+                  <td className="px-4 py-3 font-medium text-[#edf0f4]">
                     {row.teamAName}
                   </td>
-                  <td className="px-4 py-3 font-mono text-slate-700">
+                  <td className="px-4 py-3 font-mono text-[#b6bec9]">
                     {row.teamAWinProbabilityLabel}
                   </td>
-                  <td className="px-4 py-3 font-medium text-slate-950">
+                  <td className="px-4 py-3 font-medium text-[#edf0f4]">
                     {row.teamBName}
                   </td>
-                  <td className="px-4 py-3 font-mono text-slate-700">
+                  <td className="px-4 py-3 font-mono text-[#b6bec9]">
                     {row.teamBWinProbabilityLabel}
                   </td>
                 </tr>
@@ -60,7 +60,7 @@ export function MatchupOddsTable({
           </table>
         </div>
       ) : (
-        <p className="px-4 py-6 text-sm text-slate-600">
+        <p className="px-4 py-6 text-sm text-[#8c929d]">
           {hasSimulated
             ? "All currently visible matchups have been simulated."
             : "No ready matchups are available."}

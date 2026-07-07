@@ -19,7 +19,7 @@ function getMatchStatusClass(statusLabel: string) {
   }
 
   if (statusLabel.startsWith("Winner:")) {
-    return "border-amber-300/30 bg-amber-300/10 text-amber-200";
+    return "border-sky-300/30 bg-sky-300/10 text-sky-200";
   }
 
   return "border-white/10 bg-white/5 text-[#a8afb9]";

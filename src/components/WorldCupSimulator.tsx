@@ -301,7 +301,7 @@ export function WorldCupSimulator() {
             ignores official results.
           </p>
         </div>
-        <div className="grid gap-2 text-xs text-[#b6bec9] sm:grid-cols-3 lg:min-w-[520px]">
+        <div className="grid gap-2 text-xs text-[#b6bec9] sm:grid-cols-2 lg:min-w-[520px] lg:grid-cols-4">
           <div className="border border-emerald-300/25 bg-emerald-300/8 px-3 py-2">
             <p className="font-bold text-emerald-200">Official completed</p>
             <p className="mt-1 text-[#8c929d]">Final results are locked.</p>
@@ -314,10 +314,12 @@ export function WorldCupSimulator() {
             <p className="font-bold text-sky-200">Simulation projection</p>
             <p className="mt-1 text-[#8c929d]">Model-generated outcome.</p>
           </div>
+          <div className="border border-white/10 bg-white/5 px-3 py-2">
+            <p className="font-bold text-[#d7dce3]">Ready / awaiting teams</p>
+            <p className="mt-1 text-[#8c929d]">Not yet simulated.</p>
+          </div>
         </div>
       </header>
-
-      <OfficialTournamentOverview />
 
       <section aria-labelledby="simulation-sandbox-heading">
         <div className="mx-auto grid w-full max-w-[1800px] gap-5 border-t border-white/10 px-4 py-6 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.75fr)] lg:items-end">
@@ -416,7 +418,7 @@ export function WorldCupSimulator() {
 
         <Bracket matches={bracketMatches} champion={champion} />
 
-        <div className="mx-auto mt-8 flex w-full max-w-7xl flex-col gap-6 px-4 text-slate-950 sm:px-6 lg:px-8">
+        <div className="mx-auto mt-8 flex w-full max-w-[1800px] flex-col gap-6 px-4 sm:px-6">
           <MatchupOddsTable rows={matchupOddsRows} hasSimulated={champion.isKnown} />
           {monteCarloResult ? (
             <TournamentOddsTable
@@ -427,6 +429,8 @@ export function WorldCupSimulator() {
           ) : null}
         </div>
       </section>
+
+      <OfficialTournamentOverview />
     </main>
   );
 }

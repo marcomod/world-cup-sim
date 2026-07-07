@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { BracketConnector } from "@/src/components/Bracket/BracketConnector";
 import { BracketRound } from "@/src/components/Bracket/BracketRound";
 import { ChampionPanel } from "@/src/components/Bracket/ChampionPanel";
@@ -86,6 +87,18 @@ function getRoundOrder(order: RoundOrder, round: TournamentRound): MatchCardView
 }
 
 export function Bracket({ matches, champion }: BracketProps) {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Open the bracket centered on the Final/Champion column instead of the far
+  // left; an instant scroll on first mount, so nothing animates.
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+
+    if (container) {
+      container.scrollLeft = (container.scrollWidth - container.clientWidth) / 2;
+    }
+  }, []);
+
   const childrenByParent = buildChildrenByParent(matches);
   const finalMatch = matches.find((match) => match.round === "final");
   const finalChildren = finalMatch ? childrenByParent.get(finalMatch.id) : undefined;
@@ -115,7 +128,7 @@ export function Bracket({ matches, champion }: BracketProps) {
             Road to the trophy
           </h2>
         </div>
-        <div className="hidden items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8c929d] sm:flex">
+        <div className="flex flex-wrap items-center justify-end gap-4 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#8c929d]">
           <span className="flex items-center gap-2">
             <span className="h-3 w-0.5 bg-amber-400" /> Winner
           </span>
@@ -123,44 +136,55 @@ export function Bracket({ matches, champion }: BracketProps) {
         </div>
       </div>
 
-      <div
-        className="bracket-horizontal-scroll mt-5 overflow-x-auto pb-5"
-        role="region"
-        aria-label="Scrollable knockout bracket"
-        tabIndex={0}
-      >
-        <div className="knockout-bracket-grid mx-auto px-4" data-bracket-match-count={matches.length}>
-          <BracketRound label={roundLabels.round_of_32} matches={leftRoundOf32} round="round_of_32" side="left" />
-          <BracketConnector direction="left" groups={leftRoundOf16.length} />
-          <BracketRound label={roundLabels.round_of_16} matches={leftRoundOf16} round="round_of_16" side="left" />
-          <BracketConnector direction="left" groups={leftQuarterfinals.length} />
-          <BracketRound label={roundLabels.quarterfinal} matches={leftQuarterfinals} round="quarterfinal" side="left" />
-          <BracketConnector direction="left" groups={leftSemifinals.length} />
-          <BracketRound label={roundLabels.semifinal} matches={leftSemifinals} round="semifinal" side="left" />
-          <BracketConnector direction="left" straight />
+      <div className="relative">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#0b0d10] to-transparent"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#0b0d10] to-transparent"
+        />
+        <div
+          ref={scrollContainerRef}
+          className="bracket-horizontal-scroll mt-5 overflow-x-auto pb-5"
+          role="region"
+          aria-label="Scrollable knockout bracket"
+          tabIndex={0}
+        >
+          <div className="knockout-bracket-grid mx-auto px-4" data-bracket-match-count={matches.length}>
+            <BracketRound label={roundLabels.round_of_32} matches={leftRoundOf32} round="round_of_32" side="left" />
+            <BracketConnector direction="left" groups={leftRoundOf16.length} />
+            <BracketRound label={roundLabels.round_of_16} matches={leftRoundOf16} round="round_of_16" side="left" />
+            <BracketConnector direction="left" groups={leftQuarterfinals.length} />
+            <BracketRound label={roundLabels.quarterfinal} matches={leftQuarterfinals} round="quarterfinal" side="left" />
+            <BracketConnector direction="left" groups={leftSemifinals.length} />
+            <BracketRound label={roundLabels.semifinal} matches={leftSemifinals} round="semifinal" side="left" />
+            <BracketConnector direction="left" straight />
 
-          <section className="bracket-final-column" aria-labelledby="final-heading" data-round-column="final">
-            <h3 id="final-heading" className="h-10 text-center text-[10px] font-bold uppercase tracking-[0.16em] text-amber-300">
-              {roundLabels.final}
-            </h3>
-            <div className="relative h-[1080px]">
-              <ChampionPanel champion={champion} />
-              {finalMatch ? (
-                <div className="absolute inset-x-0 top-1/2 -translate-y-1/2">
-                  <MatchCard match={finalMatch} />
-                </div>
-              ) : null}
-            </div>
-          </section>
+            <section className="bracket-final-column" aria-labelledby="final-heading" data-round-column="final">
+              <h3 id="final-heading" className="h-10 text-center text-[10px] font-bold uppercase tracking-[0.16em] text-amber-300">
+                {roundLabels.final}
+              </h3>
+              <div className="relative h-[1080px]">
+                <ChampionPanel champion={champion} />
+                {finalMatch ? (
+                  <div className="absolute inset-x-0 top-1/2 -translate-y-1/2">
+                    <MatchCard match={finalMatch} />
+                  </div>
+                ) : null}
+              </div>
+            </section>
 
-          <BracketConnector direction="right" straight />
-          <BracketRound label={roundLabels.semifinal} matches={rightSemifinals} round="semifinal" side="right" />
-          <BracketConnector direction="right" groups={rightSemifinals.length} />
-          <BracketRound label={roundLabels.quarterfinal} matches={rightQuarterfinals} round="quarterfinal" side="right" />
-          <BracketConnector direction="right" groups={rightQuarterfinals.length} />
-          <BracketRound label={roundLabels.round_of_16} matches={rightRoundOf16} round="round_of_16" side="right" />
-          <BracketConnector direction="right" groups={rightRoundOf16.length} />
-          <BracketRound label={roundLabels.round_of_32} matches={rightRoundOf32} round="round_of_32" side="right" />
+            <BracketConnector direction="right" straight />
+            <BracketRound label={roundLabels.semifinal} matches={rightSemifinals} round="semifinal" side="right" />
+            <BracketConnector direction="right" groups={rightSemifinals.length} />
+            <BracketRound label={roundLabels.quarterfinal} matches={rightQuarterfinals} round="quarterfinal" side="right" />
+            <BracketConnector direction="right" groups={rightQuarterfinals.length} />
+            <BracketRound label={roundLabels.round_of_16} matches={rightRoundOf16} round="round_of_16" side="right" />
+            <BracketConnector direction="right" groups={rightRoundOf16.length} />
+            <BracketRound label={roundLabels.round_of_32} matches={rightRoundOf32} round="round_of_32" side="right" />
+          </div>
         </div>
       </div>
     </section>

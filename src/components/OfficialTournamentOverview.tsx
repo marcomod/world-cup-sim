@@ -11,7 +11,7 @@ function getOfficialStatusClass(statusTone: "completed" | "pending") {
 export function OfficialTournamentOverview() {
   return (
     <section
-      className="mx-auto w-full max-w-[1800px] px-4 pb-8 sm:px-6"
+      className="mx-auto mt-10 w-full max-w-[1800px] border-t border-white/10 px-4 pb-8 pt-8 sm:px-6"
       aria-labelledby="official-tournament-heading"
     >
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1.45fr)_minmax(360px,0.55fr)]">
@@ -133,7 +133,7 @@ export function OfficialTournamentOverview() {
                   Official knockout result status
                 </h3>
                 <p className="mt-1 text-xs text-[#8c929d]">
-                  Completed and pending official fixtures for the sandbox below.
+                  Completed and pending official fixtures for the simulation sandbox above.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-[0.1em]">
