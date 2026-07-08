@@ -101,6 +101,30 @@ not a bug — see limitations below. (The 2022 holdout year alone scored higher,
 favorable tournament above the long-run norm, not the model's typical performance; the ~65% figure is the
 number to trust.)
 
+### Two probability surfaces (they are computed differently)
+
+The UI shows probabilities in two places, and they do **not** use the same method. Both ultimately rest on
+the same Elo win function — `1 / (1 + 10^(-Δ/400))` in
+[`src/lib/simulator/probability.ts`](src/lib/simulator/probability.ts), with the production divisor `400`
+— but they consume it differently:
+
+- **Matchup odds** — the per-match win % on each bracket card and in the *Ready Matchup Odds* table — are
+  the **closed-form Elo probability, evaluated once** per matchup. No simulation, no RNG, no sample size.
+  The two surfaces differ only in rounding (whole % on cards, precise % in the table). For a single match,
+  this *is* the model's probability.
+- **Tournament Odds** — the table behind the *Run 10,000…* button — are **Monte Carlo frequencies over
+  `MONTE_CARLO_SIMULATION_COUNT = 10,000` simulated tournaments** ([`monteCarlo.ts`](src/lib/simulator/monteCarlo.ts)):
+  reach-this-round counts divided by 10,000.
+
+The two layers nest. Inside each simulated tournament, every match is resolved by **one Bernoulli draw**
+against that same closed-form Elo probability (`rng.next() < teamAWinProbability` in
+[`simulateMatch.ts`](src/lib/simulator/simulateMatch.ts)), using the seedable RNG. So for a single isolated
+match the Monte Carlo frequency converges to the closed-form number — they measure the same thing. They
+only diverge across rounds, where Tournament Odds compound many draws (path dependence, uncertain
+opponents) that one closed-form matchup number can't express. Because both layers route through the seeded
+RNG, identical seeds reproduce identical brackets and identical odds; the closed-form matchup odds have no
+seed at all.
+
 ### Calibration
 
 <!-- reliability curve: generate the chart and save it at docs/images/reliability-curve.png -->
