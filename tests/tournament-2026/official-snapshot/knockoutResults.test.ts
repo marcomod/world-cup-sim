@@ -316,6 +316,60 @@ const expectedCompletedRoundOf16Results: KnockoutResultSourceEntry[] = [
     resultStatus: "official_final",
     resultSource: "official-public-result-entry",
   },
+  {
+    matchId: "m93",
+    participantAId: "por",
+    participantBId: "esp",
+    score: {
+      participantAGoals: 0,
+      participantBGoals: 1,
+      decidedBy: "regular_time",
+    },
+    winnerId: "esp",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m94",
+    participantAId: "usa",
+    participantBId: "bel",
+    score: {
+      participantAGoals: 1,
+      participantBGoals: 4,
+      decidedBy: "regular_time",
+    },
+    winnerId: "bel",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m95",
+    participantAId: "arg",
+    participantBId: "egy",
+    score: {
+      participantAGoals: 3,
+      participantBGoals: 2,
+      decidedBy: "regular_time",
+    },
+    winnerId: "arg",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
+  {
+    matchId: "m96",
+    participantAId: "sui",
+    participantBId: "col",
+    score: {
+      participantAGoals: 0,
+      participantBGoals: 0,
+      decidedBy: "penalties",
+      participantAPenalties: 4,
+      participantBPenalties: 3,
+    },
+    winnerId: "sui",
+    resultStatus: "official_final",
+    resultSource: "official-public-result-entry",
+  },
 ];
 
 const m73Result: KnockoutResultSourceEntry = {
@@ -368,17 +422,17 @@ describe("official knockout results artifact", () => {
     const artifact = readJson<KnockoutResultsArtifact>(OFFICIAL_KNOCKOUT_RESULTS_ARTIFACT_FILE);
     const verification = verifyKnockoutResults();
 
-    expect(knockoutSource.results).toHaveLength(20);
-    expect(artifact.completedMatchCount).toBe(20);
-    expect(artifact.pendingMatchCount).toBe(12);
+    expect(knockoutSource.results).toHaveLength(24);
+    expect(artifact.completedMatchCount).toBe(24);
+    expect(artifact.pendingMatchCount).toBe(8);
     expect(artifact.resultChecksum).toBe(
-      "46a67c7cac0d1931dcf0990d3274d129d3e540322a213ab2e17b7a9958a6298c",
+      "7fe714043748ef86977ad1853f90ed4411f2d2ae2c5b69b41367015c0f93b215",
     );
     expect(artifact.completedMatches.map((match) => match.matchId)).toEqual(
-      Array.from({ length: 20 }, (_, index) => `m${index + 73}`),
+      Array.from({ length: 24 }, (_, index) => `m${index + 73}`),
     );
     expect(artifact.pendingMatches.map((match) => match.matchId)).toEqual(
-      Array.from({ length: 12 }, (_, index) => `m${index + 93}`),
+      Array.from({ length: 8 }, (_, index) => `m${index + 97}`),
     );
     expect(artifact.completedMatches.find((match) => match.matchId === "m90")).toMatchObject({
       participantA: { teamId: "can" },
@@ -400,9 +454,9 @@ describe("official knockout results artifact", () => {
     }
 
     expect(verification).toMatchObject({
-      completedMatchCount: 20,
-      pendingMatchCount: 12,
-      resultChecksum: "46a67c7cac0d1931dcf0990d3274d129d3e540322a213ab2e17b7a9958a6298c",
+      completedMatchCount: 24,
+      pendingMatchCount: 8,
+      resultChecksum: "7fe714043748ef86977ad1853f90ed4411f2d2ae2c5b69b41367015c0f93b215",
     });
   });
 
@@ -458,14 +512,14 @@ describe("official knockout results artifact", () => {
         : match[slot].teamId;
     }
 
-    expect(roundOf16.map((match) => match.matchId)).toEqual(["m93", "m94", "m95", "m96"]);
+    expect(roundOf16).toEqual([]);
     expect(
       Object.fromEntries(
-        roundOf16.map((match) => [
-          match.matchId,
+        ["m93", "m94", "m95", "m96"].map((matchId) => [
+          matchId,
           [
-            match.knownParticipants.participantA?.teamId,
-            match.knownParticipants.participantB?.teamId,
+            completedById.get(matchId)?.participantA.teamId,
+            completedById.get(matchId)?.participantB.teamId,
           ],
         ]),
       ),
@@ -492,24 +546,24 @@ describe("official knockout results artifact", () => {
       unresolvedParticipantSlots: {},
     });
     expect(pendingById.get("m98")).toMatchObject({
-      knownParticipants: {},
-      unresolvedParticipantSlots: {
-        participantA: "winner of m93",
-        participantB: "winner of m94",
+      knownParticipants: {
+        participantA: { teamId: "esp" },
+        participantB: { teamId: "bel" },
       },
+      unresolvedParticipantSlots: {},
     });
     expect(pendingById.get("m100")).toMatchObject({
-      knownParticipants: {},
-      unresolvedParticipantSlots: {
-        participantA: "winner of m95",
-        participantB: "winner of m96",
+      knownParticipants: {
+        participantA: { teamId: "arg" },
+        participantB: { teamId: "sui" },
       },
+      unresolvedParticipantSlots: {},
     });
 
     for (const completed of artifact.completedMatches) {
       const routing = completed.nextMatchRouting.find((route) => route.outcome === "winner");
       expect(routing).toBeDefined();
-      expect(routing?.toMatchId).toMatch(/^m(?:89|9[0-9])$/);
+      expect(routing?.toMatchId).toMatch(/^m(?:89|9[0-9]|100)$/);
       const toMatchId = String(routing?.toMatchId);
       const nextMatch = pendingById.get(toMatchId) ?? completedById.get(toMatchId);
       expect(nextMatch).toBeDefined();
@@ -817,10 +871,6 @@ describe("mixed official knockout simulator adapter", () => {
     }
 
     for (const matchId of [
-      "m93",
-      "m94",
-      "m95",
-      "m96",
       "m97",
       "m98",
       "m99",

@@ -289,6 +289,60 @@
       "winnerId": "eng",
       "resultStatus": "official_final",
       "resultSource": "official-public-result-entry"
+    },
+    {
+      "matchId": "m93",
+      "participantAId": "por",
+      "participantBId": "esp",
+      "score": {
+        "participantAGoals": 0,
+        "participantBGoals": 1,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "esp",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry"
+    },
+    {
+      "matchId": "m94",
+      "participantAId": "usa",
+      "participantBId": "bel",
+      "score": {
+        "participantAGoals": 1,
+        "participantBGoals": 4,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "bel",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry"
+    },
+    {
+      "matchId": "m95",
+      "participantAId": "arg",
+      "participantBId": "egy",
+      "score": {
+        "participantAGoals": 3,
+        "participantBGoals": 2,
+        "decidedBy": "regular_time"
+      },
+      "winnerId": "arg",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry"
+    },
+    {
+      "matchId": "m96",
+      "participantAId": "sui",
+      "participantBId": "col",
+      "score": {
+        "participantAGoals": 0,
+        "participantBGoals": 0,
+        "decidedBy": "penalties",
+        "participantAPenalties": 4,
+        "participantBPenalties": 3
+      },
+      "winnerId": "sui",
+      "resultStatus": "official_final",
+      "resultSource": "official-public-result-entry"
     }
   ]
 }
